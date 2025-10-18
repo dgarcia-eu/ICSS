@@ -38,10 +38,10 @@ register to a group and we will only ask for registration if attendance is very 
 
 ## Links and resources
 
-- Course syllabus, calendar for 2025, recommended readings, and grading criteria. Check this out as soon as possible
-- Course Github forum, where you can ask questions about lectures, exercises, tutorials, or assignments
-- Ilias for theory part, where you will find the slides the day before each lecture
-- Ilias for the practical part, where you will submit assignments
+- [Course syllabus, calendar for 2025, recommended readings, and grading criteria. **Read this carefully as soon as possible when you start the course**](https://dgarcia-eu.github.io/ICSS/Syllabus/Syllabus_%20Introduction%20to%20Computation%20for%20Social%20Sciences.pdf)
+- [Course Github discussions forum](https://github.com/dgarcia-eu/ICSS/discussions/), where you can ask questions about lectures, exercises, tutorials, or assignments
+- [Ilias for theory part, where you will find the slides the day before each lecture](https://ilias.uni-konstanz.de/ilias.php?baseClass=ilrepositorygui&ref_id=1963878)
+- [Ilias for the practical part, where you will submit assignments](https://ilias.uni-konstanz.de/ilias.php?baseClass=ilrepositorygui&ref_id=1963877)
 
 ## Who am I?
 
