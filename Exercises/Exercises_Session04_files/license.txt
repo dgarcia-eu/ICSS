@@ -1,0 +1,3 @@
+Materials adapted from the tutorial of Dr. Kristian Rother: https://github.com/krother/debugging_tutorial
+
+The material in this tutorial, unless stated otherwise, is available under the conditions of the Creative Commons Attribution Share-alike License 4.0. See [www.creativecommons.org](http://www.creativecommons.org) for details.
