@@ -11,20 +11,21 @@ def is_answer(node):
     return len(node) == 1
 
 
-f = open('quetions.json')
-content = f.read
-node = json.reads(content)
+f = open('questions.json')
+content = f.read()
+node = json.loads(content)
 
 finished = False
 
-while not finished
-    print(node['text']
 
-if is_answer_node(node):
-    finished = True
-else:
-    answer == input()
-    if answer.upper() in ['yes', 'y']:
-        node = node['no']
+while not finished:
+    print(node['text'])
+
+    if is_answer(node):
+        finished = True
     else:
-        node = node['yes']
+        answer = input()
+        if answer.lower() in ['yes', 'y']:
+            node = node['yes']
+        else:
+            node = node['no']
