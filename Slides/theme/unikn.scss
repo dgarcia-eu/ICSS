@@ -1,0 +1,904 @@
+/*-- scss:defaults --*/
+
+// ============================================================================
+//  University of Konstanz corporate design for Quarto / reveal.js
+//  Colours follow the "Seeblau" ramp of the official CD templates
+//  (see Konstanz-Templates/CD.UniKN.LaTeX.Presentation.v0.6/beamerthemeKonstanz.sty)
+// ============================================================================
+
+// --- Seeblau ---------------------------------------------------------------
+$seeblau:  #00a9e0 !default;   // Seeblau 100 %  (primary accent)
+$seeblau4: #59c7eb !default;   //          ~65 %
+$seeblau3: #7fd4f0 !default;   //          ~50 %
+$seeblau2: #a6e1f4 !default;   //          ~35 %  (title boxes)
+$seeblau1: #cceef9 !default;   //          ~20 %  (soft fills)
+
+// --- Neutrals --------------------------------------------------------------
+$grau5: #333333 !default;
+$grau4: #666666 !default;
+$grau3: #999999 !default;
+$grau2: #cccccc !default;
+$grau1: #e5e5e5 !default;
+
+// --- Secondary CD colours (used sparingly: links, code, emphasis) -----------
+$karpfenblau: #3e5496 !default;
+$petrol:      #00797b !default;
+$seegruen:    #0a9086 !default;
+$bordeaux:    #8e2043 !default;
+
+// --- Typography ------------------------------------------------------------
+// The Konstanz CD prescribes Arial.
+$font-family-sans-serif: Arial, "Helvetica Neue", Helvetica, "Liberation Sans", sans-serif !default;
+$presentation-font-size-root: 37.5px !default;   // was 30px; +25% (2026-10-18)
+$presentation-line-height: 1.35 !default;
+
+$body-bg:    #ffffff !default;
+$body-color: #111111 !default;
+
+$link-color:       $karpfenblau !default;
+$link-color-hover: $seeblau !default;
+
+$selection-bg:    $seeblau2 !default;
+$selection-color: #111111 !default;
+
+$presentation-heading-font:        $font-family-sans-serif !default;
+$presentation-heading-color:       #111111 !default;
+$presentation-heading-font-weight: 400 !default;
+$presentation-heading-line-height: 1.2 !default;
+
+$code-block-bg:           #fbfbfb !default;
+$code-block-border-color: $grau2 !default;
+$code-block-font-size:    0.77em !default;
+$code-color:              $bordeaux !default;
+
+/*-- scss:rules --*/
+
+// ============================================================================
+//  Slide title: rounded Seeblau plate, top left, with a soft drop shadow
+// ============================================================================
+// NOTE: `display: block` + `width: fit-content` (rather than `inline-block`)
+// is deliberate -- an inline-level title breaks Quarto's `.columns` layout.
+.reveal .slides section > h1:first-child,
+.reveal .slides section > h2:first-child {
+  display: block;
+  width: fit-content;
+  max-width: 84%;
+  margin: 0 0 0.55em 0;
+  padding: 0.1em 0.5em 0.14em;
+  background-color: $seeblau2;
+  border-radius: 8px;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
+  font-size: 1.18em;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+  text-transform: none;
+  color: #111;
+}
+
+// ============================================================================
+//  Title slide
+// ============================================================================
+#title-slide {
+  text-align: center;
+
+  .title {
+    display: block;
+    width: 86%;
+    margin: 0.2em auto 0.9em;
+    padding: 0.35em 0.6em 0.45em;
+    background-color: $seeblau2;
+    border-radius: 26px;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
+    font-size: 1.32em;     // root grew 25%; 1.32em keeps the course name on one line
+    font-weight: 400;
+    line-height: 1.22;
+    color: #111;
+  }
+
+  // Third line inside the title plate ("Session 1 - Introduction")
+  .course {
+    white-space: nowrap;   // keep the course name on one line
+  }
+
+  .session {
+    display: block;
+    margin-top: 0.15em;
+    font-size: 0.73em;
+  }
+
+  .author,
+  .quarto-title-author-name {
+    margin: 0.3em 0 0;
+    font-size: 1.15em;
+    color: #111;
+  }
+
+  // Second line of the author field: the semester
+  .semester {
+    display: block;
+    margin-top: 0.7em;
+    font-size: 0.85em;
+  }
+
+  .date {
+    margin-top: 0.55em;
+    font-size: 0.94em;
+    color: #111;
+  }
+
+  .subtitle {
+    font-size: 0.92em;
+    color: $grau4;
+  }
+}
+
+// ============================================================================
+//  Uni Konstanz wordmark, top right on every slide
+// ============================================================================
+.reveal .slide-logo {
+  position: fixed !important;
+  top: 1.4vh !important;
+  right: 1.4vw !important;
+  bottom: auto !important;
+  left: auto !important;
+  height: auto !important;
+  width: auto !important;
+  max-height: 7.5vh !important;
+  max-width: 22vw;
+  margin: 0 !important;
+  z-index: 40;
+}
+
+// ============================================================================
+//  Three-part Seeblau footer bar
+// ============================================================================
+.reveal .footer {
+  position: fixed !important;
+  left: 0;
+  right: 0;
+  bottom: 0 !important;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: stretch;
+  text-align: center;
+  font-size: clamp(11px, 1.3vw, 21px);
+  line-height: 1.1;
+  color: #111;
+  z-index: 40;
+
+  p {
+    margin: 0 !important;
+    display: contents !important;   // let the spans be the flex items
+  }
+
+  span {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45em 0.4em;
+  }
+
+  .fbar-left {
+    flex: 0 0 20%;
+    background-color: $seeblau4;
+  }
+  .fbar-mid {
+    flex: 1 1 auto;
+    background-color: $seeblau2;
+  }
+  .fbar-right {
+    flex: 0 0 24%;
+    background-color: $seeblau1;
+    padding-right: 3.2em !important;   // room for the slide number at the right end
+  }
+}
+
+// Slide number: at the right end of the footer bar, same type as the footer
+.reveal .slide-number,
+.reveal .slide-number-pdf {
+  position: fixed;
+  top: auto !important;
+  left: auto !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 41;
+  background: transparent !important;
+  color: #111 !important;
+  font-family: $font-family-sans-serif;
+  font-size: clamp(11px, 1.3vw, 21px);
+  line-height: 1.1;
+  padding: 0.45em 0.9em;
+  a { color: #111 !important; }
+}
+.reveal .slide-number-pdf { position: absolute !important; font-size: 21px; z-index: 1000 !important; }
+
+// Keep slide content clear of the footer bar
+.reveal .slides section {
+  padding-bottom: 1.2em;
+}
+
+// ============================================================================
+//  Lists
+// ============================================================================
+.reveal ul { list-style-type: disc; }
+.reveal ul ul { list-style-type: circle; }
+.reveal ul ul ul { list-style-type: square; }
+
+.reveal li::marker { color: $seeblau; }
+.reveal ol li::marker { color: $grau4; }
+
+.reveal ul,
+.reveal ol {
+  margin-left: 0.9em;
+}
+
+.reveal li {
+  margin-bottom: 0.34em;
+  line-height: 1.3;
+}
+
+.reveal li li {
+  margin-bottom: 0.2em;
+  font-size: 0.94em;
+}
+
+.reveal strong { font-weight: 700; }
+
+// ============================================================================
+//  Local font-size helpers (applied to a ::: div, so slide titles keep
+//  their size on dense slides)
+// ============================================================================
+.reveal .sm { font-size: 0.89em; }
+.reveal .xs { font-size: 0.8em; }
+.reveal .xxs { font-size: 0.72em; }
+
+// Tighter list spacing for the densest slides
+.reveal .xs li,
+.reveal .xxs li { margin-bottom: 0.18em; }
+
+// ============================================================================
+//  Section-outline slides
+// ============================================================================
+.reveal .outline {
+  margin-top: 0.6em;
+  font-size: 1.05em;
+}
+
+.reveal .outline ol { margin-left: 1.6em; }
+.reveal .outline li { margin-bottom: 0.5em; }
+
+// `.outline.focus` greys out everything except the item marked `.current`,
+// which is how the section-divider slides of the original decks work.
+.reveal .outline.focus li,
+.reveal .outline.focus li::marker {
+  color: $grau3;
+}
+
+.reveal .outline .current {
+  color: #111;
+  font-weight: 700;
+}
+
+// ============================================================================
+//  Highlight plate (e.g. the closing "Don't miss them!" box)
+// ============================================================================
+.reveal .plate {
+  background-color: $seeblau2;
+  border-radius: 8px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.22);
+  padding: 0.5em 0.8em;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.reveal .plate p { margin: 0; }
+
+// ============================================================================
+//  Images and figure grids
+// ============================================================================
+.reveal img { margin: 0; }
+
+.reveal figure { margin: 0; }
+
+.reveal figure figcaption,
+.reveal .caption {
+  margin-top: 0.25em;
+  font-size: 0.7em;
+  line-height: 1.25;
+  color: #111;
+  text-align: center;
+}
+
+// Pandoc wraps loose inline content in <p>; let the flex/grid parents see
+// the images and spans themselves.
+.reveal .imgrow > p,
+.reveal .imgcol > p,
+.reveal .logos > p,
+.reveal .photos > p,
+.reveal .timeline > p {
+  display: contents;
+}
+
+// A horizontal row of images, bottom-aligned
+.reveal .imgrow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1.2em;
+  margin-top: 0.5em;
+}
+
+.reveal .imgrow img { display: block; }
+
+.reveal .imgrow figure { text-align: center; }
+
+// Same, but images centred vertically
+.reveal .imgrow.middle { align-items: center; }
+
+// A column of stacked images
+.reveal .imgcol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8em;
+}
+
+.reveal .imgcol img { display: block; }
+
+// --- The lab slide: portrait grid + administration column ------------------
+.reveal .lab {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.4em;
+  margin-top: 0.3em;
+}
+
+.reveal .admin-label {
+  font-size: 0.77em;
+  margin-bottom: 0.5em;
+}
+
+// Portrait grid (the lab slide)
+.reveal .photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7em 1.1em;
+  align-items: flex-end;
+  max-width: 26em;
+}
+
+.reveal .photos.col {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  max-width: none;
+}
+
+.reveal .photos figure {
+  width: 7.2em;
+  text-align: center;
+}
+
+.reveal .photos img {
+  width: 100%;
+  height: 7.4em;
+  object-fit: cover;
+  display: block;
+}
+
+.reveal .photos figcaption {
+  font-size: 0.59em;
+  margin-top: 0.2em;
+}
+
+// Placeholder for a missing portrait
+.reveal .photos .noimg {
+  width: 100%;
+  height: 7.4em;
+  background-color: $grau1;
+  border: 1px dashed $grau2;
+}
+
+// Logos stacked at the right edge of a slide
+.reveal .logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.4em;
+  padding-top: 0.4em;
+}
+
+.reveal .logos img { max-width: 100%; }
+
+// ============================================================================
+//  Timeline (year -> event) used by the history slides
+// ============================================================================
+.reveal .timeline {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35em 1.1em;
+  align-items: baseline;
+  margin: 0.2em 0 0.6em;
+  font-size: 0.91em;
+}
+
+.reveal .timeline .year {
+  text-align: right;
+  color: $grau5;
+  white-space: nowrap;
+}
+
+.reveal .timeline .event { font-weight: 700; }
+
+// ============================================================================
+//  Code and pseudocode
+// ============================================================================
+.reveal pre {
+  box-shadow: none;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+}
+
+.reveal div.sourceCode {
+  background-color: $code-block-bg;
+  border: 1px solid $grau2;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.reveal pre code {
+  padding: 0.5em 0.7em;
+  max-height: none;
+  line-height: 1.3;
+}
+
+// Cormen-style pseudocode box
+.reveal pre.pseudocode {
+  display: block;
+  background-color: #f2f2f2;
+  border: 1px solid $grau5;
+  border-radius: 3px;
+  padding: 0.7em 0.9em;
+  font-family: "Times New Roman", Times, Georgia, serif;
+  font-size: 0.66em;
+  line-height: 1.45;
+  white-space: pre;
+  overflow-x: auto;
+  color: #111;
+  box-shadow: none;
+}
+
+.reveal pre.pseudocode b { font-weight: 700; }
+.reveal pre.pseudocode i { font-style: italic; }
+
+// ============================================================================
+//  Example / note boxes
+// ============================================================================
+// Rounded white panel with a soft shadow, used for worked examples.
+.reveal .example {
+  background-color: #fff;
+  border: 1px solid $grau2;
+  border-radius: 14px;
+  box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.16);
+  padding: 0.5em 0.9em 0.6em;
+  margin: 0.3em 0;
+}
+
+// A `.example` whose first line is its label, e.g. "Example:" in Seeblau.
+.reveal .example .label,
+.reveal .example > p:first-child > strong:only-child {
+  display: block;
+  color: $seeblau;
+  font-weight: 400;
+  margin-bottom: 0.25em;
+}
+
+.reveal .example p { margin: 0.15em 0; }
+.reveal .example ul { margin-top: 0.1em; margin-bottom: 0.1em; }
+
+// Same panel, used for formal definitions: the label is bold.
+.reveal .definition {
+  background-color: #fff;
+  border: 1px solid $grau2;
+  border-radius: 14px;
+  box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.16);
+  padding: 0.5em 0.9em 0.6em;
+  margin: 0.3em 0;
+}
+
+.reveal .definition p { margin: 0.15em 0; }
+
+.reveal .definition .label {
+  display: block;
+  color: $seeblau;
+  font-weight: 700;
+  margin-bottom: 0.15em;
+}
+
+// Solid label chip, e.g. "Search for 11:" next to a diagram
+.reveal .tag {
+  display: inline-block;
+  background-color: #1f6fb2;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.15em 0.6em 0.2em;
+  line-height: 1.25;
+}
+
+.reveal .tag p { margin: 0; }
+
+// Inline highlighter pen
+.reveal .hl { background-color: #ffd75e; padding: 0 0.15em; }
+.reveal .hl-orange { background-color: #f5a623; padding: 0 0.15em; font-weight: 700; }
+
+// Full-width orange action bar ("Python Refresh: ...")
+.reveal .refresh {
+  background-color: #f5a623;
+  padding: 0.25em 0.6em;
+  font-weight: 700;
+  margin-top: 0.5em;
+}
+
+.reveal .refresh p { margin: 0; }
+
+// ============================================================================
+//  Tables
+// ============================================================================
+.reveal table {
+  font-size: 0.85em;
+  border-collapse: collapse;
+  border: 1px solid $grau4;       // every table shows all four edges
+}
+
+.reveal table th {
+  background-color: $seeblau1;
+  border-bottom: 2px solid $seeblau;
+  text-align: left;
+}
+
+.reveal table td { border-bottom: 1px solid $grau1; }
+
+// Seeblau table: white-on-Seeblau header, banded Seeblau rows, no rules.
+.reveal .tbl-seeblau table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid $seeblau4;
+}
+
+.reveal .tbl-seeblau th {
+  background-color: $seeblau4;
+  color: #fff;
+  border: none;
+  padding: 0.2em 0.5em;
+}
+
+.reveal .tbl-seeblau td {
+  background-color: $seeblau1;
+  border: none;
+  border-bottom: 2px solid #fff;
+  padding: 0.2em 0.5em;
+}
+
+// Plain bordered grid table (conversion tables, data-type tables)
+.reveal .tbl-grid table { border-collapse: collapse; }
+.reveal .tbl-grid th,
+.reveal .tbl-grid td {
+  border: 1px solid $grau4;
+  padding: 0.15em 0.5em;
+  background: none;
+  text-align: left;
+}
+.reveal .tbl-grid th { background-color: $seeblau1; }
+
+// ============================================================================
+//  Misc
+// ============================================================================
+.reveal a { text-decoration: none; }
+.reveal a:hover { text-decoration: underline; }
+
+.reveal .source {
+  font-size: 0.64em;
+  color: $grau4;
+  text-align: right;
+}
+
+.reveal .center-h { text-align: center; }
+
+.reveal blockquote {
+  border-left: 5px solid $seeblau;
+  background-color: $seeblau1;
+  box-shadow: none;
+  padding: 0.4em 0.8em;
+  font-style: normal;
+}
+
+// Progress bar / controls in Seeblau
+.reveal .progress { color: $seeblau; }
+.reveal .controls { color: $seeblau; }
+
+// ============================================================================
+//  Concept boxes (programming paradigms, simple class diagrams)
+// ============================================================================
+.reveal .concept {
+  border: 1.6px solid #1f6fb2;
+  border-radius: 6px;
+  padding: 0.25em 0.6em 0.35em;
+  margin: 0.3em 0;
+  background-color: #fff;
+}
+
+.reveal .concept .label {
+  display: block;
+  color: $seeblau;
+  font-weight: 700;
+}
+
+.reveal .concept p { margin: 0.1em 0; }
+
+// A dimmed concept box (used for the build-up on the paradigm slides)
+.reveal .concept.ghost { visibility: hidden; }
+
+// Plain bordered box without the coloured rule
+.reveal .box {
+  border: 1.6px solid #1f6fb2;
+  padding: 0.25em 0.6em 0.35em;
+  margin: 0.3em 0;
+  text-align: center;
+  background-color: #fff;
+}
+
+.reveal .box p { margin: 0.05em 0; }
+
+// The "types of programming languages" table
+.reveal .tbl-lang table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78em;
+}
+
+.reveal .tbl-lang th {
+  background-color: #4a7fbf;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 0.25em 0.5em;
+  text-align: center;
+}
+
+.reveal .tbl-lang td {
+  border: 2px solid #fff;
+  padding: 0.3em 0.5em;
+  vertical-align: middle;
+  background-color: #eef2f8;
+}
+
+.reveal .tbl-lang td.type { font-weight: 700; text-align: center; }
+.reveal .tbl-lang td.ex { text-align: center; background-color: #f7f9fc; }
+.reveal .tbl-lang td.desc { background-color: #ccd5e8; }
+
+// Small monospace snippet plates (machine code / assembly examples)
+.reveal .snippet {
+  border: 1px solid $grau4;
+  background-color: #fff;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.18);
+  padding: 0.3em 0.5em;
+  font-family: SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.59em;
+  line-height: 1.3;
+  white-space: pre;
+  margin: 0.3em 0;
+}
+
+// ============================================================================
+//  Session 6: the "Simpleland" family tree stage
+// ============================================================================
+.reveal .family {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  margin-top: 0.3em;
+}
+
+.reveal .family .gen {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.reveal .family img { height: 3.1em; width: auto; display: block; }
+.reveal .family .gap { width: 7em; }
+.reveal .family .gen-parents { gap: 1.2em; }
+
+// Simpleland map, parked in the lower right corner of the slide
+.reveal .simpleland {
+  position: absolute;
+  right: 0.6em;
+  bottom: 2.8em;
+  height: 3.6em;
+  width: auto;
+}
+
+.reveal .simpleland-label {
+  position: absolute;
+  right: 6.0em;
+  bottom: 4.0em;
+  font-size: 0.77em;
+  font-weight: 700;
+}
+
+// Centred question chip used on the Simpleland slides
+.reveal .tag.qcentre {
+  display: block;
+  width: fit-content;
+  margin: 0.4em auto;
+}
+
+// ============================================================================
+//  Session 11: the running "Product" table, with highlight variants
+// ============================================================================
+.reveal .tbl-product table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 0.83em;
+}
+
+.reveal .tbl-product th {
+  background: none;
+  color: $grau3;
+  font-weight: 400;
+  border: 2px solid #111;
+  border-bottom: 2px solid #111;
+  padding: 0.15em 0.9em;
+  text-align: center;
+}
+
+.reveal .tbl-product td {
+  border: 1px solid #111;
+  padding: 0.15em 0.9em;
+  text-align: center;
+  background: none;
+}
+
+// outer frame
+.reveal .tbl-product table { border: 2px solid #111; }
+
+// the table's name, printed above it
+.reveal .tbl-name {
+  color: $grau3;
+  font-weight: 700;
+  font-size: 0.92em;
+  text-align: center;
+  margin-bottom: 0.1em;
+}
+
+// --- highlight variants ------------------------------------------------------
+// a red box around the whole relation, one row, one column, or the header
+.reveal .hl-relation table { outline: 3px solid #cc2222; outline-offset: 3px; }
+.reveal .hl-row tbody tr:nth-child(2) td { box-shadow: inset 0 0 0 2px #cc2222; }
+.reveal .hl-col tbody tr td:nth-child(2),
+.reveal .hl-col thead tr th:nth-child(2) { box-shadow: inset 0 0 0 2px #cc2222; }
+.reveal .hl-schema thead tr th { box-shadow: inset 0 0 0 2px #cc2222; }
+// selection: the two GizmoWorks rows
+.reveal .hl-select tbody tr:nth-child(1) td,
+.reveal .hl-select tbody tr:nth-child(2) td { box-shadow: inset 0 0 0 2px #cc2222; }
+// selection + projection: only the first two columns of those rows
+.reveal .hl-project tbody tr:nth-child(1) td:nth-child(-n+2),
+.reveal .hl-project tbody tr:nth-child(2) td:nth-child(-n+2) {
+  box-shadow: inset 0 0 0 2px #cc2222;
+}
+
+// ============================================================================
+//  Motivating examples (one per deck, inserted after the Overview slide)
+// ============================================================================
+// A "why this matters" panel: a Seeblau rule on the left, a small caps label,
+// a headline question, and the numbers that make the problem concrete.
+// Removal of unselected candidates is mechanical -- see tools/pickmotivation.py.
+
+.reveal .motivation {
+  border-left: 6px solid $seeblau;
+  background-color: $seeblau1;
+  border-radius: 0 10px 10px 0;
+  padding: 0.45em 0.9em 0.5em;
+  margin: 0.25em 0 0.45em;
+}
+
+.reveal .motivation p { margin: 0.15em 0; }
+
+.reveal .motivation .label {
+  display: block;
+  color: $petrol;
+  font-weight: 700;
+  font-size: 0.7em;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin-bottom: 0.15em;
+}
+
+// The one-line question the lecture answers, shown under the panel.
+.reveal .ask {
+  color: $karpfenblau;
+  font-weight: 700;
+  margin: 0.35em 0 0.2em;
+}
+
+// Compact figure-style numbers: value on top, caption underneath.
+.reveal .figures {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 0.8em;
+  margin: 0.5em 0 0.3em;
+  text-align: center;
+}
+
+.reveal .figures > div { flex: 1 1 0; }
+
+.reveal .figures .big {
+  display: block;
+  color: $seeblau;
+  font-weight: 700;
+  font-size: 1.5em;
+  line-height: 1.1;
+}
+
+.reveal .figures .cap {
+  display: block;
+  color: $grau4;
+  font-size: 0.7em;
+  line-height: 1.25;
+}
+
+// Keep the citation clear of the question line on a motivating-example slide.
+.reveal .motivation ~ .source { margin-top: 1.1em; }
+
+// ============================================================================
+//  Question & answer example decks (Slides/Examples/)
+// ============================================================================
+.reveal .tag.ex-open  { background-color: $petrol;   font-size: 0.7em; margin-bottom: 0.4em; }
+.reveal .tag.ex-close { background-color: $seegruen; font-size: 0.7em; margin-bottom: 0.4em; }
+.reveal .tag.ex-id    { background-color: $grau4;    font-size: 0.7em; margin-bottom: 0.3em; }
+
+// "What we used" box at the foot of an answer slide
+.reveal .uses {
+  border-left: 6px solid $seegruen;
+  background-color: #e0f3ec;
+  border-radius: 0 10px 10px 0;
+  padding: 0.35em 0.8em 0.4em;
+  margin-top: 0.5em;
+  font-size: 0.83em;
+}
+.reveal .uses p { margin: 0; }
+
+// ============================================================================
+//  Per-slide fit levels (2026-10-18). The base font grew by 25%; a slide whose
+//  content no longer fits gets `{.fit1}` ... `{.fit4}` on its `##` heading.
+//  The level shrinks everything on the slide (text, em-sized images, code)
+//  except the slide title. fit2 = 0.8 is exactly the old 30px base size.
+// ============================================================================
+@each $name, $f in (fit1: 0.9, fit2: 0.8, fit3: 0.72, fit4: 0.64) {
+  .reveal .slides section.#{$name} { font-size: #{$f}em; }
+  .reveal .slides section.#{$name} > h2:first-child { font-size: #{1.18 / $f}em; }
+}
+
+
+// Printed PDF: Chrome paints the fixed footer over every page, which would hide the
+// per-page slide number. In print the bar stops short of the corner and the number
+// fills the corner in the colour of the bar's right part.
+html.print-pdf .reveal .footer { right: 3.05em !important; width: auto !important; }
+html.print-pdf .reveal .footer .fbar-right { padding-right: 0.4em !important; }
+html.print-pdf .reveal .slide-number-pdf {
+  background: $seeblau1 !important;
+  width: 3.4em; text-align: center;
+  padding: 0.45em 0 !important;
+  font-size: clamp(11px, 1.3vw, 21px) !important;
+}
+
+// Person icons of the recursion deck: keep their aspect ratio inside the flex row
+.reveal .family img { flex-shrink: 0; aspect-ratio: 1; }
