@@ -8,7 +8,7 @@
 **Lecture:** Wednesdays 10:00-11:30, D301  
 **Exercises:** Tuesdays 15:15-16:45, D301
 
-The syllabus is also available as a [PDF](Syllabus/Syllabus_%20Introduction%20to%20Computation%20for%20Social%20Sciences.pdf).
+The syllabus available as [PDF](Syllabus/Syllabus_%20Introduction%20to%20Computation%20for%20Social%20Sciences.pdf).
 
 ## Course Description
 
@@ -62,8 +62,7 @@ Additionally, this year we started to work on self-contained lecture transcripts
 **Session 01: Introduction** (21.10 – 27.10)  
 Intro to the course. What is computer science; what is a computer; what is a program  
 *Reference(s): Chapter 1 of 'Python Programming: An introduction to Computer Science' by Zelle*  
-**Slides:** [view in the browser](https://dgarcia-eu.github.io/ICSS/Slides/01-Introduction/ICSS-2026-01-Introduction.html)  
-**Exercise sheet:** [view in the browser](https://dgarcia-eu.github.io/ICSS/Exercises/Exercise01.html)
+[**Slides**](Slides/01-Introduction/ICSS-2026-01-Introduction.html) -- [**Exercise sheet**](https://dgarcia-eu.github.io/ICSS/Exercises/Exercise01.html)
 
 **Session 02: Information coding** (28.10 – 03.11)  
 Units of information - bits; Representing different types of data using bits.  
