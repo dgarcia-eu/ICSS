@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 514" width="470" height="514" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker></defs>
+  <rect x="6" y="6" width="404" height="80" rx="10" fill="#a6e1f4" stroke="#00a9e0" stroke-width="2"/>
+  <text x="20" y="38" font-size="26" fill="#111" font-weight="bold" font-style="normal" text-anchor="start">Problem</text>
+  <text x="20" y="70" font-size="21" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">Who holds a research field together?</text>
+  <line x1="208.0" y1="88" x2="208.0" y2="107" stroke="#3e5496" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="6" y="110" width="404" height="80" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2"/>
+  <text x="20" y="142" font-size="26" fill="#111" font-weight="bold" font-style="normal" text-anchor="start">Representation</text>
+  <text x="20" y="174" font-size="21" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">authors as nodes, papers as edges</text>
+  <line x1="208.0" y1="192" x2="208.0" y2="211" stroke="#3e5496" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="6" y="214" width="404" height="80" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2"/>
+  <text x="20" y="246" font-size="26" fill="#111" font-weight="bold" font-style="normal" text-anchor="start">Algorithm</text>
+  <text x="20" y="278" font-size="21" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">breadth-first search from everyone</text>
+  <line x1="208.0" y1="296" x2="208.0" y2="315" stroke="#3e5496" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="6" y="318" width="404" height="80" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2"/>
+  <text x="20" y="350" font-size="26" fill="#111" font-weight="bold" font-style="normal" text-anchor="start">Program</text>
+  <text x="20" y="382" font-size="21" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">Python code for 2 million authors</text>
+  <line x1="208.0" y1="400" x2="208.0" y2="419" stroke="#3e5496" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="6" y="422" width="404" height="80" rx="10" fill="#a6e1f4" stroke="#00a9e0" stroke-width="2"/>
+  <text x="20" y="454" font-size="26" fill="#111" font-weight="bold" font-style="normal" text-anchor="start">Solution</text>
+  <text x="20" y="486" font-size="21" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">authors ranked by closeness</text>
+  <path d="M 412 462.0 H 436 V 46.0 H 416" fill="none" stroke="#3e5496" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#a)"/>
+  <text x="456" y="254.0" font-size="20" fill="#3e5496" text-anchor="middle" transform="rotate(90 456 254.0)">check and refine</text>
+</svg>
