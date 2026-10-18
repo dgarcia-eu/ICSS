@@ -2,7 +2,7 @@
 
 *Introduction to Computing for the Social Sciences*
 
-**How to use exercise sheets.** The firs Exercises (here 1 and 2) are the ones we work through together
+**How to use exercise sheets.** The first exercises in a sheet (here 1 and 2) are the ones we work through together
 in the exercise session. Work on the exercises before and bring your attempts.
 Solutions to the exercises can be found on Github but are not linked here.
 Do not check the solutions until after we have tried solving them in class.
