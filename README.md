@@ -101,13 +101,13 @@ Runtime analysis; Asymptotic notation; Applications to search and sorting
 Models of computation (DFA, PDA, Turing Machines), Complexity Classes  
 *Reference(s): Chapter 1 of 'Introduction to the Theory of Computation' by Sipser. Chapters 6 & 12 of 'Introduction to Computing - Explorations in Language, Logic, and Machines' by Evans. Chapter 10 of 'Algorithms Unlocked' by Cormen*
 
-**Session 10: Machine Learning** (13.01 - 19.01)  
-Supervised and unsupervised machine learning. Bias-variance tradeoff  
-*Reference(s): Lecture materials*
-
-**Session 11: Databases** (20.01 - 26.01)  
+**Session 10: Databases** (13.01 - 19.01)   
 Database management systems; Tables, SQL, relational algebra  
 *Reference(s): Chapter 4 of 'Big Data and Social Science: A Practical Guide to Methods and Tools' by Foster, Ghani, Jarmin, Kreuter and Lane.*
+
+**Session 11: Machine Learning** (20.01 - 26.01)  
+Supervised and unsupervised machine learning. Bias-variance tradeoff  
+*Reference(s): Lecture materials*
 
 **Session 12: Parallel Programming** (27.01 – 02.02)  
 Hardware and software parallelization, limits of parallelization  
