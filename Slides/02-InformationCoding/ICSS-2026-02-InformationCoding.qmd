@@ -1045,6 +1045,26 @@ def get_tweet_timestamp(tid):
 <https://ws-dl.blogspot.com/2019/08/2019-08-03-tweetedat-finding-tweet.html>
 :::
 
+## Why does this matter? Practical Python examples
+
+:::: {.columns}
+::: {.column width="55%"}
+![](figures/02-python-examples-notebook.png){width="100%"}
+:::
+
+::: {.column width="45%"}
+::: {.sm}
+- **Rounding errors add up:** adding 0.1 a million times, and a variance formula that returns 0
+- **An integer that becomes negative:** int32 timestamps in milliseconds overflow silently
+- **One byte, two names:** a UTF-8 file read as Latin-1 turns *Müller* into *MÃ¼ller*
+:::
+:::
+::::
+
+::: {.source}
+<https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples02-InformationCoding.ipynb>
+:::
+
 ## Summary {.fit1}
 
 - Information answers a question: one bit is one yes/no answer, and frequent outcomes deserve shorter codes

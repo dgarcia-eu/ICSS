@@ -67,7 +67,8 @@ Intro to the course. What is computer science; what is a computer; what is a pro
 
 **Session 02: Information coding** (28.10 – 03.11)  
 Units of information - bits; Representing different types of data using bits.  
-*Reference(s): Chapter 1 of 'Introduction to Computing - Explorations in Language, Logic, and Machines' by Evans*
+*Reference(s): Chapter 1 of 'Introduction to Computing - Explorations in Language, Logic, and Machines' by Evans*  
+[**Slides**](https://dgarcia-eu.github.io/ICSS/Slides/02-InformationCoding/ICSS-2026-02-InformationCoding.html) - [**Transcript**](https://dgarcia-eu.github.io/ICSS/Transcripts/02-InformationCoding.html) - [**Exercise sheet**](https://dgarcia-eu.github.io/ICSS/Exercises/Exercise02.html)
 
 **Session 03: Data Structures** (4.11 – 13.11)  
 Abstract data structures; Linked lists; Stacks; Queues; Trees; Hash tables.  
