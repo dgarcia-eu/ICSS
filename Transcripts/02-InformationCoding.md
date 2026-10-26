@@ -23,7 +23,8 @@
 9. [Character coding](#9-character-coding)
 10. [Data types and bitwise operations](#10-data-types-and-bitwise-operations)
 11. [Check yourself](#11-check-yourself)
-12. [References](#12-references)
+12. [Why does this matter? Practical Python examples](#12-why-does-this-matter-practical-python-examples)
+13. [References](#13-references)
 
 ---
 
@@ -709,7 +710,7 @@ classic fingerprint of UTF-8 read as Latin-1.
 
 ---
 
-## 12. Why does this matter? Practical python exaples
+## 12. Why does this matter? Practical Python examples
 
 Check the [practical Python examples in this Jupyter notebook](https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples02-InformationCoding.ipynb). There, you will see how rounding errors can add up to a wrong variance, an integer can silently become negative, 
 and a name that becomes two names because of one byte.
