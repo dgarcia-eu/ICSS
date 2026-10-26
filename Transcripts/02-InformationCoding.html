@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Session 2: Information Coding</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../Examples/style.css" />
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Session 2: Information Coding</h1>
+</header>
+<p class="nav">
+<a href="../Examples/index.html">← all
+examples</a><a href="00-Conventions.html">notation</a>
+</p>
+<p><em>Introduction to Computing for the Social Sciences · lecture
+transcript</em></p>
+<p><strong>Recommended reading for this session:</strong> Chapter 1 of
+Evans, <em>Introduction to Computing</em> (2011), which is free at <a
+href="https://computingbook.org/"
+class="uri">https://computingbook.org/</a>. References at the end.</p>
+<hr />
+<h2 id="contents">Contents</h2>
+<!-- MOTIVATION-TOC:BEGIN -->
+<ol start="0" type="1">
+<li><a href="#motivating-examples">Motivating examples</a>
+<!-- MOTIVATION-TOC:END --></li>
+<li><a href="#1-information-as-the-answer-to-a-question">Information as
+the answer to a question</a></li>
+<li><a href="#2-measuring-information-in-bits">Measuring information in
+bits</a></li>
+<li><a href="#3-storing-information-digitally">Storing information
+digitally</a></li>
+<li><a href="#4-positional-number-systems">Positional number
+systems</a></li>
+<li><a href="#5-converting-between-bases">Converting between
+bases</a></li>
+<li><a href="#6-negative-numbers">Negative numbers</a></li>
+<li><a href="#7-floating-point-numbers-ieee-754">Floating-point numbers:
+IEEE 754</a></li>
+<li><a href="#8-when-rounding-errors-matter">When rounding errors
+matter</a></li>
+<li><a href="#9-character-coding">Character coding</a></li>
+<li><a href="#10-data-types-and-bitwise-operations">Data types and
+bitwise operations</a></li>
+<li><a href="#11-check-yourself">Check yourself</a></li>
+<li><a href="#12-references">References</a></li>
+</ol>
+<hr />
+<!-- MOTIVATION-SECTION:BEGIN -->
+<h2 id="motivating-examples">Motivating examples</h2>
+<!-- MOTIVATION:M02-A:BEGIN -->
+<h3 id="excel-renamed-one-gene-in-five">Excel renamed one gene in
+five</h3>
+<p>In 2016, three researchers downloaded the supplementary spreadsheets
+of 3,597 published genetics papers and checked them (imagine the amount
+of work without AI). In 704 of them (19.6%) gene names had been silently
+changed. Human gene symbols include <code>SEPT2</code> (Septin 2),
+<code>MARCH1</code>, <code>DEC1</code> and <code>OCT4</code>. A
+spreadsheet opening a text file guesses what each cell means, decides
+that <code>SEPT2</code> is a date, and stores the 2nd of September of
+the current year; re-exported, the cell now reads <code>2-Sep</code>.
+Identifiers like <code>2310009E13</code> are guessed to be scientific
+notation and become <code>2.31E+13</code>, losing their digits entirely.
+Nothing failed and no warning appeared. The corruption is only visible
+if you know what the value was supposed to be. The episode ended in a
+way that is worth reflecting on: in 2020 the HUGO Gene Nomenclature
+Committee, the body that names human genes, renamed 27 genes so that
+spreadsheets would stop breaking them. <code>MARCH1</code> became
+<code>MARCHF1</code> and <code>SEPT1</code> became <code>SEPTIN1</code>.
+Biologists had to change the way they name things because of a software
+error.</p>
+<p>The bug is not really about spreadsheets, it is about information
+coding. Data is stored in bytes and the meaning of those bytes depends
+on how they are interpreted. <code>SEPT2</code> is five characters, and
+whether those characters are a gene, a date or a chemical formula is not
+specified in the file. Some program has to decide, and here a program
+decided silently and wrongly. Everything in this session is about
+understanding how that works rather than letting software guess and take
+the risk. Section 3 asks what it means to store a value at all, and why
+everything on a computer is ultimately a sequence of bits. Section 9 is
+about characters specifically: <code>S</code>, <code>E</code>,
+<code>P</code>, <code>T</code> and <code>2</code> are numbers before
+they are letters, and which numbers depends on an encoding you can
+choose. Section 10 is about types, the machinery that a programming
+language gives you to say that a column is text and must not be
+reinterpreted, which is exactly what the spreadsheet lacked. The general
+lesson to take from the session is that when a value changes and nothing
+warns you, the problem is almost always that two pieces of software
+disagreed about what the bytes meant.</p>
+<h3 id="the-index-that-lost-half-its-value">The index that lost half its
+value</h3>
+<p>The Vancouver Stock Exchange launched a new index in January 1982 at
+a value of 1000.000, recomputed after every trade, some 3000 times a
+day. Over the next 22 months the index fell steadily, reaching 524.811,
+even though the shares it tracked had on the whole gone up. Analysts
+looked for an economic explanation and did not find one because there
+was none. Each recomputation kept three decimal places by truncating the
+fourth rather than rounding it. Truncation is not symmetric up and down,
+it always removes value towards zero and never adds value away from
+zero. A loss of at most 0.001 per calculation, repeated 3000 times a day
+for 22 months, is roughly 20 index points a month. When the index was
+recomputed correctly in November 1983 it jumped overnight from 524.811
+to 1098.892.</p>
+<p>Two things make this a good story for a social scientist rather than
+for a programmer. First, the error was invisible at every individual
+step. No single calculation was wrong by an amount anyone would notice,
+and the failure lives entirely in the accumulation. When data gets
+large, we add a million numbers, not just two. Second, the error was
+systematic and not random. Had the fourth decimal been rounded, the
+errors would have been roughly symmetric and would largely have
+canceled, while truncation made every error point downwards. This is
+precisely the distinction between noise, which averages out, and bias,
+which does not, and it is the reason why numerical mistakes in analysis
+code are dangerous in a different way to measurement error.</p>
+<h2 id="1-information-as-the-answer-to-a-question">1. Information as the
+answer to a question</h2>
+<p>In computer science, information is the representation of knowledge.
+That sounds abstract until we make it operational, which is what Claude
+Shannon did in 1948. Information is encoded by recording changes in
+knowledge, and the simplest way to think about a change in knowledge is
+to ask how much we learn from the answer to a question. Take a coin.
+Before the flip we do not know the outcome, and after asking whether it
+landed heads we do. That single yes/no answer is the smallest possible
+amount of information, and we call it one <em>bit</em>. Coding
+information is done by asking questions, and the way in which we ask
+questions affects the properties and quality of the coding.</p>
+<figure>
+<img src="../Slides/02-InformationCoding/figures/02-coin-question.svg"
+alt="The smallest question is a binary one." />
+<figcaption aria-hidden="true"><em>The smallest question is a binary
+one.</em></figcaption>
+</figure>
+<hr />
+<h2 id="2-measuring-information-in-bits">2. Measuring information in
+bits</h2>
+<p>Each yes/no question gives us one bit of information, so we can ask
+how many bits we learn from the roll of a six-sided die. The answer
+depends on how we ask, that is, on how we encode the information.
+Suppose we ask the questions in the most straightforward order: is it 6,
+is it 5, is it 4, is it 3, is it 2, and if all answers are no, it must
+be 1. The figure shows this strategy as a tree.</p>
+<figure>
+<img
+src="../Slides/02-InformationCoding/figures/02-dice-tree-linear.svg"
+alt="Linear questioning strategy." />
+<figcaption aria-hidden="true"><em>Linear questioning
+strategy.</em></figcaption>
+</figure>
+<p>Counting the questions per outcome, a 6 needs one question, a 5 needs
+two, a 4 needs three, a 3 needs four, and both 1 and 2 need five,
+because once we know that it is not 3 we still have to ask whether it is
+2. The total over the six outcomes is <span
+class="math inline">\(1+2+3+4+5+5 = 20\)</span>, so on average we need
+<span class="math inline">\(20/6 \approx 3.33\)</span> questions. We can
+do better by asking questions that split the remaining possibilities in
+half. Asking first whether the result is less than 4 splits the six
+outcomes into two groups of three, and two more questions resolve each
+group.</p>
+<figure>
+<img
+src="../Slides/02-InformationCoding/figures/02-dice-tree-balanced.svg"
+alt="Balanced questioning strategy." />
+<figcaption aria-hidden="true"><em>Balanced questioning
+strategy.</em></figcaption>
+</figure>
+<p>Counting again, two outcomes need two questions and four need three,
+so the total is <span class="math inline">\(2+2+3+3+3+3 = 16\)</span>
+and the average is <span class="math inline">\(16/6 \approx
+2.66\)</span> questions. The general rule is that each yes/no question
+doubles the number of possibilities we can distinguish. With <span
+class="math inline">\(b\)</span> questions we can tell apart <span
+class="math inline">\(2^b\)</span> outcomes, so an outcome with <span
+class="math inline">\(2^b\)</span> equally likely possibilities carries
+<span class="math inline">\(b\)</span> bits of information, and eight
+equally likely outcomes carry exactly 3 bits.</p>
+<blockquote>
+<p>Note that the above calculation is an average that assumes that all
+outcomes of a dice roll are equally likely. What happens when outcomes
+have different probabilities?</p>
+</blockquote>
+<h3 id="from-questions-to-a-code">From questions to a code</h3>
+<p>If we label every “no” branch of the tree with 0 and every “yes”
+branch with 1, each outcome gets a string of bits. Following the tree
+becomes a way of coding the outcomes of the dice roll:</p>
+<figure>
+<img
+src="../Slides/02-InformationCoding/figures/02-dice-tree-balanced-bits.svg"
+alt="Encoding the outcomes" />
+<figcaption aria-hidden="true">Encoding the outcomes</figcaption>
+</figure>
+<p><span class="math display">\[6 \to 000,\quad 5 \to 001,\quad 4 \to
+01,\quad 1 \to 100,\quad 2 \to 101,\quad 3 \to 11\]</span></p>
+<p>This is a <em>prefix code</em>, i.e. no codeword is the beginning of
+another codeword. That property is what makes the code decodable without
+separators between the codewords. Reading <code>1101000100101</code>
+from the left, <code>11</code> can only be 3, then <code>01</code> is 4,
+<code>000</code> is 6, <code>100</code> is 1 and <code>101</code> is 2.
+Nothing is ambiguous at any point, because as soon as we have read a
+complete codeword we know that it is complete and we can start with the
+next one.</p>
+<p>This might remind you to the notion of entropy that you may have seen
+in a statistics course. Shannon’s entropy of a distribution is the
+minimum average number of yes/no questions needed to identify an
+outcome; a prefix code reaches that minimum exactly when all
+probabilities are powers of two, and otherwise the best prefix code
+comes within one question of it. Exercise 1 of the exercise sheet of
+this session asks you to build such a tree for a biased die, where the
+best code is no longer the balanced one.</p>
+<hr />
+<h2 id="3-storing-information-digitally">3. Storing information
+digitally</h2>
+<p>The smallest physical unit of information is one bit, with no and yes
+stored as 0 and 1. In memory a bit is a capacitor that is charged or
+not, usually together with some transistors, and on a hard disk it is a
+small region magnetized in one direction or the other. The smallest
+logical unit is one <em>byte</em>, which is 8 bits. Processors normally
+address whole bytes, that is, they read and write information in chunks
+of 8 bits. You cannot ask a processor for bit number 37 directly; you
+ask for the byte that contains it and then extract the bit with the <a
+href="#10-data-types-and-bitwise-operations">bitwise operations</a> of
+section 10.</p>
+<figure>
+<img src="../Slides/02-InformationCoding/figures/memory-array.png"
+alt="How a memory chip works." />
+<figcaption aria-hidden="true">How a memory chip works.</figcaption>
+</figure>
+<p>Bits in chips are stored as voltage levels, for example 0 volts for 0
+and +5 volts for 1. A memory chip has three kinds of input: a
+<em>select</em> line that activates the chip, a <em>read/write</em> line
+that says which operation to perform (read or write), and an
+<em>address</em> line carrying several bits that select which row of the
+chip to access. An address decoder activates the addressed row, and the
+<em>data bus</em> either carries out the content of that row, in the
+case of a read, or carries in the new value, in the case of a write.
+That is enough detail for this course. We will come back to how a
+running program organizes its memory in session 6, when we look at the
+call stack.</p>
+<hr />
+<h2 id="4-positional-number-systems">4. Positional number systems</h2>
+<p>In a <em>positional</em> number system the value of a digit depends
+on its position. In 12 the digit 1 means ten, while in 1200 the same
+digit means one thousand. Such a system needs a finite set of symbols,
+called the alphabet, a rule that assigns to position <span
+class="math inline">\(k\)</span> (counting from 0 and from right to
+left) the weight <span class="math inline">\(\text{base}^k\)</span>, and
+a symbol for zero, so that we can write that a position is empty. Not
+all number systems are positional. In a <em>unary</em> system we
+represent <span class="math inline">\(N\)</span> by repeating one symbol
+<span class="math inline">\(N\)</span> times, and position carries no
+meaning. Roman numerals are only partly positional. The Maya number
+system, by contrast, is a base-20 positional system with a symbol for
+zero, developed independently of and centuries before the Hindu-Arabic
+system that reached Europe in the Middle Ages.</p>
+<p>The <em>base</em> of a positional system, also called its
+<em>radix</em>, is the number of symbols in the alphabet. Four bases
+matter in computing:</p>
+<table>
+<thead>
+<tr>
+<th>Base</th>
+<th>Name</th>
+<th>Digits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>decimal</td>
+<td>0–9</td>
+</tr>
+<tr>
+<td>2</td>
+<td>binary</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>octal</td>
+<td>0–7</td>
+</tr>
+<tr>
+<td>16</td>
+<td>hexadecimal</td>
+<td>0–9, A–F</td>
+</tr>
+</tbody>
+</table>
+<p>We write the base as a subscript whenever it is not obvious from the
+context, as in</p>
+<p><span class="math display">\[7_{10} = 7_8 = 111_2, \qquad 9_{10} =
+11_8 = 1001_2, \qquad 14_{10} = 16_8 = 1110_2.\]</span></p>
+<hr />
+<h2 id="5-converting-between-bases">5. Converting between bases</h2>
+<h3 id="an-informal-example-of-any-base-to-decimal">An informal example
+of any base to decimal</h3>
+<p>To convert a number from any base to decimal, multiply each digit by
+its positional weight and add the results:</p>
+<p><span class="math display">\[47_8 = 7 \times 8^0 + 4 \times 8^1 = 7 +
+32 = 39_{10}\]</span></p>
+<p><span class="math display">\[1346_8 = 6 \times 8^0 + 4 \times 8^1 + 3
+\times 8^2 + 1 \times 8^3 = 6 + 32 + 192 + 512 = 742_{10}\]</span></p>
+<p><span class="math display">\[\text{CB6}_{16} = 6 \times 16^0 + 11
+\times 16^1 + 12 \times 16^2 = 6 + 176 + 3072 = 3254_{10}\]</span></p>
+<p>The answer to the question of the lecture, which of <span
+class="math inline">\(47_8\)</span> and <span
+class="math inline">\(43_{10}\)</span> is greater, is therefore <span
+class="math inline">\(43_{10}\)</span>, since <span
+class="math inline">\(47_8 = 39_{10}\)</span>. The same comparison can
+be made the other way round, converting <span
+class="math inline">\(43_{10}\)</span> to octal, which gives <span
+class="math inline">\(53_8\)</span>.</p>
+<h3 id="decimal-to-any-base-algorithm">Decimal to any base:
+Algorithm</h3>
+<p>To convert a decimal integer to another base, divide by the base
+repeatedly, keep the remainders, and read them from the last to the
+first. The procedure is the same for every base <span
+class="math inline">\(\beta\)</span>. In the lecture presents we saw
+first the binary case and then the general one.</p>
+<pre><code>Procedure DECIMAL-TO-BASE(n, β)
+Inputs:
+      n: a positive integer written in decimal
+      β: the target base
+Result: the digits of n in base β, written as x_(k-1) … x_1 x_0
+k ← 0
+While n &gt; 0:
+      x_k ← n mod β
+      n ← ⌊n / β⌋
+      k ← k + 1
+return x_(k-1) … x_1 x_0</code></pre>
+<p>Each pass of the loop produces one digit, from the least significant
+to the most significant, so after the loop the counter <span
+class="math inline">\(k\)</span> is the number of digits and the digits
+are <span class="math inline">\(x_0\)</span> to <span
+class="math inline">\(x_{k-1}\)</span>. Here is the example of the
+lecture, <span class="math inline">\(190_{10}\)</span> to binary, which
+is the procedure with <span class="math inline">\(\beta =
+2\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th>division</th>
+<th>quotient</th>
+<th>remainder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>190 : 2</td>
+<td>95</td>
+<td>0</td>
+</tr>
+<tr>
+<td>95 : 2</td>
+<td>47</td>
+<td>1</td>
+</tr>
+<tr>
+<td>47 : 2</td>
+<td>23</td>
+<td>1</td>
+</tr>
+<tr>
+<td>23 : 2</td>
+<td>11</td>
+<td>1</td>
+</tr>
+<tr>
+<td>11 : 2</td>
+<td>5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5 : 2</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2 : 2</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1 : 2</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Reading the remainders from the bottom up, <span
+class="math inline">\(190_{10} = 1011\,1110_2\)</span>. You can check
+the result by expanding the positions: <span class="math inline">\(128 +
+32 + 16 + 8 + 4 + 2 = 190\)</span>.</p>
+<h3 id="octal-and-hexadecimal-are-shorthand-for-binary">Octal and
+hexadecimal are shorthand for binary</h3>
+<p>The reason why octal and hexadecimal are used often is because they
+are compact ways of writing binary. Because <span
+class="math inline">\(8 = 2^3\)</span>, each octal digit corresponds to
+exactly three bits, and because <span class="math inline">\(16 =
+2^4\)</span>, each hexadecimal digit corresponds to exactly four bits.
+Conversion between these bases and binary can be done quicker digit by
+digit, with a table and no arithmetic:</p>
+<table>
+<thead>
+<tr>
+<th>Oct</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Binary</strong></td>
+<td>000</td>
+<td>001</td>
+<td>010</td>
+<td>011</td>
+<td>100</td>
+<td>101</td>
+<td>110</td>
+<td>111</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[47_8 = \underbrace{100}_{4}\
+\underbrace{111}_{7} = 100111_2\]</span></p>
+<p><span class="math display">\[101\,011_2 = \underbrace{101}_{5}\
+\underbrace{011}_{3} = 53_8\]</span></p>
+<table>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr>
+<th>Hex</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Binary</strong></td>
+<td>0000</td>
+<td>0001</td>
+<td>0010</td>
+<td>0011</td>
+<td>0100</td>
+<td>0101</td>
+<td>0110</td>
+<td>0111</td>
+<td>1000</td>
+<td>1001</td>
+<td>1010</td>
+<td>1011</td>
+<td>1100</td>
+<td>1101</td>
+<td>1110</td>
+<td>1111</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\texttt{0x23A7} = \underbrace{0010}_{2}\
+\underbrace{0011}_{3}\ \underbrace{1010}_{\text{A}}\
+\underbrace{0111}_{7}\]</span></p>
+<p>Hexadecimal numbers are often written with the prefix
+<code>0x</code>, as in <code>0x23A7</code>, which is the notation of C
+and Python. This is why, when going from octal to hexadecimal or binary,
+it is not a good idea to go through decimal and much easier to go
+through binary.</p>
+<blockquote>
+<p>Decimal was useful when we represented numbers with our fingers, but
+now binary is better since we represent numbers with electricity
+instead.</p>
+</blockquote>
+<h3 id="fractions-in-binary">Fractions in binary</h3>
+<p>A number between 0 and 1 is converted to binary by multiplying by 2
+repeatedly and collecting the integer parts, which are read in the order
+they are produced. The digits after the binary point have the weights
+<span class="math inline">\(2^{-1}\)</span>, <span
+class="math inline">\(2^{-2}\)</span>, and so on, which is why they are
+numbered with negative indices.</p>
+<pre><code>Procedure FRACTION-TO-BINARY(n)
+Inputs:
+      n: a number written in decimal, with 0 &lt; n &lt; 1
+Result: the binary digits of n, written as 0.x_(-1) x_(-2) … x_(-(k-1))
+k ← 1
+While n &gt; 0:
+      x_(-k) ← ⌊2n⌋
+      n ← 2n - x_(-k)
+      k ← k + 1
+return 0.x_(-1) x_(-2) … x_(-(k-1))</code></pre>
+<table>
+<thead>
+<tr>
+<th>step</th>
+<th>times 2</th>
+<th>digit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.34375</td>
+<td>0.6875</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0.6875</td>
+<td><strong>1</strong>.375</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0.375</td>
+<td>0.75</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0.75</td>
+<td><strong>1</strong>.5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td><strong>1</strong>.0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[0.34375_{10} = 0.01011_2\]</span></p>
+<p>Notice that this loop only terminates when the fraction has a finite
+binary expansion. The number <span
+class="math inline">\(0.1_{10}\)</span> does not: if you try it, you get
+the repeating pattern <span
+class="math inline">\(0.0001100110011\ldots_2\)</span> forever, and an
+implementation has to stop after a fixed number of digits. That single
+fact is responsible for most of <a
+href="#8-when-rounding-errors-matter">section 8</a>.</p>
+<hr />
+<h2 id="6-negative-numbers">6. Negative numbers</h2>
+<p>Nothing in a bit pattern says “minus”, so a convention is needed for
+negative numbers. The first idea is <em>ones’ complement</em>: let the
+leading bit carry the sign, 0 for positive and 1 for negative, use the
+remaining <span class="math inline">\(k-1\)</span> bits for the
+magnitude, and negate a number by flipping every bit:</p>
+<p><span class="math display">\[27_{10} = \underline{0}001\,1011_2
+\qquad\Longrightarrow\qquad -27_{10} =
+\underline{1}110\,0100_2\]</span></p>
+<p>The problem with this convention is that there are two
+representations of zero, <code>0000 0000</code> and
+<code>1111 1111</code>. That is bad for two practical reasons: i) this
+way, hardware must treat two different patterns as equal when comparing
+with zero, and ii) one of the <span class="math inline">\(2^k\)</span>
+available values is wasted and we could store more values with the same
+number of bits. The convention that every computer uses today is
+<em>two’s complement</em>, in which a number is negated by flipping
+every bit and then adding 1:</p>
+<p><span class="math display">\[27_{10} = 0001\,1011_2\]</span> <span
+class="math display">\[\text{invert} \rightarrow 1110\,0100_2\]</span>
+<span class="math display">\[+1 \rightarrow 1110\,0101_2 =
+-27_{10}\]</span></p>
+<p>Now zero has a unique representation and we can store one additional
+value. The best part is that ordinary binary addition works without
+changes (try it with some values). The circuit that adds unsigned
+numbers also adds signed ones, with no special case for the sign.</p>
+<figure>
+<img
+src="../Slides/02-InformationCoding/figures/02-twos-complement-wheel.svg"
+alt="Two’s complement wheel" />
+<figcaption aria-hidden="true">Two’s complement wheel</figcaption>
+</figure>
+<p>The figure shows the sixteen 4-bit values on a wheel to illustrate
+how two’s complement works. Counting up from 0 you eventually pass from
+the largest positive value, <span class="math inline">\(0111 =
+7\)</span>, to the most negative one, <span class="math inline">\(1000 =
+-8\)</span>. That wrap-around is what we call <em>overflow</em>, which
+happens whenever an operation produces a value beyond the limits of its
+encoding. In 8-bit two’s complement,</p>
+<p><span class="math display">\[0111\,1111\ (127_{10}) \; + \;
+0000\,0111\ (7_{10}) \; = \; 1000\,0110,\]</span></p>
+<p>and the result is not <span class="math inline">\(134_{10}\)</span>,
+which does not fit in 8 bits, but <span
+class="math inline">\(-122_{10}\)</span>. The result is silently wrong
+if we don’t do something to prevent it. The other classic case of a
+value beyond the limits of its encoding is division by zero, but
+operating systems and languages usually raise a warning or an error for
+that one. Overflow, by contrast, is often silent and thus more
+dangerous.</p>
+<hr />
+<h2 id="7-floating-point-numbers-ieee-754">7. Floating-point numbers:
+IEEE 754</h2>
+<p>Integers are not enough for computing. Real measurements need a way
+to write very large and very small numbers with a fixed number of bits,
+and the standard for doing so is IEEE 754. The idea is to use a binary
+version of scientific notaiton. This way, number is stored as a sign, an
+exponent and a mantissa.</p>
+<p><img
+src="../Slides/02-InformationCoding/figures/02-ieee754-single.svg"
+alt="IEEE 754 single precision" /> <img
+src="../Slides/02-InformationCoding/figures/02-ieee754-double.svg"
+alt="IEEE 754 double precision" /></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>single (32 bit, <code>float</code>)</th>
+<th>double (64 bit, <code>double</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sign <span class="math inline">\(S\)</span></td>
+<td>1 bit</td>
+<td>1 bit</td>
+</tr>
+<tr>
+<td>exponent <span class="math inline">\(E\)</span></td>
+<td>8 bits</td>
+<td>11 bits</td>
+</tr>
+<tr>
+<td>mantissa <span class="math inline">\(M\)</span></td>
+<td>23 bits</td>
+<td>52 bits</td>
+</tr>
+<tr>
+<td>bias <span class="math inline">\(B\)</span></td>
+<td>127</td>
+<td>1023</td>
+</tr>
+</tbody>
+</table>
+<p>The value represented is</p>
+<p><span class="math display">\[(-1)^S \times 1.M \times 2^{\,E -
+B},\]</span></p>
+<p>and three design choices in this formula are worth understanding
+rather than memorizing:</p>
+<ul>
+<li>First, the exponent is biased. Instead of storing a signed exponent
+<span class="math inline">\(e\)</span>, the format stores the unsigned
+number <span class="math inline">\(E = e + B\)</span>, which gives a
+range of exponents from <span class="math inline">\(-126\)</span> to
+<span class="math inline">\(127\)</span> in single precision. This
+allows the recording of both very small and very large numbers and
+without the bias we would only store either very small or very
+large.</li>
+<li>Second, the leading 1 is implicit. Every normalized binary number
+starts with <code>1.</code> followed by something, so there is no point
+in storing that 1. Leaving it out buys one extra bit we can use to make
+the representation more precise. This is why the mantissa is written
+<span class="math inline">\(m =
+1.M\)</span>.</li>
+<li>Third, some bit patterns are reserved for special values. Zero is
+represented by an exponent and a mantissa that are both 0, so there is a
+<span class="math inline">\(+0\)</span> and a <span
+class="math inline">\(-0\)</span>, and infinity by an exponent of all 1s
+with a mantissa of 0. The resulting value ranges in decimal are:</li>
+</ul>
+<p><span class="math display">\[\text{single: } 1.4 \cdot 10^{-45} \le
+|z| \le 3.4 \cdot 10^{38}, \qquad
+\text{double: } 4.9 \cdot 10^{-324} \le |z| \le 1.7 \cdot
+10^{308}.\]</span></p>
+<h3 id="ieee-754-example-decimal-to-float">IEEE 754 example: decimal to
+float</h3>
+<p>To encode <span class="math inline">\(18.625\)</span> in single
+precision:</p>
+<ul>
+<li>We first convert it to binary, <span
+class="math inline">\(18.625_{10} = 10010.101_2\)</span>, since <span
+class="math inline">\(18 = 10010_2\)</span> and <span
+class="math inline">\(0.625 = 0.101_2\)</span> by the fraction method of
+section 5.</li>
+<li>Then we normalize, <span class="math inline">\(10010.101_2 =
+1.0010101_2
+\times 2^4\)</span>, so the exponent is <span class="math inline">\(e =
+4\)</span> and the biased exponent is <span class="math inline">\(E = 4
++ 127
+= 131_{10} = 1000\,0011_2\)</span>.</li>
+<li>The sign bit is <span class="math inline">\(S = 0\)</span> because
+the number is positive, and the mantissa field holds the digits after
+the implicit leading 1, padded with zeros to 23 bits.</li>
+</ul>
+<p>The result is:</p>
+<p><span
+class="math display">\[\texttt{0|10000011|00101010000000000000000}.\]</span></p>
+<h3 id="another-example-float-to-decimal">Another example: float to
+decimal</h3>
+<p>In the opposite direction, take
+<code>1|10010011|10100000000000000000000</code>.</p>
+<ul>
+<li>The sign bit is <span class="math inline">\(S = 1\)</span>, so the
+number is negative.</li>
+<li>The exponent field is <span class="math inline">\(E = 1001\,0011_2 =
+147\)</span>, so <span class="math inline">\(e = 147 - 127 =
+20\)</span>.</li>
+<li>The mantissa bits are <code>101</code> followed by zeros, so <span
+class="math inline">\(m = 1 + 1\cdot 2^{-1} + 1 \cdot 2^{-3} = 1 + 0.5 +
+0.125 = 1.625\)</span>.</li>
+</ul>
+<p>The value is therefore <span class="math inline">\(-1.625 \times
+2^{20} = -1\,703\,936\)</span>.</p>
+<h3 id="precision-in-large-language-models">Precision in Large Language
+Models</h3>
+<p>The same trade-off appears in modern machine learning, where the
+parameters of a model are floating-point numbers and there are billions
+of them. Using fewer bits per parameter, with formats such as FP16, BF16
+and FP8 or integer formats such as INT8 and INT4, makes a model fit in
+less GPU memory at the cost of precision. For the Llama 3.1 family of
+Large Language Models, the memory needed is roughly:</p>
+<table>
+<thead>
+<tr>
+<th>Model size</th>
+<th>FP16</th>
+<th>FP8</th>
+<th>INT4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8B</td>
+<td>16 GB</td>
+<td>8 GB</td>
+<td>4 GB</td>
+</tr>
+<tr>
+<td>70B</td>
+<td>140 GB</td>
+<td>70 GB</td>
+<td>35 GB</td>
+</tr>
+<tr>
+<td>405B</td>
+<td>810 GB</td>
+<td>405 GB</td>
+<td>203 GB</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>The NVIDIA H100 cards we have in the SEDS compute node have 98 GB of
+memory. To un an LLM, you need space for the weights but also for the
+key-value cache, which takes a similar size. You can comfortably run an
+8B model even with a fraction of a card and a 70B model in INT4. It is
+also possible to <strong>shard</strong> a model and run it in several
+cards (but we very rarely need that much).</p>
+</blockquote>
+<p>This is why <em>quantization</em> is a standard term in the field. It
+is exactly the encoding question of this lecture but applied at scale to
+the weights of Large Language Models. When you run a quantized model, it
+loses performance compared to the original version, but often it pays
+off to run a quantized model with more parameters than an unquantized
+one with fewer.</p>
+<hr />
+<h2 id="8-when-rounding-errors-matter">8. When rounding errors
+matter</h2>
+<p>Floating point has a limited range and thus it cannot represent every
+number, especially the vere large positive or negative numbers. Floating
+point also has a limited precision because some numbers have no exact
+representation, i.e the have no finite binary expansion (they are
+irrational in binary). The classic case is <span
+class="math inline">\(0.1\)</span>, you can see its effect in
+Python:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">100</span>):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    f <span class="op">+=</span> <span class="dv">10</span> <span class="op">**</span> (<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(f)</span></code></pre></div>
+<pre><code>2.1
+2.2
+2.3000000000000003
+2.4000000000000004</code></pre>
+<p>Each addition introduces a tiny error and the errors accumulate. This
+is not a bug of Python; it is a property of binary floating point and it
+appears in every language that uses it. Two cases where this went wrong
+show what is at stake. In the Gulf War of 1991, a Patriot missile
+battery in Dhahran, Saudi Arabia, failed to intercept an Iraqi Scud
+missile, which hit an army barracks and killed 28 soldiers. The system
+counted time in tenths of a second as an integer and multiplied it by
+0.1 using 24-bit arithmetic, and since 0.1 has no finite binary
+expansion, each multiplication carried a small error. After about 100
+hours of continuous operation, the accumulated error was around a third
+of a second, enough for the tracking calculation to look for the missile
+in the wrong place (Skeel, 1992). In 1996 the first Ariane 5 rocket
+exploded about 39 seconds after liftoff. Software inherited from Ariane
+4 converted a 64-bit floating-point value of the horizontal velocity to
+a 16-bit signed integer. Ariane 5 flew faster, the value did not fit,
+and the conversion overflowed (ESA Inquiry Board, 1996).</p>
+<p>The lecture closes this section with COBOL and Grace Hopper. COBOL is
+a language designed in 1959 that is still used in banking, finance and
+government, partly because it does fixed-point decimal arithmetic and
+does not round fractions by default, which avoids exactly this class of
+error. Grace Hopper, a computer scientist and officer of the US Navy,
+wrote the first compiler in 1952 and designed FLOW-MATIC, the language
+on which COBOL was modeled. Grace Hopper argued for machine-independent
+programming languages when most people thought computers could only be
+programmed in their own machine code, being ahead of technology by more
+than a decade. —</p>
+<h2 id="9-character-coding">9. Character coding</h2>
+<p>Numbers were the easy part. Text needs a map from characters to bit
+patterns, and the history of that map explains most of the encoding
+problems you will meet in practice.</p>
+<h3 id="ascii">ASCII</h3>
+<p>The <em>American Standard Code for Information Interchange</em> was
+standardized in 1963 and is still in use. It was originally a 7-bit code
+for teleprinters, with 128 characters, of which 33 are control
+characters such as newline, tab and bell, and 95 are printable. The
+table reads with the row as the high hexadecimal digit and the column as
+the low one, so <code>A</code> is at row 4 and column 1, that is, <span
+class="math inline">\(41_{16} = 65_{10}\)</span>.</p>
+<figure>
+<img src="../Slides/02-InformationCoding/figures/02-ascii-table.svg"
+alt="ASCII table" />
+<figcaption aria-hidden="true">ASCII table</figcaption>
+</figure>
+<p>Two properties of the table are exploited by programs. The digits
+<code>0</code> to <code>9</code> are consecutive, so subtracting the
+code of <code>0</code> from the code of a digit gives its numeric value,
+and upper and lower case letters differ by exactly one bit, since
+<code>A</code> is <code>0x41</code> and <code>a</code> is
+<code>0x61</code>. The limitation of ASCII is obvious: it has no
+characters for other keyboards, so there is no <code>ä</code>, no
+<code>é</code> and no <code>ß</code>.</p>
+<h3 id="unicode">Unicode</h3>
+<p>The real fix is one standard that assigns a unique number, called a
+<em>code point</em>, to every character in every script. Version 1.0 of
+Unicode, in 1991, had a 16-bit code space of 65 536 code points; version
+15.0, in 2022, defines 149 186 characters, and the code space now goes
+up to 1 114 111. Code points are written as <code>U+</code> followed by
+at least four hexadecimal digits, so <code>U+00DF</code> is
+<code>ß</code>. Unicode says which number each character has, but it
+does not say how to store that number in bytes. That is the job of the
+<em>Unicode Transformation Formats</em>. UTF-16 uses 2 bytes per
+character, with pairs of 2-byte units for the characters that do not
+fit, and wastes space for Latin text. UTF-8 uses a variable number of
+bytes: 1 byte for the ASCII characters and 2 to 4 bytes for everything
+else. UTF-8 is backwards compatible with ASCII, because any valid ASCII
+file is already a valid UTF-8 file, and that is the main reason why it
+became the standard on the web and in most software.</p>
+<h3 id="why-you-will-meet-this-problem">Why you will meet this
+problem</h3>
+<p>Character encoding is a routine source of problems with social
+science data. I have struggled with it with scraped text, survey
+exports, scans of parliamentary records, and even movie scripts. Two
+rules avoid most of them: i) always document the encoding of every
+dataset you produce, and ii) use always UTF-8 unless you have a specific
+reason not to. In Python, <code>encode</code> turns text into bytes and
+shows what the encodings do:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> u <span class="op">=</span> <span class="bu">chr</span>(<span class="dv">40960</span>) <span class="op">+</span> <span class="st">&#39;abcd&#39;</span> <span class="op">+</span> <span class="bu">chr</span>(<span class="dv">1972</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> u.encode(<span class="st">&#39;utf-8&#39;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">b&#39;</span><span class="ch">\xea\x80\x80</span><span class="st">abcd</span><span class="ch">\xde\xb4</span><span class="st">&#39;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> u.encode(<span class="st">&#39;ascii&#39;</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="pp">UnicodeEncodeError</span>: <span class="st">&#39;ascii&#39;</span> codec can<span class="st">&#39;t encode character &#39;</span>ꀀ<span class="st">&#39;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="er">                    in position 0: ordinal not in range</span>(<span class="dv">128</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> u.encode(<span class="st">&#39;ascii&#39;</span>, <span class="st">&#39;ignore&#39;</span>)       <span class="co"># silently drops characters</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="st">b&#39;abcd&#39;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> u.encode(<span class="st">&#39;ascii&#39;</span>, <span class="st">&#39;replace&#39;</span>)      <span class="co"># marks them</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="st">b&#39;?abcd?&#39;</span></span></code></pre></div>
+<p>Note the difference between <code>ignore</code> and
+<code>replace</code>. The option <code>ignore</code> destroys data
+without telling you, so if you ever find yourself using it to make an
+error go away, you are deleting part of your dataset.</p>
+<blockquote>
+<p>If you want how my lab learned to finally deal with unicode properly,
+check our funny paper on emoji.</p>
+</blockquote>
+<hr />
+<h2 id="10-data-types-and-bitwise-operations">10. Data types and bitwise
+operations</h2>
+<h3 id="primitive-types">Primitive types</h3>
+<p>A <em>data type</em> is an agreement about how many bits a value uses
+and how to interpret them. The table shows the primitive types of
+languages like C and Java, which are also the types used inside
+numerical libraries such as NumPy:</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Type</th>
+<th>Bits</th>
+<th>Coding</th>
+<th>Minimum</th>
+<th>Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>boolean</code></td>
+<td>1/8</td>
+<td>truth value</td>
+<td>false</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>byte</code></td>
+<td>8</td>
+<td>two’s complement</td>
+<td>−128</td>
+<td>127</td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td>16</td>
+<td>two’s complement</td>
+<td>−32 768</td>
+<td>32 767</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>32</td>
+<td>two’s complement</td>
+<td>−2 147 483 648</td>
+<td>2 147 483 647</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td>64</td>
+<td>two’s complement</td>
+<td>−9 223 372 036 854 775 808</td>
+<td>9 223 372 036 854 775 807</td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>8–32</td>
+<td>UTF-8</td>
+<td>0 (U+0000)</td>
+<td>1 114 111 (U+10FFFF)</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>32</td>
+<td>IEEE 754</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>64</td>
+<td>IEEE 754</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The ranges are not arbitrary: an <span
+class="math inline">\(n\)</span>-bit two’s complement type covers <span
+class="math inline">\(-2^{n-1}\)</span> to <span
+class="math inline">\(2^{n-1}-1\)</span>, which explains every number in
+the table. Converting a value to a larger type is safe, converting to a
+smaller type usually loses precision, and converting a floating-point
+number to an integer cuts off the decimals. Note that this is truncation
+and not rounding, as in the Vancouver index, so mind the bias. The
+hierarchy . Tof types is <code>byte</code> ⊂ <code>short</code> =
+<code>char</code> ⊂ <code>int</code> ⊂ <code>long</code>, and
+<code>float</code> ⊂ <code>double</code>. Operators on two operands are
+only defined for operands of the same type, so a mixed expression
+converts the smaller operand up: <code>double + int</code> converts the
+<code>int</code>, and the result is always of the larger type. Python
+hides nearly all of this. Its integers grow without bound, its floats
+are always doubles, and its strings are Unicode. That convenience costs
+speed, because the checks happen at run time, and it does not make the
+all the problems above disappear. They come back in libraries often used
+in data science like NumPy and pandas, where fixed-width types are used
+for efficiency.</p>
+<h3 id="operators">Operators</h3>
+<p>Python has the arithmetic operators <code>+</code>, <code>-</code>,
+<code>*</code> and <code>/</code>, the comparison operators
+<code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
+<code>&gt;=</code>, <code>==</code> and <code>!=</code>, and the modulo
+operator <code>%</code>, where <code>a % b</code> is the remainder of
+the integer division of <code>a</code> by <code>b</code>. The logical
+operators <code>not</code>, <code>and</code> and <code>or</code> work on
+truth values, and <code>^</code> is the exclusive or. The <em>bitwise
+operators</em> work on the individual bits of integers:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>~</code></td>
+<td>complement, flips every bit</td>
+<td>in two’s complement, <code>~x</code> is <code>-x - 1</code></td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>and</td>
+<td><code>1 &amp; 1 = 1</code>, else 0</td>
+</tr>
+<tr>
+<td><code>\|</code></td>
+<td>or</td>
+<td><code>0 \| 0 = 0</code>, else 1</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>exclusive or</td>
+<td><code>1 ^ 0 = 1</code>, <code>0 ^ 1 = 1</code>, else 0</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code></td>
+<td>shift left</td>
+<td><code>0010 &lt;&lt; 2 = 1000</code></td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>shift right</td>
+<td><code>0110 &gt;&gt; 2 = 0001</code></td>
+</tr>
+</tbody>
+</table>
+<p>Shifting left by <span class="math inline">\(k\)</span> positions
+multiplies by <span class="math inline">\(2^k\)</span>, and shifting
+right divides by <span class="math inline">\(2^k\)</span> and throws
+away the remainder. These are the fastest operations a processor has and
+they are directly implemented in the hardware of the processor, which
+means they take just one machine instruction to execute.</p>
+<h3 id="application-the-secret-inside-a-tweet-id">Application: the
+secret inside a tweet ID</h3>
+<p>The identifiers of posts on Twitter, now X, are not random numbers.
+They are <em>snowflake</em> identifiers, 64-bit integers whose bits are
+divided into fields:</p>
+<figure>
+<img src="../Slides/02-InformationCoding/figures/02-snowflake-bits.svg"
+alt="Snowflake ID layout" />
+<figcaption aria-hidden="true">Snowflake ID layout</figcaption>
+</figure>
+<p>The top 41 bits are a timestamp in milliseconds counted from an epoch
+chosen by Twitter, the next 10 bits identify the machine that generated
+the identifier, and the last 12 bits are a sequence number that
+distinguishes identifiers generated in the same millisecond. As a
+consequence, you can recover the exact posting time from the identifier
+alone, without any request to the platform:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_tweet_timestamp(tid):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    offset <span class="op">=</span> <span class="dv">1288834974657</span>          <span class="co"># Twitter&#39;s epoch, in ms</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    tstamp <span class="op">=</span> (tid <span class="op">&gt;&gt;</span> <span class="dv">22</span>) <span class="op">+</span> offset   <span class="co"># drop the low 22 bits, add the epoch</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> datetime.utcfromtimestamp(tstamp <span class="op">/</span> <span class="dv">1000</span>)</span></code></pre></div>
+<p>The shift <code>tid &gt;&gt; 22</code> discards the 12 sequence bits
+and the 10 machine bits and leaves the timestamp. This is a genuinely
+useful trick for research on archived social media data, and it is
+nothing more than the bit shifting of the table above.</p>
+<hr />
+<h2 id="11-check-yourself">11. Check yourself</h2>
+<p><strong>1.</strong> Convert 100 to binary, octal and hexadecimal.</p>
+<details>
+<summary>
+Answer
+</summary>
+<p>Repeated division by 2 gives the quotients 100, 50, 25, 12, 6, 3, 1
+with remainders 0, 0, 1, 0, 0, 1, 1, which read from the last to the
+first give <span class="math inline">\(1100100_2\)</span>. Grouping the
+bits in threes from the right, <code>1 100 100</code>, gives <span
+class="math inline">\(144_8\)</span>, and grouping in fours,
+<code>0110 0100</code>, gives <span
+class="math inline">\(64_{16}\)</span>. Check: <span
+class="math inline">\(6 \times
+16 + 4 = 100\)</span>.</p>
+</details>
+<p><strong>2.</strong> Why is there no “minus” bit in two’s complement,
+strictly speaking?</p>
+<details>
+<summary>
+Answer
+</summary>
+<p>There is a leading bit that is 1 for all negative numbers, but it is
+not a separate sign flag: it carries negative positional weight. In
+8-bit two’s complement the leading bit has weight <span
+class="math inline">\(-2^7 = -128\)</span>, and the rest have their
+usual positive weights. That is why <span
+class="math inline">\(1110\,0101 = -128 + 64 + 32 + 4 + 1 =
+-27\)</span>, and why ordinary addition works unchanged.</p>
+</details>
+<p><strong>3.</strong> How many bits does a fair 16-sided die carry? A
+biased one?</p>
+<details>
+<summary>
+Answer
+</summary>
+<p>A fair 16-sided die carries <span class="math inline">\(\log_2 16 =
+4\)</span> bits, and a balanced question tree needs exactly 4 questions
+for every outcome. If the die is biased, the average number of questions
+can be lower: ask about the likely outcomes first. This is the principle
+behind Huffman coding, and exercise 1 of the exercise sheet of this
+session (tricked dice) is an example.</p>
+</details>
+<p><strong>4.</strong> <code>0.1 + 0.2 == 0.3</code> is False in Python.
+Explain in one sentence.</p>
+<details>
+<summary>
+Answer
+</summary>
+<p>Neither 0.1 nor 0.2 has a finite binary expansion, so each is stored
+as the nearest representable double, and their sum is not exactly the
+double nearest to 0.3. The right way to compare floats is
+<code>abs(a - b) &lt; tolerance</code>.</p>
+</details>
+<p><strong>5.</strong> A file looks fine in one program and shows “Ã¤”
+where “ä” should be in another. What happened?</p>
+<details>
+<summary>
+Answer
+</summary>
+<p>The file is UTF-8, where <code>ä</code> is the two bytes
+<code>0xC3 0xA4</code>, but it is being read as a one-byte-per-character
+code page such as ISO-8859-1, which renders those two bytes as
+<code>Ã</code> and <code>¤</code>. This pattern, <code>Ã</code> followed
+by another symbol, is the classic fingerprint of UTF-8 read as
+Latin-1.</p>
+</details>
+<hr />
+<h2 id="12-references">12. References</h2>
+<ul>
+<li><strong>Evans, D. (2011).</strong> <em>Introduction to Computing:
+Explorations in Language, Logic, and Machines</em>, chapter 1. Free at
+<a href="https://computingbook.org/"
+class="uri">https://computingbook.org/</a>. The reading for this
+session; the presentation of information as answers to questions and the
+dice example follow it.</li>
+<li><strong>Shannon, C. E. (1948).</strong> “A Mathematical Theory of
+Communication”. <em>Bell System Technical Journal</em> 27(3), 379–423.
+Where bits and entropy come from; section 2 of this transcript is an
+informal version of its first pages.</li>
+<li><strong>IEEE (2019).</strong> <em>IEEE Standard for Floating-Point
+Arithmetic (IEEE 754-2019)</em>.</li>
+<li><strong>Skeel, R. (1992).</strong> “Roundoff Error and the Patriot
+Missile”. <em>SIAM News</em> 25(4), 11.</li>
+<li><strong>ESA (1996).</strong> <em>Ariane 501: Presentation of Inquiry
+Board report</em>. Press release N° 33-1996. <a
+href="https://www.esa.int/Newsroom/Press_Releases/Ariane_501_-_Presentation_of_Inquiry_Board_report"
+class="uri">https://www.esa.int/Newsroom/Press_Releases/Ariane_501_-_Presentation_of_Inquiry_Board_report</a></li>
+<li><strong>McCullough, B. D. &amp; Vinod, H. D. (1999).</strong> “The
+Numerical Reliability of Econometric Software”. <em>Journal of Economic
+Literature</em> 37(2), 633–665.</li>
+<li><strong>The Unicode Consortium.</strong> <em>The Unicode
+Standard</em>. <a href="https://www.unicode.org/standard/standard.html"
+class="uri">https://www.unicode.org/standard/standard.html</a></li>
+<li><strong>Spolsky, J. (2003).</strong> “The Absolute Minimum Every
+Software Developer Absolutely, Positively Must Know About Unicode and
+Character Sets”. <a
+href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/"
+class="uri">https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/</a>.
+Short, informal, and still the best introduction to section 9.</li>
+<li><strong>Twitter snowflake IDs.</strong> <a
+href="https://github.com/oduwsdl/tweetedat"
+class="uri">https://github.com/oduwsdl/tweetedat</a> and <a
+href="https://ws-dl.blogspot.com/2019/08/2019-08-03-tweetedat-finding-tweet.html"
+class="uri">https://ws-dl.blogspot.com/2019/08/2019-08-03-tweetedat-finding-tweet.html</a></li>
+</ul>
+</body>
+</html>

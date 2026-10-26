@@ -1,0 +1,1969 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="ICSS-2026-02-InformationCoding_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ICSS-2026-02-InformationCoding_files/libs/quarto-html/tabby.min.js"></script>
+<script src="ICSS-2026-02-InformationCoding_files/libs/quarto-html/popper.min.js"></script>
+<script src="ICSS-2026-02-InformationCoding_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="ICSS-2026-02-InformationCoding_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ICSS-2026-02-InformationCoding_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="ICSS-2026-02-InformationCoding_files/libs/quarto-html/quarto-syntax-highlighting-86daaaaad7353f9cc0c554efc1dd6d94.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="David Garcia Winter Semester 2026-2027">
+  <title>Introduction to Computing for the Social Sciences Session 2 – Information Coding</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="ICSS-2026-02-InformationCoding_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="ICSS-2026-02-InformationCoding_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="ICSS-2026-02-InformationCoding_files/libs/revealjs/dist/theme/quarto-bdb2709ed6bfded77df1ce32618429bb.css">
+  <link href="ICSS-2026-02-InformationCoding_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="ICSS-2026-02-InformationCoding_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="ICSS-2026-02-InformationCoding_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="ICSS-2026-02-InformationCoding_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title"><span class="course">Introduction to Computing for the Social Sciences</span><br><span class="session">Session 2 – Information Coding</span></h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+David Garcia<br><span class="semester">Winter Semester 2026-2027</span> 
+</div>
+</div>
+</div>
+
+</section>
+<section id="course-outline" class="slide level2">
+<h2>Course Outline</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sm">
+<ul>
+<li><em>Session 1: Introduction</em></li>
+<li><strong>Session 2: Information Coding</strong></li>
+<li>Session 3: Data Structures</li>
+<li>Session 4: Programming</li>
+<li>Session 5: Algorithms</li>
+<li>Session 6: Recursion</li>
+<li>Session 7: Sorting Algorithms</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="sm">
+<ul>
+<li>Session 8: Time Complexity</li>
+<li>Session 9: Theoretical Computer Science</li>
+<li>Session 10: Machine Learning</li>
+<li>Session 11: Databases</li>
+<li>Session 12: Parallel Programming</li>
+<li>Session 13: Social Science Applications</li>
+<li>Session 14: Exam Review</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<div class="outline">
+<ol type="1">
+<li>Information Coding</li>
+<li>Conversion Between Number Coding Systems</li>
+<li>Character Coding</li>
+<li>Python Data Types and Binary Operations</li>
+</ol>
+</div>
+<!-- MOTIVATION:M02-A:BEGIN -->
+</section>
+<section id="information-coding-matters-i" class="slide level2 fit1">
+<h2>Information coding matters (I)</h2>
+<div class="motivation">
+<p><span class="label">Excel renaming genes</span> An audit of 3,597 published genetics papers found that <strong>704 of them, one in five, contained corrupted gene names.</strong> The spreadsheet had read <code>SEPT2</code> as a date and stored it as <code>2-Sep</code>; identifiers like <code>2310009E13</code> became <code>2.31E+13</code>.</p>
+</div>
+<ul>
+<li><strong>20%</strong> of papers affected</li>
+<li><strong>0</strong> warnings shown</li>
+<li><strong>27</strong> genes renamed in 2020 so the software would stop breaking them</li>
+</ul>
+<p><span class="ask">What is a spreadsheet actually storing when it shows you <code>SEPT2</code>, and who decided what it means?</span></p>
+<div class="source">
+<p>Ziemann, Eren &amp; El-Osta, <em>Genome Biology</em> (2016); Bruford et al., <em>Nature Genetics</em> (2020)</p>
+</div>
+<!-- MOTIVATION:M02-A:END -->
+<!-- MOTIVATION:M02-C:BEGIN -->
+</section>
+<section id="information-coding-matters-ii" class="slide level2 fit1">
+<h2>Information coding matters (II)</h2>
+<div class="motivation">
+<p><span class="label">The stock index that lost half of its value</span> The Vancouver Stock Exchange index opened at <strong>1000.000</strong> in 1982 and was recomputed after every trade. Months later it read <strong>524.811</strong>, while the shares it tracked had risen. Each recomputation <strong>truncated</strong> the fourth decimal instead of rounding, thousands of times a day.</p>
+</div>
+<ul>
+<li><strong>1000.000:</strong> when launced launch in Jan 1982</li>
+<li><strong>524.811:</strong> value displayed in Nov 1983</li>
+<li><strong>1098.892:</strong> true value, once recomputed</li>
+</ul>
+<p><span class="ask">Why can’t a computer store 0.1 exactly, and what does that cost after a million additions?</span></p>
+<div class="source">
+<p>Toronto Star, 29 Nov 1983; discussed in Higham, <em>Accuracy and Stability of Numerical Algorithms</em></p>
+</div>
+<!-- MOTIVATION:M02-C:END -->
+</section>
+<section id="what-is-information" class="slide level2">
+<h2>What is information?</h2>
+<div class="center-h">
+<p><img data-src="figures/google-information-search.jpg" style="width:86.0%"></p>
+<p>In Computer Science, information is the representation of knowledge</p>
+</div>
+</section>
+<section id="encoding-information" class="slide level2">
+<h2>Encoding information</h2>
+<p>Information is encoded by recording changes in knowledge.<br> For example, what we learn from the answer to a question</p>
+<div class="imgrow middle">
+<p><img data-src="figures/coin-flip.png" style="height:9.4em"> <img data-src="figures/02-coin-question.svg" style="height:8.6em"></p>
+</div>
+</section>
+<section id="measuring-information-in-bits" class="slide level2">
+<h2>Measuring information in bits</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<div class="sm">
+<p>Each yes/no question gives us a <strong>bit</strong> of information.</p>
+<p>How many bits do we learn from the result of a dice throw?</p>
+<p>This depends on how we ask to find out the dice result, i.e.&nbsp;<strong>how we encode the information</strong></p>
+</div>
+<p><img data-src="figures/dice.png" style="height:3.8em"></p>
+</div><div class="column" style="width:58%;">
+<p><img data-src="figures/02-dice-tree-linear.svg" style="height:9.2em"></p>
+</div></div>
+</section>
+<section id="measuring-information-in-bits-1" class="slide level2">
+<h2>Measuring information in bits</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<div class="sm">
+<p>Each yes/no question gives us a <strong>bit</strong> of information.</p>
+<p>How many bits do we learn from the result of a dice throw?</p>
+<p>This depends on how we ask to find out the dice result, i.e.&nbsp;<strong>how we encode the information</strong></p>
+</div>
+<p><img data-src="figures/dice.png" style="height:3.8em"></p>
+</div><div class="column" style="width:58%;">
+<p><img data-src="figures/02-dice-tree-linear.svg" style="height:9.2em"></p>
+</div></div>
+<div class="sm">
+<p>On average we will need to ask 20/6 questions (3.33). Can we do better?</p>
+</div>
+</section>
+<section id="encoding-information-more-efficiently" class="slide level2">
+<h2>Encoding information more efficiently</h2>
+<div class="center-h">
+<p><img data-src="figures/02-dice-tree-balanced.svg" style="height:10.3em"></p>
+</div>
+<div class="sm">
+<ul>
+<li>This way we only need 16/6 questions on average (2.66)</li>
+<li>Each yes/no question doubles the number of possibilities,
+<ul>
+<li>e.g.&nbsp;a result with 8 equally likely possibilities has 3 bits of information</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="encoding-information-more-efficiently-1" class="slide level2">
+<h2>Encoding information more efficiently</h2>
+<div class="center-h">
+<p><img data-src="figures/02-dice-tree-balanced-bits.svg" style="height:10.3em"></p>
+</div>
+<div class="sm">
+<ul>
+<li>Encoding the result of a dice (1-6) with three bits (0 or 1)</li>
+<li><strong>Prefix code</strong>: no coding is a prefix of another, allows unambiguous encoding</li>
+</ul>
+</div>
+</section>
+<section id="decoding-information" class="slide level2">
+<h2>Decoding information</h2>
+<div class="center-h">
+<p><img data-src="figures/02-dice-tree-balanced-bits.svg" style="height:10.3em"></p>
+</div>
+<div class="sm">
+<ul>
+<li>To decode, we translate codes back to the values they mean</li>
+<li>For example, if we encoded the following bits, what were the results of the dice?</li>
+</ul>
+<div class="center-h">
+<p><code>1101000100101</code></p>
+</div>
+</div>
+</section>
+<section id="storing-information-digitally" class="slide level2">
+<h2>Storing information digitally</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="sm">
+<ul>
+<li>Smallest physical information unit is 1 <strong>bit</strong>
+<ul>
+<li>no/yes is represented as 0/1</li>
+<li>memory: a capacitor or a capacitor and several transistors</li>
+<li>hard disk: magnetization</li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li>Smallest logical unit is 1 <strong>byte</strong>: 8 bit
+<ul>
+<li><em>logical</em> means that it can be accesses with a memory address and operated on</li>
+<li>processors can usually only address entire bytes, i.e.&nbsp;information in chunks of 8 bits</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:45%;">
+<p><img data-src="figures/sd-card.jpg" style="height:9.6em"></p>
+</div></div>
+</section>
+<section id="how-memory-works" class="slide level2">
+<h2>How memory works</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<div class="xs">
+<ul>
+<li>Bits in chips are encoded as voltage values (e.g.&nbsp;0 = 0 Volts, 1 = +5 Volts)</li>
+<li>Memory chips have three inputs
+<ul>
+<li>A line called “select” to activate</li>
+<li>A line to specify read/write</li>
+<li>An address line with several bits to select the row where to read/write</li>
+</ul></li>
+<li>The address decoder activates the corresponding row of the chip</li>
+<li>The data bus outputs the content of the row (read case) or contains the new value (write case)</li>
+</ul>
+</div>
+</div><div class="column" style="width:48%;">
+<div class="imgcol">
+<p><img data-src="figures/memory-chip.jpg" style="height:4.6em"></p>
+<p><img data-src="figures/memory-array.png" style="height:8.4em"></p>
+</div>
+<div class="source">
+<p><a href="https://faculty.etsu.edu/tarnoff/ntes2150/memory/memory.htm">Tarnoff, ETSU: computer memory</a></p>
+</div>
+</div></div>
+</section>
+<section id="conversion-between-number-coding-systems" class="slide level2">
+<h2>Conversion Between Number Coding Systems</h2>
+<div class="outline focus">
+<ol type="1">
+<li>Information Coding</li>
+<li><span class="current">Conversion Between Number Coding Systems</span></li>
+<li>Character Coding</li>
+<li>Python Data Types and Binary Operations</li>
+</ol>
+</div>
+</section>
+<section id="positional-number-systems" class="slide level2">
+<h2>Positional number systems</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="xs">
+<ul>
+<li>Value of digit depends on its position</li>
+<li>Composed of a finite number of numeric symbols (a.k.a. alphabet)</li>
+<li>Each position represents a specific value <span class="math inline">\(\text{base}^k\)</span><br>
+(<span class="math inline">\(\text{base}^3\ \text{base}^2\ \text{base}^1\ \text{base}^0\)</span>)</li>
+<li>Examples:
+<ul>
+<li>Decimal number system:
+<ul>
+<li>In 12, digit 1 has value 10</li>
+<li>in 1200 digit 1 has value 1000</li>
+</ul></li>
+<li>Unary number system: to represent number <span class="math inline">\(N\)</span>, an arbitrary symbol representing 1 is repeated <span class="math inline">\(N\)</span> times</li>
+</ul></li>
+<li>Positional number systems require a symbol for zero.
+<ul>
+<li>e.g.&nbsp;the Mayas are a base-20 positional number system</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/maya-numerals.png" style="width:100.0%"></p>
+<div class="source">
+<p><a href="https://en.wikipedia.org/wiki/Maya_numerals">Wikipedia: Maya numerals</a></p>
+</div>
+</div></div>
+</section>
+<section id="the-base-of-a-positional-number-system" class="slide level2">
+<h2>The base of a positional number system</h2>
+<div class="sm">
+<ul>
+<li>Base is also often referred to as <strong>radix</strong>
+<ul>
+<li>base 10: decimal notation (0 – 9)</li>
+<li>base 2: binary notation (0, 1)</li>
+<li>base 8: octal notation (0 – 7)</li>
+<li>base 16: hexadecimal notation (0 – 9, A – F)</li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li>Notation convention is to indicate the base, if not clearly known, as subscript
+<ul>
+<li><span class="math inline">\(7_{10} = 7_8 = 111_2\)</span></li>
+<li><span class="math inline">\(9_{10} = 11_8 = 1001_2\)</span></li>
+<li><span class="math inline">\(14_{10} = 16_8 = 1110_2\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="conversions-between-systems-informal-example" class="slide level2">
+<h2>Conversions Between Systems: Informal Example</h2>
+<ul>
+<li>Which is greater: <span class="math inline">\(47_8\)</span> or <span class="math inline">\(43_{10}\)</span> ?</li>
+</ul>
+</section>
+<section id="conversions-between-systems-informal-example-1" class="slide level2">
+<h2>Conversions Between Systems: Informal Example</h2>
+<ul>
+<li>Which is greater: <span class="math inline">\(47_8\)</span> or <span class="math inline">\(43_{10}\)</span> ?</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Convert from octal to decimal notation</li>
+</ul>
+<p><br></p>
+<div class="center-h">
+<p><span class="math inline">\(47_8 = 7 \times 8^0 + 4 \times 8^1 = 39_{10}\)</span></p>
+</div>
+</section>
+<section id="conversions-between-systems-informal-example-2" class="slide level2">
+<h2>Conversions Between Systems: Informal Example</h2>
+<ul>
+<li>Which is greater: <span class="math inline">\(47_8\)</span> or <span class="math inline">\(43_{10}\)</span> ?</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Convert from decimal to octal notation</li>
+</ul>
+<p><br></p>
+<div class="center-h">
+<p><span class="math inline">\(43_{10} = 3 \times 8^0 + 5 \times 8^1 = 53_8\)</span></p>
+</div>
+</section>
+<section id="informal-examples" class="slide level2">
+<h2>Informal examples</h2>
+<div class="sm">
+<p><strong>Decimal notation</strong></p>
+<ul>
+<li><span class="math inline">\(5648_{10} = 8 \times 10^0 + 4 \times 10^1 + 6 \times 10^2 + 5 \times 10^3\)</span></li>
+</ul>
+<p><br></p>
+<p><strong>Octal to decimal</strong></p>
+<ul>
+<li><span class="math inline">\(1346_8 = 6 \times 8^0 + 4 \times 8^1 + 3 \times 8^2 + 1 \times 8^3 = 742_{10}\)</span></li>
+</ul>
+<p><br></p>
+<p><strong>Hexadecimal to decimal</strong></p>
+<ul>
+<li><span class="math inline">\(\text{CB6}_{16} = 6 \times 16^0 + 11 \times 16^1 + 12 \times 16^2 = 3254_{10}\)</span></li>
+</ul>
+</div>
+<p><strong>How can we do this formally for any base?</strong></p>
+</section>
+<section id="conversions-between-number-systems-algorithm" class="slide level2 fit1">
+<h2>Conversions Between Number Systems: Algorithm</h2>
+<div class="sm">
+<ul>
+<li>Conversion of a <strong>decimalinteger <span class="math inline">\(n \geq 0\)</span> to binary</strong> notation</li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:56%;">
+<pre class="pseudocode"><b>Procedure</b> DECIMAL-TO-BINARY(<i>n</i>)
+<i>Inputs:</i>
+  <i>n</i>: a positive integer written in decimal
+<i>Result:</i> the binary digits of <i>n</i>, written as <i>x</i><sub><i>k</i>-1</sub> … <i>x</i><sub>1</sub> <i>x</i><sub>0</sub>
+<i>k</i> ← 0
+<b>While</b> <i>n</i> &gt; 0:
+      <i>x</i><sub><i>k</i></sub> ← <i>n</i> <b>mod</b> 2
+      <i>n</i> ← ⌊<i>n</i>/2⌋
+      <i>k</i> ← <i>k</i> + 1
+<b>return</b> <i>x</i><sub><i>k</i>-1</sub> … <i>x</i><sub>1</sub> <i>x</i><sub>0</sub></pre>
+</div><div class="column" style="width:44%;">
+<div class="center-h">
+<p><strong>Example</strong></p>
+<div class="tbl-grid xs" style="display:inline-block">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Division</th>
+<th>Quotient</th>
+<th>Remainder</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>190 : 2 =</td>
+<td>95</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>95 : 2 =</td>
+<td>47</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>47 : 2 =</td>
+<td>23</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>23 : 2 =</td>
+<td>11</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>11 : 2 =</td>
+<td>5</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>5 : 2 =</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>2 : 2 =</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1 : 2 =</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><span class="math inline">\(190_{10} = 1011\,1110_2\)</span></p>
+</div>
+</div></div>
+</section>
+<section id="conversions-between-number-systems-algorithm-1" class="slide level2">
+<h2>Conversions Between Number Systems: Algorithm</h2>
+<div class="sm">
+<ul>
+<li>Generalization: conversion of a <strong>decimal integer <span class="math inline">\(n \geq 0\)</span> to base-<span class="math inline">\(\beta\)</span></strong> notation</li>
+</ul>
+</div>
+<pre class="pseudocode" style="width:70%"><b>Procedure</b> DECIMAL-TO-BASE(<i>n</i>, <i>β</i>)
+<i>Inputs:</i>
+  <i>n</i>: a positive integer written in decimal
+  <i>β</i>: the target base
+<i>Result:</i> the digits of <i>n</i> in base <i>β</i>, written as <i>x</i><sub><i>k</i>-1</sub> … <i>x</i><sub>1</sub> <i>x</i><sub>0</sub>
+<i>k</i> ← 0
+<b>While</b> <i>n</i> &gt; 0:
+      <i>x</i><sub><i>k</i></sub> ← <i>n</i> <b>mod</b> <i>β</i>
+      <i>n</i> ← ⌊<i>n</i>/<i>β</i>⌋
+      <i>k</i> ← <i>k</i> + 1
+<b>return</b> <i>x</i><sub><i>k</i>-1</sub> … <i>x</i><sub>1</sub> <i>x</i><sub>0</sub></pre>
+</section>
+<section id="converting-between-power-of-2-bases" class="slide level2">
+<h2>Converting between power of 2 bases</h2>
+<div class="sm">
+<ul>
+<li>Conversion of <strong>octal to binary</strong> notation
+<ul>
+<li>every digit 0 - 7 can be represented exactly by 3 binary digits
+<ul>
+<li>allows for elegant and fast conversion digit by digit using blocks of 3 binary digits</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div class="example" style="width:60%;margin:0.6em auto">
+<p><span class="label">Examples</span></p>
+<ul>
+<li><span class="math inline">\(47_8 = 39_{10} = ?_2\)</span></li>
+</ul>
+</div>
+</section>
+<section id="converting-between-power-of-2-bases-1" class="slide level2 fit1">
+<h2>Converting between power of 2 bases</h2>
+<div class="sm">
+<ul>
+<li>Conversion of <strong>octal to binary</strong> notation
+<ul>
+<li>every digit 0 – 7 can be represented exactly by 3 binary digits
+<ul>
+<li>allows for elegant and fast conversion digit by digit using blocks of 3 binary digits</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div class="example sm" style="width:96%;margin:0.6em auto">
+<p><span class="label">Examples</span></p>
+<ul>
+<li><span class="math inline">\(47_8 = 39_{10} = 1 \times 2^0 + 1 \times 2^1 + 1 \times 2^2 + 0 \times 2^3 + 0 \times 2^4 + 1 \times 2^5 = 100\,111_2\)</span></li>
+</ul>
+</div>
+</section>
+<section id="converting-between-power-of-2-bases-2" class="slide level2">
+<h2>Converting between power of 2 bases</h2>
+<div class="sm">
+<ul>
+<li>Conversion of <strong>octal to binary</strong> notation
+<ul>
+<li>every digit 0 – 7 can be represented exactly by 3 binary digits
+<ul>
+<li>allows for elegant and fast conversion digit by digit using blocks of 3 binary digits</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div class="example sm" style="width:52%;margin:0.4em auto">
+<p><span class="label">Examples</span></p>
+<ul>
+<li><span class="math inline">\(47_8 = 100\,111_2\)</span></li>
+<li><span class="math inline">\(134_8 = ?_2\)</span></li>
+<li><span class="math inline">\(460231_8 = ?_2\)</span></li>
+</ul>
+</div>
+<div class="tbl-seeblau sm">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Oct</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Binary</strong></td>
+<td>000</td>
+<td>001</td>
+<td>010</td>
+<td>011</td>
+<td>100</td>
+<td>101</td>
+<td>110</td>
+<td>111</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="converting-between-power-of-2-bases-3" class="slide level2">
+<h2>Converting between power of 2 bases</h2>
+<div class="sm">
+<ul>
+<li>Conversion of <strong>binary to octal</strong> notation
+<ul>
+<li>divide binary digits into groups of three bits and convert each group of bits to an octal digit</li>
+</ul></li>
+</ul>
+</div>
+<div class="example" style="width:52%;margin:0.4em auto">
+<p><span class="label">Examples</span></p>
+<ul>
+<li><span class="math inline">\(101\,011_2 = 53_8\)</span></li>
+<li><span class="math inline">\(010\,011\,100\,101\,111_2 = 23457_8\)</span></li>
+</ul>
+</div>
+<div class="tbl-seeblau sm">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Oct</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Binary</strong></td>
+<td>000</td>
+<td>001</td>
+<td>010</td>
+<td>011</td>
+<td>100</td>
+<td>101</td>
+<td>110</td>
+<td>111</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="converting-between-power-of-2-bases-4" class="slide level2">
+<h2>Converting between power of 2 bases</h2>
+<div class="sm">
+<ul>
+<li>Conversion of <strong>hexadecimal to binary</strong> notation (also noted with <code>0x</code> prefix)
+<ul>
+<li>every digit 0 – 9 and letters A – F can be represented by exactly 4 binary digits</li>
+<li>allows for elegant and fast conversion digit by digit using blocks of 4 binary digits</li>
+</ul></li>
+</ul>
+</div>
+<div class="example" style="width:70%;margin:0.4em auto">
+<p><span class="label">Examples</span></p>
+<ul>
+<li><code>0x23A7</code> <span class="math inline">\(= 23\text{A}7_{16} = 0010\,0011\,1010\,0111_2\)</span></li>
+<li><code>0xB3D2</code> <span class="math inline">\(= \text{B}3\text{D}2_{16} = 1011\,0011\,1101\,0010_2\)</span></li>
+</ul>
+</div>
+<div class="tbl-seeblau xxs">
+<table class="caption-top">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Hex</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Binary</strong></td>
+<td>0000</td>
+<td>0001</td>
+<td>0010</td>
+<td>0011</td>
+<td>0100</td>
+<td>0101</td>
+<td>0110</td>
+<td>0111</td>
+<td>1000</td>
+<td>1001</td>
+<td>1010</td>
+<td>1011</td>
+<td>1100</td>
+<td>1101</td>
+<td>1110</td>
+<td>1111</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="converting-fractions" class="slide level2">
+<h2>Converting fractions</h2>
+<div class="sm">
+<ul>
+<li>Conversion of a fractional number <span class="math inline">\(n\)</span> <strong>with only decimal places to binary</strong> notation
+<ul>
+<li>notation of a binary number with decimal places is <span class="math inline">\(0.x_{-1} x_{-2} \dots x_{-k}\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:55%;">
+<pre class="pseudocode"><b>Procedure</b> FRACTION-TO-BINARY(<i>n</i>)
+<i>Inputs:</i>
+  <i>n</i>: a number written in decimal, with 0 &lt; <i>n</i> &lt; 1
+<i>Result:</i> the binary digits of <i>n</i>, written as 0.<i>x</i><sub>-1</sub> <i>x</i><sub>-2</sub> … <i>x</i><sub>-(<i>k</i>-1)</sub>
+<i>k</i> ← 1
+<b>While</b> <i>n</i> &gt; 0:
+      <i>x</i><sub>-<i>k</i></sub> ← ⌊2<i>n</i>⌋
+      <i>n</i> ← 2<i>n</i> - <i>x</i><sub>-<i>k</i></sub>
+      <i>k</i> ← <i>k</i> + 1
+<b>return</b> 0.<i>x</i><sub>-1</sub> <i>x</i><sub>-2</sub> … <i>x</i><sub>-(<i>k</i>-1)</sub></pre>
+</div><div class="column" style="width:45%;">
+<div class="sm">
+<p><strong>Example:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th></th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.34375</td>
+<td>× 2 = 0.6875</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0.6875</td>
+<td>× 2 = <strong>1</strong>.375</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>0.375</td>
+<td>× 2 = 0.75</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0.75</td>
+<td>× 2 = <strong>1</strong>.5</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>0.5</td>
+<td>× 2 = <strong>1</strong>.0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(0.34375_{10} = 0.01011_2\)</span></p>
+</div>
+</div></div>
+</section>
+<section id="negative-binary-numbers-ones-complement" class="slide level2">
+<h2>Negative Binary Numbers: One’s Complement</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="sm">
+<ul>
+<li><strong>Ones’ Complement</strong>
+<ul>
+<li>leading bit codes the sign (0: +, 1: –)</li>
+<li><span class="math inline">\(k-1\)</span> digits to represent the absolute value of a given number</li>
+<li>negation by inverting of the number
+<ul>
+<li>bit-wise flipping of 1s and 0s</li>
+</ul></li>
+<li>Problem: there are two representations of 0:
+<ul>
+<li><code>0000 0000</code></li>
+<li><code>1111 1111</code></li>
+</ul></li>
+<li>Why is this a problem?</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="example">
+<p><span class="label">Example</span></p>
+<ul>
+<li><span class="math inline">\(\underline{0}001\,1011_2 = 27_{10}\)</span></li>
+<li><span class="math inline">\(\underline{1}110\,0100_2 = -27_{10}\)</span></li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="negative-binary-numbers-twos-complement" class="slide level2">
+<h2>Negative Binary Numbers: Two’s Complement</h2>
+<div class="columns">
+<div class="column" style="width:58%;">
+<div class="sm">
+<ul>
+<li><strong>Two’s Complement</strong>
+<ul>
+<li>leading bit codes the sign (0: +, 1: –)</li>
+<li>negation by:
+<ol type="1">
+<li>flipping the bits of the number</li>
+<li>adding one</li>
+</ol></li>
+<li>unique representation of 0: <code>0000 0000</code></li>
+</ul></li>
+</ul>
+</div>
+<div class="example">
+<p><span class="label">Example</span></p>
+<p><span class="math inline">\(27_{10} = 0001\,1011_2\)</span></p>
+<p><span class="math inline">\(\phantom{27_{10} = {}} 1110\,0100_2\)</span> &nbsp;&nbsp;(inverted)</p>
+<p><span class="math inline">\(\phantom{27_{10} = {}} 1110\,0101_2 = -27_{10}\)</span></p>
+</div>
+</div><div class="column" style="width:42%;">
+<p><img data-src="figures/02-twos-complement-wheel.svg" style="height:12em"></p>
+</div></div>
+</section>
+<section id="overflow" class="slide level2 fit1">
+<h2>Overflow</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="sm">
+<ul>
+<li><strong>When an operation causes a value to go beyond the limits of its encoding</strong></li>
+</ul>
+</div>
+<div class="example">
+<p><span class="label">Example in 2’s complement:</span></p>
+<div class="sm">
+<p><span class="math inline">\(0111\,1111\)</span> &nbsp; <span class="math inline">\((127_{10})\)</span><br> <span class="math inline">\(+\)</span><br> <span class="math inline">\(0000\,0111\)</span> &nbsp; <span class="math inline">\((7_{10})\)</span><br> <span class="math inline">\(1000\,0110\)</span> &nbsp; <span class="math inline">\((134_{10}?\)</span> No! <span class="math inline">\(-122_{10})\)</span></p>
+</div>
+</div>
+<div class="sm">
+<ul>
+<li>Other typical example is division by zero</li>
+<li>Operating system or programming language throws a warning or an error.</li>
+</ul>
+</div>
+</div><div class="column" style="width:45%;">
+<p><img data-src="figures/overflow-meme.png" style="height:15em"></p>
+</div></div>
+</section>
+<section id="floating-point-numbers-ieee-754" class="slide level2">
+<h2>Floating-Point numbers: IEEE 754</h2>
+<div class="sm">
+<ul>
+<li>Standardized according to IEEE 754:
+<ul>
+<li>single or double precision (32 or 64 bit, <code>float</code> or <code>double</code>)</li>
+<li>1 bit for the <strong>sign of mantissa</strong>: <span class="math inline">\(s = (-1)^S\)</span></li>
+<li>8/11 bit <strong>biased exponent</strong>: <span class="math inline">\(e = E - B\)</span>
+<ul>
+<li>bias permits to have a longer range of negative exponents</li>
+<li><span class="math inline">\(B = 127\)</span> or <span class="math inline">\(B = 1023\)</span></li>
+</ul></li>
+<li>23/52 bit <strong>normalized mantissa</strong> with implicit 1: <span class="math inline">\(m = 1.M\)</span>
+<ul>
+<li>leading 1 is not explicitly stored</li>
+<li>mantissa and exponent are adjusted accordingly (normalized)</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="floating-point-numbers-ieee-754-1" class="slide level2">
+<h2>Floating-Point numbers: IEEE 754</h2>
+<div class="xs">
+<ul>
+<li>Standardized according to IEEE 754:
+<ul>
+<li>single or double precision (32 or 64 bit, <code>float</code> or <code>double</code>)</li>
+<li>1 bit for the <strong>sign of mantissa</strong>: <span class="math inline">\(s = (-1)^S\)</span></li>
+<li>8/11 bit <strong>biased exponent</strong>: <span class="math inline">\(e = E - B\)</span></li>
+<li>23/52 bit <strong>normalized mantissa</strong> with implicit 1: <span class="math inline">\(m = 1.M\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div class="imgrow middle">
+<p><img data-src="figures/02-ieee754-single.svg" style="width:49.0%"> <img data-src="figures/02-ieee754-double.svg" style="width:49.0%"></p>
+</div>
+</section>
+<section id="floating-point-numbers-ieee-754-2" class="slide level2">
+<h2>Floating-Point numbers: IEEE 754</h2>
+<div class="imgrow middle">
+<p><img data-src="figures/02-ieee754-single.svg" style="width:49.0%"> <img data-src="figures/02-ieee754-double.svg" style="width:49.0%"></p>
+</div>
+<div class="sm">
+<ul>
+<li>Special representation for
+<ul>
+<li>0 : exponent and mantissa are both 0
+<ul>
+<li>there is a positive and a negative 0</li>
+</ul></li>
+<li>infinity : exponent <span class="math inline">\(E\)</span> only 1s, mantissa <span class="math inline">\(M = 0\)</span></li>
+</ul></li>
+<li>Value ranges: &nbsp; single precision: <span class="math inline">\(1.4 \cdot 10^{-45} \leq |z| \leq 3.4 \cdot 10^{38}\)</span></li>
+<li><span style="visibility:hidden">Value ranges:</span> &nbsp; double precision: <span class="math inline">\(4.9 \cdot 10^{-324} \leq |z| \leq 1.7 \cdot 10^{308}\)</span></li>
+</ul>
+</div>
+</section>
+<section id="floating-point-numbers-ieee-754-3" class="slide level2">
+<h2>Floating-Point numbers: IEEE 754</h2>
+<div class="example">
+<p><span class="label">Example: Decimal value to float value</span></p>
+<div class="sm">
+<p><strong>18.625</strong> in single precision</p>
+<ul>
+<li>bias <span class="math inline">\(B = 127 = 2^7 - 1\)</span></li>
+<li>transform to binary notation: <span class="math inline">\(18.625_{10} = 10010.101000\dots_2\)</span></li>
+<li>normalize to calculate exponent: <span class="math inline">\(10010.101000\dots_2 = 1.0010101000\dots \cdot 2^4\)</span></li>
+<li>exponent with bias: <span class="math inline">\(E = 4_{10} + 127_{10} = 131_{10} = 1000\,0011_2\)</span></li>
+<li>sign <span class="math inline">\(S = 0\)</span></li>
+<li>result: <code>0|10000011|00101010000000000000000</code></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="floating-point-numbers-ieee-754-4" class="slide level2">
+<h2>Floating-Point numbers: IEEE 754</h2>
+<div class="example">
+<p><span class="label">Example: Float value to decimal value</span></p>
+<div class="sm">
+<p><code>1|10010011|10100000000000000000000</code> in single precision</p>
+<ul>
+<li>sign <span class="math inline">\(S = 1\)</span>, i.e., a negative number</li>
+<li>exponent <span class="math inline">\(E = 147 = 127 + 20\)</span>, i.e., <span class="math inline">\(e = 20\)</span></li>
+<li>mantissa <span class="math inline">\(m = 1 + 1 \cdot 2^{-1} + 1 \cdot 2^{-3} = 1.625\)</span></li>
+<li>result
+<ul>
+<li><span class="math inline">\(-1.625 \cdot 2^{20} = -1\,703\,936.0\)</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="numerical-formats-matter-in-ai" class="slide level2">
+<h2>Numerical formats matter in AI</h2>
+<div class="sm">
+<p>AI models require a lot of memory in GPU (VRAM). Models are based on parameters that are often fitted as floating-point numbers.</p>
+</div>
+<div class="columns">
+<div class="column" style="width:52%;">
+<div class="sm">
+<p>Common formats in AI:</p>
+<ul>
+<li>FP32 (32-bit Floating-Point)</li>
+<li>FP16 (16-bit Floating-Point / Half-Precision)</li>
+<li>BF16 (bfloat16 / Brain Floating Point)</li>
+<li>FP8 (8-bit Floating-Point)</li>
+<li>INT8 (8-bit Integer, for Quantized Models)</li>
+<li>INT4 / INT2 (Quantized, Low-Bit Formats)</li>
+</ul>
+</div>
+</div><div class="column" style="width:48%;">
+<div class="tbl-grid sm">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Model Size</th>
+<th>FP16</th>
+<th>FP8</th>
+<th>INT4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8B</td>
+<td>16 GB</td>
+<td>8 GB</td>
+<td>4 GB</td>
+</tr>
+<tr class="even">
+<td>70B</td>
+<td>140 GB</td>
+<td>70 GB</td>
+<td>35 GB</td>
+</tr>
+<tr class="odd">
+<td>405B</td>
+<td>810 GB</td>
+<td>405 GB</td>
+<td>203 GB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<ul>
+<li>Llama 3.1 – 405B, 70B &amp; 8B<br>memory requirements by precision</li>
+<li>Lower precision affects model performance</li>
+</ul>
+</div></div>
+</section>
+<section id="underflow-rounding-errors-in-floating-point" class="slide level2">
+<h2>Underflow: Rounding errors in Floating-Point</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="sm">
+<ul>
+<li>Limited value range
+<ul>
+<li>can not represent every possible number</li>
+<li>in practice double precision does cover most cases though</li>
+</ul></li>
+<li>Limited precision, rounding errors
+<ul>
+<li>limited room for decimal places</li>
+<li>certain decimal numbers can not be expressed precisely in binary notation:
+<ul>
+<li>very common example: 0.1</li>
+</ul></li>
+<li>accumulation of small rounding errors possible</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="example">
+<p><span class="label">Rounding error example</span></p>
+<div style="font-size:0.85em">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>f <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb1-2"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">100</span>):</span>
+<span id="cb1-3"><a href=""></a>    f <span class="op">+=</span> <span class="dv">10</span> <span class="op">**</span> (<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb1-4"><a href=""></a>    <span class="bu">print</span>(f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="xs">
+<pre><code>&gt;&gt; 2.1
+&gt;&gt; 2.2
+&gt;&gt; 2.3000000000000003
+&gt;&gt; 2.4000000000000004</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="rounding-and-floating-point-errors" class="slide level2 fit1">
+<h2>Rounding and floating point errors</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-h">
+<p><img data-src="figures/patriot-missile.jpg" style="height:5.4em"></p>
+</div>
+<div class="xs">
+<ul>
+<li>Gulf War, 1991: Iraqi Scud missile hit American barracks in Dhahran, Saudi Arabia, killing 28 soldiers and wounding 260.</li>
+<li>“A 24-bit representation of 0.1 was used to multiply the clocktime, yielding a result in a pair of 24-bit registers. This was transformed into a 48-bit floating-point number.”</li>
+<li><a href="https://www.cs.unc.edu/~smp/COMP205/LECTURES/ERROR/lec23/node4.html">“Roundoff Error and the Patriot Missile”, Robert Skeel, SIAM News (1992)</a></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-h">
+<p><img data-src="figures/ariane5.png" style="height:5.4em"></p>
+</div>
+<div class="xs">
+<ul>
+<li>Ariane 5 maiden flight, 1996: Rocket exploded 39 seconds after liftoff.</li>
+<li>Error when converting horizontal velocity from a 64-bit floating point number to a 16-bit signed integer between the software of Ariane 5 and Ariane 4.</li>
+<li><a href="https://www.esa.int/Newsroom/Press_Releases/Ariane_501_-_Presentation_of_Inquiry_Board_report">N° 33–1996: Ariane 501 - Presentation of Inquiry Board report</a></li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="cobol-and-grace-hopper" class="slide level2">
+<h2>COBOL and Grace Hopper</h2>
+<div class="columns">
+<div class="column" style="width:62%;">
+<div class="sm">
+<ul>
+<li>COBOL is a very old programming language, designed in 1959 but still very used in banking, finance, and government</li>
+<li>COBOL does no rounding by default on fractions, minimizing the risk of rounding errors</li>
+<li>Grace Hopper, a.k.a. grandma COBOL, was an American military computer scientist that invented machine-independent programming languages, COBOL being one of the first</li>
+</ul>
+</div>
+<div class="source">
+<p><a href="https://www.tpr.org/technology-entrepreneurship/2019-05-23/how-cobol-still-powers-the-global-economy-at-60-years-old" class="uri">https://www.tpr.org/technology-entrepreneurship/2019-05-23/how-cobol-still-powers-the-global-economy-at-60-years-old</a></p>
+</div>
+</div><div class="column" style="width:38%;">
+<div class="center-h">
+<p><img data-src="figures/grace-hopper.png" style="height:12em"></p>
+</div>
+</div></div>
+</section>
+<section id="character-coding" class="slide level2">
+<h2>Character Coding</h2>
+<div class="outline focus">
+<ol type="1">
+<li>Information Coding</li>
+<li>Conversion Between Number Coding Systems</li>
+<li><span class="current">Character Coding</span></li>
+<li>Python Data Types and Binary Operations</li>
+</ol>
+</div>
+</section>
+<section id="ascii-code" class="slide level2 fit1">
+<h2>ASCII – Code</h2>
+<div class="sm">
+<ul>
+<li><em>American Standard Code for Information Interchange</em></li>
+<li>Standard since 1963, still in use today</li>
+</ul>
+</div>
+<div class="center-h">
+<p><img data-src="figures/02-ascii-table.svg" style="height:8.6em"></p>
+</div>
+<div class="xs">
+<ul>
+<li>initially 7 bit code for tele printers, all codes of US keyboard in one byte
+<ul>
+<li>128 characters, 33 control characters, 95 printable characters</li>
+</ul></li>
+<li>Missing characters for other keyboards</li>
+</ul>
+</div>
+</section>
+<section id="unicode" class="slide level2">
+<h2>Unicode</h2>
+<div class="sm">
+<ul>
+<li>In ASCII, not all possible characters can be represented, e.g., kanji, chinese</li>
+<li>Solution: development of standardized <strong>Unicode</strong>
+<ul>
+<li>simultaneous representation of all possible characters</li>
+<li>version 1.0 in 1991 with a 16-bit code space (65 536 code points)</li>
+<li>2022 version (15.0) has 149,186 characters</li>
+<li>Notation: <code>U+</code> and at least 4 hexadecimal numbers
+<ul>
+<li>e.g.: <code>U+00DF</code> = ß</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="representation-of-unicode" class="slide level2">
+<h2>Representation of Unicode</h2>
+<div class="sm">
+<ul>
+<li>3 bytes are necessary for all possible characters
+<ul>
+<li>wasting memory in many geographical regions, e.g.&nbsp;Europe</li>
+</ul></li>
+<li>Definition of <strong>Unicode Transformation Formats (UTF)</strong> as solution</li>
+<li><strong>UTF-16</strong>
+<ul>
+<li>2 byte per characters but still wastes memory</li>
+<li>other areas are covered by combination of UTF-16 characters</li>
+</ul></li>
+<li><strong>UTF-8</strong>
+<ul>
+<li>1 byte per character, covers most important Western characters</li>
+<li>Compatible with ASCII Codes</li>
+<li>other characters use a sequence of up to four bytes</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="usual-character-encoding-issues" class="slide level2">
+<h2>Usual Character Encoding Issues</h2>
+<div class="sm">
+<ul>
+<li>Character encoding is a usual source of problems with social science data</li>
+<li>Try to control coding in documentation and keep it general (e.g.&nbsp;UTF-8)</li>
+</ul>
+</div>
+<div style="font-size:0.8em">
+<pre><code>&gt;&gt;&gt; u = chr(40960) + 'abcd' + chr(1972)
+&gt;&gt;&gt; u.encode('utf-8')
+b'\xea\x80\x80abcd\xde\xb4'
+&gt;&gt;&gt; u.encode('ascii')
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+UnicodeEncodeError: 'ascii' codec can't encode character '\ua000' in position 0:
+    ordinal not in range(128)
+&gt;&gt;&gt; u.encode('ascii', 'ignore')
+b'abcd'
+&gt;&gt;&gt; u.encode('ascii', 'replace')
+b'?abcd?'
+&gt;&gt;&gt; u.encode('ascii', 'xmlcharrefreplace')
+b'&amp;#40960;abcd&amp;#1972;'</code></pre>
+</div>
+</section>
+<section id="python-data-types-and-binary-operations" class="slide level2">
+<h2>Python Data Types and Binary Operations</h2>
+<div class="outline focus">
+<ol type="1">
+<li>Information Coding</li>
+<li>Conversion Between Number Coding Systems</li>
+<li>Character Coding</li>
+<li><span class="current">Python Data Types and Binary Operations</span></li>
+</ol>
+</div>
+</section>
+<section id="primitive-data-types" class="slide level2 fit1">
+<h2>Primitive Data Types</h2>
+<div class="tbl-seeblau sm">
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Bits</th>
+<th>Coding</th>
+<th>Minimum</th>
+<th>Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>boolean</code></td>
+<td>1/8</td>
+<td>truth value</td>
+<td>false</td>
+<td>true</td>
+</tr>
+<tr class="even">
+<td><code>byte</code></td>
+<td>8</td>
+<td>two’s complement</td>
+<td>-128</td>
+<td>127</td>
+</tr>
+<tr class="odd">
+<td><code>short</code></td>
+<td>16</td>
+<td>two’s complement</td>
+<td>-32 768</td>
+<td>32 767</td>
+</tr>
+<tr class="even">
+<td><code>int</code></td>
+<td>32</td>
+<td>two’s complement</td>
+<td>-2 147 483 648</td>
+<td>2 147 483 647</td>
+</tr>
+<tr class="odd">
+<td><code>long</code></td>
+<td>64</td>
+<td>two’s complement</td>
+<td>-9 223 372 036 854 775 808</td>
+<td>9 223 372 036 854 775 807</td>
+</tr>
+<tr class="even">
+<td><code>char</code></td>
+<td>8-32</td>
+<td>UTF-8 (standard)</td>
+<td>0 (U+0000)</td>
+<td>1 114 111 (U+10FFFF)</td>
+</tr>
+<tr class="odd">
+<td><code>float</code></td>
+<td>32</td>
+<td>IEEE 754</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>double</code></td>
+<td>64</td>
+<td>IEEE 754</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="xs">
+<p>These are the primitive types of languages like C and Java. Python hides them behind <code>bool</code>, <code>int</code> (unbounded), <code>float</code> (a 64-bit <code>double</code>) and <code>str</code> (Unicode text).</p>
+</div>
+</section>
+<section id="type-conversion" class="slide level2">
+<h2>Type Conversion</h2>
+<div class="sm">
+<ul>
+<li>Expressions can be turned into other types
+<ul>
+<li>general rules are:
+<ul>
+<li>conversion to a “larger” data type can be done without loss of precision</li>
+<li>conversion to a “smaller” data type usually leads to loss of precision</li>
+<li>conversion of a floating point number to an integer cuts the decimal places</li>
+</ul></li>
+<li>general type hierarchy:
+<ul>
+<li><code>byte</code> <span class="math inline">\(\subset\)</span> <code>short</code> = <code>char</code> <span class="math inline">\(\subset\)</span> <code>int</code> <span class="math inline">\(\subset\)</span> <code>long</code></li>
+<li><code>float</code> <span class="math inline">\(\subset\)</span> <code>double</code></li>
+</ul></li>
+</ul></li>
+<li>Python “hides” most of this complexity
+<ul>
+<li>you can, for example, add or multiply numbers of different type and the number formats are correctly managed</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="automatic-type-conversion" class="slide level2">
+<h2>Automatic Type Conversion</h2>
+<div class="sm">
+<ul>
+<li>Automatic type conversion is especially important for arithmetic operations</li>
+</ul>
+<p><br></p>
+<ul>
+<li><p>binary operators are only defined for the same data type:</p>
+<ul>
+<li><p><code>double</code> + <code>int</code>, requires conversion of <code>int</code> to <code>double</code><br>e.g.&nbsp;<span class="math inline">\(10.5 + 5 = 15.5\)</span></p></li>
+<li><p><code>double</code> + <code>float</code>, requires conversion of <code>float</code> to <code>double</code><br>e.g.&nbsp;<span class="math inline">\(10.5f + 5.2 = 15.7\)</span></p></li>
+<li><p>resulting type is always the “larger” type</p></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="operators" class="slide level2">
+<h2>Operators</h2>
+<div class="sm">
+<ul>
+<li>Simple mathematical operations <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code></li>
+<li>Comparison operators <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code>, <code>!=</code></li>
+<li>Brackets for mathematical operations</li>
+<li>Modulo operator <code>%</code>
+<ul>
+<li><code>a % b</code> yields the remainder of the integer division of <code>a</code> by <code>b</code></li>
+</ul></li>
+<li>Logical operators (only for truth values)
+<ul>
+<li><code>not</code>: logical negation</li>
+<li><code>and</code>: logical and (True and True = True, else False)</li>
+<li><code>or</code>: logical or (False or False = False, else True)</li>
+<li><code>^</code>: exclusive or (<code>False ^ True = True</code>, <code>True ^ False = True</code>, else <code>False</code>)</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="operators-1" class="slide level2">
+<h2>Operators</h2>
+<div class="sm">
+<ul>
+<li><p>Bitwise operators (only for integers)</p>
+<ul>
+<li><code>~</code> &nbsp;&nbsp; bitwise complement: flips every bit (in two’s complement <code>~x = -x - 1</code>)</li>
+<li><code>&amp;</code> &nbsp;&nbsp; bitwise and (<code>1 &amp; 1 = 1</code>, else 0)</li>
+<li><code>|</code> &nbsp;&nbsp; bitwise or (<code>0 | 0 = 0</code>, else 1)</li>
+<li><code>^</code> &nbsp;&nbsp; bitwise exclusive or (<code>1^0 = 1</code>, <code>0^1 = 1</code>, else 0)</li>
+<li><code>&lt;&lt;</code> &nbsp; bitwise shift to the left (<code>0010 &lt;&lt; 2 = 1000</code>)</li>
+<li><code>&gt;&gt;</code> &nbsp; bitwise shift to the right (<code>0110 &gt;&gt; 2 = 0001</code>)</li>
+</ul></li>
+</ul>
+</div>
+<div class="refresh">
+<p>Python Refresh: Try yourself with some binary or hexadecimal operations</p>
+</div>
+</section>
+<section id="social-science-application-the-secret-of-twitter-snowflakes" class="slide level2">
+<h2>Social Science Application: the secret of Twitter snowflakes</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="sm">
+<p><code>"id": 10765432100123456789</code></p>
+</div>
+</div><div class="column" style="width:70%;">
+<p><img data-src="figures/02-snowflake-bits.svg" style="height:3.4em"></p>
+</div></div>
+<div class="xs">
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="kw">def</span> get_tweet_timestamp(tid):</span>
+<span id="cb4-2"><a href=""></a>    offset <span class="op">=</span> <span class="dv">1288834974657</span></span>
+<span id="cb4-3"><a href=""></a>    tstamp <span class="op">=</span> (tid <span class="op">&gt;&gt;</span> <span class="dv">22</span>) <span class="op">+</span> offset</span>
+<span id="cb4-4"><a href=""></a>    utcdttime <span class="op">=</span> datetime.utcfromtimestamp(tstamp<span class="op">/</span><span class="dv">1000</span>)</span>
+<span id="cb4-5"><a href=""></a>    <span class="bu">print</span>(<span class="bu">str</span>(tid) <span class="op">+</span> <span class="st">" : "</span> <span class="op">+</span> <span class="bu">str</span>(tstamp) <span class="op">+</span> <span class="st">" =&gt; "</span> <span class="op">+</span> <span class="bu">str</span>(utcdttime))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="source">
+<p><a href="https://github.com/oduwsdl/tweetedat" class="uri">https://github.com/oduwsdl/tweetedat</a><br> <a href="https://ws-dl.blogspot.com/2019/08/2019-08-03-tweetedat-finding-tweet.html" class="uri">https://ws-dl.blogspot.com/2019/08/2019-08-03-tweetedat-finding-tweet.html</a></p>
+</div>
+</section>
+<section id="summary" class="slide level2 fit1">
+<h2>Summary</h2>
+<ul>
+<li>Information answers a question: one bit is one yes/no answer, and frequent outcomes deserve shorter codes</li>
+<li>Computers store everything as bits; binary, octal and hexadecimal are ways to write them</li>
+<li>Negative integers use two’s complement; fixed-width integers can overflow</li>
+<li>IEEE 754 floating point approximates real numbers, so rounding errors appear and add up</li>
+<li>Text needs a character encoding (ASCII, Unicode, UTF-8); reading with the wrong one corrupts it</li>
+<li>Data types decide what the bits mean and which operations apply</li>
+</ul>
+<p><strong>Next session:</strong> Data Structures</p>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../theme/unikn-logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><span class="fbar-left">Session 02</span><span class="fbar-mid">Introduction to Computing for the Social Sciences</span><span class="fbar-right">Winter Semester 2026-2027</span></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="ICSS-2026-02-InformationCoding_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="ICSS-2026-02-InformationCoding_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="ICSS-2026-02-InformationCoding_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="ICSS-2026-02-InformationCoding_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="ICSS-2026-02-InformationCoding_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="ICSS-2026-02-InformationCoding_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="ICSS-2026-02-InformationCoding_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="ICSS-2026-02-InformationCoding_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="ICSS-2026-02-InformationCoding_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="ICSS-2026-02-InformationCoding_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 6.0e-2,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+              // target, if specified
+              link.setAttribute("target", "_blank");
+              if (link.getAttribute("rel") === null) {
+                link.setAttribute("rel", "noopener");
+              }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
