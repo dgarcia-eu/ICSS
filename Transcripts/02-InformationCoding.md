@@ -711,7 +711,7 @@ classic fingerprint of UTF-8 read as Latin-1.
 
 ## 12. Why does this matter? Practical python exaples
 
-Check the [practical Python examples in this Jupyter notebook](https://dgarcia-eu.github.io/ICSS/Slides/02-InformationCoding/PythonExamples/Examples02-InformationCoding.ipynb). There, you will see how rounding errors can add up to a wrong variance, an integer can silently become negative, 
+Check the [practical Python examples in this Jupyter notebook](https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples02-InformationCoding.ipynb). There, you will see how rounding errors can add up to a wrong variance, an integer can silently become negative, 
 and a name that becomes two names because of one byte.
 
 
