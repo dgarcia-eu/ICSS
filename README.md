@@ -73,7 +73,7 @@ Units of information - bits; Representing different types of data using bits.
 **Session 03: Data Structures** (4.11 – 13.11)  
 Abstract data structures; Linked lists; Stacks; Queues; Trees; Hash tables.  
 *Reference(s): Chapter 10 of 'Introduction to Algorithms' by Cormen, Leiserson, Rivest and Stein*  
-[**Slides**](https://dgarcia-eu.github.io/ICSS/Slides/03-DataStructures/ICSS-2026-03-DataStructures.html) - [**Transcript**](https://dgarcia-eu.github.io/ICSS/Transcripts/02-DataStructures.html) - [**Exercise sheet**](https://dgarcia-eu.github.io/ICSS/Exercises/Exercise03.html)
+[**Slides**](https://dgarcia-eu.github.io/ICSS/Slides/03-DataStructures/ICSS-2026-03-DataStructures.html) - [**Transcript**](https://dgarcia-eu.github.io/ICSS/Transcripts/03-DataStructures.html) - [**Exercise sheet**](https://dgarcia-eu.github.io/ICSS/Exercises/Exercise03.html)
 
 > **NOTE:** No class on 10.11 nor 11.11. Instead on 13.11 in A702, Exercise 03 at 10:00-11:30 and Lecture 04 at 13:30-15:00
 
