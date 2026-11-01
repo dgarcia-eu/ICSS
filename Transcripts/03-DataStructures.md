@@ -621,7 +621,14 @@ is a faster and more memory-efficient implementation of the same language and a 
 
 ---
 
-## 11. Check yourself
+## 11. Why does this matter? Practical Python examples
+
+Check the [practical Python examples in this Jupyter notebook](https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples03-DataStructures.ipynb). 
+There, you will see the tremendous difference in speed when finding duplicates with two different
+data structures and how binary search works from inside.
+---
+
+## 12. Check yourself
 
 **1.** You need to store 100,000 records and look them up by a 12-digit national ID. Array, BST or hash table?
 
@@ -683,7 +690,7 @@ Pseudonymization is not anonymization.
 
 ---
 
-## 12. References
+## 13. References
 
 - **Cormen, T. H., Leiserson, C. E., Rivest, R. L. & Stein, C. (2009).**
   *Introduction to Algorithms*, 3rd ed., MIT Press. Chapter 10 (elementary data
