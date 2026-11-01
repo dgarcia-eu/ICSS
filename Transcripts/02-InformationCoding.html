@@ -361,32 +361,13 @@ Evans, <em>Introduction to Computing</em> (2011), which is free at <a href="http
 <hr />
 <div id="contents" class="section level2">
 <h2>Contents</h2>
-<!-- MOTIVATION-TOC:BEGIN -->
-<ol start="0" style="list-style-type: decimal">
-<li><a href="#motivating-examples">Motivating examples</a>
-<!-- MOTIVATION-TOC:END --></li>
-<li><a href="#id_1-information-as-the-answer-to-a-question">Information
-as the answer to a question</a></li>
-<li><a href="#id_2-measuring-information-in-bits">Measuring information
-in bits</a></li>
-<li><a href="#id_3-storing-information-digitally">Storing information
-digitally</a></li>
-<li><a href="#id_4-positional-number-systems">Positional number
+<ol style="list-style-type: decimal">
+<li><a href="#information-coding">Information coding</a></li>
+<li><a href="#number-systems">Conversion between number coding
 systems</a></li>
-<li><a href="#id_5-converting-between-bases">Converting between
-bases</a></li>
-<li><a href="#id_6-negative-numbers">Negative numbers</a></li>
-<li><a href="#id_7-floating-point-numbers-ieee-754">Floating-point
-numbers: IEEE 754</a></li>
-<li><a href="#id_8-when-rounding-errors-matter">When rounding errors
-matter</a></li>
-<li><a href="#id_9-character-coding">Character coding</a></li>
-<li><a href="#id_10-data-types-and-bitwise-operations">Data types and
-bitwise operations</a></li>
-<li><a href="#id_11-check-yourself">Check yourself</a></li>
-<li><a href="#id_12-why-does-this-matter-practical-python-examples">Why
-does this matter? Practical Python examples</a></li>
-<li><a href="#id_13-references">References</a></li>
+<li><a href="#character-coding">Character coding</a></li>
+<li><a href="#data-types">Python data types and binary
+operations</a></li>
 </ol>
 <hr />
 <!-- MOTIVATION-SECTION:BEGIN -->
@@ -460,7 +441,7 @@ which does not, and it is the reason why numerical mistakes in analysis
 code are dangerous in a different way to measurement error.</p>
 </div>
 </div>
-<div id="information-as-the-answer-to-a-question" class="section level2">
+<div id="information-coding" class="section level2">
 <h2>1. Information as the answer to a question</h2>
 <p>In computer science, information is the representation of knowledge.
 That sounds abstract until we make it operational, which is what Claude
@@ -555,8 +536,7 @@ small region magnetized in one direction or the other. The smallest
 logical unit is one <em>byte</em>, which is 8 bits. Processors normally
 address whole bytes, that is, they read and write information in chunks
 of 8 bits. You cannot ask a processor for bit number 37 directly; you
-ask for the byte that contains it and then extract the bit with the <a href="#id_10-data-types-and-bitwise-operations">bitwise operations</a>
-of section 10.</p>
+ask for the byte that contains it and then extract the bit with the <a href="#data-types">bitwise operations</a> of section 10.</p>
 <div class="float">
 <img role="img" aria-label="How a memory chip works." src="data:image/png;base64,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" alt="How a memory chip works." />
 <div class="figcaption">How a memory chip works.</div>
@@ -574,7 +554,7 @@ running program organizes its memory in session 6, when we look at the
 call stack.</p>
 <hr />
 </div>
-<div id="positional-number-systems" class="section level2">
+<div id="number-systems" class="section level2">
 <h2>4. Positional number systems</h2>
 <p>In a <em>positional</em> number system the value of a digit depends
 on its position. In 12 the digit 1 means ten, while in 1200 the same
@@ -897,7 +877,8 @@ return 0.x_(-1) x_(-2) … x_(-(k-1))</code></pre>
 binary expansion. The number <span class="math inline">\(0.1_{10}\)</span> does not: if you try it, you get
 the repeating pattern <span class="math inline">\(0.0001100110011\ldots_2\)</span> forever, and an
 implementation has to stop after a fixed number of digits. That single
-fact is responsible for most of <a href="#id_8-when-rounding-errors-matter">section 8</a>.</p>
+fact is responsible for most of <a href="#rounding-errors">section
+8</a>.</p>
 <hr />
 </div>
 </div>
@@ -1108,7 +1089,7 @@ one with fewer.</p>
 <hr />
 </div>
 </div>
-<div id="when-rounding-errors-matter" class="section level2">
+<div id="rounding-errors" class="section level2">
 <h2>8. When rounding errors matter</h2>
 <p>Floating point has a limited range and thus it cannot represent every
 number, especially the vere large positive or negative numbers. Floating
@@ -1225,7 +1206,7 @@ check our funny paper on emoji.</p>
 <hr />
 </div>
 </div>
-<div id="data-types-and-bitwise-operations" class="section level2">
+<div id="data-types" class="section level2">
 <h2>10. Data types and bitwise operations</h2>
 <div id="primitive-types" class="section level3">
 <h3>Primitive types</h3>

@@ -9,22 +9,10 @@
 
 ## Contents
 
-<!-- MOTIVATION-TOC:BEGIN -->
-0. [Motivating examples](#motivating-examples)
-<!-- MOTIVATION-TOC:END -->
-1. [Information as the answer to a question](#1-information-as-the-answer-to-a-question)
-2. [Measuring information in bits](#2-measuring-information-in-bits)
-3. [Storing information digitally](#3-storing-information-digitally)
-4. [Positional number systems](#4-positional-number-systems)
-5. [Converting between bases](#5-converting-between-bases)
-6. [Negative numbers](#6-negative-numbers)
-7. [Floating-point numbers: IEEE 754](#7-floating-point-numbers-ieee-754)
-8. [When rounding errors matter](#8-when-rounding-errors-matter)
-9. [Character coding](#9-character-coding)
-10. [Data types and bitwise operations](#10-data-types-and-bitwise-operations)
-11. [Check yourself](#11-check-yourself)
-12. [Why does this matter? Practical Python examples](#12-why-does-this-matter-practical-python-examples)
-13. [References](#13-references)
+1. [Information coding](#information-coding)
+2. [Conversion between number coding systems](#number-systems)
+3. [Character coding](#character-coding)
+4. [Python data types and binary operations](#data-types)
 
 ---
 
@@ -85,7 +73,7 @@ distinction between noise, which averages out, and bias, which does not, and
 it is the reason why numerical mistakes in analysis code are dangerous in a different way to measurement error.
 
 
-## 1. Information as the answer to a question
+## 1. Information as the answer to a question {#information-coding}
 
 In computer science, information is the representation of knowledge. That
 sounds abstract until we make it operational, which is what Claude Shannon did
@@ -166,7 +154,7 @@ direction or the other. The smallest logical unit is one *byte*, which is 8
 bits. Processors normally address whole bytes, that is, they read and write
 information in chunks of 8 bits. You cannot ask a processor for bit number 37
 directly; you ask for the byte that contains it and then extract the bit with
-the [bitwise operations](#10-data-types-and-bitwise-operations) of section 10.
+the [bitwise operations](#data-types) of section 10.
 
 ![How a memory chip works.](../Slides/02-InformationCoding/figures/memory-array.png)
 
@@ -183,7 +171,7 @@ call stack.
 
 ---
 
-## 4. Positional number systems
+## 4. Positional number systems {#number-systems}
 
 In a *positional* number system the value of a digit depends on its position.
 In 12 the digit 1 means ten, while in 1200 the same digit means one thousand.
@@ -332,7 +320,7 @@ Notice that this loop only terminates when the fraction has a finite binary
 expansion. The number $0.1_{10}$ does not: if you try it, you get the repeating
 pattern $0.0001100110011\ldots_2$ forever, and an implementation has to stop
 after a fixed number of digits. That single fact is responsible for most of
-[section 8](#8-when-rounding-errors-matter).
+[section 8](#rounding-errors).
 
 ---
 
@@ -461,7 +449,7 @@ encoding question of this lecture but applied at scale to the weights of Large L
 
 ---
 
-## 8. When rounding errors matter
+## 8. When rounding errors matter {#rounding-errors}
 
 Floating point has a limited range and thus it cannot represent every number, especially the vere large positive or negative numbers. Floating point also has a limited precision because some numbers have no exact representation, i.e the have no finite binary expansion (they are irrational in binary). The classic case is $0.1$, you can see its effect in Python:
 
@@ -504,7 +492,7 @@ designed FLOW-MATIC, the language on which COBOL was modeled. Grace Hopper argue
 could only be programmed in their own machine code, being ahead of technology by more than a decade.
 ---
 
-## 9. Character coding
+## 9. Character coding {#character-coding}
 
 Numbers were the easy part. Text needs a map from characters to bit patterns,
 and the history of that map explains most of the encoding problems you will
@@ -569,7 +557,7 @@ an error go away, you are deleting part of your dataset.
 
 ---
 
-## 10. Data types and bitwise operations
+## 10. Data types and bitwise operations {#data-types}
 
 ### Primitive types
 

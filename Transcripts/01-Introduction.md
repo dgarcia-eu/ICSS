@@ -10,20 +10,13 @@
 
 ## Contents
 
-1. [Why a computing course in a social science degree](#1-why-a-computing-course-in-a-social-science-degree)
-2. [What the course is about](#2-what-the-course-is-about)
-3. [What is a computer?](#3-what-is-a-computer)
-4. [What is computer science?](#4-what-is-computer-science)
-5. [What is an algorithm?](#5-what-is-an-algorithm)
-6. [Computing as an artificial science](#6-computing-as-an-artificial-science)
-7. [A short history](#7-a-short-history)
-8. [The subfields of computer science](#8-the-subfields-of-computer-science)
-9. [Check yourself](#9-check-yourself)
-10. [References](#10-references)
+1. [Course motivations and objectives](#motivation)
+2. [Course overview and formalities](#course)
+3. [A brief introduction to computer science](#computer-science)
 
 ---
 
-## 1. Why a computing course in a social science degree
+## 1. Why a computing course in a social science degree {#motivation}
 
 ### The digital society
 
@@ -97,7 +90,7 @@ does, and what it means when someone says that the computer decided.
 
 ---
 
-## 2. What the course is about
+## 2. What the course is about {#course}
 
 The overarching goal of the course is that you become able to solve problems
 computationally. More concretely, by the end of the course you should be able to
@@ -119,7 +112,7 @@ sort, and the same holds for every other topic in the course.
 
 ---
 
-## 3. What is a computer?
+## 3. What is a computer? {#computer-science}
 
 Zelle (2016, chapter 1) defines a computer as *a machine that stores and
 manipulates information under the control of a changeable program*. Each part
