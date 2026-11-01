@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" font-family="Arial, Helvetica, sans-serif">
+  <circle cx="22" cy="20" r="14" fill="#a6a6a6" stroke="#111" stroke-width="1.1"/>
+  <rect x="46" y="5" width="146" height="30" fill="#fff" stroke="#111" stroke-width="1"/>
+  <text x="52" y="25" text-anchor="start" font-size="14" fill="#111" font-weight="normal" font-style="normal">Root</text>
+  <circle cx="22" cy="56" r="14" fill="#dbeedb" stroke="#111" stroke-width="1.1"/>
+  <rect x="46" y="41" width="146" height="30" fill="#fff" stroke="#111" stroke-width="1"/>
+  <text x="52" y="61" text-anchor="start" font-size="14" fill="#111" font-weight="normal" font-style="normal">Leaf Node</text>
+  <line x1="6" y1="92" x2="38" y2="92" stroke="#111" stroke-width="1.4"/>
+  <rect x="46" y="77" width="146" height="30" fill="#fff" stroke="#111" stroke-width="1"/>
+  <text x="52" y="97" text-anchor="start" font-size="14" fill="#111" font-weight="normal" font-style="normal">Parent-Child</text>
+  <line x1="6" y1="128" x2="38" y2="128" stroke="#1f6fb2" stroke-width="1.2" stroke-dasharray="2 3"/>
+  <rect x="46" y="113" width="146" height="30" fill="#fff" stroke="#111" stroke-width="1"/>
+  <text x="52" y="133" text-anchor="start" font-size="14" fill="#111" font-weight="normal" font-style="normal">Siblings</text>
+  <ellipse cx="22" cy="164" rx="17" ry="11" fill="none" stroke="#999" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <rect x="46" y="149" width="146" height="30" fill="#fff" stroke="#111" stroke-width="1"/>
+  <text x="52" y="169" text-anchor="start" font-size="14" fill="#111" font-weight="normal" font-style="normal">Sub-tree</text>
+</svg>

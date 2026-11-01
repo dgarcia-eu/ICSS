@@ -84,6 +84,8 @@ Programming languages; good coding practices; software specifications and testin
 Definition; examples; search algorithms  
 *Reference(s): Chapter 1 of 'Algorithms Unlocked' by Cormen*
 
+*If you want to learn more about my research, I will present ["The Collective Behavior of AI Agents" on 19.11 at 17:00 in G307](https://www.philosophie.uni-konstanz.de/forschung/ki-vorlesung/)*
+
 **Session 06: Recursive algorithms** (25.11 – 01.12)  
 Recursion vs. iteration; Properties of recursive algorithms  
 *Reference(s): Chapter 13 of 'Python Programming: An introduction to Computer Science' by Zelle*

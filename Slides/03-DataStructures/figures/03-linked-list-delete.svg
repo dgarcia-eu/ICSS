@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 140" width="840" height="140" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#222"/></marker>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f6fb2"/></marker>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#cc2222"/></marker>
+  </defs>
+  <text x="106.0" y="85.0" text-anchor="middle" font-size="17" fill="#111" font-weight="bold" font-style="normal">head</text>
+  <line x1="128.0" y1="79.0" x2="165.0" y2="79.0" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <rect x="168.0" y="56" width="58" height="46" fill="#cceef9" stroke="#111" stroke-width="1.4"/>
+  <text x="197.0" y="86.0" text-anchor="middle" font-size="20" fill="#111" font-weight="normal" font-style="normal">7</text>
+  <rect x="226.0" y="56" width="34" height="46" fill="#fff" stroke="#111" stroke-width="1.4"/>
+  <circle cx="243.0" cy="79.0" r="4" fill="#111"/>
+  <rect x="312.0" y="56" width="58" height="46" fill="#eeeeee" stroke="#999" stroke-width="1.4"/>
+  <text x="341.0" y="86.0" text-anchor="middle" font-size="20" fill="#999" font-weight="normal" font-style="normal">13</text>
+  <rect x="370.0" y="56" width="34" height="46" fill="#fff" stroke="#999" stroke-width="1.4"/>
+  <circle cx="387.0" cy="79.0" r="4" fill="#999"/>
+  <rect x="456.0" y="56" width="58" height="46" fill="#cceef9" stroke="#111" stroke-width="1.4"/>
+  <text x="485.0" y="86.0" text-anchor="middle" font-size="20" fill="#111" font-weight="normal" font-style="normal">21</text>
+  <rect x="514.0" y="56" width="34" height="46" fill="#fff" stroke="#111" stroke-width="1.4"/>
+  <circle cx="531.0" cy="79.0" r="4" fill="#111"/>
+  <rect x="600.0" y="56" width="58" height="46" fill="#cceef9" stroke="#111" stroke-width="1.4"/>
+  <text x="629.0" y="86.0" text-anchor="middle" font-size="20" fill="#111" font-weight="normal" font-style="normal">42</text>
+  <rect x="658.0" y="56" width="34" height="46" fill="#fff" stroke="#111" stroke-width="1.4"/>
+  <circle cx="675.0" cy="79.0" r="4" fill="#111"/>
+  <text x="197.0" y="124" text-anchor="middle" font-size="14" fill="#555" font-weight="normal" font-style="italic">key</text>
+  <text x="243.0" y="124" text-anchor="middle" font-size="14" fill="#555" font-weight="normal" font-style="italic">next</text>
+  <line x1="387.0" y1="79.0" x2="453.0" y2="79.0" stroke="#999" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#a)"/>
+  <line x1="531.0" y1="79.0" x2="597.0" y2="79.0" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <line x1="675.0" y1="79.0" x2="726.0" y2="79.0" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="752.0" y="85.0" text-anchor="middle" font-size="17" fill="#111" font-weight="bold" font-style="normal">NIL</text>
+  <path d="M 243.0 56 C 263.0 8, 465.0 8, 485.0 52" fill="none" stroke="#cc2222" stroke-width="2.2" marker-end="url(#ar)"/>
+  <text x="364.0" y="16" text-anchor="middle" font-size="15" fill="#cc2222" font-weight="normal" font-style="normal">delete 13: the predecessor now points past it</text>
+</svg>

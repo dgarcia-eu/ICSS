@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 292" width="470" height="292" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#222"/></marker>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f6fb2"/></marker>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#cc2222"/></marker>
+  </defs>
+  <text x="150" y="22" text-anchor="middle" font-size="16" fill="#111" font-weight="bold" font-style="normal">key</text>
+  <text x="330" y="16" text-anchor="middle" font-size="15" fill="#111" font-weight="bold" font-style="normal">hash</text>
+  <text x="330" y="34" text-anchor="middle" font-size="15" fill="#111" font-weight="bold" font-style="normal">function</text>
+  <text x="430" y="16" text-anchor="middle" font-size="15" fill="#111" font-weight="bold" font-style="normal">hash</text>
+  <text x="430" y="34" text-anchor="middle" font-size="15" fill="#111" font-weight="bold" font-style="normal">value</text>
+  <rect x="300" y="46" width="60" height="230" fill="#6fa8f5"/>
+  <rect x="400" y="46" width="42" height="24" fill="#3ddc84" stroke="#111" stroke-width="1"/>
+  <text x="421" y="64" text-anchor="middle" font-size="14" fill="#111" font-weight="normal" font-style="normal">0</text>
+  <rect x="400" y="73" width="42" height="24" fill="#fff" stroke="#111" stroke-width="1"/>
+  <text x="421" y="91" text-anchor="middle" font-size="14" fill="#111" font-weight="normal" font-style="normal">1</text>
+  <rect x="400" y="100" width="42" height="24" fill="#fff" stroke="#111" stroke-width="1"/>
+  <text x="421" y="118" text-anchor="middle" font-size="14" fill="#111" font-weight="normal" font-style="normal">2</text>
+  <rect x="400" y="127" width="42" height="24" fill="#ef4444" stroke="#111" stroke-width="1"/>
+  <text x="421" y="145" text-anchor="middle" font-size="14" fill="#111" font-weight="normal" font-style="normal">3</text>
+  <rect x="400" y="154" width="42" height="24" fill="#fff" stroke="#111" stroke-width="1"/>
+  <text x="421" y="172" text-anchor="middle" font-size="14" fill="#111" font-weight="normal" font-style="normal">4</text>
+  <rect x="400" y="181" width="42" height="24" fill="#3ddc84" stroke="#111" stroke-width="1"/>
+  <text x="421" y="199" text-anchor="middle" font-size="14" fill="#111" font-weight="normal" font-style="normal">5</text>
+  <rect x="400" y="208" width="42" height="24" fill="#e9edf2" stroke="#111" stroke-width="1"/>
+  <text x="421" y="226" text-anchor="middle" font-size="14" fill="#111" font-weight="normal" font-style="normal">6</text>
+  <text x="415" y="239" text-anchor="middle" font-size="16" fill="#111" font-weight="normal" font-style="normal">⋮</text>
+  <rect x="400" y="241" width="42" height="24" fill="#fff" stroke="#111" stroke-width="1"/>
+  <text x="421" y="259" text-anchor="middle" font-size="14" fill="#111" font-weight="normal" font-style="italic">m</text>
+  <rect x="40" y="60" width="240" height="34" fill="#fbfbdc" stroke="none"/>
+  <text x="160" y="84" text-anchor="middle" font-size="16" fill="#111" font-weight="normal" font-style="normal">Max Mustermann</text>
+  <line x1="282" y1="77" x2="298" y2="77" stroke="#cc2222" stroke-width="1.6"/>
+  <line x1="362" y1="77" x2="396" y2="139.0" stroke="#cc2222" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="40" y="112" width="240" height="34" fill="#fbfbdc" stroke="none"/>
+  <text x="160" y="136" text-anchor="middle" font-size="16" fill="#111" font-weight="normal" font-style="normal">Petra Paul</text>
+  <line x1="282" y1="129" x2="298" y2="129" stroke="#111" stroke-width="1.6"/>
+  <line x1="362" y1="129" x2="396" y2="58.0" stroke="#111" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="40" y="164" width="240" height="34" fill="#fbfbdc" stroke="none"/>
+  <text x="160" y="188" text-anchor="middle" font-size="16" fill="#111" font-weight="normal" font-style="normal">Michael Müller</text>
+  <line x1="282" y1="181" x2="298" y2="181" stroke="#cc2222" stroke-width="1.6"/>
+  <line x1="362" y1="181" x2="396" y2="139.0" stroke="#cc2222" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="40" y="216" width="240" height="34" fill="#fbfbdc" stroke="none"/>
+  <text x="160" y="240" text-anchor="middle" font-size="16" fill="#111" font-weight="normal" font-style="normal">Anja Schmidt</text>
+  <line x1="282" y1="233" x2="298" y2="233" stroke="#111" stroke-width="1.6"/>
+  <line x1="362" y1="233" x2="396" y2="193.0" stroke="#111" stroke-width="1.6" marker-end="url(#a)"/>
+</svg>
