@@ -151,6 +151,12 @@ C and C++ are both compiled languages. Java is something close to a compiled lan
 
 ![*A compiler translates the whole program once into a binary file, which then runs many times.*](../Slides/04-Software/figures/04-compiler.svg)
 
+The difference is easy to measure. Section 1 of the [Python examples notebook of
+this session](https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples04-Software.ipynb) adds up ten million numbers twice, once
+with a Python loop, which is interpreted step by step, and once with NumPy,
+whose loop is compiled code. The compiled version is about a hundred times
+faster.
+
 Vibe coding, which we will discuss in section 5, is a kind of programming. It also turns a description of how to perform a task into a programming language that then can be compiled or interpreted into machine code, all automatically. The difference is that the description is in natural language rather than in a formal programming language. An unavoidable difference with traditional programming is *flakiness*. A
 compiler turns the same source code into the same machine code every time,
 while a language model will often turn the same request into different code and different results.
@@ -626,6 +632,9 @@ or if the code raises an error that the test did not expect. The report
 prints a dot for every test that passed and an `F` for every test that
 failed, followed by the failed asserts with the values that did not match.
 Nothing has to be called by hand, so adding a test means adding a function.
+To see pytest run step by step on a real example, from writing the files to
+reading the report and fixing the code, follow section 3 of the [Python
+examples notebook of this session](https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples04-Software.ipynb).
 
 ![*How pytest works: it finds the test files and functions, runs them, and reports.*](../Slides/04-Software/figures/04-pytest.svg)
 
@@ -823,7 +832,17 @@ code with an invariant in mind is exactly this reasoning.
 
 ---
 
-## 8. Check yourself
+## 8. Why does this matter? Practical Python examples
+
+Check the [practical Python examples in this Jupyter notebook](https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples04-Software.ipynb).
+There, you will see a Python loop run about a hundred times slower than the
+same computation in compiled NumPy, a mean that is quietly wrong until a
+one-line test catches it, and a generated function whose wrong date format is
+found and fixed by running pytest step by step.
+
+---
+
+## 9. Check yourself
 
 **1.** Is Python compiled or interpreted, and what does that mean for when you see an error?
 
@@ -906,7 +925,7 @@ that data does both jobs.
 
 ---
 
-## 9. References
+## 10. References
 
 - **Zelle, J. M. (2016).** *Python Programming: An Introduction to Computer
   Science*, 3rd ed. Franklin, Beedle & Associates. Chapters 2 and 6–8 are the

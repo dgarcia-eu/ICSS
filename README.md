@@ -79,7 +79,8 @@ Abstract data structures; Linked lists; Stacks; Queues; Trees; Hash tables.
 
 **Session 04: Software** (13.11 – 17.11)  
 Programming languages; good coding practices; software specifications and testing  
-*Reference(s): Chapters 2, 6-8 of 'Python Programming: An introduction to Computer Science' by Zelle*
+*Reference(s): Chapters 2, 6-8 of 'Python Programming: An introduction to Computer Science' by Zelle*  
+[**Slides**](https://dgarcia-eu.github.io/ICSS/Slides/04-Software/ICSS-2026-04-Software.html) - [**Transcript**](https://dgarcia-eu.github.io/ICSS/Transcripts/04-Software.html) - [**Exercise sheet**](https://dgarcia-eu.github.io/ICSS/Exercises/Exercise04.html)
 
 **Session 05: Algorithms** (18.11 – 24.11)  
 Definition; examples; search algorithms  
