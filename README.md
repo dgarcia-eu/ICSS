@@ -71,7 +71,7 @@ Units of information - bits; Representing different types of data using bits.
 [**Slides**](https://dgarcia-eu.github.io/ICSS/Slides/02-InformationCoding/ICSS-2026-02-InformationCoding.html) - [**Transcript**](https://dgarcia-eu.github.io/ICSS/Transcripts/02-InformationCoding.html) - [**Exercise sheet**](https://dgarcia-eu.github.io/ICSS/Exercises/Exercise02.html)
 
 **Session 03: Data Structures** (4.11 – 13.11)  
-Abstract data structures; Linked lists; Stacks; Queues; Trees; Hash tables.  
+Abstract data structures; Linked lists; Trees; Hash tables.  
 *Reference(s): Chapter 10 of 'Introduction to Algorithms' by Cormen, Leiserson, Rivest and Stein*  
 [**Slides**](https://dgarcia-eu.github.io/ICSS/Slides/03-DataStructures/ICSS-2026-03-DataStructures.html) - [**Transcript**](https://dgarcia-eu.github.io/ICSS/Transcripts/03-DataStructures.html) - [**Exercise sheet**](https://dgarcia-eu.github.io/ICSS/Exercises/Exercise03.html)
 
