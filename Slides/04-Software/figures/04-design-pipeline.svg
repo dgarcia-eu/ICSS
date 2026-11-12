@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1176 334" width="1176" height="334" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker></defs>
+  <rect x="248" y="12" width="652" height="316" rx="14" fill="#f3fafd" stroke="#3e5496" stroke-width="3"/>
+  <text x="268" y="46" font-size="21" fill="#111" font-weight="bold" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">link_waves(wave1, wave2)</text>
+  <text x="882" y="46" font-size="16" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="end">the step that was specified</text>
+  <rect x="6" y="112" width="196" height="116" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="104" y="144" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">read_wave(path)</text>
+  <text x="104" y="176" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">one file into a list</text>
+  <text x="104" y="198" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">of (email, answer)</text>
+  <rect x="290" y="66" width="250" height="76" rx="10" fill="#a6e1f4" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="415" y="96" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">by_person(wave1)</text>
+  <text x="415" y="122" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">pseudonym → last answer</text>
+  <line x1="204" y1="150" x2="286" y2="104" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="290" y="162" width="250" height="76" rx="10" fill="#a6e1f4" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="415" y="192" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">by_person(wave2)</text>
+  <text x="415" y="218" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">pseudonym → last answer</text>
+  <line x1="204" y1="192" x2="286" y2="200" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="212" y="116" font-size="15" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">wave1</text>
+  <text x="212" y="222" font-size="15" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">wave2</text>
+  <line x1="415" y1="240" x2="415" y2="262" stroke="#3e5496" stroke-width="2.5" stroke-dasharray="5 4" marker-end="url(#a)"/>
+  <text x="424" y="256" font-size="15" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">both use</text>
+  <rect x="300" y="266" width="230" height="54" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="415" y="288" font-size="16" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">pseudonym(email)</text>
+  <text x="415" y="310" font-size="14" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">clean, then hash with a secret</text>
+  <rect x="612" y="104" width="262" height="110" rx="10" fill="#a6e1f4" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="743" y="136" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">pair_up(first, second)</text>
+  <text x="743" y="166" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">pseudonyms in both:</text>
+  <text x="743" y="190" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">a set intersection</text>
+  <line x1="542" y1="104" x2="608" y2="140" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="542" y1="200" x2="608" y2="178" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="743" y="256" font-size="15" fill="#e07b00" font-weight="normal" font-style="italic" text-anchor="middle">and first of all:</text>
+  <text x="743" y="278" font-size="15" fill="#e07b00" font-weight="normal" font-style="italic" text-anchor="middle">an empty wave raises ValueError</text>
+  <line x1="876" y1="159" x2="954" y2="159" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="929" y="146" font-size="15" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="middle">pairs</text>
+  <rect x="958" y="112" width="210" height="116" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="1063" y="144" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">report(pairs)</text>
+  <text x="1063" y="176" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">how many changed</text>
+  <text x="1063" y="198" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">their answer</text>
+</svg>

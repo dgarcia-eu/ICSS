@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1190 330" width="1190" height="330" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker></defs>
+  <rect x="6" y="10" width="168" height="52" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="90.0" y="43" font-size="19" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">Requirements</text>
+  <line x1="177" y1="36" x2="205" y2="36" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <circle cx="114.0" cy="98.0" r="13.0" fill="#59c7eb"/>
+  <path d="M 92.0 136.0 V 130.0 A 22.0 22.0 0 0 1 136.0 130.0 V 136.0 Z" fill="#59c7eb"/>
+  <circle cx="56.0" cy="108.2" r="9.1" fill="#bbbbbb"/>
+  <path d="M 40.6 134.8 V 130.6 A 15.399999999999999 15.399999999999999 0 0 1 71.4 130.6 V 134.8 Z" fill="#bbbbbb"/>
+  <text x="56.0" y="152" font-size="14" fill="#666666" font-weight="normal" font-style="normal" text-anchor="middle">client</text>
+  <text x="90.0" y="172" font-size="21" fill="#3e5496" font-weight="bold" font-style="normal" text-anchor="middle">analyst</text>
+  <text x="90.0" y="196" font-size="16" fill="#444" font-weight="normal" font-style="italic" text-anchor="middle">with the client</text>
+  <path d="M 26 214 H 136 L 154 232 V 288 H 26 Z" fill="#ffffff" stroke="#666666" stroke-width="2"/>
+  <text x="90.0" y="242" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace"></text>
+  <line x1="40" y1="260" x2="140" y2="260" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="40" y1="274" x2="110" y2="274" stroke="#c8c8c8" stroke-width="5"/>
+  <text x="90.0" y="238" font-size="16" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">requirements</text>
+  <line x1="156" y1="251" x2="226" y2="251" stroke="#3e5496" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="208" y="10" width="168" height="52" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="292.0" y="43" font-size="19" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">Specification</text>
+  <line x1="379" y1="36" x2="407" y2="36" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <circle cx="292.0" cy="98.0" r="13.0" fill="#59c7eb"/>
+  <path d="M 270.0 136.0 V 130.0 A 22.0 22.0 0 0 1 314.0 130.0 V 136.0 Z" fill="#59c7eb"/>
+  <text x="292.0" y="172" font-size="21" fill="#3e5496" font-weight="bold" font-style="normal" text-anchor="middle">analyst</text>
+  <text x="292.0" y="196" font-size="16" fill="#444" font-weight="normal" font-style="italic" text-anchor="middle">writes it down</text>
+  <path d="M 228 214 H 338 L 356 232 V 288 H 228 Z" fill="#ffffff" stroke="#666666" stroke-width="2"/>
+  <text x="292.0" y="242" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace"></text>
+  <line x1="242" y1="260" x2="342" y2="260" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="242" y1="274" x2="312" y2="274" stroke="#c8c8c8" stroke-width="5"/>
+  <text x="292.0" y="238" font-size="16" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">specification</text>
+  <line x1="358" y1="251" x2="428" y2="251" stroke="#3e5496" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="410" y="10" width="168" height="52" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="494.0" y="43" font-size="19" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">Design</text>
+  <line x1="581" y1="36" x2="609" y2="36" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <circle cx="494.0" cy="98.0" r="13.0" fill="#59c7eb"/>
+  <path d="M 472.0 136.0 V 130.0 A 22.0 22.0 0 0 1 516.0 130.0 V 136.0 Z" fill="#59c7eb"/>
+  <text x="494.0" y="172" font-size="21" fill="#3e5496" font-weight="bold" font-style="normal" text-anchor="middle">architect</text>
+  <text x="494.0" y="196" font-size="16" fill="#444" font-weight="normal" font-style="italic" text-anchor="middle">splits the work</text>
+  <path d="M 430 214 H 540 L 558 232 V 288 H 430 Z" fill="#ffffff" stroke="#666666" stroke-width="2"/>
+  <text x="494.0" y="242" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace"></text>
+  <line x1="444" y1="260" x2="544" y2="260" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="444" y1="274" x2="514" y2="274" stroke="#c8c8c8" stroke-width="5"/>
+  <text x="494.0" y="238" font-size="16" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">design</text>
+  <line x1="560" y1="251" x2="630" y2="251" stroke="#3e5496" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="612" y="10" width="168" height="52" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="696.0" y="43" font-size="19" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">Implementation</text>
+  <line x1="783" y1="36" x2="811" y2="36" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <circle cx="668.0" cy="98.0" r="13.0" fill="#59c7eb"/>
+  <path d="M 646.0 136.0 V 130.0 A 22.0 22.0 0 0 1 690.0 130.0 V 136.0 Z" fill="#59c7eb"/>
+  <line x1="724.0" y1="88.35" x2="724.0" y2="99.75" stroke="#3e5496" stroke-width="2.375"/>
+  <circle cx="724.0" cy="86.45" r="3.8" fill="#3e5496"/>
+  <rect x="705.0" y="99.75" width="38.0" height="28.5" rx="6.6499999999999995" fill="#3e5496"/>
+  <circle cx="715.45" cy="112.1" r="3.8" fill="#ffffff"/>
+  <circle cx="732.55" cy="112.1" r="3.8" fill="#ffffff"/>
+  <rect x="714.5" y="120.65" width="19.0" height="2.8499999999999996" fill="#ffffff"/>
+  <rect x="708.8" y="130.15" width="30.4" height="9.5" rx="2.8499999999999996" fill="#3e5496"/>
+  <text x="696.0" y="172" font-size="21" fill="#3e5496" font-weight="bold" font-style="normal" text-anchor="middle">coder</text>
+  <text x="696.0" y="196" font-size="16" fill="#444" font-weight="normal" font-style="italic" text-anchor="middle">human or agent</text>
+  <path d="M 632 214 H 742 L 760 232 V 288 H 632 Z" fill="#ffffff" stroke="#666666" stroke-width="2"/>
+  <text x="696.0" y="242" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace"></text>
+  <line x1="646" y1="260" x2="746" y2="260" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="646" y1="274" x2="716" y2="274" stroke="#c8c8c8" stroke-width="5"/>
+  <text x="696.0" y="238" font-size="16" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">code</text>
+  <line x1="762" y1="251" x2="832" y2="251" stroke="#3e5496" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="814" y="10" width="168" height="52" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="898.0" y="43" font-size="19" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">Testing</text>
+  <line x1="985" y1="36" x2="1013" y2="36" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <circle cx="898.0" cy="98.0" r="13.0" fill="#59c7eb"/>
+  <path d="M 876.0 136.0 V 130.0 A 22.0 22.0 0 0 1 920.0 130.0 V 136.0 Z" fill="#59c7eb"/>
+  <text x="898.0" y="172" font-size="21" fill="#3e5496" font-weight="bold" font-style="normal" text-anchor="middle">tester</text>
+  <text x="898.0" y="196" font-size="16" fill="#444" font-weight="normal" font-style="italic" text-anchor="middle">checks the code</text>
+  <path d="M 834 214 H 944 L 962 232 V 288 H 834 Z" fill="#ffffff" stroke="#666666" stroke-width="2"/>
+  <text x="898.0" y="242" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace"></text>
+  <line x1="848" y1="260" x2="948" y2="260" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="848" y1="274" x2="918" y2="274" stroke="#c8c8c8" stroke-width="5"/>
+  <text x="898.0" y="238" font-size="16" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">test report</text>
+  <line x1="964" y1="251" x2="1034" y2="251" stroke="#3e5496" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="1016" y="10" width="168" height="52" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="1100.0" y="43" font-size="19" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">Maintenance</text>
+  <circle cx="1100.0" cy="98.0" r="13.0" fill="#59c7eb"/>
+  <path d="M 1078.0 136.0 V 130.0 A 22.0 22.0 0 0 1 1122.0 130.0 V 136.0 Z" fill="#59c7eb"/>
+  <text x="1100.0" y="172" font-size="21" fill="#3e5496" font-weight="bold" font-style="normal" text-anchor="middle">maintainer</text>
+  <text x="1100.0" y="196" font-size="16" fill="#444" font-weight="normal" font-style="italic" text-anchor="middle">fixes, extends</text>
+  <path d="M 1036 214 H 1146 L 1164 232 V 288 H 1036 Z" fill="#ffffff" stroke="#666666" stroke-width="2"/>
+  <text x="1100.0" y="242" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace"></text>
+  <line x1="1050" y1="260" x2="1150" y2="260" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="1050" y1="274" x2="1120" y2="274" stroke="#c8c8c8" stroke-width="5"/>
+  <text x="1100.0" y="238" font-size="16" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">new requests</text>
+  <text x="595.0" y="318" font-size="17" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="middle">each role hands its result to the next one; in a small project, one person plays several roles</text>
+</svg>

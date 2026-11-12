@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 344" width="600" height="344" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker></defs>
+  <rect x="40" y="30" width="520" height="210" rx="105" fill="#cceef9" stroke="#3e5496" stroke-width="2.5"/>
+  <text x="300" y="62" font-size="22" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">object ana</text>
+  <rect x="110" y="84" width="170" height="110" rx="10" fill="#ffffff" stroke="#00a9e0" stroke-width="2"/>
+  <text x="195" y="112" font-size="19" fill="#666666" font-weight="normal" font-style="normal" text-anchor="middle">data</text>
+  <text x="195" y="142" font-size="19" fill="#111" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">name = "Ana"</text>
+  <text x="195" y="168" font-size="19" fill="#111" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">age = 34</text>
+  <rect x="320" y="84" width="170" height="110" rx="10" fill="#ffffff" stroke="#00a9e0" stroke-width="2"/>
+  <text x="405" y="112" font-size="19" fill="#666666" font-weight="normal" font-style="normal" text-anchor="middle">methods</text>
+  <text x="405" y="142" font-size="19" fill="#3e5496" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">is_adult()</text>
+  <text x="405" y="168" font-size="19" fill="#3e5496" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">describe()</text>
+  <line x1="318" y1="150" x2="284" y2="150" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="40" y="274" font-size="18" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">data and the code that uses it,</text>
+  <text x="40" y="296" font-size="18" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">in one place</text>
+  <line x1="405" y1="296" x2="405" y2="198" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="405" y="316" font-size="20" fill="#111" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">ana.is_adult()</text>
+</svg>

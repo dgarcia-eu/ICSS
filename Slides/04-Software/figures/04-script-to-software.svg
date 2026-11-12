@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 352" width="860" height="352" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker></defs>
+  <path d="M 30 20 H 170 L 204 54 V 230 H 30 Z" fill="#ffffff" stroke="#666666" stroke-width="2"/>
+  <line x1="50" y1="80" x2="176" y2="80" stroke="#bbbbbb" stroke-width="6"/>
+  <line x1="50" y1="104" x2="156" y2="104" stroke="#bbbbbb" stroke-width="6"/>
+  <line x1="50" y1="128" x2="136" y2="128" stroke="#bbbbbb" stroke-width="6"/>
+  <line x1="50" y1="152" x2="176" y2="152" stroke="#bbbbbb" stroke-width="6"/>
+  <line x1="50" y1="176" x2="156" y2="176" stroke="#bbbbbb" stroke-width="6"/>
+  <line x1="50" y1="200" x2="136" y2="200" stroke="#bbbbbb" stroke-width="6"/>
+  <text x="112" y="48" font-size="18" fill="#111" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">analysis.py</text>
+  <text x="117" y="264" font-size="21" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">a script:</text>
+  <text x="117" y="292" font-size="18" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">one file, one person,</text>
+  <text x="117" y="316" font-size="18" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">run once</text>
+  <line x1="226" y1="130" x2="318" y2="130" stroke="#3e5496" stroke-width="3" marker-end="url(#a)"/>
+  <text x="272" y="114" font-size="18" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="middle">grows into</text>
+  <line x1="435.0" y1="36" x2="590" y2="130" stroke="#00a9e0" stroke-width="1.8" stroke-dasharray="5 5"/>
+  <line x1="755.0" y1="36" x2="590" y2="130" stroke="#00a9e0" stroke-width="1.8" stroke-dasharray="5 5"/>
+  <line x1="435.0" y1="222" x2="590" y2="130" stroke="#00a9e0" stroke-width="1.8" stroke-dasharray="5 5"/>
+  <line x1="755.0" y1="222" x2="590" y2="130" stroke="#00a9e0" stroke-width="1.8" stroke-dasharray="5 5"/>
+  <line x1="595.0" y1="278" x2="590" y2="130" stroke="#00a9e0" stroke-width="1.8" stroke-dasharray="5 5"/>
+  <rect x="500" y="88" width="180" height="84" rx="10" fill="#a6e1f4" stroke="#3e5496" stroke-width="2.5"/>
+  <text x="590" y="124" font-size="21" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">code in</text>
+  <text x="590" y="150" font-size="21" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">small parts</text>
+  <rect x="340" y="10" width="190" height="52" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2"/>
+  <text x="435.0" y="43" font-size="19" fill="#111" font-weight="normal" font-style="normal" text-anchor="middle">requirements</text>
+  <rect x="660" y="10" width="190" height="52" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2"/>
+  <text x="755.0" y="43" font-size="19" fill="#111" font-weight="normal" font-style="normal" text-anchor="middle">tests</text>
+  <rect x="340" y="196" width="190" height="52" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2"/>
+  <text x="435.0" y="229" font-size="19" fill="#111" font-weight="normal" font-style="normal" text-anchor="middle">documentation</text>
+  <rect x="660" y="196" width="190" height="52" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2"/>
+  <text x="755.0" y="229" font-size="19" fill="#111" font-weight="normal" font-style="normal" text-anchor="middle">versions</text>
+  <rect x="500" y="252" width="190" height="52" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2"/>
+  <text x="595.0" y="285" font-size="19" fill="#111" font-weight="normal" font-style="normal" text-anchor="middle">users and data</text>
+  <text x="595" y="340" font-size="19" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">software: many parts, many people, many years</text>
+</svg>

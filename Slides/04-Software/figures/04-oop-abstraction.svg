@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 344" width="600" height="344" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker></defs>
+  <rect x="126" y="30" width="348" height="210" rx="10" fill="#cceef9" stroke="#3e5496" stroke-width="2.5"/>
+  <text x="300" y="62" font-size="21" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">a str object: "Konstanz"</text>
+  <rect x="190" y="84" width="220" height="96" rx="6" fill="#d9d9d9" stroke="#666666" stroke-width="1.5"/>
+  <text x="300" y="124" font-size="19" fill="#555" font-weight="normal" font-style="normal" text-anchor="middle">how the text</text>
+  <text x="300" y="146" font-size="19" fill="#555" font-weight="normal" font-style="normal" text-anchor="middle">is stored: hidden</text>
+  <rect x="134" y="200" width="108" height="32" rx="6" fill="#ffffff" stroke="#3e5496" stroke-width="1.8"/>
+  <text x="188" y="222" font-size="17" fill="#3e5496" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">upper()</text>
+  <rect x="246" y="200" width="108" height="32" rx="6" fill="#ffffff" stroke="#3e5496" stroke-width="1.8"/>
+  <text x="300" y="222" font-size="17" fill="#3e5496" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">count()</text>
+  <rect x="358" y="200" width="108" height="32" rx="6" fill="#ffffff" stroke="#3e5496" stroke-width="1.8"/>
+  <text x="412" y="222" font-size="17" fill="#3e5496" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">replace()</text>
+  <text x="250" y="274" font-size="18" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">you use the methods it offers,</text>
+  <text x="250" y="296" font-size="18" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">not what is inside</text>
+  <line x1="205" y1="316" x2="205" y2="234" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="205" y="326" font-size="18" fill="#111" font-weight="normal" font-style="normal" text-anchor="end" font-family="DejaVu Sans Mono, Consolas, monospace">s.upper()</text>
+</svg>

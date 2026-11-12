@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 344" width="600" height="344" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker></defs>
+  <rect x="170" y="4" width="260" height="180" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="300.0" y="31" font-size="19" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">Respondent</text>
+  <line x1="170" y1="44" x2="430" y2="44" stroke="#00a9e0" stroke-width="1.5"/>
+  <text x="184" y="68" font-size="16" fill="#111" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">name</text>
+  <text x="184" y="94" font-size="16" fill="#111" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">age</text>
+  <line x1="170" y1="110" x2="430" y2="110" stroke="#00a9e0" stroke-width="1.5"/>
+  <text x="184" y="134" font-size="16" fill="#3e5496" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">is_adult()</text>
+  <text x="184" y="160" font-size="16" fill="#3e5496" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">describe()</text>
+  <rect x="170" y="238" width="260" height="102" rx="10" fill="#a6e1f4" stroke="#3e5496" stroke-width="2.5"/>
+  <text x="300.0" y="265" font-size="19" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">Student</text>
+  <line x1="170" y1="278" x2="430" y2="278" stroke="#3e5496" stroke-width="1.5"/>
+  <text x="184" y="302" font-size="16" fill="#111" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">program</text>
+  <line x1="300" y1="236" x2="300" y2="188" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="312" y="220" font-size="19" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">is a</text>
+  <text x="450" y="268" font-size="18" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">+ everything</text>
+  <text x="450" y="290" font-size="18" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="start">a Respondent has</text>
+</svg>

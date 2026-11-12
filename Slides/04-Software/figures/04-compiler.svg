@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 196" width="560" height="196" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker></defs>
+  <text x="10" y="22" font-size="19" fill="#666666" font-weight="normal" font-style="normal" text-anchor="start">source code</text>
+  <rect x="6" y="32" width="150" height="114" rx="6" fill="#ffffff" stroke="#666666" stroke-width="1.6"/>
+  <text x="18" y="62" font-size="19" fill="#111" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">x = 3</text>
+  <text x="18" y="90" font-size="19" fill="#111" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">y = x * 2</text>
+  <text x="18" y="118" font-size="19" fill="#111" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">print(y)</text>
+  <rect x="196" y="40" width="128" height="96" rx="10" fill="#a6e1f4" stroke="#3e5496" stroke-width="2.5"/>
+  <text x="260" y="80" font-size="22" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">Compiler</text>
+  <text x="260" y="108" font-size="17" fill="#333" font-weight="normal" font-style="normal" text-anchor="middle">once, the</text>
+  <text x="260" y="128" font-size="17" fill="#333" font-weight="normal" font-style="normal" text-anchor="middle">whole program</text>
+  <line x1="160" y1="88" x2="192" y2="88" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="358" y="40" width="96" height="96" rx="6" fill="#f2f2f2" stroke="#666666" stroke-width="1.6"/>
+  <text x="406" y="70" font-size="18" fill="#111" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">0100</text>
+  <text x="406" y="96" font-size="18" fill="#111" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">1101</text>
+  <text x="406" y="122" font-size="18" fill="#111" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">0011</text>
+  <text x="406" y="162" font-size="17" fill="#666666" font-weight="normal" font-style="normal" text-anchor="middle">machine code</text>
+  <line x1="326" y1="88" x2="354" y2="88" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="484" y="58" width="72" height="62" rx="6" fill="#ffffff" stroke="#666666" stroke-width="1.6"/>
+  <text x="520" y="84" font-size="18" fill="#666666" font-weight="normal" font-style="normal" text-anchor="middle">run</text>
+  <text x="520" y="110" font-size="21" fill="#111" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">6</text>
+  <line x1="456" y1="88" x2="480" y2="88" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="406" y="190" font-size="17" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="middle">runs many times, fast</text>
+</svg>

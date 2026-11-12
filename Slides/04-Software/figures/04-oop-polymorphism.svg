@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 344" width="600" height="344" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker></defs>
+  <rect x="190" y="14" width="220" height="50" rx="10" fill="#a6e1f4" stroke="#3e5496" stroke-width="2.5"/>
+  <text x="300" y="47" font-size="23" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">p.describe()</text>
+  <line x1="300" y1="66" x2="155" y2="118" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="30" y="122" width="250" height="108" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2"/>
+  <text x="155" y="152" font-size="19" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">ana: a Respondent</text>
+  <text x="155" y="182" font-size="16" fill="#666666" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">Respondent.describe()</text>
+  <text x="155" y="212" font-size="17" fill="#3e5496" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">→ 'Ana, 34 years'</text>
+  <line x1="300" y1="66" x2="445" y2="118" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="320" y="122" width="250" height="108" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2"/>
+  <text x="445" y="152" font-size="19" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">bea: a Student</text>
+  <text x="445" y="182" font-size="16" fill="#666666" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">Student.describe()</text>
+  <text x="445" y="212" font-size="17" fill="#3e5496" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">→ 'Bea: SEDS'</text>
+  <text x="300" y="266" font-size="18" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="middle">the same call; each object runs</text>
+  <text x="300" y="288" font-size="18" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="middle">the method of its own class</text>
+</svg>

@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="ICSS-2026-04-Software_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ICSS-2026-04-Software_files/libs/quarto-html/tabby.min.js"></script>
+<script src="ICSS-2026-04-Software_files/libs/quarto-html/popper.min.js"></script>
+<script src="ICSS-2026-04-Software_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="ICSS-2026-04-Software_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ICSS-2026-04-Software_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="ICSS-2026-04-Software_files/libs/quarto-html/quarto-syntax-highlighting-86daaaaad7353f9cc0c554efc1dd6d94.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="David Garcia Winter Semester 2026-2027">
+  <title>Introduction to Computing for the Social Sciences Session 4 – Software</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="ICSS-2026-04-Software_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="ICSS-2026-04-Software_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="ICSS-2026-04-Software_files/libs/revealjs/dist/theme/quarto-bdb2709ed6bfded77df1ce32618429bb.css">
+  <link href="ICSS-2026-04-Software_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="ICSS-2026-04-Software_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="ICSS-2026-04-Software_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="ICSS-2026-04-Software_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title"><span class="course">Introduction to Computing for the Social Sciences</span><br><span class="session">Session 4 – Software</span></h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+David Garcia<br><span class="semester">Winter Semester 2026-2027</span> 
+</div>
+</div>
+</div>
+
+</section>
+<section id="course-outline" class="slide level2">
+<h2>Course Outline</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sm">
+<ul>
+<li><em>Session 1: Introduction</em></li>
+<li><em>Session 2: Information Coding</em></li>
+<li><em>Session 3: Data Structures</em></li>
+<li><strong>Session 4: Software</strong></li>
+<li>Session 5: Algorithms</li>
+<li>Session 6: Recursion</li>
+<li>Session 7: Sorting Algorithms</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="sm">
+<ul>
+<li>Session 8: Time Complexity</li>
+<li>Session 9: Theoretical Computer Science</li>
+<li>Session 10: Machine Learning</li>
+<li>Session 11: Databases</li>
+<li>Session 12: Parallel Programming</li>
+<li>Session 13: Social Science Applications</li>
+<li>Session 14: Exam Review</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<div class="outline">
+<ol type="1">
+<li>Programming in a nutshell</li>
+<li>Software engineering</li>
+<li>Requirements, specifications, and design</li>
+<li>Testing</li>
+</ol>
+</div>
+<!-- MOTIVATION:M04-A:BEGIN -->
+</section>
+<section id="the-app-that-leaked-13000-photo-ids" class="slide level2 fit1">
+<h2>The app that leaked 13,000 photo IDs</h2>
+<div class="motivation">
+<p><span class="label">Motivating example</span> <strong>Tea</strong>, a US app where women warn each other about men they date, asked every new user for a selfie and a photo ID to prove she was a woman. In July 2025 someone posted the address of the storage contained all these data. There was <strong>no login and no access rule.</strong> Anyone could download everything.</p>
+</div>
+<div class="figures">
+<div class="fq">
+<p><span class="big">72,000</span><span class="cap">images downloaded</span></p>
+</div>
+<div class="fq">
+<p><span class="big">13,000</span><span class="cap">selfies and photo IDs</span></p>
+</div>
+<div class="fq">
+<p><span class="big">1 million+</span><span class="cap">private messages, in a second leak</span></p>
+</div>
+</div>
+<p><span class="ask"><em>“Only moderators may see the ID photos”</em> was obviously required. Why did nothing enforce it, and which test would have caught it?</span></p>
+<div class="source">
+<p>TechCrunch and CNN, 26 July 2025; 404 Media. Many blamed vibe coding; Tea says the code predates 2024.</p>
+</div>
+<!-- MOTIVATION:M04-A:END -->
+<!-- MOTIVATION:M04-D:BEGIN -->
+</section>
+<section id="million-lines-of-code-to-move-5-millimeters" class="slide level2 fit1">
+<h2>20 million lines of code to move 5 millimeters</h2>
+<div class="motivation">
+<p><span class="label">Motivating example</span> In the 2000s, <strong>Symbian</strong>, the system of Nokia’s phones, ran most of the world’s smartphones. In 2010 a former Nokia design executive told how his team wanted to move one element of a phone’s screen up by 5 mm: <em>“We can’t find the piece of code that could shift it up 5mm.”</em></p>
+</div>
+<div class="figures">
+<div class="fq">
+<p><span class="big">20 million</span><span class="cap">lines of code in one phone</span></p>
+</div>
+<div class="fq">
+<p><span class="big">40 million</span><span class="cap">lines of Symbian released as open source, 2010</span></p>
+</div>
+<div class="fq">
+<p><span class="big">11 million</span><span class="cap">lines of Android at the time</span></p>
+</div>
+</div>
+<p><span class="ask">Nobody wrote this code to be unchangeable. What makes working code impossible to change? What keeps a codebase changeable?</span></p>
+<div class="source">
+<p>Juhani Risku in The Register, 22 July 2010; All About Symbian, 4 February 2010. In 2011 Nokia replaced Symbian with Windows Phone.</p>
+</div>
+<!-- MOTIVATION:M04-D:END -->
+</section>
+<section id="programming-in-a-nutshell" class="slide level2">
+<h2>Programming in a nutshell</h2>
+<div class="outline focus">
+<ol type="1">
+<li><span class="current">Programming in a nutshell</span></li>
+<li>Software engineering</li>
+<li>Requirements, specifications, and design</li>
+<li>Testing</li>
+</ol>
+</div>
+</section>
+<section id="what-is-programming" class="slide level2 fit2">
+<h2>What is programming?</h2>
+<div class="definition">
+<p><span class="label">Definition: Programming</span> Programming is the process of creating a set of instructions that tell a computer how to perform a task.</p>
+</div>
+<div class="definition">
+<p><span class="label">Definition: Programming Language</span></p>
+<div class="sm">
+<p>A formal language for writing those instructions, either directly as machine code or as human-readable source code that is translated to machine code automatically.</p>
+</div>
+</div>
+<div class="concept sm">
+<p><span class="label">Vibe coding is programming too</span> A coding agent automatically converts natural language into machine code, thus vibe coding is a type of programming. The main difference with traditional coding is <strong>flakiness</strong>: the same natural language request can lead to very different codes as a result.</p>
+</div>
+</section>
+<section id="the-first-programmer-ada-lovelace" class="slide level2">
+<h2>The first programmer: Ada Lovelace</h2>
+<div class="columns">
+<div class="column" style="width:41%;">
+<div class="center-h">
+<p><img data-src="figures/ada-lovelace.jpg" style="height:6em"></p>
+</div>
+<div class="xs">
+<ul>
+<li><strong>1843</strong>: Ada Lovelace (1815–1852) writes notes on Babbage’s <strong>Analytical Engine</strong></li>
+<li><strong>Note G</strong> (right): a program for the engine to compute Bernoulli numbers, the first published program</li>
+</ul>
+</div>
+</div><div class="column" style="width:59%;">
+<p><img data-src="figures/lovelace-program.jpg" style="width:96.0%"></p>
+<div class="source">
+<p>Portrait: A. E. Chalon, c.&nbsp;1840. Note G: Lovelace, 1843</p>
+</div>
+</div></div>
+</section>
+<section id="levels-of-programming-languages" class="slide level2">
+<h2>Levels of programming languages</h2>
+<div class="tbl-lang">
+<table style="border:1px solid #666;width:100%">
+<tbody><tr>
+<th style="width:15%">
+Type
+</th>
+<th style="width:16%">
+Examples
+</th>
+<th style="width:35%">
+What it is
+</th>
+<th>
+The same computation
+</th>
+</tr>
+<tr>
+<td class="type">
+High-level
+</td>
+<td class="ex">
+Python, R,<br>Java, C
+</td>
+<td class="desc">
+<ul>
+<li>
+Written for humans, portable
+</li>
+<li>
+One line becomes many machine instructions
+</li>
+</ul>
+</td>
+<td class="ex">
+<pre class="snippet" style="margin:0;font-size:1.0em">area = b * h / 2</pre>
+</td>
+</tr>
+<tr>
+<td class="type" rowspan="2">
+Low-level
+</td>
+<td class="ex">
+Assembly
+</td>
+<td class="desc">
+<ul>
+<li>
+Readable names for machine instructions. Machine dependent.
+</li>
+</ul>
+</td>
+<td class="ex">
+<pre class="snippet" style="margin:0;font-size:1.0em">LOAD r1,b
+LOAD r2,h
+MUL  r1,r2
+DIV  r1,#2</pre>
+</td>
+</tr>
+<tr>
+<td class="ex">
+Machine<br>code
+</td>
+<td class="desc">
+<ul>
+<li>
+Binary instructions the CPU executes
+</li>
+</ul>
+</td>
+<td class="ex">
+<pre class="snippet" style="margin:0;font-size:1.0em">0001001001000101
+0010010011101100
+10101101001...</pre>
+</td>
+</tr>
+</tbody></table>
+</div>
+</section>
+<section id="interpreter-vs.-compiler" class="slide level2">
+<h2>Interpreter vs.&nbsp;compiler</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="concept sm">
+<p><span class="label">Interpreter: Python, R, JavaScript</span></p>
+<ul>
+<li>Translates and runs the code <strong>one line at a time</strong>, on every run</li>
+<li>Errors appear only when the line runs, never before</li>
+</ul>
+</div>
+<p><img data-src="figures/04-interpreter.svg" style="width:100.0%"></p>
+</div><div class="column" style="width:50%;">
+<div class="concept sm">
+<p><span class="label">Compiler: C, C++, (Java)</span></p>
+<ul>
+<li>Translates the <strong>whole program</strong> once into machine code binary file</li>
+<li>Some errors appear before it runs, others require a debugger</li>
+</ul>
+</div>
+<p><img data-src="figures/04-compiler.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section id="programming-paradigms" class="slide level2">
+<h2>Programming paradigms</h2>
+<div class="sm">
+<p>Paradigms classify languages and programs by <strong>how</strong> they express a computation</p>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="concept sm">
+<p><span class="label">Imperative</span> Statements that change the program’s state step by step. Determines <strong>how</strong> to compute.</p>
+</div>
+<div class="concept sm">
+<p><span class="label">Object-oriented</span> Groups data and the instructions that operate on it into <strong>objects</strong>. Models what we compute on.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="concept sm">
+<p><span class="label">Declarative</span> Describes <strong>what</strong> the result should be, not how to compute it.<br>
+(for example SQL, session 11)</p>
+</div>
+<div class="concept sm">
+<p><span class="label">Functional</span> The result is the value of functions applied to functions<br>
+(based on recursion, session 6)</p>
+</div>
+</div></div>
+<div class="xs">
+<p>Python supports all of them: which one you use depends on how you write.</p>
+</div>
+</section>
+<section id="imperative-programming" class="slide level2">
+<h2>Imperative programming</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sm">
+<ul>
+<li>The program has a <strong>state</strong> composed of the current values of its variables</li>
+<li><strong>Assignments</strong> change the state</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="sm">
+<ul>
+<li><strong>Control structures</strong> choose what runs next, for example conditionals and loops</li>
+<li><strong>Functions</strong> name a block of steps that can be reused and centrally changed</li>
+</ul>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:62%;">
+<div style="font-size:1.06em">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>total <span class="op">=</span> <span class="dv">0</span>             <span class="co"># assignment</span></span>
+<span id="cb1-2"><a href=""></a><span class="cf">for</span> age <span class="kw">in</span> [<span class="dv">34</span>, <span class="dv">41</span>]:  <span class="co"># loop</span></span>
+<span id="cb1-3"><a href=""></a>    <span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">18</span>:     <span class="co"># condition</span></span>
+<span id="cb1-4"><a href=""></a>        total <span class="op">+=</span> age</span>
+<span id="cb1-5"><a href=""></a></span>
+<span id="cb1-6"><a href=""></a><span class="kw">def</span> mean(xs):         <span class="co"># function</span></span>
+<span id="cb1-7"><a href=""></a>    <span class="cf">return</span> <span class="bu">sum</span>(xs) <span class="op">/</span> <span class="bu">len</span>(xs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:38%;">
+<div class="concept sm">
+<p><span class="label">Etymology</span> <em>imperare</em>, Latin: <strong>to order, to command</strong>. An imperative program is a sequence of orders, carried out one after the other.</p>
+</div>
+</div></div>
+</section>
+<section id="why-do-we-use-object-oriented-programming" class="slide level2 fit1">
+<h2>Why do we use Object-Oriented Programming?</h2>
+<div class="sm">
+<ul>
+<li>Large programs are written by <strong>teams</strong> and <strong>maintained</strong> for years</li>
+<li>The main motivation is code management: OOP gives each part of the program <strong>one responsibility</strong>, in one class, owned by one person or team</li>
+<li>Others use a class only through its <strong>methods</strong>. Its code can change without affecting the other developers. Developers just need to know the object model, not the code inside.</li>
+</ul>
+</div>
+<div class="center-h">
+<p><img data-src="figures/04-oop-team.svg" style="height:5.6em"></p>
+</div>
+<div class="concept xs">
+<p><span class="label">A note on scale</span> For a one-person script, OOP adds little. But it has become a conceptual building block of many programming languages, Python included: every value in Python is an object.</p>
+</div>
+</section>
+<section id="object-oriented-programming" class="slide level2">
+<h2>Object-oriented programming</h2>
+<div class="sm">
+<ul>
+<li>An <strong>object</strong> bundles <strong>data</strong> (its <em>attributes</em>) with the <strong>operations</strong> on that data (its <em>methods</em>)</li>
+<li>A <strong>class</strong> is the blueprint. Every object is an <strong>instance</strong> of a class</li>
+<li>You query or change an object by calling its methods: <code>object.method(arguments)</code></li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:58%;">
+<p><img data-src="figures/04-class-objects.svg" style="height:8.6em"></p>
+</div><div class="column" style="width:42%;">
+<div style="font-size:0.66em; padding-top:6.2em">
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>ana <span class="op">=</span> Respondent(<span class="st">"Ana"</span>, <span class="dv">34</span>)</span>
+<span id="cb2-2"><a href=""></a>ben <span class="op">=</span> Respondent(<span class="st">"Ben"</span>, <span class="dv">16</span>)</span>
+<span id="cb2-3"><a href=""></a>ana.describe()   <span class="co"># 'Ana, 34 years'</span></span>
+<span id="cb2-4"><a href=""></a>ben.is_adult()   <span class="co"># False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="you-already-use-objects" class="slide level2">
+<h2>You already use objects</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sm">
+<p><strong>Strings</strong></p>
+</div>
+<div style="font-size:0.68em">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>s <span class="op">=</span> <span class="st">"Konstanz"</span></span>
+<span id="cb3-2"><a href=""></a>s.upper()     <span class="co"># 'KONSTANZ'</span></span>
+<span id="cb3-3"><a href=""></a>s.count(<span class="st">"n"</span>)  <span class="co"># 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="sm">
+<p><strong>Dictionaries</strong></p>
+</div>
+<div style="font-size:0.68em">
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a>votes <span class="op">=</span> {<span class="st">"yes"</span>: <span class="dv">12</span>, <span class="st">"no"</span>: <span class="dv">7</span>}</span>
+<span id="cb4-2"><a href=""></a>votes.get(<span class="st">"no"</span>)        <span class="co"># 7</span></span>
+<span id="cb4-3"><a href=""></a>votes.get(<span class="st">"maybe"</span>, <span class="dv">0</span>)  <span class="co"># 0</span></span>
+<span id="cb4-4"><a href=""></a><span class="bu">list</span>(votes.keys())     <span class="co"># ['yes', 'no']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+<p><img data-src="figures/04-dict-objects.svg" style="height:9.2em"></p>
+<div class="xs">
+<p><code>s</code> is a <code>str</code> object, <code>votes</code> a <code>dict</code> object; lists and data frames work the same way.</p>
+</div>
+</section>
+<section id="your-own-class-and-objects" class="slide level2">
+<h2>Your own class and objects</h2>
+<div style="font-size:0.91em">
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="kw">class</span> Respondent:</span>
+<span id="cb5-2"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):      <span class="co"># runs when an object is created</span></span>
+<span id="cb5-3"><a href=""></a>        <span class="va">self</span>.name <span class="op">=</span> name                <span class="co"># attributes</span></span>
+<span id="cb5-4"><a href=""></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb5-5"><a href=""></a></span>
+<span id="cb5-6"><a href=""></a>    <span class="kw">def</span> is_adult(<span class="va">self</span>):                 <span class="co"># methods; self is the object</span></span>
+<span id="cb5-7"><a href=""></a>        <span class="cf">return</span> <span class="va">self</span>.age <span class="op">&gt;=</span> <span class="dv">18</span></span>
+<span id="cb5-8"><a href=""></a></span>
+<span id="cb5-9"><a href=""></a>    <span class="kw">def</span> describe(<span class="va">self</span>):</span>
+<span id="cb5-10"><a href=""></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss"> years"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div class="columns" style="margin-top:2.0em">
+<div class="column" style="width:50%;">
+<div style="font-size:0.91em">
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>ana <span class="op">=</span> Respondent(<span class="st">"Ana"</span>, <span class="dv">34</span>)</span>
+<span id="cb6-2"><a href=""></a>ben <span class="op">=</span> Respondent(<span class="st">"Ben"</span>, <span class="dv">16</span>)</span>
+<span id="cb6-3"><a href=""></a>ana.describe()</span>
+<span id="cb6-4"><a href=""></a>ben.is_adult()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="font-size:0.91em">
+<pre><code>
+
+'Ana, 34 years'
+False</code></pre>
+</div>
+</div></div>
+</section>
+<section id="oop-concepts" class="slide level2">
+<h2>OOP concepts</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<div class="sm">
+<ul>
+<li><strong>Encapsulation:</strong> data and the methods that use it live together in one object.</li>
+</ul>
+</div>
+</div><div class="column" style="width:58%;">
+<div class="center-h">
+<p><img data-src="figures/04-oop-encapsulation.svg" style="height:8.4em"></p>
+</div>
+<div style="font-size:1.2em">
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>ana <span class="op">=</span> Respondent(<span class="st">"Ana"</span>, <span class="dv">34</span>)</span>
+<span id="cb8-2"><a href=""></a>ana.age         <span class="co"># 34</span></span>
+<span id="cb8-3"><a href=""></a>ana.is_adult()  <span class="co"># True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="oop-concepts-1" class="slide level2">
+<h2>OOP concepts</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<div class="sm">
+<ul>
+<li>Encapsulation: data and the methods that use it live together in one object</li>
+<li><strong>Abstraction:</strong> you use an object through its methods, without knowing how it works inside</li>
+</ul>
+</div>
+</div><div class="column" style="width:58%;">
+<div class="center-h">
+<p><img data-src="figures/04-oop-abstraction.svg" style="height:8.4em"></p>
+</div>
+<div style="font-size:0.99em">
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>s <span class="op">=</span> <span class="st">"Konstanz"</span></span>
+<span id="cb9-2"><a href=""></a>s.upper()   <span class="co"># 'KONSTANZ', but how?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="oop-concepts-2" class="slide level2">
+<h2>OOP concepts</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<div class="sm">
+<ul>
+<li>Encapsulation: data and the methods that use it live together in one object</li>
+<li>Abstraction: you use an object through its methods, without knowing how it works inside</li>
+<li><strong>Inheritance:</strong> a new class extends an existing one and reuses its methods: a student <em>is a</em> respondent</li>
+</ul>
+</div>
+</div><div class="column" style="width:58%;">
+<div class="center-h">
+<p><img data-src="figures/04-oop-inheritance.svg" style="height:8.4em"></p>
+</div>
+<div style="font-size:0.81em">
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="kw">class</span> Student(Respondent):</span>
+<span id="cb10-2"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, program):</span>
+<span id="cb10-3"><a href=""></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(name, age)</span>
+<span id="cb10-4"><a href=""></a>        <span class="va">self</span>.program <span class="op">=</span> program</span>
+<span id="cb10-5"><a href=""></a></span>
+<span id="cb10-6"><a href=""></a>bea <span class="op">=</span> Student(<span class="st">"Bea"</span>, <span class="dv">21</span>, <span class="st">"SEDS"</span>)</span>
+<span id="cb10-7"><a href=""></a>bea.is_adult()  <span class="co"># True: inherited</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="oop-concepts-3" class="slide level2">
+<h2>OOP concepts</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<div class="sm">
+<ul>
+<li>Encapsulation: data and the methods that use it live together in one object</li>
+<li>Abstraction: you use an object through its methods, without knowing how it works inside</li>
+<li>Inheritance: a new class extends an existing one and reuses its methods: a student <em>is a</em> respondent</li>
+<li><strong>Polymorphism:</strong> the same call does the right thing for each class</li>
+</ul>
+</div>
+</div><div class="column" style="width:58%;">
+<div class="center-h">
+<p><img data-src="figures/04-oop-polymorphism.svg" style="height:8.4em"></p>
+</div>
+<div style="font-size:0.79em">
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="kw">class</span> Student(Respondent):</span>
+<span id="cb11-2"><a href=""></a>    <span class="kw">def</span> describe(<span class="va">self</span>):</span>
+<span id="cb11-3"><a href=""></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>program<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb11-4"><a href=""></a>ana.describe()  <span class="co"># 'Ana, 34 years'</span></span>
+<span id="cb11-5"><a href=""></a>bea.describe()  <span class="co"># 'Bea: SEDS'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="software-engineering" class="slide level2">
+<h2>Software engineering</h2>
+<div class="outline focus">
+<ol type="1">
+<li>Programming in a nutshell</li>
+<li><span class="current">Software engineering</span></li>
+<li>Requirements, specifications, and design</li>
+<li>Testing</li>
+</ol>
+</div>
+</section>
+<section id="what-is-software" class="slide level2">
+<h2>What is software?</h2>
+<div class="definition">
+<p><span class="label">Definition: Software</span> Computer programs, procedures, and possibly associated documentation and data pertaining to the operation of a computer system.</p>
+</div>
+<div class="center-h">
+<p><img data-src="figures/04-software.svg" style="height:7.2em"></p>
+</div>
+<div class="source">
+<p>IEEE Std 610.12-1990, <em>Standard Glossary of Software Engineering Terminology</em></p>
+</div>
+</section>
+<section id="from-a-script-to-software" class="slide level2">
+<h2>From a script to software</h2>
+<div class="definition">
+<p><span class="label">Definition: Software engineering</span></p>
+<div class="sm">
+<p>The application of a systematic, disciplined approach to the development, operation and maintenance of software.</p>
+</div>
+</div>
+<div class="center-h">
+<p><img data-src="figures/04-script-to-software.svg" style="height:8em"></p>
+</div>
+<div class="sm">
+<p>Research code needs this too. Software outlives the paper and others build on it.</p>
+</div>
+</section>
+<section id="a-typical-software-engineering-flow" class="slide level2">
+<h2>A typical software engineering flow</h2>
+<p><br> <img data-src="figures/04-se-flow.svg" style="width:100.0%"></p>
+<div class="sm">
+<ul>
+<li>Real projects go around this loop many times, in small steps (<strong>iterative</strong> development)</li>
+<li>Two steps define correctness: the <strong>specification</strong> says what is right, <strong>testing</strong> checks it</li>
+</ul>
+</div>
+</section>
+<section id="roles-in-a-software-team" class="slide level2 fit1">
+<h2>Roles in a software team</h2>
+<div class="center-h">
+<p><img data-src="figures/04-roles.svg" style="height:9.4em"></p>
+</div>
+<div class="sm">
+<ul>
+<li>Each stage has an owner: the <strong>analyst</strong> finds out what is needed, the <strong>architect</strong> splits the work, the <strong>coder</strong> implements, the <strong>tester</strong> checks, the <strong>maintainer</strong> keeps it running</li>
+<li>The <strong>coder</strong> can be a person or a coding agent: both work from the same instructions</li>
+<li>In academic research you often play every role yourself but in industry you will have to work with more people</li>
+</ul>
+</div>
+</section>
+<section id="vibe-coding-done-right" class="slide level2">
+<h2>Vibe coding done right</h2>
+<div class="center-h">
+<p><img data-src="figures/04-se-flow-vibe.svg" style="width:100.0%"></p>
+</div>
+<div class="sm">
+<ul>
+<li><strong>Vibe coding</strong>: describe what you want, accept the generated code without reading it, and see whether it seems to work</li>
+<li>A coding agent can take the <strong>coder’s</strong> role. Agents can sometimes help on the design and the testing but especially requirements and specifications are dangerous to vibe code</li>
+</ul>
+</div>
+</section>
+<section id="requirements-specifications-and-design" class="slide level2">
+<h2>Requirements, specifications, and design</h2>
+<div class="outline focus">
+<ol type="1">
+<li>Programming in a nutshell</li>
+<li>Software engineering</li>
+<li><span class="current">Requirements, specifications, and design</span></li>
+<li>Testing</li>
+</ol>
+</div>
+</section>
+<section id="our-example-a-panel-survey-in-two-waves" class="slide level2 fit2">
+<h2>Our example: a panel survey in two waves</h2>
+<div class="example sm">
+<p>Ana, the client, says: <em>“We asked the same people the same question in spring and in autumn. I need everyone’s two answers side by side to see who changed their mind. Please, no email addresses in what I share with the team.”</em></p>
+</div>
+<div class="center-h">
+<p><img data-src="figures/04-panel-example.svg" style="width:100.0%"></p>
+</div>
+<div class="sm">
+<p>Here we use this request as an example that goes over each stage of the sofware engineering flow, from requirements to maintenance</p>
+</div>
+</section>
+<section id="what-are-requirements" class="slide level2 fit1">
+<h2>What are requirements?</h2>
+<div class="definition">
+<p><span class="label">Definition: Requirements</span></p>
+<div class="sm">
+<p>Description of what the software must achieve, for whom, and under which constraints and conditions. This is written in the words of the people who need it.</p>
+</div>
+</div>
+<div class="sm">
+<ul>
+<li>The <strong>analyst</strong> collects requirements from the <strong>client</strong>, who may be a research team, a colleague, a target user, or yourself in three months</li>
+<li>They describe the need, not the program. <em>“Everyone’s two answers side by side, with no email addresses”</em> is a requirement</li>
+<li>Four questions find most of them. <strong>Who</strong> uses it? With <strong>which data</strong>? What must <strong>never</strong> happen? When is it <strong>done</strong>?</li>
+<li>A misunderstanding found here costs a conversation with the client. Found after the code is written, it costs work and risks that can be avoided.</li>
+</ul>
+</div>
+</section>
+<section id="functional-and-non-functional-requirements" class="slide level2 fit1">
+<h2>Functional and non-functional requirements</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="concept sm">
+<p><span class="label">Functional</span></p>
+<p><strong>Functional requirements map inputs to outputs.</strong></p>
+<p>In the example:</p>
+<ul>
+<li><p>Only people in both waves are paired, also if they typed their email differently.</p></li>
+<li><p>People only in one wave do not appear in the output</p></li>
+<li><p>An empty wave raises an error</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="concept sm">
+<p><span class="label">Non-functional</span> <strong>How the program must behave beyond its outputs</strong></p>
+<p>In the example:</p>
+<ul>
+<li><strong>security</strong>: users see only their own data</li>
+<li><strong>privacy</strong>: no email addresses in the output</li>
+<li><strong>safety</strong>: never delete or change the original data</li>
+<li>performance, reproducibility</li>
+</ul>
+</div>
+</div></div>
+<div class="sm">
+<p>Tea met its functional requirements because users could talk with each other as intended. Nobody had written down the non-functional requirements, especially not the one about who is allowed to access user pictures.</p>
+</div>
+</section>
+<section id="what-is-a-specification" class="slide level2">
+<h2>What is a specification?</h2>
+<div class="definition">
+<p><span class="label">Definition: Specification</span></p>
+<div class="sm">
+<p>A precise description of <strong>what</strong> a program must do, without saying <strong>how</strong>.</p>
+</div>
+</div>
+<div class="sm">
+<ul>
+<li>Essentially a better-written version of a requirement.</li>
+<li>The <strong>inputs</strong>, and what may be assumed about them (the <em>preconditions</em>)</li>
+<li>The <strong>outputs</strong>, and what is guaranteed about them (the <em>postconditions</em>)</li>
+<li>What happens in <strong>edge cases and errors</strong> and what the program must <strong>never</strong> do</li>
+<li>The analyst writes it for two readers. The <strong>coder</strong> implements it, and the <strong>tester</strong> checks the code against it</li>
+</ul>
+</div>
+<div class="xs">
+<p>In this course, you find specifications for each algorithm next to <code>Inputs:</code> and <code>Result:</code></p>
+</div>
+</section>
+<section id="from-ambiguous-request-to-specification" class="slide level2">
+<h2>From ambiguous request to specification</h2>
+<div class="example">
+<div class="sm">
+<p><em>“Write a function that links the two waves of our panel survey, so we can see who changed their answer.”</em></p>
+</div>
+</div>
+<div class="sm">
+<p>A careful coder asks these five questions. A hurried coder, human or agent, answers them alone and in silence.</p>
+</div>
+<div class="sm">
+<ol type="1">
+<li>When are two records the same person? Is <code>" Ana@Uni.de"</code> the same as <code>"ana@uni.de"</code>?</li>
+<li>What if someone answered twice in the same wave?</li>
+<li>What happens to people who answered only once?</li>
+<li>May email addresses appear in the result?</li>
+<li>May the function change the lists it was given?</li>
+</ol>
+</div>
+</section>
+<section id="writing-the-specification" class="slide level2">
+<h2>Writing the specification</h2>
+<div style="font-size:0.94em">
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="kw">def</span> link_waves(wave1, wave2):</span>
+<span id="cb12-2"><a href=""></a>    <span class="co">"""Pair the answers of the people in both waves.</span></span>
+<span id="cb12-3"><a href=""></a></span>
+<span id="cb12-4"><a href=""></a><span class="co">    wave1, wave2: lists of (email, answer) pairs.</span></span>
+<span id="cb12-5"><a href=""></a><span class="co">    Emails match ignoring case and surrounding spaces.</span></span>
+<span id="cb12-6"><a href=""></a><span class="co">    If someone answered twice in a wave, the last answer counts.</span></span>
+<span id="cb12-7"><a href=""></a><span class="co">    Returns: a dict from pseudonym(email) to (answer1, answer2),</span></span>
+<span id="cb12-8"><a href=""></a><span class="co">      only for the people in both waves.</span></span>
+<span id="cb12-9"><a href=""></a><span class="co">    Raises: ValueError if a wave is empty.</span></span>
+<span id="cb12-10"><a href=""></a><span class="co">    Never: puts an email in the result or changes the lists.</span></span>
+<span id="cb12-11"><a href=""></a><span class="co">    """</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="sm">
+<ul>
+<li>Each line answers one of the five questions</li>
+<li>One extra line settles the empty case</li>
+<li>Nothing here says <strong>how</strong> to link the waves, only <strong>what</strong> we want</li>
+</ul>
+</div>
+</section>
+<section id="the-specification-is-the-coders-instructions" class="slide level2 fit2">
+<h2>The specification is the coder’s instructions</h2>
+<div class="columns">
+<div class="column" style="width:44%;">
+<div class="example sm">
+<p><strong>Vague instructions</strong></p>
+<p><em>“Write a function that links the two waves.”</em></p>
+</div>
+</div><div class="column" style="width:56%;">
+<div class="example sm">
+<p><strong>Specified instructions</strong></p>
+<p><em>“Write <code>link_waves(wave1, wave2)</code>. Each wave is a list of (email, answer) pairs. Match emails ignoring case and spaces. If someone answered twice, keep the last answer. Return a dict from <code>pseudonym(email)</code> to the two answers, for the people in both waves. Raise <code>ValueError</code> if a wave is empty. Never put an email in the result or change the lists. Use only the standard library.”</em></p>
+</div>
+</div></div>
+<ul>
+<li>Precise instructions get better code from any coder.</li>
+<li><strong>Important:</strong> specifications give you something to <strong>test</strong> the code against</li>
+<li>A rule that must never be broken needs more than instructions. Enforce it with permissions, backups, and separate test and production data</li>
+</ul>
+</section>
+<section id="one-specification-any-coder" class="slide level2">
+<h2>One specification, any coder</h2>
+<div class="center-h">
+<p><img data-src="figures/04-any-coder.svg" style="width:90.0%"></p>
+</div>
+<div class="sm">
+<ul>
+<li>A colleague and a coding agent receive <strong>the same instructions</strong> and their code has to pass <strong>the same tests</strong></li>
+<li>The tester writes the tests from the specification, not from the code. Tests are done against was asked rather than what was coded.<br>
+</li>
+<li>Ideally, coders and testers are different people (and tend to hate each other)</li>
+</ul>
+</div>
+</section>
+<section id="what-not-how" class="slide level2">
+<h2>What, not how</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="center-h">
+<p><img data-src="figures/xkcd-1425-tasks.png" style="height:12.4em"></p>
+</div>
+</div><div class="column" style="width:70%;">
+<div class="sm">
+<ul>
+<li>Requirements and the specification say <strong>what</strong> the software must do. The design says <strong>how</strong></li>
+<li>Clients and analysts describe the need and the result, not the solution. <em>“Everyone’s two answers side by side”</em> leaves the how open</li>
+<li>The how decides the <strong>cost</strong>. Two requests that sound alike can differ by years of work, as in the comic</li>
+<li>Estimates of cost and effort are made at the <strong>design</strong> stage, once the architect knows how the work will be split</li>
+</ul>
+</div>
+</div></div>
+<div class="source">
+<p>xkcd 1425, “Tasks”, by Randall Munroe (2014), CC BY-NC 2.5</p>
+</div>
+</section>
+<section id="design-small-subtasks-with-clear-connections" class="slide level2 fit1">
+<h2>Design: Small subtasks with clear connections</h2>
+<div class="center-h">
+<p><img data-src="figures/04-design-pipeline.svg" style="width:88.0%"></p>
+</div>
+<div class="sm">
+<ul>
+<li>The <strong>architect</strong> designs how to implement the specifications by breaking the program into <strong>small parts</strong>, each with one job and its own specification</li>
+<li>The architect also decides <strong>what data flows between the parts</strong> and in which data structure</li>
+<li>Small parts are easier to test, easier to replace, and easier to hand to a coder. They are usually the size of a function or a kind of atomic component</li>
+</ul>
+</div>
+</section>
+<section id="design-choosing-the-data-structures" class="slide level2">
+<h2>Design: choosing the data structures</h2>
+<div class="tbl-grid sm">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>The program needs to…</th>
+<th>Data structure (session 3)</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>keep items in order</td>
+<td>list</td>
+<td>the (email, answer) pairs of a wave</td>
+</tr>
+<tr class="even">
+<td>look something up by a key</td>
+<td>dictionary</td>
+<td>pseudonym → answer, one per wave</td>
+</tr>
+<tr class="odd">
+<td>check membership fast</td>
+<td>set</td>
+<td>the pseudonyms in both waves</td>
+</tr>
+<tr class="even">
+<td>serve first come, first served</td>
+<td>queue</td>
+<td>a waiting list for a seminar (to be covered in session 5)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<p>A coder, human or agent, writes better code inside a structure the architect chose than inside one it invented on the spot</p>
+</section>
+<section id="skipping-the-design-spaghetti-code" class="slide level2">
+<h2>Skipping the design: spaghetti code</h2>
+<div class="center-h">
+<p><img data-src="figures/04-spaghetti.svg" style="height:8.1em"></p>
+</div>
+<div class="sm">
+<ul>
+<li>Without a design, every new need is patched in wherever it fits: duplicated parts, a global variable that everything changes, code nobody dares to remove</li>
+<li>Every later change then touches many parts, and no part can be tested on its own</li>
+<li>Design is <strong>pre-work</strong>: an hour of design saves days of coding, debugging and testing down the road</li>
+</ul>
+</div>
+</section>
+<section id="testing" class="slide level2">
+<h2>Testing</h2>
+<div class="outline focus">
+<ol type="1">
+<li>Programming in a nutshell</li>
+<li>Software engineering</li>
+<li>Requirements, specifications, and design</li>
+<li><span class="current">Testing</span></li>
+</ol>
+</div>
+</section>
+<section id="what-is-a-test" class="slide level2">
+<h2>What is a test?</h2>
+<div class="definition">
+<p><span class="label">Definition: Test</span></p>
+<div class="sm">
+<p>A small program that runs your code on an input whose correct output you know, and checks that the code produces the expected output.</p>
+</div>
+</div>
+<div style="font-size:0.8em">
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>w1 <span class="op">=</span> [(<span class="st">"ana@uni.de"</span>, <span class="st">"yes"</span>), (<span class="st">"ben@uni.de"</span>, <span class="st">"no"</span>)]</span>
+<span id="cb13-2"><a href=""></a>w2 <span class="op">=</span> [(<span class="st">"ana@uni.de"</span>, <span class="st">"no"</span>), (<span class="st">"eva@uni.de"</span>, <span class="st">"yes"</span>)]</span>
+<span id="cb13-3"><a href=""></a><span class="cf">assert</span> <span class="bu">list</span>(link_waves(w1, w2).values()) <span class="op">==</span> [(<span class="st">"yes"</span>, <span class="st">"no"</span>)]</span>
+<span id="cb13-4"><a href=""></a><span class="cf">assert</span> <span class="st">"ana@uni.de"</span> <span class="kw">not</span> <span class="kw">in</span> <span class="bu">str</span>(link_waves(w1, w2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>The specification says what should happen. The <strong>tester’s</strong> tests check that it does</p></li>
+<li><p>A failing <code>assert</code> stops the program with an error. This makes errors loud and prevent quiet errors that are only detected later</p></li>
+</ul>
+</section>
+<section id="what-is-pytest" class="slide level2">
+<h2>What is pytest?</h2>
+<div class="center-h">
+<p><img data-src="figures/04-pytest.svg" style="height:7.9em"></p>
+</div>
+<div class="sm">
+<ul>
+<li><strong>pytest</strong> is a Python package for running tests</li>
+<li>You can install it with <code>pip install pytest</code></li>
+<li>A test is a function named <code>test_...</code> in a file named <code>test_...</code>. It <strong>passes</strong> if it runs to the end and <strong>fails</strong> on a failed <code>assert</code> or an unexpected error</li>
+<li>One command finds all the tests, runs them, and reports which ones failed and why</li>
+</ul>
+</div>
+</section>
+<section id="tests-with-pytest-the-test-file" class="slide level2">
+<h2>Tests with pytest: the test file</h2>
+<div class="columns">
+<div class="column" style="width:64%;">
+<div style="font-size:0.78em">
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="co"># test_panel.py</span></span>
+<span id="cb14-2"><a href=""></a><span class="im">import</span> pytest</span>
+<span id="cb14-3"><a href=""></a><span class="im">from</span> panel <span class="im">import</span> link_waves</span>
+<span id="cb14-4"><a href=""></a></span>
+<span id="cb14-5"><a href=""></a>W1 <span class="op">=</span> [(<span class="st">"ana@uni.de"</span>, <span class="st">"yes"</span>),</span>
+<span id="cb14-6"><a href=""></a>      (<span class="st">"ben@uni.de"</span>, <span class="st">"no"</span>)]</span>
+<span id="cb14-7"><a href=""></a>W2 <span class="op">=</span> [(<span class="st">"ana@uni.de"</span>, <span class="st">"no"</span>),</span>
+<span id="cb14-8"><a href=""></a>      (<span class="st">"eva@uni.de"</span>, <span class="st">"yes"</span>)]</span>
+<span id="cb14-9"><a href=""></a></span>
+<span id="cb14-10"><a href=""></a><span class="kw">def</span> test_typical():</span>
+<span id="cb14-11"><a href=""></a>    pairs <span class="op">=</span> link_waves(W1, W2)</span>
+<span id="cb14-12"><a href=""></a>    <span class="cf">assert</span> <span class="bu">list</span>(pairs.values()) <span class="op">==</span> [(<span class="st">"yes"</span>, <span class="st">"no"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:36%;">
+<div class="sm">
+<ul>
+<li>The test file imports the function it tests from <code>panel.py</code></li>
+<li><code>W1</code> and <code>W2</code> are small test data, shared by all tests</li>
+<li><code>test_typical</code> checks the ordinary case. Ana answered in both waves, so there is one pair</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="tests-with-pytest-edge-cases" class="slide level2">
+<h2>Tests with pytest: edge cases</h2>
+<div style="font-size:0.9em">
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="kw">def</span> test_case_and_spaces_are_ignored():</span>
+<span id="cb15-2"><a href=""></a>    w2 <span class="op">=</span> [(<span class="st">" Ana@Uni.de"</span>, <span class="st">"no"</span>)]</span>
+<span id="cb15-3"><a href=""></a>    <span class="cf">assert</span> <span class="bu">len</span>(link_waves(W1, w2)) <span class="op">==</span> <span class="dv">1</span></span>
+<span id="cb15-4"><a href=""></a></span>
+<span id="cb15-5"><a href=""></a><span class="kw">def</span> test_no_emails_in_result():</span>
+<span id="cb15-6"><a href=""></a>    pairs <span class="op">=</span> link_waves(W1, W2)</span>
+<span id="cb15-7"><a href=""></a>    <span class="cf">assert</span> <span class="st">"ana@uni.de"</span> <span class="kw">not</span> <span class="kw">in</span> <span class="bu">str</span>(pairs)</span>
+<span id="cb15-8"><a href=""></a></span>
+<span id="cb15-9"><a href=""></a><span class="kw">def</span> test_empty_wave_raises():</span>
+<span id="cb15-10"><a href=""></a>    <span class="cf">with</span> pytest.raises(<span class="pp">ValueError</span>):</span>
+<span id="cb15-11"><a href=""></a>        link_waves(W1, [])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="sm">
+<p>Each test checks one line of the specification. The last one uses <code>pytest.raises</code> to check that an error is raised</p>
+</div>
+</section>
+<section>
+<section id="example-a-quick-implementation-meets-the-tests" class="title-slide slide level1 center">
+<h1>Example: A quick implementation meets the tests</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size:0.73em">
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="kw">def</span> link_waves(wave1, wave2):</span>
+<span id="cb16-2"><a href=""></a>    first <span class="op">=</span> <span class="bu">dict</span>(wave1)</span>
+<span id="cb16-3"><a href=""></a>    <span class="cf">return</span> {email: (first[email], answer)</span>
+<span id="cb16-4"><a href=""></a>            <span class="cf">for</span> email, answer <span class="kw">in</span> wave2</span>
+<span id="cb16-5"><a href=""></a>            <span class="cf">if</span> email <span class="kw">in</span> first}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="sm">
+<p>A coder’s first try. Plausible, short, and wrong three times</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="font-size:0.69em">
+<pre><code>$ pytest -q
+.FFF
+FAILED test_case_and_spaces_are_ignored
+  assert 0 == 1
+FAILED test_no_emails_in_result
+  'ana@uni.de' is contained here
+FAILED test_empty_wave_raises
+  DID NOT RAISE ValueError
+3 failed, 1 passed</code></pre>
+</div>
+</div></div>
+<div class="sm">
+<ul>
+<li>It compares emails exactly, so <code>" Ana@Uni.de"</code> becomes a new person and panel members <strong>quietly disappear</strong></li>
+<li>It keys the result by email, so the privacy requirement is broken without any error</li>
+<li>The fix is to clean each email, key the result by <code>pseudonym(email)</code>, and raise an error if a wave is empty. Then all four tests pass</li>
+</ul>
+</div>
+</section>
+<section id="choosing-test-cases" class="slide level2">
+<h2>Choosing test cases</h2>
+<div class="tbl-grid">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kind</th>
+<th>Example input</th>
+<th>Expected</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Typical</td>
+<td>Ana in both waves, Ben and Eva in one</td>
+<td>one pair, <code>("yes", "no")</code></td>
+</tr>
+<tr class="even">
+<td>Spelling</td>
+<td><code>" Ana@Uni.de"</code> and <code>"ana@uni.de"</code></td>
+<td>the same person</td>
+</tr>
+<tr class="odd">
+<td>Duplicates</td>
+<td>Ana twice in wave 1</td>
+<td>her last answer</td>
+</tr>
+<tr class="even">
+<td>Boundary</td>
+<td>nobody in both waves</td>
+<td><code>{}</code></td>
+</tr>
+<tr class="odd">
+<td>Empty</td>
+<td><code>[]</code> as a wave</td>
+<td><code>ValueError</code></td>
+</tr>
+<tr class="even">
+<td>Must not happen</td>
+<td>an email in the result, a changed list</td>
+<td>never</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sm">
+<p>Write one test for every line of the specification, and more wherever it draws a line, such as spelling, duplicates, nobody in common, and empty input</p>
+</div>
+</section>
+<section id="test-first-then-implement" class="slide level2">
+<h2>Test first, then implement</h2>
+<div class="center-h">
+<p><img data-src="figures/04-test-first.svg" style="width:100.0%"></p>
+</div>
+<ul>
+<li>The tests exist <strong>before</strong> the code, so they record what was meant and not what the code happens to do</li>
+<li>The tests are your measurement. They replace the feeling that the code works with evidence that it does. Adapting tests to existing code is a mistake that invalidates the original purpose of testing</li>
+</ul>
+</section>
+<section id="maintenance-example-the-third-wave-arrives" class="slide level2">
+<h2>Maintenance example: the third wave arrives</h2>
+<div class="example sm">
+<p><em>“Great! In spring we run a third wave. Can we link all three?”</em> (Ana, a year later)</p>
+</div>
+<div class="center-h">
+<p><img data-src="figures/04-maintenance.svg" style="width:88.0%"></p>
+</div>
+<div class="sm">
+<p>The <strong>maintainer</strong> goes through the flow again on a small scale. First the specification changes, then the tests, then the code</p>
+</div>
+</section>
+<section id="the-flow-leaves-documentation-behind" class="slide level2">
+<h2>The flow leaves documentation behind</h2>
+<div class="center-h">
+<p><img data-src="figures/04-documentation.svg" style="height:8.4em"></p>
+</div>
+<div class="example sm">
+<p><span class="label">Symbian</span> 20 million lines of code and no map of them. Moving an element by 5 mm needs to know which part draws the screen and what depends on it. A design document would have said where; tests would have said what breaks</p>
+</div>
+</section>
+<section id="what-tests-cannot-do" class="slide level2">
+<h2>What tests cannot do</h2>
+<div class="example">
+<div class="sm">
+<p><em>“Program testing can be used to show the presence of bugs, but never to show their absence.”</em><br> Edsger W. Dijkstra, <em>Notes on Structured Programming</em> (1970)</p>
+</div>
+</div>
+<div class="sm">
+<ul>
+<li>Tests check only the cases you thought of. A missing requirement produces missing tests</li>
+<li><strong>Software verification</strong> goes further. It <em>proves</em>, with mathematics, that a program meets its specification for <strong>every</strong> input. It is expensive, so it is used where failure is unacceptable, as in aircraft control, railway signaling and operating system kernels</li>
+<li>For research code, the practical combination is a specification, tests, and <strong>reading</strong> the code you did not write</li>
+</ul>
+</div>
+</section>
+<section id="a-proof-instead-of-a-test-a-loop-invariant" class="slide level2 fit1">
+<h2>A proof instead of a test: a loop invariant</h2>
+<div class="concept sm">
+<p><span class="label">Loop invariant</span> A statement that is true before every turn of a loop. Here: <code>total</code> is the sum of the first <code>i</code> elements</p>
+</div>
+<div class="columns">
+<div class="column" style="width:52%;">
+<div style="font-size:0.82em">
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a><span class="kw">def</span> mean(xs):</span>
+<span id="cb18-2"><a href=""></a>    <span class="co">"""xs: a non-empty list of numbers.</span></span>
+<span id="cb18-3"><a href=""></a><span class="co">    Returns: their mean."""</span></span>
+<span id="cb18-4"><a href=""></a>    total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb18-5"><a href=""></a>    i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb18-6"><a href=""></a>    <span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(xs):</span>
+<span id="cb18-7"><a href=""></a>        <span class="co"># invariant: total == sum(xs[:i])</span></span>
+<span id="cb18-8"><a href=""></a>        total <span class="op">=</span> total <span class="op">+</span> xs[i]</span>
+<span id="cb18-9"><a href=""></a>        i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb18-10"><a href=""></a>    <span class="cf">return</span> total <span class="op">/</span> <span class="bu">len</span>(xs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:48%;">
+<div class="sm">
+<ol type="1">
+<li><strong>Before the loop</strong>: <code>i</code> and <code>total</code> are 0, the sum of no elements</li>
+<li><strong>Each turn</strong>: <code>total</code> gains <code>xs[i]</code> and <code>i</code> grows by 1, so the invariant still holds</li>
+<li><strong>After the loop</strong>: <code>i == len(xs)</code>, so <code>total</code> is the sum of all elements. The list is not empty, so there is no division by zero</li>
+</ol>
+</div>
+</div></div>
+<div class="sm">
+<p>A test checks one list. This argument covers <strong>every</strong> non-empty list. Verification tools check such arguments by computer</p>
+</div>
+</section>
+<section id="summary" class="slide level2 fit2">
+<h2>Summary</h2>
+<div class="sm">
+<ul>
+<li>A <strong>program</strong> is a precise list of instructions, run by an <strong>interpreter</strong> or translated by a <strong>compiler</strong></li>
+<li><strong>Paradigms</strong> differ in how they express a computation. Imperative programs change state step by step, and <strong>objects</strong> bundle data with methods, as in <code>s.upper()</code> or your own classes</li>
+<li><strong>Software engineering</strong> puts coding inside a loop of requirements, specification, design, implementation, testing and maintenance</li>
+<li><strong>Requirements</strong> say what is needed, the <strong>specification</strong> says exactly what the program must do, and the <strong>design</strong> splits it into small parts</li>
+<li>A <strong>test</strong> runs the code on cases with known answers. Write the tests first, then implement, whoever the coder is</li>
+<li>With coding agents, implementation is cheap. <strong>Everything around it</strong> is the part you cannot delegate</li>
+</ul>
+</div>
+<div class="concept xs">
+<p><strong>Research assistant job opening:</strong> help review the psychological literature for simulations of human behavior with LLMs. Interested? Drop me an email or talk to me after class</p>
+</div>
+<p><strong>Next session:</strong> Algorithms</p>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../theme/unikn-logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><span class="fbar-left">Session 04</span><span class="fbar-mid">Introduction to Computing for the Social Sciences</span><span class="fbar-right">Winter Semester 2026-2027</span></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="ICSS-2026-04-Software_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="ICSS-2026-04-Software_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="ICSS-2026-04-Software_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="ICSS-2026-04-Software_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="ICSS-2026-04-Software_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="ICSS-2026-04-Software_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="ICSS-2026-04-Software_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="ICSS-2026-04-Software_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="ICSS-2026-04-Software_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="ICSS-2026-04-Software_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 6.0e-2,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+              // target, if specified
+              link.setAttribute("target", "_blank");
+              if (link.getAttribute("rel") === null) {
+                link.setAttribute("rel", "noopener");
+              }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

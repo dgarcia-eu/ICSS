@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 332" width="820" height="332" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker></defs>
+  <rect x="20" y="40" width="300" height="180" rx="10" fill="#a6e1f4" stroke="#3e5496" stroke-width="2.5"/>
+  <text x="170.0" y="67" font-size="19" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">class dict</text>
+  <line x1="20" y1="80" x2="320" y2="80" stroke="#3e5496" stroke-width="1.5"/>
+  <text x="34" y="104" font-size="16" fill="#111" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">keys</text>
+  <text x="34" y="130" font-size="16" fill="#111" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">values</text>
+  <line x1="20" y1="146" x2="320" y2="146" stroke="#3e5496" stroke-width="1.5"/>
+  <text x="34" y="170" font-size="16" fill="#3e5496" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">get(key, default)</text>
+  <text x="34" y="196" font-size="16" fill="#3e5496" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">keys()</text>
+  <text x="170" y="24" font-size="16" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="middle">the blueprint</text>
+  <text x="26" y="246" font-size="15" fill="#333" font-weight="normal" font-style="normal" text-anchor="start">attributes: the data · methods: what it can do</text>
+  <rect x="520" y="30" width="280" height="128" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="660.0" y="57" font-size="19" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">votes: a dict</text>
+  <line x1="520" y1="70" x2="800" y2="70" stroke="#00a9e0" stroke-width="1.5"/>
+  <text x="534" y="94" font-size="16" fill="#111" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">"yes" → 12</text>
+  <text x="534" y="120" font-size="16" fill="#111" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">"no" → 7</text>
+  <line x1="512" y1="94.0" x2="326" y2="75.0" stroke="#3e5496" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#a)"/>
+  <rect x="520" y="160" width="280" height="128" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="660.0" y="187" font-size="19" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">ages: a dict</text>
+  <line x1="520" y1="200" x2="800" y2="200" stroke="#00a9e0" stroke-width="1.5"/>
+  <text x="534" y="224" font-size="16" fill="#111" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">"Ana" → 34</text>
+  <text x="534" y="250" font-size="16" fill="#111" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">"Ben" → 16</text>
+  <line x1="512" y1="224.0" x2="326" y2="125.0" stroke="#3e5496" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#a)"/>
+  <text x="420" y="134" font-size="15" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="middle">instance of</text>
+  <text x="660" y="320" font-size="16" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="middle">the objects: each has its own data</text>
+</svg>

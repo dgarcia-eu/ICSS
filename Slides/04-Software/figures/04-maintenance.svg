@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1104 332" width="1104" height="332" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker></defs>
+  <rect x="6" y="40" width="300" height="120" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="156.0" y="28" font-size="17" fill="#666666" font-weight="bold" font-style="normal" text-anchor="middle">unchanged</text>
+  <text x="156.0" y="74" font-size="18" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">read_wave(path)</text>
+  <text x="156.0" y="110" font-size="18" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">reads wave 3 like the others</text>
+  <line x1="309" y1="100" x2="399" y2="100" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="402" y="40" width="300" height="120" rx="10" fill="#fff3e0" stroke="#e07b00" stroke-width="2.5"/>
+  <text x="552.0" y="28" font-size="17" fill="#e07b00" font-weight="bold" font-style="normal" text-anchor="middle">changed</text>
+  <text x="552.0" y="74" font-size="18" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">link_waves(waves)</text>
+  <text x="552.0" y="110" font-size="18" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">any number of waves:</text>
+  <text x="552.0" y="136" font-size="18" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">spec, tests, code, in order</text>
+  <line x1="705" y1="100" x2="795" y2="100" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="798" y="40" width="300" height="120" rx="10" fill="#fff3e0" stroke="#e07b00" stroke-width="2.5"/>
+  <text x="948.0" y="28" font-size="17" fill="#e07b00" font-weight="bold" font-style="normal" text-anchor="middle">changed</text>
+  <text x="948.0" y="74" font-size="18" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">report(pairs)</text>
+  <text x="948.0" y="110" font-size="18" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">one more column</text>
+  <line x1="552.0" y1="196" x2="552.0" y2="163" stroke="#3e5496" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#a)"/>
+  <rect x="412" y="226" width="280" height="100" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.5"/>
+  <text x="552.0" y="216" font-size="17" fill="#666666" font-weight="bold" font-style="normal" text-anchor="middle">unchanged</text>
+  <text x="552.0" y="258" font-size="18" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">pseudonym(email)</text>
+  <text x="552.0" y="288" font-size="17" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">the secret must stay the same,</text>
+  <text x="552.0" y="310" font-size="17" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">or wave 3 cannot be linked</text>
+  <circle cx="66" cy="246.0" r="13.0" fill="#59c7eb"/>
+  <path d="M 44.0 284.0 V 278.0 A 22.0 22.0 0 0 1 88.0 278.0 V 284.0 Z" fill="#59c7eb"/>
+  <text x="66" y="310" font-size="18" fill="#3e5496" font-weight="bold" font-style="normal" text-anchor="middle">maintainer</text>
+  <text x="948.0" y="266" font-size="18" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="middle">the four old tests run again</text>
+  <text x="948.0" y="290" font-size="18" fill="#3e5496" font-weight="normal" font-style="italic" text-anchor="middle">after every change:</text>
+  <text x="948.0" y="314" font-size="18" fill="#3e5496" font-weight="bold" font-style="italic" text-anchor="middle">regression tests</text>
+</svg>

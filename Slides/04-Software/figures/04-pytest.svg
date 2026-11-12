@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1176 310" width="1176" height="310" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker></defs>
+  <path d="M 10 30 H 90 L 106 46 H 318 V 296 H 10 Z" fill="#fbfbfb" stroke="#666666" stroke-width="2"/>
+  <text x="164" y="70" font-size="20" fill="#666666" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">survey/</text>
+  <path d="M 26 88 H 120 L 138 106 V 166 H 26 Z" fill="#ffffff" stroke="#666666" stroke-width="2"/>
+  <text x="82.0" y="116" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace"></text>
+  <line x1="40" y1="134" x2="124" y2="134" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="40" y1="148" x2="94" y2="148" stroke="#c8c8c8" stroke-width="5"/>
+  <text x="82" y="114" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">panel.py</text>
+  <text x="82" y="184" font-size="17" fill="#444" font-weight="normal" font-style="italic" text-anchor="middle">the code</text>
+  <path d="M 150 88 H 292 L 310 106 V 166 H 150 Z" fill="#ffffff" stroke="#666666" stroke-width="2"/>
+  <text x="230.0" y="116" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace"></text>
+  <text x="230" y="112" font-size="16" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">test_panel.py</text>
+  <text x="230" y="134" font-size="14" fill="#3e5496" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">def test_typical</text>
+  <text x="230" y="152" font-size="14" fill="#3e5496" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">def test_empty_wave</text>
+  <text x="230" y="184" font-size="17" fill="#444" font-weight="normal" font-style="italic" text-anchor="middle">the tests</text>
+  <rect x="64" y="212" width="200" height="46" rx="6" fill="#222222" stroke="#222222" stroke-width="2.5"/>
+  <text x="164" y="242" font-size="22" fill="#ffffff" font-weight="normal" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">$ pytest</text>
+  <text x="164" y="282" font-size="17" fill="#444" font-weight="normal" font-style="italic" text-anchor="middle">one command, in the folder</text>
+  <line x1="324" y1="163" x2="372" y2="163" stroke="#3e5496" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="378" y="36" width="400" height="262" rx="10" fill="#a6e1f4" stroke="#3e5496" stroke-width="2.5"/>
+  <text x="578.0" y="74" font-size="26" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">pytest</text>
+  <circle cx="412" cy="105" r="15" fill="#3e5496"/>
+  <text x="412" y="111" font-size="17" fill="#ffffff" font-weight="bold" font-style="normal" text-anchor="middle">1</text>
+  <text x="440" y="103" font-size="19" fill="#111" font-weight="normal" font-style="normal" text-anchor="start">finds every file</text>
+  <text x="440" y="125" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">test_*.py</text>
+  <circle cx="412" cy="153" r="15" fill="#3e5496"/>
+  <text x="412" y="159" font-size="17" fill="#ffffff" font-weight="bold" font-style="normal" text-anchor="middle">2</text>
+  <text x="440" y="151" font-size="19" fill="#111" font-weight="normal" font-style="normal" text-anchor="start">finds every function</text>
+  <text x="440" y="173" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">test_*  in those files</text>
+  <circle cx="412" cy="201" r="15" fill="#3e5496"/>
+  <text x="412" y="207" font-size="17" fill="#ffffff" font-weight="bold" font-style="normal" text-anchor="middle">3</text>
+  <text x="440" y="199" font-size="19" fill="#111" font-weight="normal" font-style="normal" text-anchor="start">runs each one</text>
+  <text x="440" y="221" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="start">failed assert or error = fail</text>
+  <circle cx="412" cy="249" r="15" fill="#3e5496"/>
+  <text x="412" y="255" font-size="17" fill="#ffffff" font-weight="bold" font-style="normal" text-anchor="middle">4</text>
+  <text x="440" y="247" font-size="19" fill="#111" font-weight="normal" font-style="normal" text-anchor="start">reports</text>
+  <text x="440" y="269" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="start">which failed, and why</text>
+  <line x1="784" y1="163" x2="832" y2="163" stroke="#3e5496" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="836" y="56" width="330" height="222" rx="8" fill="#222222" stroke="#222222" stroke-width="2.5"/>
+  <text x="852" y="94" font-size="17" fill="#ffffff" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">test_panel.py .F</text>
+  <text x="852" y="150" font-size="17" fill="#ff8080" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">FAILED test_empty_wave_raises</text>
+  <text x="852" y="178" font-size="17" fill="#ff8080" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">  DID NOT RAISE ValueError</text>
+  <text x="852" y="234" font-size="17" fill="#ffd27f" font-weight="normal" font-style="normal" text-anchor="start" font-family="DejaVu Sans Mono, Consolas, monospace">1 failed, 1 passed</text>
+  <text x="1001" y="302" font-size="17" fill="#444" font-weight="normal" font-style="italic" text-anchor="middle">. passed    F failed</text>
+</svg>

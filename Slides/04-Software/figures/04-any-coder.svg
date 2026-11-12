@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 326" width="1140" height="326" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker></defs>
+  <path d="M 10 92 H 192 L 210 110 V 242 H 10 Z" fill="#cceef9" stroke="#3e5496" stroke-width="2"/>
+  <text x="110.0" y="120" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">link_waves</text>
+  <line x1="24" y1="138" x2="196" y2="138" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="24" y1="152" x2="166" y2="152" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="24" y1="166" x2="196" y2="166" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="24" y1="180" x2="166" y2="180" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="24" y1="194" x2="196" y2="194" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="24" y1="208" x2="166" y2="208" stroke="#c8c8c8" stroke-width="5"/>
+  <text x="110" y="270" font-size="18" fill="#3e5496" font-weight="bold" font-style="normal" text-anchor="middle">the specification</text>
+  <text x="110" y="292" font-size="16" fill="#444" font-weight="normal" font-style="italic" text-anchor="middle">(analyst)</text>
+  <line x1="214" y1="167" x2="290" y2="90" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <circle cx="340" cy="71.2" r="15.6" fill="#59c7eb"/>
+  <path d="M 313.6 116.8 V 109.6 A 26.4 26.4 0 0 1 366.4 109.6 V 116.8 Z" fill="#59c7eb"/>
+  <text x="340" y="144" font-size="18" fill="#3e5496" font-weight="bold" font-style="normal" text-anchor="middle">a colleague</text>
+  <line x1="392" y1="88" x2="470" y2="88" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <path d="M 476 44 H 608 L 626 62 V 134 H 476 Z" fill="#ffffff" stroke="#666666" stroke-width="2"/>
+  <text x="551.0" y="72" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">panel.py</text>
+  <line x1="490" y1="90" x2="612" y2="90" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="490" y1="104" x2="582" y2="104" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="630" y1="88" x2="726" y2="141" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="214" y1="167" x2="290" y2="260" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="340" y1="226.95" x2="340" y2="240.75" stroke="#3e5496" stroke-width="2.875"/>
+  <circle cx="340" cy="224.65" r="4.6" fill="#3e5496"/>
+  <rect x="317.0" y="240.75" width="46.0" height="34.5" rx="8.049999999999999" fill="#3e5496"/>
+  <circle cx="329.65" cy="255.7" r="4.6" fill="#ffffff"/>
+  <circle cx="350.35" cy="255.7" r="4.6" fill="#ffffff"/>
+  <rect x="328.5" y="266.05" width="23.0" height="3.4499999999999997" fill="#ffffff"/>
+  <rect x="321.6" y="277.55" width="36.8" height="11.5" rx="3.4499999999999997" fill="#3e5496"/>
+  <text x="340" y="314" font-size="18" fill="#3e5496" font-weight="bold" font-style="normal" text-anchor="middle">a coding agent</text>
+  <line x1="392" y1="258" x2="470" y2="258" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <path d="M 476 214 H 608 L 626 232 V 304 H 476 Z" fill="#ffffff" stroke="#666666" stroke-width="2"/>
+  <text x="551.0" y="242" font-size="17" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle" font-family="DejaVu Sans Mono, Consolas, monospace">panel.py</text>
+  <line x1="490" y1="260" x2="612" y2="260" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="490" y1="274" x2="582" y2="274" stroke="#c8c8c8" stroke-width="5"/>
+  <line x1="630" y1="258" x2="726" y2="193" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="732" y="92" width="196" height="150" rx="10" fill="#a6e1f4" stroke="#3e5496" stroke-width="2.5"/>
+  <text x="830" y="128" font-size="20" fill="#111" font-weight="bold" font-style="normal" text-anchor="middle">the tests</text>
+  <text x="830" y="156" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">written by the tester</text>
+  <text x="830" y="178" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">from the specification,</text>
+  <text x="830" y="200" font-size="16" fill="#444" font-weight="normal" font-style="normal" text-anchor="middle">before the code</text>
+  <line x1="932" y1="140" x2="990" y2="112" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="932" y1="196" x2="990" y2="226" stroke="#3e5496" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="998" y="118" font-size="19" fill="#3e5496" font-weight="bold" font-style="normal" text-anchor="start">pass</text>
+  <text x="998" y="222" font-size="19" fill="#e07b00" font-weight="bold" font-style="normal" text-anchor="start">fail: back</text>
+  <text x="998" y="244" font-size="19" fill="#e07b00" font-weight="bold" font-style="normal" text-anchor="start">to the coder</text>
+</svg>
