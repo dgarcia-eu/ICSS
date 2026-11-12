@@ -111,7 +111,7 @@ The table below summarizes what we will learn in this session. Here, you will st
 ## 2. Arrays
 
 An *array* is a systematic arrangement of similar objects, usually in rows and optionally also in columns. We access its elements by *index*. In most programming languages the indices of an array of length $n$ run from $0$ to $n-1$, while in MATLAB, in R and in our pseudocode they run from $1$ to $n$, as explained in the
-[conventions](00-Conventions.md).
+[conventions](00-Conventions.html).
 
 ![*An array with indices.*](../Slides/03-DataStructures/figures/03-array.svg)
 

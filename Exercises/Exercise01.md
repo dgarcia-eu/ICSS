@@ -9,7 +9,7 @@ Do not check the solutions until after we have tried solving them in class.
 Additional practice exercises are provided in the end for you to practice more. You can ask questions about them in class if there is time.
 
 Everything here is pen-and-paper. Notation follows the
-[course conventions](../Transcripts/00-Conventions.md); remember that
+[course conventions](../Transcripts/00-Conventions.html); remember that
 **pseudocode arrays are indexed from 1**.
 
 ---

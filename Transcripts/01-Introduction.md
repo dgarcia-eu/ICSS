@@ -4,7 +4,7 @@
 
 > This is the companion text for the first lecture. It covers everything on the
 > slides plus the explanations that were given out loud, so you can study from
-> it alone. Notation follows [the course conventions](00-Conventions.md).
+> it alone. Notation follows [the course conventions](00-Conventions.html).
 
 ---
 
@@ -189,7 +189,7 @@ For i = 1 to n - 1:
 ```
 
 The same algorithm can be written in Python. Note the shift in the indices,
-which is explained in the [conventions](00-Conventions.md): pseudocode counts
+which is explained in the [conventions](00-Conventions.html): pseudocode counts
 from 1 and Python counts from 0.
 
 ```python
