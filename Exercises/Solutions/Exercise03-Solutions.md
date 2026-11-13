@@ -123,10 +123,12 @@ Inputs:
       x: a node of L
 Result: L without the node x
 If x.prev ≠ NIL
-      then x.prev.next ← x.next
-      else L.head ← x.next
+      x.prev.next ← x.next
+else 
+      L.head ← x.next
+
 If x.next ≠ NIL
-      then x.next.prev ← x.prev
+      x.next.prev ← x.prev
 ```
 
 Deleting 13 from the list of the figure sets `7.next` to the node 21 and
