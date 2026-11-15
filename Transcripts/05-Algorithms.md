@@ -420,6 +420,8 @@ d[s] ← 0
 
 In the figures, the distance is written inside the node, the name of the node
 is just outside it and the parent is the gray capital letter beyond that. The
+fill of a node shows its color, i.e. white for WHITE, gray for GRAY and black
+for BLACK. After the initialization only $c$ is GRAY. The
 algorithm itself keeps a queue of the vertices that have been seen but whose
 neighbors have not been examined yet.
 
@@ -452,8 +454,8 @@ Three details make the algorithm work:
 
 ### Full trace, starting from $s = c$
 
-In the figures the queue is drawn below the graph and a crossed cell has just
-been dequeued. After the initialization, $c$ is enqueued.
+In the figures the queue is drawn below the graph, a crossed cell has just
+been dequeued and an orange ring marks the vertex $u$ that is being processed. After the initialization, $c$ is enqueued.
 
 ::: {.bfs-trace}
 ![*The queue holds c after the initialization.*](../Slides/05-Algorithms/figures/05-bfs-q0.svg)
@@ -490,7 +492,7 @@ We dequeue $g$ and its white neighbor $d$ gets distance 2 and parent $G$.
 We dequeue $e$ and its white neighbor $a$ gets distance 3 and parent $E$.
 
 ::: {.bfs-trace}
-![*State after processing e.*](../Slides/05-Algorithms/figures/05-bfs-e.svg)
+![*State after processing e.*](../Slides/05-Algorithms/figures/05-bfs-e2.svg)
 :::
 
 Finally, we dequeue $d$ and then $a$, and neither of them has white neighbors.
@@ -576,7 +578,7 @@ comparable.
 
 ---
 
-## 13. References
+## 12. References
 
 - **Cormen, T. H. (2013).** *Algorithms Unlocked*, MIT Press, chapter 1. The
   reading for this session and the source of the framing of the properties of an
