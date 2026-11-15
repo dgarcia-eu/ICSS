@@ -84,7 +84,8 @@ Programming languages; good coding practices; software specifications and testin
 
 **Session 05: Algorithms** (18.11 – 24.11)  
 Definition; examples; search algorithms  
-*Reference(s): Chapter 1 of 'Algorithms Unlocked' by Cormen*
+*Reference(s): Chapter 1 of 'Algorithms Unlocked' by Cormen*  
+[**Slides**](https://dgarcia-eu.github.io/ICSS/Slides/05-Algorithms/ICSS-2026-05-Algorithms.html) - [**Transcript**](https://dgarcia-eu.github.io/ICSS/Transcripts/05-Algorithms.html) - [**Exercise sheet**](https://dgarcia-eu.github.io/ICSS/Exercises/Exercise05.html)
 
 *If you want to learn more about my research, I will present ["The Collective Behavior of AI Agents" on 19.11 at 17:00 in G307](https://www.philosophie.uni-konstanz.de/forschung/ki-vorlesung/)*
 
