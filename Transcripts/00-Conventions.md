@@ -168,7 +168,7 @@ A graph is a pair $G = (V, E)$:
 | $w(u,v)$ | the weight of the edge from $u$ to $v$ |
 | $\text{neighbors}(u)$ | the vertices reachable from $u$ in one step |
 
-In the search algorithms (BFS in session 5, DFS in session 6) each vertex $u$
+In the search algorithms (BFS in the Algorithms session, DFS in the Recursion session) each vertex $u$
 carries:
 
 | Notation | Meaning |

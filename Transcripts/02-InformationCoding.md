@@ -1,5 +1,12 @@
 # Session 2: Information Coding
 
+<style>
+figure, .figure, .float { margin: 1.4em 0 1.8em 0; }
+figure img, .float img { display: block; max-width: 100%; }
+figcaption, .figcaption, .figure p.caption { margin-top: 0.3em; font-size: 0.88em; color: #555; }
+details { margin: -0.5em 0 2.2em 0; }
+</style>
+
 *Introduction to Computing for the Social Sciences · lecture transcript*
 
 **Recommended reading for this session:** Chapter 1 of Evans, *Introduction to Computing*
@@ -166,7 +173,7 @@ carrying several bits that select which row of the chip to access. An address
 decoder activates the addressed row, and the *data bus* either carries out the
 content of that row, in the case of a read, or carries in the new value, in the
 case of a write. That is enough detail for this course. We will come back to
-how a running program organizes its memory in session 6, when we look at the
+how a running program organizes its memory in the Recursion session, when we look at the
 call stack.
 
 ---
@@ -361,6 +368,8 @@ limits of its encoding is division by zero, but operating systems and languages
 usually raise a warning or an error for that one. Overflow, by contrast, is
 often silent and thus more dangerous.
 
+To see an integer silently become negative in ordinary data work, follow section 2 of the [Python examples notebook of this session](https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples02-InformationCoding.ipynb).
+
 ---
 
 ## 7. Floating-point numbers: IEEE 754
@@ -490,6 +499,9 @@ default, which avoids exactly this class of error. Grace Hopper, a computer
 scientist and officer of the US Navy, wrote the first compiler in 1952 and
 designed FLOW-MATIC, the language on which COBOL was modeled. Grace Hopper argued for machine-independent programming languages when most people thought computers
 could only be programmed in their own machine code, being ahead of technology by more than a decade.
+
+To see rounding errors add up to a wrong result in a few lines of Python, follow section 1 of the [Python examples notebook of this session](https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples02-InformationCoding.ipynb).
+
 ---
 
 ## 9. Character coding {#character-coding}
@@ -554,6 +566,8 @@ destroys data without telling you, so if you ever find yourself using it to make
 an error go away, you are deleting part of your dataset.
 
 > If you want how my lab learned to finally deal with unicode properly, check our funny paper on emoji.
+
+To see one name become two because of a single byte, follow section 3 of the [Python examples notebook of this session](https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples02-InformationCoding.ipynb).
 
 ---
 
@@ -637,7 +651,14 @@ above.
 
 ---
 
-## 11. Check yourself
+## 11. Why does this matter? Practical Python examples
+
+Check the [practical Python examples in this Jupyter notebook](https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples02-InformationCoding.ipynb). There, you will see how rounding errors can add up to a wrong variance, an integer can silently become negative, 
+and a name that becomes two names because of one byte.
+
+---
+
+## 12. Check yourself
 
 **1.** Convert 100 to binary, octal and hexadecimal.
 
@@ -697,12 +718,6 @@ classic fingerprint of UTF-8 read as Latin-1.
 </details>
 
 ---
-
-## 12. Why does this matter? Practical Python examples
-
-Check the [practical Python examples in this Jupyter notebook](https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples02-InformationCoding.ipynb). There, you will see how rounding errors can add up to a wrong variance, an integer can silently become negative, 
-and a name that becomes two names because of one byte.
-
 
 ## 13. References
 

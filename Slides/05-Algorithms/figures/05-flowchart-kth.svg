@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" width="700" height="700" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4a4a"/></marker>
+    <marker id="agS" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4a4a"/></marker>
+  </defs>
+  <rect x="220.0" y="7.0" width="140" height="38" rx="19.0" fill="#3fd28a" stroke="#111" stroke-width="1.1"/>
+  <text x="290" y="30" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">start</text>
+  <path d="M 290 45 V 66" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <polygon points="197.0,68.0 395.0,68.0 383.0,112.0 185.0,112.0" fill="#b3a07a" stroke="#111" stroke-width="1.1"/>
+  <text x="290" y="94.0" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">read M, n, k</text>
+  <path d="M 290 112 V 130" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <rect x="225.0" y="132.0" width="130" height="40" fill="#c8c8c8" stroke="#111" stroke-width="1.1"/>
+  <text x="290" y="156.0" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">i ← 1</text>
+  <path d="M 290 172 V 190" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <polygon points="290,191.0 380.0,228 290,265.0 200.0,228" fill="#f0645f" stroke="#111" stroke-width="1.1"/>
+  <text x="290" y="232.0" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">i ≤ k ?</text>
+  <path d="M 200 228 H 158" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="178" y="216" text-anchor="middle" font-size="19" fill="#333" font-weight="normal" font-style="italic">no</text>
+  <polygon points="19.0,206.0 157.0,206.0 145.0,250.0 7.0,250.0" fill="#b3a07a" stroke="#111" stroke-width="1.1"/>
+  <text x="82" y="232.0" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">output M[k]</text>
+  <path d="M 82 250 V 282" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <rect x="22.0" y="283.0" width="120" height="38" rx="19.0" fill="#3fd28a" stroke="#111" stroke-width="1.1"/>
+  <text x="82" y="306" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">stop</text>
+  <path d="M 290 265 V 288" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="314" y="283" text-anchor="middle" font-size="19" fill="#333" font-weight="normal" font-style="italic">yes</text>
+  <rect x="190.0" y="289.0" width="200" height="58" fill="#c8c8c8" stroke="#111" stroke-width="1.1"/>
+  <text x="290" y="308.8" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">smallest ← i</text>
+  <text x="290" y="335.2" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">j ← i + 1</text>
+  <path d="M 290 347 V 366" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <polygon points="290,367.0 380.0,404 290,441.0 200.0,404" fill="#f0645f" stroke="#111" stroke-width="1.1"/>
+  <text x="290" y="408.0" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">j ≤ n ?</text>
+  <path d="M 380 404 H 432" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="398" y="394" text-anchor="middle" font-size="19" fill="#333" font-weight="normal" font-style="italic">no</text>
+  <rect x="434.0" y="372.0" width="252" height="64" fill="#c8c8c8" stroke="#111" stroke-width="1.1"/>
+  <text x="560" y="394.8" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">swap M[i], M[smallest]</text>
+  <text x="560" y="421.2" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">i ← i + 1</text>
+  <path d="M 560 372 V 228 H 384" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <path d="M 290 441 V 456" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="314" y="452" text-anchor="middle" font-size="19" fill="#333" font-weight="normal" font-style="italic">yes</text>
+  <polygon points="290,458.0 440.0,510 290,562.0 140.0,510" fill="#f0645f" stroke="#111" stroke-width="1.1"/>
+  <text x="290" y="500.8" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">M[j] &lt;</text>
+  <text x="290" y="527.2" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">M[smallest] ?</text>
+  <path d="M 290 562 V 592" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="314" y="584" text-anchor="middle" font-size="19" fill="#333" font-weight="normal" font-style="italic">yes</text>
+  <rect x="205.0" y="594.0" width="170" height="40" fill="#c8c8c8" stroke="#111" stroke-width="1.1"/>
+  <text x="290" y="618.0" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">smallest ← j</text>
+  <path d="M 290 634 V 654" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <rect x="220.0" y="654.0" width="140" height="40" fill="#c8c8c8" stroke="#111" stroke-width="1.1"/>
+  <text x="290" y="678.0" text-anchor="middle" font-size="22" fill="#111" font-weight="bold" font-style="normal">j ← j + 1</text>
+  <path d="M 440 510 H 478 V 674 H 364" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="462" y="500" text-anchor="middle" font-size="19" fill="#333" font-weight="normal" font-style="italic">no</text>
+  <path d="M 220 674 H 150 V 404 H 196" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+</svg>

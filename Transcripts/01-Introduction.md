@@ -1,5 +1,12 @@
 # Session 1: Introduction
 
+<style>
+figure, .figure, .float { margin: 1.4em 0 1.8em 0; }
+figure img, .float img { display: block; max-width: 100%; }
+figcaption, .figcaption, .figure p.caption { margin-top: 0.3em; font-size: 0.88em; color: #555; }
+details { margin: -0.5em 0 2.2em 0; }
+</style>
+
 *Introduction to Computing for the Social Sciences · lecture transcript*
 
 > This is the companion text for the first lecture. It covers everything on the
@@ -163,8 +170,8 @@ reasoning tasks. Both parts of the definition matter. Self-contained means that
 the algorithm does not rely on any outside cleverness, only on the steps that
 are written down. Step-by-step means that each step is unambiguous, so that two
 people following the same algorithm get the same result. We will make this much
-more precise in session 5, where we discuss the properties an algorithm must
-have, and in session 9, where the word gets a formal definition in terms of
+more precise in the Algorithms session, where we discuss the properties an algorithm must
+have, and in the Theoretical Computer Science session, where the word gets a formal definition in terms of
 Turing machines. For now, an example is the best introduction.
 
 ### Example: selection sort
@@ -224,7 +231,7 @@ loop runs $n-1$ times and not $n$, because once $n-1$ elements are in place the
 last one has nowhere else to go. And the number of comparisons does not depend
 on the input at all: it is always $(n-1) + (n-2) + \dots + 1$, so selection
 sort takes the same time on a list that is already sorted as on a shuffled one.
-We will count this properly in session 8.
+We will count this properly in the Time Complexity session.
 
 ### Pseudocode versus code
 
@@ -234,7 +241,7 @@ us state the idea without deciding things that do not matter yet, such as which
 language to use, which data structure holds the elements, or whether indices
 start at 0 or at 1. Leaving those decisions open is deliberate, because it
 keeps the description of the method separate from the details of one
-implementation. Session 5 is about writing good pseudocode.
+implementation. The Algorithms session is about writing good pseudocode.
 
 ---
 
@@ -266,7 +273,7 @@ computer science a science rather than a craft, and it is where most of this
 course lives. Notice also the political weight of Simon's examples. If computer
 scientists design the program that decides who gets parole, then a design
 decision is a policy decision. This is the thread that runs through the ethics
-material of session 10 and the applications of session 13.
+material of the Machine Learning session and the applications of the Social Science Applications session.
 
 ---
 
@@ -277,8 +284,8 @@ entry adds one idea, and that the ideas accumulate.
 
 | When | What | The idea it adds |
 |---|---|---|
-| c. 300 BC | Euclid's algorithm | a procedure can be stated exactly and will always terminate with the right answer (we implement it in session 6) |
-| c. 820 | al-Khwarizmi's book on Hindu-Arabic numerals | systematic manipulation of symbols; his name becomes the word algorithm (session 5) |
+| c. 300 BC | Euclid's algorithm | a procedure can be stated exactly and will always terminate with the right answer (we implement it in the Recursion session) |
+| c. 820 | al-Khwarizmi's book on Hindu-Arabic numerals | systematic manipulation of symbols; his name becomes the word algorithm (the Algorithms session) |
 | 1305 | Ramon Llull's mechanical logic | reasoning itself might be mechanized |
 | 1837 | Babbage's Analytical Engine | a machine that is programmed rather than built for one task |
 | 1843 | Ada Lovelace's program for the Analytical Engine | the first published program |
@@ -286,11 +293,11 @@ entry adds one idea, and that the ideas accumulate.
 | 1944 | Colossus Mark 2 | electronic computing applied to a real problem, breaking the Lorenz cipher |
 | 1954 | TRADIC at Bell Labs | transistors: small, reliable and cheap enough to spread |
 | 1969 | the first message on the ARPANET | computers as a network rather than isolated machines |
-| 1972 | the C programming language | portable systems programming (session 4) |
+| 1972 | the C programming language | portable systems programming (the Software session) |
 | 1981 | the IBM PC | computing as a consumer good |
 | 1990 | the World Wide Web at CERN | information, not just computation, as the main application |
 | 1997 | Deep Blue beats Garry Kasparov | search plus hardware beats human expertise in a bounded domain |
-| 2016 | AlphaGo beats Lee Sedol | learned evaluation beats hand-written rules (session 10) |
+| 2016 | AlphaGo beats Lee Sedol | learned evaluation beats hand-written rules (the Machine Learning session) |
 | 2022 | ChatGPT | generative models reach the general public |
 
 ---
@@ -299,17 +306,17 @@ entry adds one idea, and that the ideas accumulate.
 
 A rough map of the discipline helps to place the sessions of this course.
 Computer engineering covers microprocessor technology, computer architecture
-and the communication between machines; we touch on it in sessions 2 and 4.
+and the communication between machines; we touch on it in the Information Coding and Software sessions.
 Theoretical computer science covers automata theory and formal languages,
-complexity theory and quantum computing; sessions 8 and 9 belong here. Applied
+complexity theory and quantum computing; the Time Complexity and Theoretical Computer Science sessions belong here. Applied
 computer science covers programming languages, algorithms and data structures,
 operating systems, databases and software development, which is the content of
-sessions 3 to 7, 11 and 12. Finally, there are interdisciplinary fields that
+the sessions from Data Structures to Sorting Algorithms, Databases and Parallel Programming. Finally, there are interdisciplinary fields that
 apply computing to the problems of another discipline: business informatics,
 computer vision, artificial intelligence, computational linguistics,
 bioinformatics, medical informatics, media informatics, human-computer
 interaction, and computational social science, which is the reason you are in
-this course and the subject of sessions 10 and 13.
+this course and the subject of the Machine Learning and Social Science Applications sessions.
 
 ---
 

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" font-family="Arial, Helvetica, sans-serif">
+  <line x1="40" y1="112" x2="148" y2="154" stroke="#111" stroke-width="1.4"/>
+  <line x1="148" y1="154" x2="148" y2="74" stroke="#111" stroke-width="1.4"/>
+  <line x1="148" y1="74" x2="256" y2="74" stroke="#111" stroke-width="1.4"/>
+  <line x1="256" y1="74" x2="256" y2="154" stroke="#111" stroke-width="1.4"/>
+  <line x1="256" y1="74" x2="364" y2="154" stroke="#111" stroke-width="1.4"/>
+  <line x1="364" y1="74" x2="364" y2="154" stroke="#111" stroke-width="1.4"/>
+  <line x1="148" y1="154" x2="256" y2="154" stroke="#111" stroke-width="1.4"/>
+  <circle cx="40" cy="112" r="22" fill="#fff" stroke="#111" stroke-width="1.4"/>
+  <text x="40" y="119" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">&#8734;</text>
+  <text x="40" y="80" text-anchor="middle" font-size="18" fill="#111" font-weight="normal" font-style="italic">a</text>
+  <text x="40" y="60" text-anchor="middle" font-size="15" fill="#8a8a8a" font-weight="normal" font-style="italic">NIL</text>
+  <circle cx="148" cy="74" r="22" fill="#fff" stroke="#111" stroke-width="1.4"/>
+  <text x="148" y="81" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">&#8734;</text>
+  <text x="148" y="42" text-anchor="middle" font-size="18" fill="#111" font-weight="normal" font-style="italic">b</text>
+  <text x="148" y="22" text-anchor="middle" font-size="15" fill="#8a8a8a" font-weight="normal" font-style="italic">NIL</text>
+  <circle cx="256" cy="74" r="22" fill="#b8b8b8" stroke="#111" stroke-width="1.4"/>
+  <text x="256" y="81" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">0</text>
+  <text x="256" y="42" text-anchor="middle" font-size="18" fill="#111" font-weight="normal" font-style="italic">c</text>
+  <text x="256" y="22" text-anchor="middle" font-size="15" fill="#8a8a8a" font-weight="normal" font-style="italic">NIL</text>
+  <circle cx="364" cy="74" r="22" fill="#fff" stroke="#111" stroke-width="1.4"/>
+  <text x="364" y="81" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">&#8734;</text>
+  <text x="364" y="42" text-anchor="middle" font-size="18" fill="#111" font-weight="normal" font-style="italic">d</text>
+  <text x="364" y="22" text-anchor="middle" font-size="15" fill="#8a8a8a" font-weight="normal" font-style="italic">NIL</text>
+  <circle cx="148" cy="154" r="22" fill="#fff" stroke="#111" stroke-width="1.4"/>
+  <text x="148" y="161" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">&#8734;</text>
+  <text x="148" y="200" text-anchor="middle" font-size="18" fill="#111" font-weight="normal" font-style="italic">e</text>
+  <text x="148" y="220" text-anchor="middle" font-size="15" fill="#8a8a8a" font-weight="normal" font-style="italic">NIL</text>
+  <circle cx="256" cy="154" r="22" fill="#fff" stroke="#111" stroke-width="1.4"/>
+  <text x="256" y="161" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">&#8734;</text>
+  <text x="256" y="200" text-anchor="middle" font-size="18" fill="#111" font-weight="normal" font-style="italic">f</text>
+  <text x="256" y="220" text-anchor="middle" font-size="15" fill="#8a8a8a" font-weight="normal" font-style="italic">NIL</text>
+  <circle cx="364" cy="154" r="22" fill="#fff" stroke="#111" stroke-width="1.4"/>
+  <text x="364" y="161" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">&#8734;</text>
+  <text x="364" y="200" text-anchor="middle" font-size="18" fill="#111" font-weight="normal" font-style="italic">g</text>
+  <text x="364" y="220" text-anchor="middle" font-size="15" fill="#8a8a8a" font-weight="normal" font-style="italic">NIL</text>
+  <text x="6" y="264" text-anchor="start" font-size="22" fill="#111" font-weight="bold" font-style="italic">Q:</text>
+  <rect x="50" y="238" width="50" height="38" fill="#fff" stroke="#111" stroke-width="1.4"/>
+  <text x="75" y="264" text-anchor="middle" font-size="21" fill="#111" font-weight="normal" font-style="normal">c</text>
+  <text x="75" y="296" text-anchor="middle" font-size="17" fill="#111" font-weight="normal" font-style="normal">0</text>
+</svg>

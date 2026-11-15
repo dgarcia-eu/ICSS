@@ -123,12 +123,10 @@ Inputs:
       x: a node of L
 Result: L without the node x
 If x.prev ≠ NIL
-      x.prev.next ← x.next
-else 
-      L.head ← x.next
-
+      then x.prev.next ← x.next
+      else L.head ← x.next
 If x.next ≠ NIL
-      x.next.prev ← x.prev
+      then x.next.prev ← x.prev
 ```
 
 Deleting 13 from the list of the figure sets `7.next` to the node 21 and
@@ -168,7 +166,7 @@ c) **Hash table**. Only exact-match lookup by URL is needed, and the number of
 possible URLs is astronomically larger than the number observed.
 d) A **linked list** with a pointer to each end: new responses are appended
 at the end and processed from the head, both in one step. This is a queue,
-which session 5 covers explicitly.
+which the Algorithms session covers explicitly.
 
 ### A2. Hash function quality
 

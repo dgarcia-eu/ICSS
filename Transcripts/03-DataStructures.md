@@ -4,6 +4,7 @@
 figure, .figure, .float { margin: 1.4em 0 1.8em 0; }
 figure img, .float img { display: block; max-width: 100%; }
 figcaption, .figcaption, .figure p.caption { margin-top: 0.3em; font-size: 0.88em; color: #555; }
+details { margin: -0.5em 0 2.2em 0; }
 </style>
 
 *Introduction to Computing for the Social Sciences · lecture transcript*
@@ -35,7 +36,8 @@ other one:
 ```
 For each response i:
       For each response j after i:
-            If i and j match, then record a duplicate
+            If i and j match
+                  then record a duplicate
 ```
 
 That is $\binom{2\,000\,000}{2} \approx 2 \times 10^{12}$ comparisons, two
@@ -73,7 +75,7 @@ drops from $10^{11}$ comparisons to about $5 \times 10^8$, from overnight to
 under a minute.
 That is a factor of 460 for free, except that it is not totally free and this session you will learn what is the cost.
 The list has to be sorted, which
-costs something up front and session 07 will help us understand how much.
+costs something up front and the Sorting Algorithms session will help us understand how much.
 
 ---
 
@@ -97,7 +99,7 @@ is there, it can also be used to retrieve the value stored with the key. Diagram
 
 ![*Four examples of data structures with keys and values.*](../Slides/03-DataStructures/figures/03-data-structures.svg)
 
-The table below summarizes what we will learn in this session. Here, you will start having an understanding about why some data structures are faster for some operations than others, in session 8 we will learn more precisely how to formalize concepts like "instant" or "slow".
+The table below summarizes what we will learn in this session. Here, you will start having an understanding about why some data structures are faster for some operations than others, in the Time Complexity session we will learn more precisely how to formalize concepts like "instant" or "slow".
 
 | Structure | Look up by index | Look up by key | Insert / delete |
 |---|---|---|---|
@@ -222,9 +224,9 @@ While p ≤ r:
       q ← ⌊(p + r)/2⌋
       If A[q] = x
             then return q
-      else if A[q] > x
-            then r ← q - 1
-      else p ← q + 1
+            else If A[q] > x
+                  then r ← q - 1
+                  else p ← q + 1
 return NOT-FOUND
 ```
 
@@ -250,6 +252,8 @@ That is three comparisons instead of up to ten. In general binary search needs
 about $\log_2 n$ comparisons, which is why doubling the data adds only one
 step. The catch is that the array has to be sorted, and keeping an array sorted under insertion means first searching the position and then shifting elements, so we have fast search and slow editing again. The fix is to stop storing the order in the positions and start storing it in the pointers.
 
+To count the steps of binary search on real data, follow section 2 of the [Python examples notebook of this session](https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples03-DataStructures.ipynb).
+
 ---
 
 ## 6. Binary trees and binary search trees
@@ -257,7 +261,7 @@ step. The catch is that the array has to be sorted, and keeping an array sorted 
 A *binary tree* is a tree data structure that is either empty or consists of a
 node, the *root* $S$, with at most two children, the left child $L$ and the
 right child $R$, both of which are themselves binary trees. Note that the
-definition is recursive, i.e. a tree is defined in terms of trees. Session 6 makes
+definition is recursive, i.e. a tree is defined in terms of trees. The Recursion session makes
 that pattern its main topic, but it is already doing work here, because it
 means that any algorithm on a tree can be written as "do something to the root,
 then do the same thing to the two subtrees". The vocabulary is the one of a
@@ -578,8 +582,9 @@ is worth remembering. The test `key in d` hashes the key and takes one step,
 and so does `key in d.keys()` in Python 3, because the view of the keys uses
 the same hash table. But `key in list(d)` or a loop over the keys scans them
 one by one, which turns an instant operation into a linear scan, and in a loop
-that becomes a quadratic algorithm, as we will learn how to calculate in session 8.
+that becomes a quadratic algorithm, as we will learn how to calculate in the Time Complexity session.
 
+To time the difference between a list and a hash-based structure when matching two surveys, follow section 1 of the [Python examples notebook of this session](https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples03-DataStructures.ipynb).
 
 ## 10. Why this matters for social science
 
@@ -608,7 +613,7 @@ name it or not. An example tool built around hash tables is the AWK scripting la
 quiet favorite of many data scientists. It was created at Bell Labs by Alfred
 Aho, Peter Weinberger and Brian Kernighan, whose initials give it its name, and
 it is a key component of UNIX. It is extremely fast for what it does thanks to
-two things, namely regular expressions, which we will learn in session 9, and hash
+two things, namely regular expressions, which we will learn in the Theoretical Computer Science session, and hash
 tables. Its default array type is an associative array backed by a hash table,
 which is why counting things in AWK is a one-liner:
 

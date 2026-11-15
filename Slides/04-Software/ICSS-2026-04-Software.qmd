@@ -39,8 +39,8 @@ format:
 ::: {.sm}
 - Session 8: Time Complexity
 - Session 9: Theoretical Computer Science
-- Session 10: Machine Learning
-- Session 11: Databases
+- Session 10: Databases
+- Session 11: Machine Learning
 - Session 12: Parallel Programming
 - Session 13: Social Science Applications
 - Session 14: Exam Review
@@ -243,13 +243,13 @@ Groups data and the instructions that operate on it into **objects**. Models wha
 ::: {.concept .sm}
 [Declarative]{.label}
 Describes **what** the result should be, not how to compute it.  
-(for example SQL, session 11)
+(for example SQL, Databases session)
 :::
 
 ::: {.concept .sm}
 [Functional]{.label}
 The result is the value of functions applied to functions  
-(based on recursion, session 6)
+(see the Recursion session)
 :::
 :::
 ::::
@@ -829,12 +829,12 @@ xkcd 1425, "Tasks", by Randall Munroe (2014), CC BY-NC 2.5
 ## Design: choosing the data structures
 
 ::: {.tbl-grid .sm}
-| The program needs to... | Data structure (session 3) | Example |
+| The program needs to... | Data structure | Example |
 |---|---|---|
 | keep items in order | list | the (email, answer) pairs of a wave |
 | look something up by a key | dictionary | pseudonym → answer, one per wave |
 | check membership fast | set | the pseudonyms in both waves |
-| serve first come, first served | queue | a waiting list for a seminar (to be covered in session 5)|
+| serve first come, first served | queue | a waiting list for a seminar (Algorithms session)|
 :::
 
 </br>
@@ -1100,6 +1100,26 @@ def mean(xs):
 
 ::: {.sm}
 A test checks one list. This argument covers **every** non-empty list. Verification tools check such arguments by computer
+:::
+
+## Why does this matter? Practical Python examples
+
+:::: {.columns}
+::: {.column width="55%"}
+![](figures/04-python-examples-notebook.png){width="100%"}
+:::
+
+::: {.column width="45%"}
+::: {.sm}
+- **Interpreted loop, compiled library:** the same sum is about a hundred times faster in NumPy
+- **A bug that only a test can see:** a mean that is quietly wrong until a one-line test catches it
+- **Vibe coding with pytest:** a generated function whose wrong date format is found and fixed step by step
+:::
+:::
+::::
+
+::: {.source}
+<https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples04-Software.ipynb>
 :::
 
 ## Summary {.fit2}

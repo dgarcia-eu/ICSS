@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344 322" width="344" height="322" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4a4a"/></marker>
+    <marker id="agS" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4a4a"/></marker>
+  </defs>
+  <rect x="96" y="60" width="140" height="38" fill="#cceef9" stroke="#8a8a8a" stroke-width="1"/>
+  <rect x="96" y="98" width="140" height="38" fill="#cceef9" stroke="#8a8a8a" stroke-width="1"/>
+  <rect x="96" y="136" width="140" height="38" fill="#cceef9" stroke="#8a8a8a" stroke-width="1"/>
+  <rect x="96" y="174" width="140" height="38" fill="#cceef9" stroke="#8a8a8a" stroke-width="1"/>
+  <rect x="96" y="212" width="140" height="38" fill="#cceef9" stroke="#8a8a8a" stroke-width="1"/>
+  <rect x="96" y="250" width="140" height="38" fill="#cceef9" stroke="#8a8a8a" stroke-width="1"/>
+  <rect x="8" y="16" width="120" height="34" fill="#cceef9" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="68" y="10" text-anchor="middle" font-size="14" fill="#111" font-weight="normal" font-style="normal">Enqueue</text>
+  <path d="M 128 33 L 150 33 Q 162 33 162 45 L 162 54" fill="none" stroke="#4a4a4a" stroke-width="4" marker-end="url(#agS)"/>
+  <text x="90" y="78" text-anchor="end" font-size="14" fill="#111" font-weight="normal" font-style="normal">Rear &#10132;</text>
+  <text x="90" y="282" text-anchor="end" font-size="14" fill="#111" font-weight="normal" font-style="normal">Front &#10132;</text>
+  <rect x="214" y="278" width="120" height="34" fill="#cceef9" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="274" y="268" text-anchor="middle" font-size="14" fill="#111" font-weight="normal" font-style="normal">Dequeue</text>
+  <path d="M 178 268 L 178 292 Q 178 296 190 296 L 208 296" fill="none" stroke="#4a4a4a" stroke-width="4" marker-end="url(#agS)"/>
+</svg>

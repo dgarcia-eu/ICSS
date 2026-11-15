@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 332" width="1100" height="332" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker></defs>
+  <rect x="6" y="8" width="170" height="70" rx="10" fill="#ffffff" stroke="#3e5496" stroke-width="2.2"/>
+  <text x="91" y="53" text-anchor="middle" font-size="30" fill="#3e5496" font-weight="bold" font-style="normal">input</text>
+  <line x1="180" y1="43" x2="232" y2="43" stroke="#3e5496" stroke-width="2.6" marker-end="url(#ak)"/>
+  <rect x="238" y="8" width="624" height="70" rx="10" fill="#a6e1f4" stroke="#3e5496" stroke-width="2.2"/>
+  <rect x="252" y="18" width="108" height="50" rx="7" fill="#ffffff" stroke="#00a9e0" stroke-width="1.8"/>
+  <text x="306" y="52" text-anchor="middle" font-size="26" fill="#111" font-weight="normal" font-style="normal">step 1</text>
+  <rect x="373" y="18" width="108" height="50" rx="7" fill="#ffffff" stroke="#00a9e0" stroke-width="1.8"/>
+  <text x="427" y="52" text-anchor="middle" font-size="26" fill="#111" font-weight="normal" font-style="normal">step 2</text>
+  <rect x="494" y="18" width="108" height="50" rx="7" fill="#ffffff" stroke="#00a9e0" stroke-width="1.8"/>
+  <text x="548" y="52" text-anchor="middle" font-size="26" fill="#111" font-weight="normal" font-style="normal">step 3</text>
+  <text x="669" y="52" text-anchor="middle" font-size="26" fill="#111" font-weight="normal" font-style="normal">&#8230;</text>
+  <rect x="736" y="18" width="108" height="50" rx="7" fill="#ffffff" stroke="#00a9e0" stroke-width="1.8"/>
+  <text x="790" y="52" text-anchor="middle" font-size="26" fill="#111" font-weight="normal" font-style="normal">step n</text>
+  <line x1="866" y1="43" x2="918" y2="43" stroke="#3e5496" stroke-width="2.6" marker-end="url(#ak)"/>
+  <rect x="924" y="8" width="170" height="70" rx="10" fill="#ffffff" stroke="#3e5496" stroke-width="2.2"/>
+  <text x="1009" y="53" text-anchor="middle" font-size="30" fill="#3e5496" font-weight="bold" font-style="normal">output</text>
+  <text x="6" y="122" text-anchor="start" font-size="24" fill="#3e5496" font-weight="bold" font-style="normal">Examples</text>
+  <line x1="128" y1="114" x2="1094" y2="114" stroke="#3e5496" stroke-width="1.6" stroke-dasharray="6 5"/>
+  <rect x="6" y="136" width="354" height="190" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.2"/>
+  <text x="183" y="178" text-anchor="middle" font-size="28" fill="#111" font-weight="bold" font-style="normal">Youngest respondent</text>
+  <text x="24" y="232" text-anchor="start" font-size="24" fill="#555" font-weight="normal" font-style="normal">input</text>
+  <text x="118" y="232" text-anchor="start" font-size="24" fill="#111" font-weight="normal" font-style="normal">34, 51, 27, 46</text>
+  <text x="24" y="292" text-anchor="start" font-size="24" fill="#555" font-weight="normal" font-style="normal">output</text>
+  <text x="118" y="292" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">27</text>
+  <rect x="372" y="136" width="354" height="190" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.2"/>
+  <text x="549" y="178" text-anchor="middle" font-size="28" fill="#111" font-weight="bold" font-style="normal">Sort names</text>
+  <text x="390" y="232" text-anchor="start" font-size="24" fill="#555" font-weight="normal" font-style="normal">input</text>
+  <text x="484" y="232" text-anchor="start" font-size="24" fill="#111" font-weight="normal" font-style="normal">Mia, Ana, Leo</text>
+  <text x="390" y="292" text-anchor="start" font-size="24" fill="#555" font-weight="normal" font-style="normal">output</text>
+  <text x="484" y="292" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">Ana, Leo, Mia</text>
+  <rect x="738" y="136" width="354" height="190" rx="10" fill="#cceef9" stroke="#00a9e0" stroke-width="2.2"/>
+  <text x="915" y="178" text-anchor="middle" font-size="28" fill="#111" font-weight="bold" font-style="normal">Steps from Ana to Ben</text>
+  <text x="756" y="232" text-anchor="start" font-size="24" fill="#555" font-weight="normal" font-style="normal">input</text>
+  <text x="850" y="232" text-anchor="start" font-size="24" fill="#111" font-weight="normal" font-style="normal">friendship network</text>
+  <text x="756" y="292" text-anchor="start" font-size="24" fill="#555" font-weight="normal" font-style="normal">output</text>
+  <text x="850" y="292" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">2 steps</text>
+</svg>

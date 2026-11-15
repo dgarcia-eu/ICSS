@@ -39,8 +39,8 @@ format:
 ::: {.sm}
 - Session 8: Time Complexity
 - Session 9: Theoretical Computer Science
-- Session 10: Machine Learning
-- Session 11: Databases
+- Session 10: Databases
+- Session 11: Machine Learning
 - Session 12: Parallel Programming
 - Session 13: Social Science Applications
 - Session 14: Exam Review
@@ -942,7 +942,7 @@ Abstract data type composed of a collection of (key, value) pairs, such that eac
 - The AWK language is a specialized language for string processing: a secret tool of many data scientists
 - key component of UNIX, co-created by Brian Kernighan at Bell Labs
 - AWK: Alfred **A**ho, Peter **W**einberger and Brian **K**ernighan
-- Extremely efficient thanks to the use of regular expressions (we will learn them in session 9) and hash tables
+- Extremely efficient thanks to the use of regular expressions (we will learn them in the Theoretical Computer Science session) and hash tables
 - The default array structure is an associative memory (dictionary) based on a hash table
 - MAWK: faster implementation and more memory efficient
 :::
@@ -955,6 +955,26 @@ Abstract data type composed of a collection of (key, value) pairs, such that eac
 
 ::: {.source}
 Brian Kernighan on hash tables: <https://www.youtube.com/watch?v=qTZJLJ3Gm6Q>
+:::
+
+## Why does this matter? Practical Python examples
+
+:::: {.columns}
+::: {.column width="55%"}
+![](figures/03-python-examples-notebook.png){width="100%"}
+:::
+
+::: {.column width="45%"}
+::: {.sm}
+- **Matching two surveys:** finding the respondents who answered both, with a list and with a set
+- **Minutes or milliseconds:** the same task is thousands of times faster with the right data structure
+- **Inside binary search:** counting the steps it really takes
+:::
+:::
+::::
+
+::: {.source}
+<https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples03-DataStructures.ipynb>
 :::
 
 ## Summary
@@ -987,9 +1007,9 @@ Brian Kernighan on hash tables: <https://www.youtube.com/watch?v=qTZJLJ3Gm6Q>
       <i>q</i> &larr; ⌊(<i>p</i> + <i>r</i>)/2⌋
       <b>If</b> <i>A</i>[<i>q</i>] = <i>x</i>
             <b>then return</b> <i>q</i>
-      <b>else if</b> <i>A</i>[<i>q</i>] &gt; <i>x</i>
-            <b>then</b> <i>r</i> &larr; <i>q</i> - 1
-      <b>else</b> <i>p</i> &larr; <i>q</i> + 1
+            <b>else If</b> <i>A</i>[<i>q</i>] &gt; <i>x</i>
+                  <b>then</b> <i>r</i> &larr; <i>q</i> - 1
+                  <b>else</b> <i>p</i> &larr; <i>q</i> + 1
 <b>return</b> NOT-FOUND</pre>
 :::
 
@@ -1019,9 +1039,9 @@ See Cormen (2013), pp. 28&ndash;30, for more on this algorithm
       <i>q</i> &larr; ⌊(<i>p</i> + <i>r</i>)/2⌋
       <b>If</b> <i>A</i>[<i>q</i>] = <i>x</i>
             <b>then return</b> <i>q</i>
-      <b>else if</b> <i>A</i>[<i>q</i>] &gt; <i>x</i>
-            <b>then</b> <i>r</i> &larr; <i>q</i> - 1
-      <b>else</b> <i>p</i> &larr; <i>q</i> + 1
+            <b>else If</b> <i>A</i>[<i>q</i>] &gt; <i>x</i>
+                  <b>then</b> <i>r</i> &larr; <i>q</i> - 1
+                  <b>else</b> <i>p</i> &larr; <i>q</i> + 1
 <b>return</b> NOT-FOUND</pre>
 :::
 
@@ -1049,9 +1069,9 @@ Use binary search to **find 43**
       <i>q</i> &larr; ⌊(<i>p</i> + <i>r</i>)/2⌋
       <b>If</b> <i>A</i>[<i>q</i>] = <i>x</i>
             <b>then return</b> <i>q</i>
-      <b>else if</b> <i>A</i>[<i>q</i>] &gt; <i>x</i>
-            <b>then</b> <i>r</i> &larr; <i>q</i> - 1
-      <b>else</b> <i>p</i> &larr; <i>q</i> + 1
+            <b>else If</b> <i>A</i>[<i>q</i>] &gt; <i>x</i>
+                  <b>then</b> <i>r</i> &larr; <i>q</i> - 1
+                  <b>else</b> <i>p</i> &larr; <i>q</i> + 1
 <b>return</b> NOT-FOUND</pre>
 :::
 

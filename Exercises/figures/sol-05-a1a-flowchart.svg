@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372 352" width="372" height="352" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4a4a"/></marker>
+    <marker id="agS" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4a4a"/></marker>
+  </defs>
+  <rect x="115.0" y="6.0" width="130" height="36" rx="18.0" fill="#3fd28a" stroke="#111" stroke-width="1.1"/>
+  <text x="180" y="28" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">start</text>
+  <path d="M 180 42 V 62" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <polygon points="107.0,63.0 265.0,63.0 253.0,105.0 95.0,105.0" fill="#b3a07a" stroke="#111" stroke-width="1.1"/>
+  <text x="180" y="88.0" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">read n</text>
+  <path d="M 180 105 V 126" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <polygon points="180,128.0 295.0,170 180,212.0 65.0,170" fill="#f0645f" stroke="#111" stroke-width="1.1"/>
+  <text x="180" y="174.0" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">n mod 2 = 0 ?</text>
+  <path d="M 65 170 H 40 V 248" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="52" y="160" text-anchor="middle" font-size="18" fill="#333" font-weight="normal" font-style="italic">yes</text>
+  <path d="M 295 170 H 320 V 248" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="310" y="160" text-anchor="middle" font-size="18" fill="#333" font-weight="normal" font-style="italic">no</text>
+  <polygon points="12.0,249.0 120.0,249.0 108.0,291.0 0.0,291.0" fill="#b3a07a" stroke="#111" stroke-width="1.1"/>
+  <text x="60" y="274.0" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">print even</text>
+  <polygon points="252.0,249.0 360.0,249.0 348.0,291.0 240.0,291.0" fill="#b3a07a" stroke="#111" stroke-width="1.1"/>
+  <text x="300" y="274.0" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">print odd</text>
+  <path d="M 60 291 V 330 H 112" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <path d="M 300 291 V 330 H 248" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <rect x="115.0" y="312.0" width="130" height="36" rx="18.0" fill="#3fd28a" stroke="#111" stroke-width="1.1"/>
+  <text x="180" y="334" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">stop</text>
+</svg>

@@ -130,9 +130,9 @@ b) The inner loop runs for $j = i+1, \dots, n$, so it makes $n - i$ comparisons.
 c) $\sum_{i=1}^{n-1} (n-i) = (n-1) + (n-2) + \dots + 1 = \dfrac{n(n-1)}{2}$.
 d) No: it makes exactly the same number of comparisons on a sorted array as on
 a reversed one. That is unusual, because most sorting algorithms have a best
-case that is much faster than their worst case; insertion sort in session 8 is
+case that is much faster than their worst case; insertion sort in the Time Complexity session is
 the standard example. The swap count of selection sort varies a little, but the
-comparison count is fixed. In session 8 we will say this as: selection sort is
+comparison count is fixed. In the Time Complexity session we will say this as: selection sort is
 $\Theta(n^2)$ in the best, the average and the worst case.
 
 ### A3. Algorithm versus program

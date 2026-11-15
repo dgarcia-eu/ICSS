@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="ICSS-2026-03-DataStructures_files/libs/revealjs/dist/theme/quarto-bdb2709ed6bfded77df1ce32618429bb.css">
+  <link rel="stylesheet" href="ICSS-2026-03-DataStructures_files/libs/revealjs/dist/theme/quarto-279c0b835c116e4ac4cadb9e4456e167.css">
   <link href="ICSS-2026-03-DataStructures_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ICSS-2026-03-DataStructures_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ICSS-2026-03-DataStructures_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -158,8 +158,8 @@ David Garcia<br><span class="semester">Winter Semester 2026-2027</span>
 <ul>
 <li>Session 8: Time Complexity</li>
 <li>Session 9: Theoretical Computer Science</li>
-<li>Session 10: Machine Learning</li>
-<li>Session 11: Databases</li>
+<li>Session 10: Databases</li>
+<li>Session 11: Machine Learning</li>
 <li>Session 12: Parallel Programming</li>
 <li>Session 13: Social Science Applications</li>
 <li>Session 14: Exam Review</li>
@@ -1146,7 +1146,7 @@ than values <span class="math inline">\(h(k)\)</span> maps to</li>
 <li>The AWK language is a specialized language for string processing: a secret tool of many data scientists</li>
 <li>key component of UNIX, co-created by Brian Kernighan at Bell Labs</li>
 <li>AWK: Alfred <strong>A</strong>ho, Peter <strong>W</strong>einberger and Brian <strong>K</strong>ernighan</li>
-<li>Extremely efficient thanks to the use of regular expressions (we will learn them in session 9) and hash tables</li>
+<li>Extremely efficient thanks to the use of regular expressions (we will learn them in the Theoretical Computer Science session) and hash tables</li>
 <li>The default array structure is an associative memory (dictionary) based on a hash table</li>
 <li>MAWK: faster implementation and more memory efficient</li>
 </ul>
@@ -1156,6 +1156,24 @@ than values <span class="math inline">\(h(k)\)</span> maps to</li>
 </div></div>
 <div class="source">
 <p>Brian Kernighan on hash tables: <a href="https://www.youtube.com/watch?v=qTZJLJ3Gm6Q" class="uri">https://www.youtube.com/watch?v=qTZJLJ3Gm6Q</a></p>
+</div>
+</section>
+<section id="why-does-this-matter-practical-python-examples" class="slide level2">
+<h2>Why does this matter? Practical Python examples</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><img data-src="figures/03-python-examples-notebook.png" style="width:100.0%"></p>
+</div><div class="column" style="width:45%;">
+<div class="sm">
+<ul>
+<li><strong>Matching two surveys:</strong> finding the respondents who answered both, with a list and with a set</li>
+<li><strong>Minutes or milliseconds:</strong> the same task is thousands of times faster with the right data structure</li>
+<li><strong>Inside binary search:</strong> counting the steps it really takes</li>
+</ul>
+</div>
+</div></div>
+<div class="source">
+<p><a href="https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples03-DataStructures.ipynb" class="uri">https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples03-DataStructures.ipynb</a></p>
 </div>
 </section>
 <section id="summary" class="slide level2">
@@ -1187,9 +1205,9 @@ than values <span class="math inline">\(h(k)\)</span> maps to</li>
       <i>q</i> ← ⌊(<i>p</i> + <i>r</i>)/2⌋
       <b>If</b> <i>A</i>[<i>q</i>] = <i>x</i>
             <b>then return</b> <i>q</i>
-      <b>else if</b> <i>A</i>[<i>q</i>] &gt; <i>x</i>
-            <b>then</b> <i>r</i> ← <i>q</i> - 1
-      <b>else</b> <i>p</i> ← <i>q</i> + 1
+            <b>else If</b> <i>A</i>[<i>q</i>] &gt; <i>x</i>
+                  <b>then</b> <i>r</i> ← <i>q</i> - 1
+                  <b>else</b> <i>p</i> ← <i>q</i> + 1
 <b>return</b> NOT-FOUND</pre>
 </div><div class="column" style="width:50%;">
 <div class="sm">
@@ -1216,9 +1234,9 @@ than values <span class="math inline">\(h(k)\)</span> maps to</li>
       <i>q</i> ← ⌊(<i>p</i> + <i>r</i>)/2⌋
       <b>If</b> <i>A</i>[<i>q</i>] = <i>x</i>
             <b>then return</b> <i>q</i>
-      <b>else if</b> <i>A</i>[<i>q</i>] &gt; <i>x</i>
-            <b>then</b> <i>r</i> ← <i>q</i> - 1
-      <b>else</b> <i>p</i> ← <i>q</i> + 1
+            <b>else If</b> <i>A</i>[<i>q</i>] &gt; <i>x</i>
+                  <b>then</b> <i>r</i> ← <i>q</i> - 1
+                  <b>else</b> <i>p</i> ← <i>q</i> + 1
 <b>return</b> NOT-FOUND</pre>
 </div><div class="column" style="width:50%;">
 <div class="center-h sm">
@@ -1242,9 +1260,9 @@ than values <span class="math inline">\(h(k)\)</span> maps to</li>
       <i>q</i> ← ⌊(<i>p</i> + <i>r</i>)/2⌋
       <b>If</b> <i>A</i>[<i>q</i>] = <i>x</i>
             <b>then return</b> <i>q</i>
-      <b>else if</b> <i>A</i>[<i>q</i>] &gt; <i>x</i>
-            <b>then</b> <i>r</i> ← <i>q</i> - 1
-      <b>else</b> <i>p</i> ← <i>q</i> + 1
+            <b>else If</b> <i>A</i>[<i>q</i>] &gt; <i>x</i>
+                  <b>then</b> <i>r</i> ← <i>q</i> - 1
+                  <b>else</b> <i>p</i> ← <i>q</i> + 1
 <b>return</b> NOT-FOUND</pre>
 </div><div class="column" style="width:50%;">
 <div class="center-h sm">

@@ -354,6 +354,12 @@ display: none;
 
 <div id="session-2-information-coding" class="section level1">
 <h1>Session 2: Information Coding</h1>
+<style>
+figure, .figure, .float { margin: 1.4em 0 1.8em 0; }
+figure img, .float img { display: block; max-width: 100%; }
+figcaption, .figcaption, .figure p.caption { margin-top: 0.3em; font-size: 0.88em; color: #555; }
+details { margin: -0.5em 0 2.2em 0; }
+</style>
 <p><em>Introduction to Computing for the Social Sciences · lecture
 transcript</em></p>
 <p><strong>Recommended reading for this session:</strong> Chapter 1 of
@@ -550,8 +556,8 @@ chip to access. An address decoder activates the addressed row, and the
 <em>data bus</em> either carries out the content of that row, in the
 case of a read, or carries in the new value, in the case of a write.
 That is enough detail for this course. We will come back to how a
-running program organizes its memory in session 6, when we look at the
-call stack.</p>
+running program organizes its memory in the Recursion session, when we
+look at the call stack.</p>
 <hr />
 </div>
 <div id="number-systems" class="section level2">
@@ -928,6 +934,9 @@ value beyond the limits of its encoding is division by zero, but
 operating systems and languages usually raise a warning or an error for
 that one. Overflow, by contrast, is often silent and thus more
 dangerous.</p>
+<p>To see an integer silently become negative in ordinary data work,
+follow section 2 of the <a href="https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples02-InformationCoding.ipynb">Python
+examples notebook of this session</a>.</p>
 <hr />
 </div>
 <div id="floating-point-numbers-ieee-754" class="section level2">
@@ -1130,7 +1139,11 @@ wrote the first compiler in 1952 and designed FLOW-MATIC, the language
 on which COBOL was modeled. Grace Hopper argued for machine-independent
 programming languages when most people thought computers could only be
 programmed in their own machine code, being ahead of technology by more
-than a decade. —</p>
+than a decade.</p>
+<p>To see rounding errors add up to a wrong result in a few lines of
+Python, follow section 1 of the <a href="https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples02-InformationCoding.ipynb">Python
+examples notebook of this session</a>.</p>
+<hr />
 </div>
 <div id="character-coding" class="section level2">
 <h2>9. Character coding</h2>
@@ -1203,6 +1216,9 @@ error go away, you are deleting part of your dataset.</p>
 <p>If you want how my lab learned to finally deal with unicode properly,
 check our funny paper on emoji.</p>
 </blockquote>
+<p>To see one name become two because of a single byte, follow section 3
+of the <a href="https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples02-InformationCoding.ipynb">Python
+examples notebook of this session</a>.</p>
 <hr />
 </div>
 </div>
@@ -1398,8 +1414,17 @@ nothing more than the bit shifting of the table above.</p>
 <hr />
 </div>
 </div>
+<div id="why-does-this-matter-practical-python-examples" class="section level2">
+<h2>11. Why does this matter? Practical Python examples</h2>
+<p>Check the <a href="https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples02-InformationCoding.ipynb">practical
+Python examples in this Jupyter notebook</a>. There, you will see how
+rounding errors can add up to a wrong variance, an integer can silently
+become negative, and a name that becomes two names because of one
+byte.</p>
+<hr />
+</div>
 <div id="check-yourself" class="section level2">
-<h2>11. Check yourself</h2>
+<h2>12. Check yourself</h2>
 <p><strong>1.</strong> Convert 100 to binary, octal and hexadecimal.</p>
 <details>
 <summary>
@@ -1462,14 +1487,6 @@ by another symbol, is the classic fingerprint of UTF-8 read as
 Latin-1.</p>
 </details>
 <hr />
-</div>
-<div id="why-does-this-matter-practical-python-examples" class="section level2">
-<h2>12. Why does this matter? Practical Python examples</h2>
-<p>Check the <a href="https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples02-InformationCoding.ipynb">practical
-Python examples in this Jupyter notebook</a>. There, you will see how
-rounding errors can add up to a wrong variance, an integer can silently
-become negative, and a name that becomes two names because of one
-byte.</p>
 </div>
 <div id="references" class="section level2">
 <h2>13. References</h2>

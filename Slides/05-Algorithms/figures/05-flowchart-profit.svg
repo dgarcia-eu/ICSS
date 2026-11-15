@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 424" width="440" height="424" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4a4a"/></marker>
+    <marker id="agS" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4a4a"/></marker>
+  </defs>
+  <rect x="71.0" y="8.0" width="78" height="24" rx="12.0" fill="#3fd28a" stroke="#111" stroke-width="1.1"/>
+  <text x="110" y="24" text-anchor="middle" font-size="12" fill="#111" font-weight="bold" font-style="normal">start</text>
+  <polygon points="34.0,55.0 198.0,55.0 186.0,93.0 22.0,93.0" fill="#b3a07a" stroke="#111" stroke-width="1.1"/>
+  <text x="110" y="71.4" text-anchor="middle" font-size="11" fill="#111" font-weight="bold" font-style="normal">Read Selling Price</text>
+  <text x="110" y="84.60000000000001" text-anchor="middle" font-size="11" fill="#111" font-weight="bold" font-style="normal">(SP)</text>
+  <polygon points="34.0,121.0 198.0,121.0 186.0,159.0 22.0,159.0" fill="#b3a07a" stroke="#111" stroke-width="1.1"/>
+  <text x="110" y="137.4" text-anchor="middle" font-size="11" fill="#111" font-weight="bold" font-style="normal">Read Cost Price</text>
+  <text x="110" y="150.6" text-anchor="middle" font-size="11" fill="#111" font-weight="bold" font-style="normal">(CP)</text>
+  <polygon points="110,184.0 196.0,208 110,232.0 24.0,208" fill="#f0645f" stroke="#111" stroke-width="1.1"/>
+  <text x="110" y="212.0" text-anchor="middle" font-size="12" fill="#111" font-weight="bold" font-style="normal">SP &gt;= CP</text>
+  <rect x="256.0" y="192.0" width="168" height="32" fill="#c8c8c8" stroke="#111" stroke-width="1.1"/>
+  <text x="340" y="212.0" text-anchor="middle" font-size="12" fill="#111" font-weight="bold" font-style="normal">Profit = SP - CP</text>
+  <rect x="26.0" y="262.0" width="168" height="32" fill="#c8c8c8" stroke="#111" stroke-width="1.1"/>
+  <text x="110" y="282.0" text-anchor="middle" font-size="12" fill="#111" font-weight="bold" font-style="normal">Loss = CP - SP</text>
+  <polygon points="34.0,326.0 198.0,326.0 186.0,362.0 22.0,362.0" fill="#b3a07a" stroke="#111" stroke-width="1.1"/>
+  <text x="110" y="348.0" text-anchor="middle" font-size="12" fill="#111" font-weight="bold" font-style="normal">Output Loss</text>
+  <polygon points="264.0,326.0 428.0,326.0 416.0,362.0 252.0,362.0" fill="#b3a07a" stroke="#111" stroke-width="1.1"/>
+  <text x="340" y="348.0" text-anchor="middle" font-size="12" fill="#111" font-weight="bold" font-style="normal">Output Profit</text>
+  <rect x="71.0" y="392.0" width="78" height="24" rx="12.0" fill="#3fd28a" stroke="#111" stroke-width="1.1"/>
+  <text x="110" y="408" text-anchor="middle" font-size="12" fill="#111" font-weight="bold" font-style="normal">stop</text>
+  <line x1="110" y1="32" x2="110" y2="53" stroke="#111" stroke-width="1.4" marker-end="url(#a)"/>
+  <line x1="110" y1="93" x2="110" y2="119" stroke="#111" stroke-width="1.4" marker-end="url(#a)"/>
+  <line x1="110" y1="159" x2="110" y2="182" stroke="#111" stroke-width="1.4" marker-end="url(#a)"/>
+  <line x1="196" y1="208" x2="254" y2="208" stroke="#111" stroke-width="1.4" marker-end="url(#a)"/>
+  <text x="226" y="200" text-anchor="middle" font-size="15" fill="#2e8b3a" font-weight="normal" font-style="normal">&#10004;</text>
+  <line x1="110" y1="232" x2="110" y2="260" stroke="#111" stroke-width="1.4" marker-end="url(#a)"/>
+  <text x="122" y="250" text-anchor="start" font-size="14" fill="#cc2222" font-weight="normal" font-style="normal">&#10008;</text>
+  <line x1="110" y1="294" x2="110" y2="324" stroke="#111" stroke-width="1.4" marker-end="url(#a)"/>
+  <line x1="340" y1="224" x2="340" y2="324" stroke="#111" stroke-width="1.4" marker-end="url(#a)"/>
+  <line x1="110" y1="362" x2="110" y2="390" stroke="#111" stroke-width="1.4" marker-end="url(#a)"/>
+  <path d="M 340 362 L 340 404 L 152 404" fill="none" stroke="#111" stroke-width="1.4" marker-end="url(#a)"/>
+</svg>

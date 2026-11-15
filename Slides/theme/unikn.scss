@@ -476,6 +476,10 @@ $code-color:              $bordeaux !default;
 
 .reveal pre.pseudocode b { font-weight: 700; }
 .reveal pre.pseudocode i { font-style: italic; }
+// line highlight inside pseudocode (the lines a slide is about)
+.reveal pre.pseudocode .hl { background-color: #fde3a7; display: inline-block; min-width: calc(100% - 0.6em); }
+// code part of a line whose comment should start in a common column
+.reveal pre.pseudocode .cc { display: inline-block; min-width: 21em; }
 
 // ============================================================================
 //  Example / note boxes
@@ -844,7 +848,7 @@ $code-color:              $bordeaux !default;
   display: block;
   color: $seeblau;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 1.15em;     // was 1.5em; no body text may be larger than the slide title (2026-11-15)
   line-height: 1.1;
 }
 

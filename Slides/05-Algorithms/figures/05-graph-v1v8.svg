@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 196" width="380" height="196" font-family="Arial, Helvetica, sans-serif">
+  <line x1="46" y1="78" x2="140" y2="44" stroke="#111" stroke-width="1"/>
+  <line x1="222" y1="52" x2="330" y2="40" stroke="#111" stroke-width="1"/>
+  <line x1="222" y1="52" x2="44" y2="148" stroke="#111" stroke-width="1"/>
+  <line x1="330" y1="40" x2="186" y2="110" stroke="#111" stroke-width="1"/>
+  <line x1="330" y1="40" x2="254" y2="122" stroke="#111" stroke-width="1"/>
+  <line x1="44" y1="148" x2="186" y2="110" stroke="#111" stroke-width="1"/>
+  <line x1="44" y1="148" x2="334" y2="152" stroke="#111" stroke-width="1"/>
+  <line x1="186" y1="110" x2="254" y2="122" stroke="#111" stroke-width="1"/>
+  <line x1="254" y1="122" x2="334" y2="152" stroke="#111" stroke-width="1"/>
+  <circle cx="46" cy="78" r="18" fill="#b8b8b8" stroke="#111" stroke-width="1.1"/>
+  <text x="45" y="82" text-anchor="middle" font-size="16">v<tspan font-size="14" dy="4">1</tspan></text>
+  <circle cx="140" cy="44" r="18" fill="#b8b8b8" stroke="#111" stroke-width="1.1"/>
+  <text x="139" y="48" text-anchor="middle" font-size="16">v<tspan font-size="14" dy="4">2</tspan></text>
+  <circle cx="222" cy="52" r="18" fill="#b8b8b8" stroke="#111" stroke-width="1.1"/>
+  <text x="221" y="56" text-anchor="middle" font-size="16">v<tspan font-size="14" dy="4">3</tspan></text>
+  <circle cx="330" cy="40" r="18" fill="#b8b8b8" stroke="#111" stroke-width="1.1"/>
+  <text x="329" y="44" text-anchor="middle" font-size="16">v<tspan font-size="14" dy="4">4</tspan></text>
+  <circle cx="44" cy="148" r="18" fill="#b8b8b8" stroke="#111" stroke-width="1.1"/>
+  <text x="43" y="152" text-anchor="middle" font-size="16">v<tspan font-size="14" dy="4">5</tspan></text>
+  <circle cx="186" cy="110" r="18" fill="#b8b8b8" stroke="#111" stroke-width="1.1"/>
+  <text x="185" y="114" text-anchor="middle" font-size="16">v<tspan font-size="14" dy="4">6</tspan></text>
+  <circle cx="254" cy="122" r="18" fill="#b8b8b8" stroke="#111" stroke-width="1.1"/>
+  <text x="253" y="126" text-anchor="middle" font-size="16">v<tspan font-size="14" dy="4">7</tspan></text>
+  <circle cx="334" cy="152" r="18" fill="#b8b8b8" stroke="#111" stroke-width="1.1"/>
+  <text x="333" y="156" text-anchor="middle" font-size="16">v<tspan font-size="14" dy="4">8</tspan></text>
+</svg>

@@ -94,7 +94,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="ICSS-2026-04-Software_files/libs/revealjs/dist/theme/quarto-bdb2709ed6bfded77df1ce32618429bb.css">
+  <link rel="stylesheet" href="ICSS-2026-04-Software_files/libs/revealjs/dist/theme/quarto-279c0b835c116e4ac4cadb9e4456e167.css">
   <link href="ICSS-2026-04-Software_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ICSS-2026-04-Software_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ICSS-2026-04-Software_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -223,8 +223,8 @@ David Garcia<br><span class="semester">Winter Semester 2026-2027</span>
 <ul>
 <li>Session 8: Time Complexity</li>
 <li>Session 9: Theoretical Computer Science</li>
-<li>Session 10: Machine Learning</li>
-<li>Session 11: Databases</li>
+<li>Session 10: Databases</li>
+<li>Session 11: Machine Learning</li>
 <li>Session 12: Parallel Programming</li>
 <li>Session 13: Social Science Applications</li>
 <li>Session 14: Exam Review</li>
@@ -454,11 +454,11 @@ Binary instructions the CPU executes
 </div><div class="column" style="width:50%;">
 <div class="concept sm">
 <p><span class="label">Declarative</span> Describes <strong>what</strong> the result should be, not how to compute it.<br>
-(for example SQL, session 11)</p>
+(for example SQL, Databases session)</p>
 </div>
 <div class="concept sm">
 <p><span class="label">Functional</span> The result is the value of functions applied to functions<br>
-(based on recursion, session 6)</p>
+(see the Recursion session)</p>
 </div>
 </div></div>
 <div class="xs">
@@ -975,7 +975,7 @@ False</code></pre>
 <thead>
 <tr class="header">
 <th>The program needs to…</th>
-<th>Data structure (session 3)</th>
+<th>Data structure</th>
 <th>Example</th>
 </tr>
 </thead>
@@ -998,7 +998,7 @@ False</code></pre>
 <tr class="even">
 <td>serve first come, first served</td>
 <td>queue</td>
-<td>a waiting list for a seminar (to be covered in session 5)</td>
+<td>a waiting list for a seminar (Algorithms session)</td>
 </tr>
 </tbody>
 </table>
@@ -1276,6 +1276,24 @@ FAILED test_empty_wave_raises
 </div></div>
 <div class="sm">
 <p>A test checks one list. This argument covers <strong>every</strong> non-empty list. Verification tools check such arguments by computer</p>
+</div>
+</section>
+<section id="why-does-this-matter-practical-python-examples" class="slide level2">
+<h2>Why does this matter? Practical Python examples</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><img data-src="figures/04-python-examples-notebook.png" style="width:100.0%"></p>
+</div><div class="column" style="width:45%;">
+<div class="sm">
+<ul>
+<li><strong>Interpreted loop, compiled library:</strong> the same sum is about a hundred times faster in NumPy</li>
+<li><strong>A bug that only a test can see:</strong> a mean that is quietly wrong until a one-line test catches it</li>
+<li><strong>Vibe coding with pytest:</strong> a generated function whose wrong date format is found and fixed step by step</li>
+</ul>
+</div>
+</div></div>
+<div class="source">
+<p><a href="https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples04-Software.ipynb" class="uri">https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples04-Software.ipynb</a></p>
 </div>
 </section>
 <section id="summary" class="slide level2 fit2">

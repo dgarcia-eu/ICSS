@@ -358,6 +358,7 @@ display: none;
 figure, .figure, .float { margin: 1.4em 0 1.8em 0; }
 figure img, .float img { display: block; max-width: 100%; }
 figcaption, .figcaption, .figure p.caption { margin-top: 0.3em; font-size: 0.88em; color: #555; }
+details { margin: -0.5em 0 2.2em 0; }
 </style>
 <p><em>Introduction to Computing for the Social Sciences · lecture
 transcript</em></p>
@@ -386,7 +387,8 @@ The direct translation of the question into code compares every response
 with every other one:</p>
 <pre><code>For each response i:
       For each response j after i:
-            If i and j match, then record a duplicate</code></pre>
+            If i and j match
+                  then record a duplicate</code></pre>
 <p>That is <span class="math inline">\(\binom{2\,000\,000}{2} \approx 2
 \times 10^{12}\)</span> comparisons, two million million. Even at ten
 million comparisons per second, this would take over two days. Now the
@@ -420,8 +422,8 @@ steps is <span class="math inline">\(\lceil \log_2 6\,000 \rceil =
 13\)</span>. With this, the whole recoding effort drops from <span class="math inline">\(10^{11}\)</span> comparisons to about <span class="math inline">\(5 \times 10^8\)</span>, from overnight to under a
 minute. That is a factor of 460 for free, except that it is not totally
 free and this session you will learn what is the cost. The list has to
-be sorted, which costs something up front and session 07 will help us
-understand how much.</p>
+be sorted, which costs something up front and the Sorting Algorithms
+session will help us understand how much.</p>
 <hr />
 </div>
 </div>
@@ -454,8 +456,9 @@ and values.</em></div>
 </div>
 <p>The table below summarizes what we will learn in this session. Here,
 you will start having an understanding about why some data structures
-are faster for some operations than others, in session 8 we will learn
-more precisely how to formalize concepts like “instant” or “slow”.</p>
+are faster for some operations than others, in the Time Complexity
+session we will learn more precisely how to formalize concepts like
+“instant” or “slow”.</p>
 <table>
 <thead>
 <tr class="header">
@@ -645,9 +648,9 @@ While p ≤ r:
       q ← ⌊(p + r)/2⌋
       If A[q] = x
             then return q
-      else if A[q] &gt; x
-            then r ← q - 1
-      else p ← q + 1
+            else If A[q] &gt; x
+                  then r ← q - 1
+                  else p ← q + 1
 return NOT-FOUND</code></pre>
 <p>The variables <span class="math inline">\(p\)</span> and <span class="math inline">\(r\)</span> bracket the part of the array that
 could still contain <span class="math inline">\(x\)</span>, and <span class="math inline">\(q\)</span> is the middle of that bracket. Each
@@ -680,6 +683,9 @@ under insertion means first searching the position and then shifting
 elements, so we have fast search and slow editing again. The fix is to
 stop storing the order in the positions and start storing it in the
 pointers.</p>
+<p>To count the steps of binary search on real data, follow section 2 of
+the <a href="https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples03-DataStructures.ipynb">Python
+examples notebook of this session</a>.</p>
 <hr />
 </div>
 <div id="binary-trees-and-binary-search-trees" class="section level2">
@@ -688,13 +694,13 @@ pointers.</p>
 or consists of a node, the <em>root</em> <span class="math inline">\(S\)</span>, with at most two children, the left
 child <span class="math inline">\(L\)</span> and the right child <span class="math inline">\(R\)</span>, both of which are themselves binary
 trees. Note that the definition is recursive, i.e. a tree is defined in
-terms of trees. Session 6 makes that pattern its main topic, but it is
-already doing work here, because it means that any algorithm on a tree
-can be written as “do something to the root, then do the same thing to
-the two subtrees”. The vocabulary is the one of a family tree. The root
-is the top node, a <em>leaf</em> is a node with no children, parent and
-child are the two ends of an edge, siblings share a parent, and a
-<em>subtree</em> is a node together with everything below it.</p>
+terms of trees. The Recursion session makes that pattern its main topic,
+but it is already doing work here, because it means that any algorithm
+on a tree can be written as “do something to the root, then do the same
+thing to the two subtrees”. The vocabulary is the one of a family tree.
+The root is the top node, a <em>leaf</em> is a node with no children,
+parent and child are the two ends of an edge, siblings share a parent,
+and a <em>subtree</em> is a node together with everything below it.</p>
 <div class="float">
 <img role="img" aria-label="A binary tree." src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDAgMjMyIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjIzMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiPgogIDxkZWZzPgogICAgPG1hcmtlciBpZD0iYSIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNiIgbWFya2VySGVpZ2h0PSI2IgogICAgICAgICAgICBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTSAwIDAgTCAxMCA1IEwgMCAxMCB6IiBmaWxsPSIjMjIyIi8+PC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJhYiIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNiIgbWFya2VySGVpZ2h0PSI2IgogICAgICAgICAgICBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTSAwIDAgTCAxMCA1IEwgMCAxMCB6IiBmaWxsPSIjMWY2ZmIyIi8+PC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJhciIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNiIgbWFya2VySGVpZ2h0PSI2IgogICAgICAgICAgICBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTSAwIDAgTCAxMCA1IEwgMCAxMCB6IiBmaWxsPSIjY2MyMjIyIi8+PC9tYXJrZXI+CiAgPC9kZWZzPgogIDxsaW5lIHgxPSIyNTAiIHkxPSIzNyIgeDI9IjE2MCIgeTI9IjY5IiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMS4xIi8+CiAgPGxpbmUgeDE9IjI1MCIgeTE9IjM3IiB4Mj0iMzUwIiB5Mj0iNjkiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjEiLz4KICA8bGluZSB4MT0iMTYwIiB5MT0iOTkiIHgyPSIxMTAiIHkyPSIxMzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjEiLz4KICA8bGluZSB4MT0iMTYwIiB5MT0iOTkiIHgyPSIyMTUiIHkyPSIxMzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjEiLz4KICA8bGluZSB4MT0iMzUwIiB5MT0iOTkiIHgyPSIzMDUiIHkyPSIxMzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjEiLz4KICA8bGluZSB4MT0iMzUwIiB5MT0iOTkiIHgyPSI0MDAiIHkyPSIxMzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjEiLz4KICA8bGluZSB4MT0iMTEwIiB5MT0iMTYxIiB4Mj0iNzUiIHkyPSIxOTMiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjEiLz4KICA8bGluZSB4MT0iMTEwIiB5MT0iMTYxIiB4Mj0iMTQwIiB5Mj0iMTkzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMS4xIi8+CiAgPGxpbmUgeDE9IjIxNSIgeTE9IjE2MSIgeDI9IjIxNSIgeTI9IjE5MyIgc3Ryb2tlPSIjMTExIiBzdHJva2Utd2lkdGg9IjEuMSIvPgogIDxsaW5lIHgxPSIxNzUiIHkxPSI4NCIgeDI9IjMzNSIgeTI9Ijg0IiBzdHJva2U9IiMxZjZmYjIiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWRhc2hhcnJheT0iMiAzIi8+CiAgPGxpbmUgeDE9IjkwIiB5MT0iMjA4IiB4Mj0iMTI1IiB5Mj0iMjA4IiBzdHJva2U9IiMxZjZmYjIiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWRhc2hhcnJheT0iMiAzIi8+CiAgPGVsbGlwc2UgY3g9IjM1MiIgY3k9IjExOCIgcng9IjcyIiByeT0iNjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzk5OSIgc3Ryb2tlLXdpZHRoPSIxLjIiIHN0cm9rZS1kYXNoYXJyYXk9IjUgNCIvPgogIDxjaXJjbGUgY3g9IjI1MCIgY3k9IjIyIiByPSIxNSIgZmlsbD0iI2E2YTZhNiIgc3Ryb2tlPSIjMTExIiBzdHJva2Utd2lkdGg9IjEuMSIvPgogIDx0ZXh0IHg9IjI1MCIgeT0iMjciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiMxMTEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiIGZvbnQtc3R5bGU9Im5vcm1hbCI+QTwvdGV4dD4KICA8Y2lyY2xlIGN4PSIxNjAiIGN5PSI4NCIgcj0iMTUiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjEiLz4KICA8dGV4dCB4PSIxNjAiIHk9Ijg5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmaWxsPSIjMTExIiBmb250LXdlaWdodD0ibm9ybWFsIiBmb250LXN0eWxlPSJub3JtYWwiPkI8L3RleHQ+CiAgPGNpcmNsZSBjeD0iMzUwIiBjeT0iODQiIHI9IjE1IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMS4xIi8+CiAgPHRleHQgeD0iMzUwIiB5PSI4OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzExMSIgZm9udC13ZWlnaHQ9Im5vcm1hbCIgZm9udC1zdHlsZT0ibm9ybWFsIj5DPC90ZXh0PgogIDxjaXJjbGUgY3g9IjExMCIgY3k9IjE0NiIgcj0iMTUiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjEiLz4KICA8dGV4dCB4PSIxMTAiIHk9IjE1MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzExMSIgZm9udC13ZWlnaHQ9Im5vcm1hbCIgZm9udC1zdHlsZT0ibm9ybWFsIj5EPC90ZXh0PgogIDxjaXJjbGUgY3g9IjIxNSIgY3k9IjE0NiIgcj0iMTUiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjEiLz4KICA8dGV4dCB4PSIyMTUiIHk9IjE1MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzExMSIgZm9udC13ZWlnaHQ9Im5vcm1hbCIgZm9udC1zdHlsZT0ibm9ybWFsIj5FPC90ZXh0PgogIDxjaXJjbGUgY3g9IjMwNSIgY3k9IjE0NiIgcj0iMTUiIGZpbGw9IiNkYmVlZGIiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjEiLz4KICA8dGV4dCB4PSIzMDUiIHk9IjE1MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzExMSIgZm9udC13ZWlnaHQ9Im5vcm1hbCIgZm9udC1zdHlsZT0ibm9ybWFsIj5GPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQwMCIgY3k9IjE0NiIgcj0iMTUiIGZpbGw9IiNkYmVlZGIiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjEiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjE1MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzExMSIgZm9udC13ZWlnaHQ9Im5vcm1hbCIgZm9udC1zdHlsZT0ibm9ybWFsIj5HPC90ZXh0PgogIDxjaXJjbGUgY3g9Ijc1IiBjeT0iMjA4IiByPSIxNSIgZmlsbD0iI2RiZWVkYiIgc3Ryb2tlPSIjMTExIiBzdHJva2Utd2lkdGg9IjEuMSIvPgogIDx0ZXh0IHg9Ijc1IiB5PSIyMTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiMxMTEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiIGZvbnQtc3R5bGU9Im5vcm1hbCI+SDwvdGV4dD4KICA8Y2lyY2xlIGN4PSIxNDAiIGN5PSIyMDgiIHI9IjE1IiBmaWxsPSIjZGJlZWRiIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMS4xIi8+CiAgPHRleHQgeD0iMTQwIiB5PSIyMTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiMxMTEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiIGZvbnQtc3R5bGU9Im5vcm1hbCI+STwvdGV4dD4KICA8Y2lyY2xlIGN4PSIyMTUiIGN5PSIyMDgiIHI9IjE1IiBmaWxsPSIjZGJlZWRiIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMS4xIi8+CiAgPHRleHQgeD0iMjE1IiB5PSIyMTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiMxMTEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiIGZvbnQtc3R5bGU9Im5vcm1hbCI+SjwvdGV4dD4KPC9zdmc+Cg==" alt="A binary tree." />
 <div class="figcaption"><em>A binary tree.</em></div>
@@ -1187,7 +1193,10 @@ view of the keys uses the same hash table. But
 <code>key in list(d)</code> or a loop over the keys scans them one by
 one, which turns an instant operation into a linear scan, and in a loop
 that becomes a quadratic algorithm, as we will learn how to calculate in
-session 8.</p>
+the Time Complexity session.</p>
+<p>To time the difference between a list and a hash-based structure when
+matching two surveys, follow section 1 of the <a href="https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples03-DataStructures.ipynb">Python
+examples notebook of this session</a>.</p>
 </div>
 <div id="why-this-matters-for-social-science" class="section level2">
 <h2>10. Why this matters for social science</h2>
@@ -1276,10 +1285,10 @@ specialized language for string processing and a quiet favorite of many
 data scientists. It was created at Bell Labs by Alfred Aho, Peter
 Weinberger and Brian Kernighan, whose initials give it its name, and it
 is a key component of UNIX. It is extremely fast for what it does thanks
-to two things, namely regular expressions, which we will learn in
-session 9, and hash tables. Its default array type is an associative
-array backed by a hash table, which is why counting things in AWK is a
-one-liner:</p>
+to two things, namely regular expressions, which we will learn in the
+Theoretical Computer Science session, and hash tables. Its default array
+type is an associative array backed by a hash table, which is why
+counting things in AWK is a one-liner:</p>
 <pre class="awk"><code>{ count[$1]++ }  END { for (k in count) print k, count[k] }</code></pre>
 <p>That is a word-frequency counter, and the <code>count</code> array is
 a hash table. MAWK is a faster and more memory-efficient implementation

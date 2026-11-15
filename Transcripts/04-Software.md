@@ -4,6 +4,7 @@
 figure, .figure, .float { margin: 1.4em 0 1.8em 0; }
 figure img, .float img { display: block; max-width: 100%; }
 figcaption, .figcaption, .figure p.caption { margin-top: 0.3em; font-size: 0.88em; color: #555; }
+details { margin: -0.5em 0 2.2em 0; }
 </style>
 
 *Introduction to Computing for the Social Sciences · lecture transcript*
@@ -174,8 +175,8 @@ leaves the how to the system. Within the imperative family, *object-oriented*
 programming groups data and the instructions into objects.
 Within the declarative family, *functional* programming expresses the result
 as the value of functions applied to other functions. You will meet the
-declarative style in SQL in session 11, and the functional style through
-recursion in session 6. Python supports all of these paradigms, and which one
+declarative style in SQL in the Databases session, and the functional style through
+recursion in the Recursion session. Python supports all of these paradigms, and which one
 you are using depends on how you write in Python. You can even mix them in the same program. The rest of this
 part covers the two you use in almost every Python program, which are imperative and
 object-oriented.
@@ -513,7 +514,7 @@ settles the empty case. None of them says how to link the waves, which is the ma
 The specification can be checked against any
 implementation, whether you wrote it, a colleague did, or a coding agent did.
 The result is keyed by `pseudonym(email)`, a hash of the cleaned email address
-computed with a secret, as in the pseudonymization example of session 3. The
+computed with a secret, as in the pseudonymization example of the Data Structures session. The
 same person gets the same key in both waves, and nobody without the secret can
 recover the address.
 
@@ -568,7 +569,7 @@ Small parts have three advantages. They are easier to test, because each can
 be checked on its own with a few cases. They are easier to replace, because a
 new file format only changes `read_wave`. And they are easier to hand to a
 coder, one specified function at a time, rather than as a whole program at
-once. Choosing the data structures is part of the design, session 3 gave
+once. Choosing the data structures is part of the design, the Data Structures session gave
 you some choices but we will learn about more in later sessions. To keep items in order, use a list, such as the (email,
 answer) pairs of a wave. To look something up by a key, use a dictionary, such
 as one per wave from pseudonym to answer. To check membership fast, use a set,
@@ -824,7 +825,7 @@ The precondition that the list is not empty rules out
 a division by zero. Together, the three steps show that the function returns
 the mean for every non-empty list, not only for the lists a test happens to
 try. This is the same reasoning as a proof by induction, and it is how the
-textbook of session 7 argues that sorting algorithms are correct.
+textbook of the Sorting Algorithms session argues that sorting algorithms are correct.
 Verification tools such as Dafny let a computer check arguments of this kind,
 line by line, which is why they need the specification and the invariant in a
 formal language. For a loop of five lines you can do it by hand, and reading

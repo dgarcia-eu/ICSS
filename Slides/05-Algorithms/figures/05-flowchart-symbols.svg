@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 292" width="210" height="292" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4a4a"/></marker>
+    <marker id="agS" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2"
+            orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4a4a"/></marker>
+  </defs>
+  <rect x="22.0" y="9.0" width="116" height="26" rx="13.0" fill="#3fd28a" stroke="#111" stroke-width="1.1"/>
+  <text x="80" y="26" text-anchor="middle" font-size="12" fill="#111" font-weight="bold" font-style="normal">start/stop</text>
+  <polygon points="28.0,69.0 144.0,69.0 132.0,103.0 16.0,103.0" fill="#b3a07a" stroke="#111" stroke-width="1.1"/>
+  <text x="80" y="83.4" text-anchor="middle" font-size="11" fill="#111" font-weight="bold" font-style="normal">input &amp;</text>
+  <text x="80" y="96.60000000000001" text-anchor="middle" font-size="11" fill="#111" font-weight="bold" font-style="normal">output</text>
+  <rect x="19.0" y="137.0" width="122" height="30" fill="#c8c8c8" stroke="#111" stroke-width="1.1"/>
+  <text x="80" y="156.0" text-anchor="middle" font-size="11" fill="#111" font-weight="bold" font-style="normal">operation</text>
+  <polygon points="80,204.0 138.0,226 80,248.0 22.0,226" fill="#f0645f" stroke="#111" stroke-width="1.1"/>
+  <text x="80" y="230.0" text-anchor="middle" font-size="11" fill="#111" font-weight="bold" font-style="normal">split</text>
+  <line x1="138" y1="226" x2="176" y2="226" stroke="#111" stroke-width="1.4" marker-end="url(#a)"/>
+  <text x="180" y="220" text-anchor="start" font-size="11" fill="#111" font-weight="normal" font-style="normal">no</text>
+  <line x1="80" y1="248" x2="80" y2="282" stroke="#111" stroke-width="1.4" marker-end="url(#a)"/>
+  <text x="70" y="272" text-anchor="end" font-size="11" fill="#111" font-weight="normal" font-style="normal">yes</text>
+</svg>

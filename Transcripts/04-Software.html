@@ -358,6 +358,7 @@ display: none;
 figure, .figure, .float { margin: 1.4em 0 1.8em 0; }
 figure img, .float img { display: block; max-width: 100%; }
 figcaption, .figcaption, .figure p.caption { margin-top: 0.3em; font-size: 0.88em; color: #555; }
+details { margin: -0.5em 0 2.2em 0; }
 </style>
 <p><em>Introduction to Computing for the Social Sciences · lecture
 transcript</em></p>
@@ -602,12 +603,13 @@ how to the system. Within the imperative family,
 <em>object-oriented</em> programming groups data and the instructions
 into objects. Within the declarative family, <em>functional</em>
 programming expresses the result as the value of functions applied to
-other functions. You will meet the declarative style in SQL in session
-11, and the functional style through recursion in session 6. Python
-supports all of these paradigms, and which one you are using depends on
-how you write in Python. You can even mix them in the same program. The
-rest of this part covers the two you use in almost every Python program,
-which are imperative and object-oriented.</p>
+other functions. You will meet the declarative style in SQL in the
+Databases session, and the functional style through recursion in the
+Recursion session. Python supports all of these paradigms, and which one
+you are using depends on how you write in Python. You can even mix them
+in the same program. The rest of this part covers the two you use in
+almost every Python program, which are imperative and
+object-oriented.</p>
 <hr />
 </div>
 <div id="imperative-programming" class="section level2">
@@ -959,8 +961,8 @@ directly. The specification can be checked against any implementation,
 whether you wrote it, a colleague did, or a coding agent did. The result
 is keyed by <code>pseudonym(email)</code>, a hash of the cleaned email
 address computed with a secret, as in the pseudonymization example of
-session 3. The same person gets the same key in both waves, and nobody
-without the secret can recover the address.</p>
+the Data Structures session. The same person gets the same key in both
+waves, and nobody without the secret can recover the address.</p>
 <p>Whoever the coder is, the instructions they receive are a
 specification, whether those instructions were written carefully or not.
 Compare</p>
@@ -1028,16 +1030,17 @@ each can be checked on its own with a few cases. They are easier to
 replace, because a new file format only changes <code>read_wave</code>.
 And they are easier to hand to a coder, one specified function at a
 time, rather than as a whole program at once. Choosing the data
-structures is part of the design, session 3 gave you some choices but we
-will learn about more in later sessions. To keep items in order, use a
-list, such as the (email, answer) pairs of a wave. To look something up
-by a key, use a dictionary, such as one per wave from pseudonym to
-answer. To check membership fast, use a set, such as the pseudonyms that
-appear in both waves, which is the intersection of the two sets of keys.
-To serve first come, first served, use a queue, such as a waiting list
-for a seminar. The design is the architect’s decision, because a coder,
-human or agent, writes better code inside a structure that was chosen
-for it than inside one it invented on the spot.</p>
+structures is part of the design, the Data Structures session gave you
+some choices but we will learn about more in later sessions. To keep
+items in order, use a list, such as the (email, answer) pairs of a wave.
+To look something up by a key, use a dictionary, such as one per wave
+from pseudonym to answer. To check membership fast, use a set, such as
+the pseudonyms that appear in both waves, which is the intersection of
+the two sets of keys. To serve first come, first served, use a queue,
+such as a waiting list for a seminar. The design is the architect’s
+decision, because a coder, human or agent, writes better code inside a
+structure that was chosen for it than inside one it invented on the
+spot.</p>
 <p>Skipping the design does not save the work, it moves it to later
 moments and makes it larger. Without a design, every new need is patched
 into the program wherever it fits. The same email cleaning ends up in
@@ -1295,12 +1298,12 @@ line returns the mean.</li>
 zero. Together, the three steps show that the function returns the mean
 for every non-empty list, not only for the lists a test happens to try.
 This is the same reasoning as a proof by induction, and it is how the
-textbook of session 7 argues that sorting algorithms are correct.
-Verification tools such as Dafny let a computer check arguments of this
-kind, line by line, which is why they need the specification and the
-invariant in a formal language. For a loop of five lines you can do it
-by hand, and reading code with an invariant in mind is exactly this
-reasoning.</p>
+textbook of the Sorting Algorithms session argues that sorting
+algorithms are correct. Verification tools such as Dafny let a computer
+check arguments of this kind, line by line, which is why they need the
+specification and the invariant in a formal language. For a loop of five
+lines you can do it by hand, and reading code with an invariant in mind
+is exactly this reasoning.</p>
 <hr />
 </div>
 </div>
