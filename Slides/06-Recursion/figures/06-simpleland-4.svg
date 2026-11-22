@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 314" width="1160" height="314" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b03a2e"/></marker><marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e07b00"/></marker><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#888"/></marker></defs>
+  <text x="20" y="280" text-anchor="start" font-size="20" fill="#666" font-weight="normal" font-style="italic">P</text>
+  <text x="20" y="184" text-anchor="start" font-size="20" fill="#666" font-weight="normal" font-style="italic">parents of P</text>
+  <text x="20" y="88" text-anchor="start" font-size="20" fill="#666" font-weight="normal" font-style="italic">grandparents of P</text>
+  <text x="20" y="25" text-anchor="start" font-size="20" fill="#cc2222" font-weight="normal" font-style="italic">unknown ancestors</text>
+  <line x1="390" y1="213.5" x2="520" y2="231" stroke="#777" stroke-width="1.6"/>
+  <line x1="650" y1="213.5" x2="520" y2="231" stroke="#777" stroke-width="1.6"/>
+  <line x1="315" y1="117.5" x2="390" y2="135" stroke="#777" stroke-width="1.6"/>
+  <line x1="445" y1="117.5" x2="390" y2="135" stroke="#777" stroke-width="1.6"/>
+  <line x1="595" y1="117.5" x2="650" y2="135" stroke="#777" stroke-width="1.6"/>
+  <line x1="725" y1="117.5" x2="650" y2="135" stroke="#777" stroke-width="1.6"/>
+  <line x1="289" y1="32" x2="315" y2="40" stroke="#cc2222" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="289" cy="19" r="13" fill="#fff" stroke="#cc2222" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="289" y="25" text-anchor="middle" font-size="17" fill="#cc2222" font-weight="bold" font-style="normal">?</text>
+  <line x1="341" y1="32" x2="315" y2="40" stroke="#cc2222" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="341" cy="19" r="13" fill="#fff" stroke="#cc2222" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="341" y="25" text-anchor="middle" font-size="17" fill="#cc2222" font-weight="bold" font-style="normal">?</text>
+  <line x1="419" y1="32" x2="445" y2="40" stroke="#cc2222" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="419" cy="19" r="13" fill="#fff" stroke="#cc2222" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="419" y="25" text-anchor="middle" font-size="17" fill="#cc2222" font-weight="bold" font-style="normal">?</text>
+  <line x1="471" y1="32" x2="445" y2="40" stroke="#cc2222" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="471" cy="19" r="13" fill="#fff" stroke="#cc2222" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="471" y="25" text-anchor="middle" font-size="17" fill="#cc2222" font-weight="bold" font-style="normal">?</text>
+  <line x1="569" y1="32" x2="595" y2="40" stroke="#cc2222" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="569" cy="19" r="13" fill="#fff" stroke="#cc2222" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="569" y="25" text-anchor="middle" font-size="17" fill="#cc2222" font-weight="bold" font-style="normal">?</text>
+  <line x1="621" y1="32" x2="595" y2="40" stroke="#cc2222" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="621" cy="19" r="13" fill="#fff" stroke="#cc2222" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="621" y="25" text-anchor="middle" font-size="17" fill="#cc2222" font-weight="bold" font-style="normal">?</text>
+  <line x1="699" y1="32" x2="725" y2="40" stroke="#cc2222" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="699" cy="19" r="13" fill="#fff" stroke="#cc2222" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="699" y="25" text-anchor="middle" font-size="17" fill="#cc2222" font-weight="bold" font-style="normal">?</text>
+  <line x1="751" y1="32" x2="725" y2="40" stroke="#cc2222" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="751" cy="19" r="13" fill="#fff" stroke="#cc2222" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="751" y="25" text-anchor="middle" font-size="17" fill="#cc2222" font-weight="bold" font-style="normal">?</text>
+  <path d="M 493.8 307.5 Q 493.8 276.0 520.0 276.0 Q 546.2 276.0 546.2 307.5 Z" fill="#d16ba5" stroke="#333" stroke-width="1.3"/>
+  <circle cx="520.0" cy="255.0" r="15.8" fill="#f2c9a5" stroke="#333" stroke-width="1.3"/>
+  <path d="M 503.7 253.9 A 16.3 16.3 0 0 1 536.3 253.9 Q 528.4 245.6 520.0 246.6 Q 511.6 245.6 503.7 253.9 Z" fill="#2b2b2b" stroke="none" stroke-width="1.6"/>
+  <circle cx="502.1" cy="246.6" r="5.8" fill="#2b2b2b"/>
+  <circle cx="537.9" cy="246.6" r="5.8" fill="#2b2b2b"/>
+  <text x="520.0" y="299.1" text-anchor="middle" font-size="18" fill="#fff" font-weight="bold" font-style="normal">P</text>
+  <path d="M 363.8 211.5 Q 363.8 180.0 390.0 180.0 Q 416.2 180.0 416.2 211.5 Z" fill="#d9534f" stroke="#333" stroke-width="1.3"/>
+  <path d="M 372.1 156.9 Q 366.9 180.0 374.2 186.3 L 405.8 186.3 Q 413.1 180.0 407.9 156.9 Z" fill="#7a4a2a" stroke="none" stroke-width="1.6"/>
+  <circle cx="390.0" cy="159.0" r="15.8" fill="#f6d3b3" stroke="#333" stroke-width="1.3"/>
+  <path d="M 373.7 157.9 A 16.3 16.3 0 0 1 406.3 157.9 Q 398.4 149.6 390.0 150.6 Q 381.6 149.6 373.7 157.9 Z" fill="#7a4a2a" stroke="none" stroke-width="1.6"/>
+  <path d="M 623.8 211.5 Q 623.8 180.0 650.0 180.0 Q 676.2 180.0 676.2 211.5 Z" fill="#e8a13a" stroke="#333" stroke-width="1.3"/>
+  <circle cx="650.0" cy="159.0" r="15.8" fill="#dba77c" stroke="#333" stroke-width="1.3"/>
+  <path d="M 633.7 157.9 A 16.3 16.3 0 0 1 666.3 157.9 Q 658.4 149.6 650.0 150.6 Q 641.6 149.6 633.7 157.9 Z" fill="#3a3a3a" stroke="none" stroke-width="1.6"/>
+  <path d="M 288.8 115.5 Q 288.8 84.0 315.0 84.0 Q 341.2 84.0 341.2 115.5 Z" fill="#e6c84a" stroke="#333" stroke-width="1.3"/>
+  <circle cx="315.0" cy="63.0" r="15.8" fill="#f6d3b3" stroke="#333" stroke-width="1.3"/>
+  <path d="M 298.7 62.0 A 16.3 16.3 0 0 1 331.3 62.0 Q 323.4 53.5 315.0 54.6 Q 306.6 53.5 298.7 62.0 Z" fill="#b9b9b9" stroke="none" stroke-width="1.6"/>
+  <circle cx="315.0" cy="45.1" r="6.3" fill="#b9b9b9"/>
+  <path d="M 418.8 115.5 Q 418.8 84.0 445.0 84.0 Q 471.2 84.0 471.2 115.5 Z" fill="#6f9fd8" stroke="#333" stroke-width="1.3"/>
+  <circle cx="445.0" cy="63.0" r="15.8" fill="#f2c9a5" stroke="#333" stroke-width="1.3"/>
+  <path d="M 429.2 65.1 Q 427.1 56.7 432.4 53.5" fill="none" stroke="#b9b9b9" stroke-width="3"/>
+  <path d="M 460.8 65.1 Q 462.9 56.7 457.6 53.5" fill="none" stroke="#b9b9b9" stroke-width="3"/>
+  <path d="M 568.8 115.5 Q 568.8 84.0 595.0 84.0 Q 621.2 84.0 621.2 115.5 Z" fill="#7fb7e6" stroke="#333" stroke-width="1.3"/>
+  <circle cx="595.0" cy="63.0" r="15.8" fill="#dba77c" stroke="#333" stroke-width="1.3"/>
+  <path d="M 578.7 62.0 A 16.3 16.3 0 0 1 611.3 62.0 Q 603.4 53.5 595.0 54.6 Q 586.6 53.5 578.7 62.0 Z" fill="#d0d0d0" stroke="none" stroke-width="1.6"/>
+  <circle cx="595.0" cy="45.1" r="6.3" fill="#d0d0d0"/>
+  <path d="M 698.8 115.5 Q 698.8 84.0 725.0 84.0 Q 751.2 84.0 751.2 115.5 Z" fill="#a8704a" stroke="#333" stroke-width="1.3"/>
+  <circle cx="725.0" cy="63.0" r="15.8" fill="#c98d63" stroke="#333" stroke-width="1.3"/>
+  <path d="M 709.2 65.1 Q 707.1 56.7 712.4 53.5" fill="none" stroke="#c4c4c4" stroke-width="3"/>
+  <path d="M 740.8 65.1 Q 742.9 56.7 737.6 53.5" fill="none" stroke="#c4c4c4" stroke-width="3"/>
+  <circle cx="1040" cy="206" r="62" fill="#a6e1f4" stroke="#3e5496" stroke-width="2.8"/>
+  <path d="M 1004.9 187.4 C 1009.0 160.5 1046.2 158.5 1054.5 175.0 C 1064.8 168.8 1085.5 183.3 1079.3 201.9 C 1089.6 216.3 1077.2 241.1 1056.5 239.1 C 1044.1 253.5 1017.3 249.4 1015.2 228.7 C 994.5 226.7 992.5 199.8 1004.9 187.4 Z" fill="#9bd48a" stroke="#3d7d3a" stroke-width="1.6"/>
+  <path d="M 1031.7 237.0 C 1037.9 220.5 1050.3 222.5 1052.4 237.0" fill="#a6e1f4" stroke="#3d7d3a" stroke-width="1.6"/>
+  <path d="M 1042.1 201.9 C 1027.6 183.3 1031.7 170.9 1042.1 170.9 C 1052.4 170.9 1056.5 183.3 1042.1 201.9 Z" fill="#e0503a" stroke="#8c2a1c" stroke-width="1.2"/>
+  <circle cx="1042.1" cy="182.2" r="4.1" fill="#fff"/>
+  <text x="1040" y="292" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">Simpleland</text>
+</svg>

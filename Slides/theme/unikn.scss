@@ -745,7 +745,7 @@ $code-color:              $bordeaux !default;
 }
 
 // ============================================================================
-//  Session 11: the running "Product" table, with highlight variants
+//  Session 10: the running "Product" table, with highlight variants
 // ============================================================================
 .reveal .tbl-product table {
   border-collapse: collapse;
@@ -906,3 +906,61 @@ html.print-pdf .reveal .slide-number-pdf {
 
 // Person icons of the recursion deck: keep their aspect ratio inside the flex row
 .reveal .family img { flex-shrink: 0; aspect-ratio: 1; }
+
+// ============================================================================
+//  Session 6 (2026-11-22)
+// ============================================================================
+// A figure parked at the bottom of the slide, so that it stays in place while
+// the text above it changes from slide to slide (Simpleland family tree).
+.reveal .stage-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2.6em;
+  margin: 0;
+}
+.reveal .stage-bottom p { margin: 0; }
+.reveal .stage-bottom img { display: block; width: 100%; max-width: none; max-height: none; margin: 0; }
+
+// Small line above a slide title, e.g. "Recursive algorithm 1"
+.reveal h2 .pretitle {
+  display: block;
+  font-size: 0.56em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $petrol;
+  line-height: 1.25;
+}
+
+// Python code shown large on its own slide
+.reveal .pycode { width: 92%; margin: 0.6em auto; }
+.reveal .pycode pre { font-size: 0.98em; width: 100%; }
+.reveal .pycode pre code { line-height: 1.4; max-height: none; padding: 0.5em 0.8em; }
+
+// Inline SVG of the call stack slides: code as text, with a fixed layout
+.reveal svg.callstack { display: block; width: 82%; height: auto; margin: 0 auto; }
+
+// Rows that pair a text on the left with an example on the right
+.reveal .rtypes { display: flex; flex-direction: column; gap: 0.45em; font-size: 0.74em; }
+.reveal .rtypes .rt {
+  border: 2px solid $seeblau;
+  border-radius: 8px;
+  background: #f1fafe;
+  padding: 0.3em 0.6em;
+}
+.reveal .rtypes .rt.rt-inner { margin: 0.25em 0 0.15em 1.3em; background: #d4eef9; border-style: dashed; }
+.reveal .rtypes .rt-row { display: flex; align-items: center; gap: 1em; }
+.reveal .rtypes .rt-l { flex: 1 1 auto; }
+.reveal .rtypes .rt-r { flex: 0 0 23em; }
+.reveal .rtypes p { margin: 0.15em 0; }
+.reveal .rtypes ul { margin: 0.1em 0 0.1em 1em; }
+.reveal .rtypes.atypes { font-size: 0.68em; gap: 0.3em; }
+.reveal .rtypes.atypes .rt { padding: 0.15em 0.6em; }
+.reveal .rtypes.atypes .rt-r { flex: 0 0 21em; text-align: center; }
+.reveal .rtypes.atypes .rt:first-child .rt-r img { width: 76%; margin: 0 auto; }
+
+// A table with more room around it and in its cells
+.reveal .tbl-roomy { margin: 0.7em 0 1.1em 0; }
+.reveal .tbl-roomy table th, .reveal .tbl-roomy table td { padding: 0.42em 0.9em; }
+.reveal .rtypes.atypes .rt-r img { display: block; width: 100%; margin: 0; }

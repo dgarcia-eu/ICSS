@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 280" width="340" height="280" font-family="Arial, Helvetica, sans-serif">
+  <line x1="270" y1="32" x2="300.8" y2="56" stroke="#111" stroke-width="1.8"/>
+  <text x="306.8" y="68" text-anchor="middle" font-size="21" fill="#111" font-weight="normal" font-style="normal">4</text>
+  <line x1="270" y1="32" x2="230" y2="56" stroke="#111" stroke-width="1.8"/>
+  <text x="270" y="33" text-anchor="middle" font-size="30" fill="#111" font-weight="bold" font-style="normal">*</text>
+  <line x1="224" y1="76" x2="254.8" y2="100" stroke="#111" stroke-width="1.8"/>
+  <text x="260.8" y="112" text-anchor="middle" font-size="21" fill="#111" font-weight="normal" font-style="normal">3</text>
+  <line x1="224" y1="76" x2="193.2" y2="100" stroke="#111" stroke-width="1.8"/>
+  <text x="187.2" y="112" text-anchor="middle" font-size="21" fill="#111" font-weight="normal" font-style="normal">fac(2)</text>
+  <text x="224" y="77" text-anchor="middle" font-size="30" fill="#111" font-weight="bold" font-style="normal">*</text>
+</svg>

@@ -1,0 +1,2675 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="ICSS-2026-06-Recursion_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ICSS-2026-06-Recursion_files/libs/quarto-html/tabby.min.js"></script>
+<script src="ICSS-2026-06-Recursion_files/libs/quarto-html/popper.min.js"></script>
+<script src="ICSS-2026-06-Recursion_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="ICSS-2026-06-Recursion_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ICSS-2026-06-Recursion_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="ICSS-2026-06-Recursion_files/libs/quarto-html/quarto-syntax-highlighting-86daaaaad7353f9cc0c554efc1dd6d94.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="David Garcia Winter Semester 2026-2027">
+  <title>Introduction to Computing for the Social Sciences Session 6 – Recursion</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="ICSS-2026-06-Recursion_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="ICSS-2026-06-Recursion_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="ICSS-2026-06-Recursion_files/libs/revealjs/dist/theme/quarto-6bbe6302e82146d19e0295983f6517cb.css">
+  <link href="ICSS-2026-06-Recursion_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="ICSS-2026-06-Recursion_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="ICSS-2026-06-Recursion_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="ICSS-2026-06-Recursion_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title"><span class="course">Introduction to Computing for the Social Sciences</span><br><span class="session">Session 6 – Recursion</span></h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+David Garcia<br><span class="semester">Winter Semester 2026-2027</span> 
+</div>
+</div>
+</div>
+
+</section>
+<section id="course-outline" class="slide level2">
+<h2>Course Outline</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div>
+<ul>
+<li><em>Session 1: Introduction</em></li>
+<li><em>Session 2: Information Coding</em></li>
+<li><em>Session 3: Data Structures</em></li>
+<li><em>Session 4: Software</em></li>
+<li><em>Session 5: Algorithms</em></li>
+<li><strong>Session 6: Recursion</strong></li>
+<li>Session 7: Sorting Algorithms</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div>
+<ul>
+<li>Session 8: Time Complexity</li>
+<li>Session 9: Theoretical Computer Science</li>
+<li>Session 10: Databases</li>
+<li>Session 11: Machine Learning</li>
+<li>Session 12: Parallel Programming</li>
+<li>Session 13: Social Science Applications</li>
+<li>Session 14: Exam Review</li>
+</ul>
+</div>
+</div></div>
+<!-- MOTIVATION:M06-B:BEGIN -->
+</section>
+<section id="the-comment-thread-with-no-bottom" class="slide level2 fit1">
+<h2>The comment thread with no bottom</h2>
+<div class="motivation">
+<p><span class="label">Motivating example</span> A discussion thread has replies, replies to replies, and replies to those. To count the posts or to measure how deep an argument went, a procedure has to go through the whole structure, and the structure is <strong>defined in terms of itself</strong>.</p>
+</div>
+<div class="columns">
+<div class="column" style="width:46%;">
+<div class="definition">
+<p><span class="label">A comment is</span> a post, plus a list of <strong>comments</strong>.</p>
+</div>
+<p><span class="ask">When the <em>data</em> is defined in terms of itself, what should the <em>procedure</em> look like?</span></p>
+</div><div class="column" style="width:54%;">
+<div class="center-h">
+<p><img data-src="figures/06-thread-recursive.svg" style="height:9.7em"></p>
+</div>
+</div></div>
+<!-- MOTIVATION:M06-B:END -->
+<!-- MOTIVATION:M06-D:BEGIN -->
+</section>
+<section id="the-car-software-that-could-run-out-of-stack" class="slide level2 fit1">
+<h2>The car software that could run out of stack</h2>
+<div class="motivation">
+<p><span class="label">Motivating example</span> Between 2009 and 2011 Toyota recalled millions of cars after reports of unintended acceleration. In the trial <em>Bookout v. Toyota</em> (2013), the software expert Michael Barr testified that the engine control software of the Camry used <strong>recursion</strong> and could run out of <strong>stack memory</strong>.</p>
+</div>
+<div class="figures">
+<div class="fq">
+<p><span class="big">41%</span><span class="cap">of the stack used at most, according to Toyota</span></p>
+</div>
+<div class="fq">
+<p><span class="big">94%</span><span class="cap">of the stack used, according to the expert, before counting the recursion</span></p>
+</div>
+<div class="fq">
+<p><span class="big">no check</span><span class="cap">at run time that would notice a stack overflow</span></p>
+</div>
+</div>
+<p><span class="ask">Why does a function that calls itself need more memory with every call, and what happens when that memory runs out?</span></p>
+<div class="source">
+<p>Barr, M. (2013). <em>Bookout v. Toyota: 2005 Camry L4 software analysis</em>. Koopman, P. (2014). <em>A case study of Toyota unintended acceleration and software safety</em></p>
+</div>
+<!-- MOTIVATION:M06-D:END -->
+</section>
+<section id="example-citizens-of-simpleland" class="slide level2">
+<h2>Example: Citizens of Simpleland</h2>
+<div class="center-h">
+<p><img data-src="figures/06-simpleland-map.svg" style="height:13.4em"></p>
+</div>
+</section>
+<section id="example-citizens-of-simpleland-1" class="slide level2 fit1">
+<h2>Example: Citizens of Simpleland</h2>
+<div class="sm">
+<p>A person (P) is a citizen of Simpleland if it satisfies any of these conditions:</p>
+<ul>
+<li>P was born in Simpleland</li>
+<li>either of P’s parents are citizens of Simpleland</li>
+</ul>
+</div>
+<div class="stage-bottom">
+<p><img data-src="figures/06-simpleland-0.svg"></p>
+</div>
+</section>
+<section id="example-citizens-of-simpleland-2" class="slide level2 fit1">
+<h2>Example: Citizens of Simpleland</h2>
+<div class="sm">
+<p>A person (P) is a citizen of Simpleland if it satisfies any of these conditions:</p>
+<ul>
+<li>P was born in Simpleland</li>
+<li>either of P’s parents are citizens of Simpleland</li>
+</ul>
+</div>
+<div class="sm">
+<p><strong>Is P a citizen of Simpleland?</strong></p>
+</div>
+<div class="stage-bottom">
+<p><img data-src="figures/06-simpleland-1.svg"></p>
+</div>
+</section>
+<section id="example-citizens-of-simpleland-3" class="slide level2 fit1">
+<h2>Example: Citizens of Simpleland</h2>
+<div class="sm">
+<p>A person (P) is a citizen of Simpleland if it satisfies any of these conditions:</p>
+<ul>
+<li><span class="hl">P was born in Simpleland</span></li>
+<li>either of P’s parents are citizens of Simpleland</li>
+</ul>
+</div>
+<div class="sm">
+<p><strong>Is P a citizen of Simpleland?</strong></p>
+</div>
+<div class="stage-bottom">
+<p><img data-src="figures/06-simpleland-1.svg"></p>
+</div>
+</section>
+<section id="example-citizens-of-simpleland-4" class="slide level2 fit1">
+<h2>Example: Citizens of Simpleland</h2>
+<div class="sm">
+<p>A person (P) is a citizen of Simpleland if it satisfies any of these conditions:</p>
+<ul>
+<li>P was born in Simpleland</li>
+<li>either of P’s parents are citizens of Simpleland</li>
+</ul>
+</div>
+<div class="sm">
+<p><strong>Is P a citizen of Simpleland?</strong></p>
+</div>
+<div class="stage-bottom">
+<p><img data-src="figures/06-simpleland-2.svg"></p>
+</div>
+</section>
+<section id="example-citizens-of-simpleland-5" class="slide level2 fit1">
+<h2>Example: Citizens of Simpleland</h2>
+<div class="sm">
+<p>A person (P) is a citizen of Simpleland if it satisfies any of these conditions:</p>
+<ul>
+<li>P was born in Simpleland</li>
+<li><span class="hl">either of P’s parents are citizens of Simpleland</span></li>
+</ul>
+</div>
+<div class="sm">
+<p><strong>Is P a citizen of Simpleland?</strong></p>
+</div>
+<div class="stage-bottom">
+<p><img data-src="figures/06-simpleland-2.svg"></p>
+</div>
+</section>
+<section id="example-citizens-of-simpleland-6" class="slide level2 fit1">
+<h2>Example: Citizens of Simpleland</h2>
+<div class="sm">
+<p>A person (P) is a citizen of Simpleland if it satisfies any of these conditions:</p>
+<ul>
+<li>P was born in Simpleland</li>
+<li>either of P’s parents are citizens of Simpleland</li>
+</ul>
+</div>
+<div class="sm">
+<p><strong>Is P a citizen of Simpleland?</strong></p>
+</div>
+<div class="stage-bottom">
+<p><img data-src="figures/06-simpleland-3.svg"></p>
+</div>
+</section>
+<section id="components-of-recursion" class="slide level2 fit1">
+<h2>Components of Recursion</h2>
+<div class="sm">
+<p>A person (P) is a citizen of Simpleland if it satisfies any of these conditions:</p>
+<ul>
+<li>P was born in Simpleland &nbsp;&nbsp; <span class="hl"><strong>Base case</strong></span></li>
+<li>either of P’s parents are citizens of Simpleland</li>
+</ul>
+</div>
+<div class="sm">
+<p><strong>Is P a citizen of Simpleland?</strong></p>
+</div>
+<div class="stage-bottom">
+<p><img data-src="figures/06-simpleland-3.svg"></p>
+</div>
+</section>
+<section id="components-of-recursion-1" class="slide level2 fit1">
+<h2>Components of Recursion</h2>
+<div class="sm">
+<p>A person (P) is a citizen of Simpleland if it satisfies any of these conditions:</p>
+<ul>
+<li>P was born in Simpleland</li>
+<li>either of P’s parents are citizens of Simpleland &nbsp;&nbsp; <span class="hl"><strong>Recursion case</strong></span></li>
+</ul>
+</div>
+<div class="sm">
+<p><strong>Is P a citizen of Simpleland?</strong></p>
+</div>
+<div class="stage-bottom">
+<p><img data-src="figures/06-simpleland-3.svg"></p>
+</div>
+</section>
+<section id="recursion" class="slide level2 fit1">
+<h2>Recursion</h2>
+<div class="definition">
+<p><span class="label">Definition of recursion</span></p>
+<div class="sm">
+<p>Recursion is a technique in mathematics, logic and computer science to specify a function through itself (a <em>recursive definition</em>). The fundamental principle of recursion is to define the value of a function <span class="math inline">\(f\)</span> through previously calculated values of the same function <span class="math inline">\(f(n)\)</span>, <span class="math inline">\(f(n-1)\)</span>, …</p>
+</div>
+</div>
+<div>
+<ul>
+<li>as long as the start value of the function <span class="math inline">\(f\)</span> is known for sufficiently many arguments (<strong>base cases</strong>), any value of <span class="math inline">\(f\)</span> can be calculated</li>
+<li>a recursive call of the function <span class="math inline">\(f\)</span> keeps calling itself until
+<ul>
+<li>the function converges to a specific target value</li>
+<li>or a pre-defined <strong>abort condition</strong> has been met</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="issues-with-recursion" class="slide level2 fit1">
+<h2>Issues with Recursion</h2>
+<div class="sm">
+<p>A person (P) is a citizen of Simpleland if it satisfies any of these conditions:</p>
+<ul>
+<li>P was born in Simpleland</li>
+<li>either of P’s parents are citizens of Simpleland</li>
+</ul>
+</div>
+<div class="sm">
+<p><strong>What if we don’t know all ancestors of P?</strong></p>
+</div>
+<div class="stage-bottom">
+<p><img data-src="figures/06-simpleland-4.svg"></p>
+</div>
+</section>
+<section id="issues-with-recursion-1" class="slide level2 fit1">
+<h2>Issues with Recursion</h2>
+<div class="sm">
+<p>A person (P) is a citizen of Simpleland if it satisfies any of these conditions:</p>
+<ul>
+<li>P was born in Simpleland</li>
+<li>either of P’s parents are citizens of Simpleland</li>
+<li>if we don’t know P’s parents, P is not a citizen of Simpleland &nbsp;&nbsp; <span class="hl"><strong>Abort case</strong></span></li>
+</ul>
+</div>
+<div class="stage-bottom">
+<p><img data-src="figures/06-simpleland-4.svg"></p>
+</div>
+</section>
+<section id="example-seating-four-diners" class="slide level2">
+<h2>Example: Seating four diners</h2>
+<div>
+<p>How many different ways exist for arranging the four diners?</p>
+</div>
+<div class="center-h">
+<p><img data-src="figures/06-seating-diners.svg" style="height:9.5em"></p>
+</div>
+</section>
+<section id="example-seating-four-diners-1" class="slide level2">
+<h2>Example: Seating four diners</h2>
+<div>
+<p>How many different ways exist for arranging the four diners?</p>
+</div>
+<div class="center-h">
+<p><img data-src="figures/06-seating-choices.svg" style="height:9.5em"></p>
+</div>
+</section>
+<section id="example-seating-four-diners-2" class="slide level2">
+<h2>Example: Seating four diners</h2>
+<div>
+<p>How many different ways exist for arranging the four diners?</p>
+</div>
+<div class="center-h">
+<p><img data-src="figures/06-seating-choices.svg" style="height:9.5em"></p>
+</div>
+<div class="center-h">
+<p><span class="math inline">\(4! = 4 \cdot 3 \cdot 2 \cdot 1 = 24\)</span> arrangements</p>
+</div>
+</section>
+<section id="factorial-a-recursive-definition" class="slide level2">
+<h2>Factorial: A Recursive Definition</h2>
+<div class="definition">
+<p><span class="label">Iterative definition</span> <span class="math inline">\(n! = n \, (n-1) \, (n-2) \cdots 1\)</span>, for example <span class="math inline">\(4! = 4 \cdot 3 \cdot 2 \cdot 1 = 24\)</span></p>
+</div>
+<div class="definition">
+<p><span class="label">Recursive definition</span> <span class="math inline">\(n! = n \, (n-1)!\)</span>, for example <span class="math inline">\(4! = 4 \cdot 3! = 4 \cdot 3 \cdot 2! = 4 \cdot 3 \cdot 2 \cdot 1! = 24\)</span></p>
+</div>
+<div class="sm">
+<ul>
+<li>The recursive definition uses the factorial itself, one number smaller</li>
+<li>It needs a place to stop: without <span class="math inline">\(1! = 1\)</span> the unfolding would never end</li>
+</ul>
+</div>
+</section>
+<section id="factorial-a-recursive-definition-1" class="slide level2">
+<h2>Factorial: A Recursive Definition</h2>
+<div class="definition">
+<p><span class="label">Iterative definition</span> <span class="math inline">\(n! = n \, (n-1) \, (n-2) \cdots 1\)</span>, for example <span class="math inline">\(4! = 4 \cdot 3 \cdot 2 \cdot 1 = 24\)</span></p>
+</div>
+<div class="definition">
+<p><span class="label">Recursive definition</span> <span class="math inline">\(n! = n \, (n-1)!\)</span>, for example <span class="math inline">\(4! = 4 \cdot 3! = 4 \cdot 3 \cdot 2! = 4 \cdot 3 \cdot 2 \cdot 1! = 24\)</span></p>
+</div>
+<div class="center-h">
+<p><span class="math display">\[n! = \begin{cases} 1 &amp; \text{if } n = 1 \quad \text{(base case)}\\
+n \cdot (n-1)! &amp; \text{if } n &gt; 1 \quad \text{(recursion case)} \end{cases}\]</span></p>
+</div>
+</section>
+<section id="factorial-iterative-implementation" class="slide level2">
+<h2>Factorial: Iterative Implementation</h2>
+<div class="codewrap" style="font-size:1.50em">
+<pre class="pseudocode" style="width:60%;margin:0.4em auto"><b>Procedure</b> ITERATIVE-FACTORIAL(<i>n</i>)
+<i>Inputs:</i>
+  <i>n</i>: a positive integer
+<i>Result:</i> the factorial of <i>n</i>
+<i>result</i> ← 1
+<b>While</b> <i>n</i> &gt; 1:
+      <i>result</i> ← <i>result</i> · <i>n</i>
+      <i>n</i> ← <i>n</i> - 1
+<b>return</b> <i>result</i></pre>
+</div>
+<div class="center-h sm">
+<p><span class="math inline">\(n! = n \, (n-1) \, (n-2) \dots (1)\)</span></p>
+</div>
+</section>
+<section id="factorial-recursive-implementation" class="slide level2">
+<h2>Factorial: Recursive Implementation</h2>
+<div class="codewrap" style="font-size:1.50em">
+<pre class="pseudocode" style="width:64%;margin:0.4em auto"><b>Procedure</b> RECURSIVE-FACTORIAL(<i>n</i>)
+<i>Inputs:</i>
+  <i>n</i>: a positive integer
+<i>Result:</i> the factorial of <i>n</i>
+<b>If</b> <i>n</i> = 1
+      <b>then return</b> 1
+      <b>else return</b> <i>n</i> · RECURSIVE-FACTORIAL(<i>n</i> - 1)</pre>
+</div>
+<div class="center-h sm">
+<p><span class="math inline">\(n! = n \, (n-1)!\)</span> &nbsp;&nbsp;&nbsp; <span class="math inline">\(1! = 1\)</span></p>
+</div>
+</section>
+<section id="recursive-factorial-in-python" class="slide level2">
+<h2>Recursive factorial in Python</h2>
+<div class="pycode">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># assumes input is a positive integer</span></span>
+<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># returns n!</span></span>
+<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> recursive_factorial(n):</span>
+<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb1-5"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb1-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-7"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> n <span class="op">*</span> recursive_factorial(n<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="center-h sm">
+<p><span class="math inline">\(n! = n \, (n-1)!\)</span> &nbsp;&nbsp;&nbsp; <span class="math inline">\(1! = 1\)</span></p>
+</div>
+</section>
+<section id="factorial-recursive-execution" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<ul>
+<li>The calculation of <code>fac(4)</code> can be represented as a tree</li>
+</ul>
+</div>
+<div class="imgrow middle" style="flex-wrap:wrap;gap:0.6em 1.4em">
+<p><img data-src="figures/06-factorial-tree-1.svg" style="height:5.4em"> <img data-src="figures/06-factorial-tree-2.svg" style="height:5.4em"> <img data-src="figures/06-factorial-tree-3.svg" style="height:5.4em"> <img data-src="figures/06-factorial-tree-4.svg" style="height:5.4em"> <img data-src="figures/06-factorial-tree-5.svg" style="height:5.4em"> <img data-src="figures/06-factorial-tree-6.svg" style="height:5.4em"> <img data-src="figures/06-factorial-tree-7.svg" style="height:5.4em"></p>
+</div>
+</section>
+<section id="factorial-recursive-execution-1" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<ul>
+<li>The calculation of <code>fac(4)</code> can be represented as a tree</li>
+</ul>
+</div>
+<div class="center-h">
+<p><img data-src="figures/06-factorial-tree-1.svg" style="height:11.4em"></p>
+</div>
+</section>
+<section id="factorial-recursive-execution-2" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<ul>
+<li>The calculation of <code>fac(4)</code> can be represented as a tree</li>
+</ul>
+</div>
+<div class="center-h">
+<p><img data-src="figures/06-factorial-tree-2.svg" style="height:11.4em"></p>
+</div>
+</section>
+<section id="factorial-recursive-execution-3" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<ul>
+<li>The calculation of <code>fac(4)</code> can be represented as a tree</li>
+</ul>
+</div>
+<div class="center-h">
+<p><img data-src="figures/06-factorial-tree-3.svg" style="height:11.4em"></p>
+</div>
+</section>
+<section id="factorial-recursive-execution-4" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<ul>
+<li>The calculation of <code>fac(4)</code> can be represented as a tree</li>
+</ul>
+</div>
+<div class="center-h">
+<p><img data-src="figures/06-factorial-tree-4.svg" style="height:11.4em"></p>
+</div>
+</section>
+<section id="factorial-recursive-execution-5" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<ul>
+<li>The calculation of <code>fac(4)</code> can be represented as a tree</li>
+</ul>
+</div>
+<div class="center-h">
+<p><img data-src="figures/06-factorial-tree-5.svg" style="height:11.4em"></p>
+</div>
+</section>
+<section id="factorial-recursive-execution-6" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<ul>
+<li>The calculation of <code>fac(4)</code> can be represented as a tree</li>
+</ul>
+</div>
+<div class="center-h">
+<p><img data-src="figures/06-factorial-tree-6.svg" style="height:11.4em"></p>
+</div>
+</section>
+<section id="factorial-recursive-execution-7" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<ul>
+<li>The calculation of <code>fac(4)</code> can be represented as a tree</li>
+</ul>
+</div>
+<div class="center-h">
+<p><img data-src="figures/06-factorial-tree-7.svg" style="height:11.4em"></p>
+</div>
+<div class="center-h sm">
+<p><span class="math inline">\(\Rightarrow\)</span> <code>fac(4)</code> = 24</p>
+</div>
+</section>
+<section id="factorial-recursive-execution-8" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<p><strong>The call <code>recursive_factorial(3)</code> creates a frame with n = 3</strong></p>
+</div>
+<!-- CALLSTACK:1:BEGIN -->
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1160 596" class="callstack" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="6" markerheight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"></path></marker><marker id="ar" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b03a2e"></path></marker><marker id="ao" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e07b00"></path></marker><marker id="ak" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"></path></marker><marker id="ag" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#888"></path></marker></defs>
+  <text x="20" y="28" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">recursive_factorial(3)</text>
+  <path d="M 64 37 L 150 53" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="164" y="51" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=3</text>
+  <g opacity="1">
+  <rect x="110" y="58" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <rect x="114" y="177" width="592" height="28" rx="0" fill="#fde3a7" stroke="none" stroke-width="1.4"></rect>
+  <text x="124" y="85" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="124" y="113" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="141" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="124" y="169" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="197" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="750" y="99" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="758" y="71" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="779" y="99" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">3</text>
+  </g>
+</svg>
+<!-- CALLSTACK:1:END -->
+</section>
+<section id="factorial-recursive-execution-9" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<p><strong>n is not 1, so the function calls itself with n = 2 and waits for the result</strong></p>
+</div>
+<!-- CALLSTACK:2:BEGIN -->
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1160 596" class="callstack" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="6" markerheight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"></path></marker><marker id="ar" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b03a2e"></path></marker><marker id="ao" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e07b00"></path></marker><marker id="ak" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"></path></marker><marker id="ag" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#888"></path></marker></defs>
+  <text x="20" y="28" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">recursive_factorial(3)</text>
+  <path d="M 64 37 L 150 53" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="164" y="51" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=3</text>
+  <g opacity="1">
+  <rect x="110" y="58" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="124" y="85" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="124" y="113" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="141" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="124" y="169" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="197" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="750" y="99" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="758" y="71" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="779" y="99" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">3</text>
+  </g>
+  <path d="M 521 215 L 560 241" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="576" y="232" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=2</text>
+  <g opacity="1">
+  <rect x="250" y="246" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <rect x="254" y="365" width="592" height="28" rx="0" fill="#fde3a7" stroke="none" stroke-width="1.4"></rect>
+  <text x="264" y="273" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="264" y="301" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="264" y="329" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="264" y="357" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="264" y="385" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="890" y="287" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="898" y="259" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="919" y="287" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">2</text>
+  </g>
+</svg>
+<!-- CALLSTACK:2:END -->
+</section>
+<section id="factorial-recursive-execution-10" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<p><strong>The call with n = 1 reaches the base case</strong></p>
+</div>
+<!-- CALLSTACK:3:BEGIN -->
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1160 596" class="callstack" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="6" markerheight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"></path></marker><marker id="ar" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b03a2e"></path></marker><marker id="ao" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e07b00"></path></marker><marker id="ak" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"></path></marker><marker id="ag" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#888"></path></marker></defs>
+  <text x="20" y="28" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">recursive_factorial(3)</text>
+  <path d="M 64 37 L 150 53" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="164" y="51" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=3</text>
+  <g opacity="1">
+  <rect x="110" y="58" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="124" y="85" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="124" y="113" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="141" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="124" y="169" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="197" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="750" y="99" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="758" y="71" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="779" y="99" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">3</text>
+  </g>
+  <path d="M 521 215 L 560 241" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="576" y="232" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=2</text>
+  <g opacity="1">
+  <rect x="250" y="246" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="264" y="273" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="264" y="301" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="264" y="329" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="264" y="357" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="264" y="385" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="890" y="287" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="898" y="259" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="919" y="287" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">2</text>
+  </g>
+  <path d="M 661 403 L 700 429" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="716" y="420" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=1</text>
+  <g opacity="1">
+  <rect x="390" y="434" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <rect x="394" y="497" width="592" height="28" rx="0" fill="#fde3a7" stroke="none" stroke-width="1.4"></rect>
+  <text x="404" y="461" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="404" y="489" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="404" y="517" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="404" y="545" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="404" y="573" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="1030" y="475" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="1038" y="447" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="1059" y="475" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">1</text>
+  </g>
+</svg>
+<!-- CALLSTACK:3:END -->
+</section>
+<section id="factorial-recursive-execution-11" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<p><strong>The base case returns 1 to the call that is waiting with n = 2</strong></p>
+</div>
+<!-- CALLSTACK:4:BEGIN -->
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1160 596" class="callstack" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="6" markerheight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"></path></marker><marker id="ar" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b03a2e"></path></marker><marker id="ao" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e07b00"></path></marker><marker id="ak" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"></path></marker><marker id="ag" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#888"></path></marker></defs>
+  <text x="20" y="28" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">recursive_factorial(3)</text>
+  <path d="M 64 37 L 150 53" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="164" y="51" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=3</text>
+  <g opacity="1">
+  <rect x="110" y="58" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="124" y="85" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="124" y="113" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="141" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="124" y="169" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="197" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="750" y="99" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="758" y="71" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="779" y="99" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">3</text>
+  </g>
+  <path d="M 521 215 L 560 241" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="576" y="232" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=2</text>
+  <g opacity="1">
+  <rect x="250" y="246" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <rect x="254" y="365" width="592" height="28" rx="0" fill="#fde3a7" stroke="none" stroke-width="1.4"></rect>
+  <text x="264" y="273" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="264" y="301" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="264" y="329" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="264" y="357" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="264" y="385" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="890" y="287" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="898" y="259" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="919" y="287" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">2</text>
+  <text x="862" y="385" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" fill="#b03a2e" font-weight="bold" space="preserve" style="white-space:pre">= 2 * 1</text>
+  </g>
+  <path d="M 661 403 L 700 429" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="716" y="420" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=1</text>
+  <g opacity="0.45">
+  <rect x="390" y="434" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="404" y="461" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="404" y="489" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="404" y="517" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="404" y="545" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="404" y="573" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="1030" y="475" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="1038" y="447" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="1059" y="475" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">1</text>
+  </g>
+  <path d="M 387 511 C 297 525 250 491 306 405" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="266" y="475" text-anchor="middle" font-size="24" fill="#b03a2e" font-weight="bold" font-style="normal">1</text>
+</svg>
+<!-- CALLSTACK:4:END -->
+</section>
+<section id="factorial-recursive-execution-12" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<p><strong>That call returns 2 · 1 = 2 to the call that is waiting with n = 3</strong></p>
+</div>
+<!-- CALLSTACK:5:BEGIN -->
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1160 596" class="callstack" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="6" markerheight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"></path></marker><marker id="ar" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b03a2e"></path></marker><marker id="ao" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e07b00"></path></marker><marker id="ak" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"></path></marker><marker id="ag" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#888"></path></marker></defs>
+  <text x="20" y="28" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">recursive_factorial(3)</text>
+  <path d="M 64 37 L 150 53" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="164" y="51" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=3</text>
+  <g opacity="1">
+  <rect x="110" y="58" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <rect x="114" y="177" width="592" height="28" rx="0" fill="#fde3a7" stroke="none" stroke-width="1.4"></rect>
+  <text x="124" y="85" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="124" y="113" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="141" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="124" y="169" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="197" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="750" y="99" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="758" y="71" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="779" y="99" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">3</text>
+  <text x="722" y="197" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" fill="#b03a2e" font-weight="bold" space="preserve" style="white-space:pre">= 3 * 2</text>
+  </g>
+  <path d="M 521 215 L 560 241" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="576" y="232" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=2</text>
+  <g opacity="0.45">
+  <rect x="250" y="246" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="264" y="273" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="264" y="301" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="264" y="329" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="264" y="357" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="264" y="385" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="890" y="287" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="898" y="259" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="919" y="287" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">2</text>
+  <text x="862" y="385" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" fill="#b03a2e" font-weight="bold" space="preserve" style="white-space:pre">= 2 * 1</text>
+  </g>
+  <path d="M 661 403 L 700 429" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="716" y="420" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=1</text>
+  <g opacity="0.45">
+  <rect x="390" y="434" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="404" y="461" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="404" y="489" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="404" y="517" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="404" y="545" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="404" y="573" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="1030" y="475" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="1038" y="447" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="1059" y="475" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">1</text>
+  </g>
+  <path d="M 387 511 C 297 525 250 491 306 405" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="266" y="475" text-anchor="middle" font-size="24" fill="#b03a2e" font-weight="bold" font-style="normal">1</text>
+  <path d="M 247 379 C 157 393 110 303 166 217" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="126" y="287" text-anchor="middle" font-size="24" fill="#b03a2e" font-weight="bold" font-style="normal">2</text>
+</svg>
+<!-- CALLSTACK:5:END -->
+</section>
+<section id="factorial-recursive-execution-13" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<p><strong>The first call returns 3 · 2 = 6</strong></p>
+</div>
+<!-- CALLSTACK:6:BEGIN -->
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1160 596" class="callstack" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="6" markerheight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"></path></marker><marker id="ar" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b03a2e"></path></marker><marker id="ao" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e07b00"></path></marker><marker id="ak" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"></path></marker><marker id="ag" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#888"></path></marker></defs>
+  <text x="20" y="28" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">recursive_factorial(3)</text>
+  <path d="M 64 37 L 150 53" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="164" y="51" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=3</text>
+  <g opacity="0.45">
+  <rect x="110" y="58" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="124" y="85" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="124" y="113" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="141" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="124" y="169" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="197" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="750" y="99" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="758" y="71" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="779" y="99" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">3</text>
+  <text x="722" y="197" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" fill="#b03a2e" font-weight="bold" space="preserve" style="white-space:pre">= 3 * 2</text>
+  </g>
+  <path d="M 521 215 L 560 241" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="576" y="232" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=2</text>
+  <g opacity="0.45">
+  <rect x="250" y="246" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="264" y="273" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="264" y="301" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="264" y="329" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="264" y="357" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="264" y="385" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="890" y="287" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="898" y="259" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="919" y="287" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">2</text>
+  <text x="862" y="385" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" fill="#b03a2e" font-weight="bold" space="preserve" style="white-space:pre">= 2 * 1</text>
+  </g>
+  <path d="M 661 403 L 700 429" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="716" y="420" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=1</text>
+  <g opacity="0.45">
+  <rect x="390" y="434" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="404" y="461" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="404" y="489" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="404" y="517" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="404" y="545" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="404" y="573" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="1030" y="475" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="1038" y="447" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="1059" y="475" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">1</text>
+  </g>
+  <path d="M 387 511 C 297 525 250 491 306 405" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="266" y="475" text-anchor="middle" font-size="24" fill="#b03a2e" font-weight="bold" font-style="normal">1</text>
+  <path d="M 247 379 C 157 393 110 303 166 217" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="126" y="287" text-anchor="middle" font-size="24" fill="#b03a2e" font-weight="bold" font-style="normal">2</text>
+  <path d="M 107 191 C 47 221 22 180 34 40" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="14" y="150" text-anchor="middle" font-size="24" fill="#b03a2e" font-weight="bold" font-style="normal">6</text>
+</svg>
+<!-- CALLSTACK:6:END -->
+</section>
+<section id="factorial-recursive-execution-14" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<p><strong>Memory costs: every call that is waiting keeps its own frame with its own n</strong></p>
+</div>
+<!-- CALLSTACK:7:BEGIN -->
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1160 596" class="callstack" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="6" markerheight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"></path></marker><marker id="ar" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b03a2e"></path></marker><marker id="ao" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e07b00"></path></marker><marker id="ak" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"></path></marker><marker id="ag" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#888"></path></marker></defs>
+  <text x="20" y="28" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">recursive_factorial(3)</text>
+  <path d="M 64 37 L 150 53" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="164" y="51" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=3</text>
+  <g opacity="1">
+  <rect x="110" y="58" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="124" y="85" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="124" y="113" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="141" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="124" y="169" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="197" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="750" y="99" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="758" y="71" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="779" y="99" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">3</text>
+  <text x="722" y="197" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" fill="#b03a2e" font-weight="bold" space="preserve" style="white-space:pre">= 3 * 2</text>
+  </g>
+  <path d="M 521 215 L 560 241" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="576" y="232" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=2</text>
+  <g opacity="1">
+  <rect x="250" y="246" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="264" y="273" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="264" y="301" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="264" y="329" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="264" y="357" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="264" y="385" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="890" y="287" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="898" y="259" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="919" y="287" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">2</text>
+  <text x="862" y="385" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" fill="#b03a2e" font-weight="bold" space="preserve" style="white-space:pre">= 2 * 1</text>
+  </g>
+  <path d="M 661 403 L 700 429" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="716" y="420" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=1</text>
+  <g opacity="1">
+  <rect x="390" y="434" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="404" y="461" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="404" y="489" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="404" y="517" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="404" y="545" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="404" y="573" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="1030" y="475" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="1038" y="447" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="1059" y="475" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">1</text>
+  </g>
+  <path d="M 387 511 C 297 525 250 491 306 405" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="266" y="475" text-anchor="middle" font-size="24" fill="#b03a2e" font-weight="bold" font-style="normal">1</text>
+  <path d="M 247 379 C 157 393 110 303 166 217" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="126" y="287" text-anchor="middle" font-size="24" fill="#b03a2e" font-weight="bold" font-style="normal">2</text>
+  <path d="M 107 191 C 47 221 22 180 34 40" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="14" y="150" text-anchor="middle" font-size="24" fill="#b03a2e" font-weight="bold" font-style="normal">6</text>
+  <rect x="930" y="60" width="200" height="36" rx="3" fill="#59d8c4" stroke="none" stroke-width="1.4"></rect>
+  <text x="1030.0" y="86" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">Memory costs</text>
+  <path d="M 938 78 L 804 90" fill="none" stroke="#111" stroke-width="2" marker-end="url(#a)"></path>
+  <path d="M 1010 96 L 922 255" fill="none" stroke="#111" stroke-width="2" marker-end="url(#a)"></path>
+  <path d="M 1070 96 L 1062 443" fill="none" stroke="#111" stroke-width="2" marker-end="url(#a)"></path>
+</svg>
+<!-- CALLSTACK:7:END -->
+</section>
+<section id="factorial-recursive-execution-15" class="slide level2">
+<h2>Factorial: Recursive Execution</h2>
+<div class="sm">
+<p><strong>Time costs: every call and every return takes time</strong></p>
+</div>
+<!-- CALLSTACK:8:BEGIN -->
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1160 596" class="callstack" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="6" markerheight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"></path></marker><marker id="ar" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b03a2e"></path></marker><marker id="ao" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e07b00"></path></marker><marker id="ak" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"></path></marker><marker id="ag" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="5" markerheight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#888"></path></marker></defs>
+  <text x="20" y="28" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">recursive_factorial(3)</text>
+  <path d="M 64 37 L 150 53" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="164" y="51" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=3</text>
+  <g opacity="1">
+  <rect x="110" y="58" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="124" y="85" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="124" y="113" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="141" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="124" y="169" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="124" y="197" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="750" y="99" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="758" y="71" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="779" y="99" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">3</text>
+  <text x="722" y="197" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" fill="#b03a2e" font-weight="bold" space="preserve" style="white-space:pre">= 3 * 2</text>
+  </g>
+  <path d="M 521 215 L 560 241" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="576" y="232" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=2</text>
+  <g opacity="1">
+  <rect x="250" y="246" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="264" y="273" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="264" y="301" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="264" y="329" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="264" y="357" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="264" y="385" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="890" y="287" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="898" y="259" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="919" y="287" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">2</text>
+  <text x="862" y="385" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" fill="#b03a2e" font-weight="bold" space="preserve" style="white-space:pre">= 2 * 1</text>
+  </g>
+  <path d="M 661 403 L 700 429" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="716" y="420" text-anchor="start" font-size="24" fill="#111" font-weight="bold" font-style="normal">n=1</text>
+  <g opacity="1">
+  <rect x="390" y="434" width="600" height="154" rx="6" fill="#f6f8fa" stroke="#c9d1d9" stroke-width="1.4"></rect>
+  <text x="404" y="461" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#d73a49" font-weight="bold">def</tspan><tspan fill="#24292e"> </tspan><tspan fill="#6f42c1">recursive_factorial</tspan><tspan fill="#24292e">(n):</tspan></text>
+  <text x="404" y="489" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">if</tspan><tspan fill="#24292e"> n == </tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="404" y="517" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> </tspan><tspan fill="#005cc5">1</tspan></text>
+  <text x="404" y="545" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">    </tspan><tspan fill="#d73a49" font-weight="bold">else</tspan><tspan fill="#24292e">:</tspan></text>
+  <text x="404" y="573" font-size="22" font-family="DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, monospace" space="preserve" style="white-space:pre"><tspan fill="#24292e">        </tspan><tspan fill="#d73a49" font-weight="bold">return</tspan><tspan fill="#24292e"> n * recursive_factorial(n-</tspan><tspan fill="#005cc5">1</tspan><tspan fill="#24292e">)</tspan></text>
+  <text x="1030" y="475" text-anchor="end" font-size="24" fill="#111" font-weight="bold" font-style="normal">n:</text>
+  <rect x="1038" y="447" width="42" height="38" rx="0" fill="#fff" stroke="#b03a2e" stroke-width="2.4"></rect>
+  <text x="1059" y="475" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">1</text>
+  </g>
+  <path d="M 387 511 C 297 525 250 491 306 405" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="266" y="475" text-anchor="middle" font-size="24" fill="#b03a2e" font-weight="bold" font-style="normal">1</text>
+  <path d="M 247 379 C 157 393 110 303 166 217" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="126" y="287" text-anchor="middle" font-size="24" fill="#b03a2e" font-weight="bold" font-style="normal">2</text>
+  <path d="M 107 191 C 47 221 22 180 34 40" fill="none" stroke="#b03a2e" stroke-width="3.4" marker-end="url(#ar)"></path>
+  <text x="14" y="150" text-anchor="middle" font-size="24" fill="#b03a2e" font-weight="bold" font-style="normal">6</text>
+  <rect x="20" y="540" width="160" height="36" rx="3" fill="#59d8c4" stroke="none" stroke-width="1.4"></rect>
+  <text x="100.0" y="566" text-anchor="middle" font-size="24" fill="#111" font-weight="bold" font-style="normal">Time costs</text>
+  <path d="M 60 538 L 14 162" fill="none" stroke="#111" stroke-width="2" marker-end="url(#a)"></path>
+  <path d="M 96 538 L 130 299" fill="none" stroke="#111" stroke-width="2" marker-end="url(#a)"></path>
+  <path d="M 132 538 L 270 487" fill="none" stroke="#111" stroke-width="2" marker-end="url(#a)"></path>
+</svg>
+<!-- CALLSTACK:8:END -->
+</section>
+<section id="memory-of-a-running-program" class="slide level2 fit1">
+<h2>Memory of a running program</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
+<div class="sm">
+<p>A program being run in a machine is called a <strong>process</strong>. Processes require memory to run, which is organized as follows:</p>
+<ul>
+<li><strong>Code Segment (CS)</strong> with the instructions of the program</li>
+<li><strong>Data Segment or Heap (DS)</strong> with the data that the program creates</li>
+<li><strong>Stack Segment (SS)</strong> with what the running function calls have to remember</li>
+</ul>
+<p>The heap and the stack grow and shrink while the program runs.</p>
+</div>
+</div><div class="column" style="width:44%;">
+<div class="center-h">
+<p><img data-src="figures/06-memory.svg" style="height:15.4em"></p>
+</div>
+</div></div>
+</section>
+<section id="memory-of-a-running-program-1" class="slide level2 fit1">
+<h2>Memory of a running program</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
+<div class="sm">
+<p>A program being run in a machine is called a <strong>process</strong>. Processes require memory to run, which is organized as follows:</p>
+<ul>
+<li><strong>Code Segment (CS)</strong>
+<ul>
+<li>contains executable instructions, i.e., a program loaded from hard disk</li>
+<li>typically read-only and of fixed size</li>
+</ul></li>
+<li>Data Segment or Heap (DS)</li>
+<li>Stack Segment (SS)</li>
+</ul>
+</div>
+</div><div class="column" style="width:44%;">
+<div class="center-h">
+<p><img data-src="figures/06-memory-cs.svg" style="height:15.4em"></p>
+</div>
+</div></div>
+</section>
+<section id="memory-of-a-running-program-2" class="slide level2 fit1">
+<h2>Memory of a running program</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
+<div class="sm">
+<p>A program being run in a machine is called a <strong>process</strong>. Processes require memory to run, which is organized as follows:</p>
+<ul>
+<li>Code Segment (CS)</li>
+<li><strong>Data Segment or Heap (DS)</strong>
+<ul>
+<li>contains global data, and Python manages all objects in a (private) heap</li>
+<li>typically no execute (NX)</li>
+<li>size is limited by main memory (RAM) or by explicit parameter when run</li>
+</ul></li>
+<li>Stack Segment (SS)</li>
+</ul>
+</div>
+</div><div class="column" style="width:44%;">
+<div class="center-h">
+<p><img data-src="figures/06-memory-ds.svg" style="height:15.4em"></p>
+</div>
+</div></div>
+</section>
+<section id="memory-of-a-running-program-3" class="slide level2 fit1">
+<h2>Memory of a running program</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
+<div class="sm">
+<p>A program being run in a machine is called a <strong>process</strong>. Processes require memory to run, which is organized as follows:</p>
+<ul>
+<li>Code Segment (CS)</li>
+<li>Data Segment or Heap (DS)</li>
+<li><strong>Stack Segment (SS)</strong>
+<ul>
+<li>contains local variables, parameters, return address</li>
+<li>typically no execute (NX)</li>
+<li>limited in size, e.g.&nbsp;8 MB for Linux, 1 MB for Windows and Java</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:44%;">
+<div class="center-h">
+<p><img data-src="figures/06-memory-ss.svg" style="height:15.4em"></p>
+</div>
+</div></div>
+</section>
+<section id="recursion-in-memory-one-stack-frame-per-call" class="slide level2 fit1">
+<h2>Recursion in memory: one stack frame per call</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
+<div class="sm">
+<ul>
+<li>Every function call puts a <strong>frame</strong> on the stack that contains:
+<ul>
+<li>its parameters and local variables</li>
+<li>the <strong>return address</strong>, i.e.&nbsp;where the program continues after the call</li>
+</ul></li>
+<li>The frame is removed when the call returns its value</li>
+<li>A recursive call does not replace the frame of its caller. It adds a new frame on top</li>
+<li><code>recursive_factorial(3)</code> needs three frames at its deepest point, so the stack grows and shrinks with every call</li>
+</ul>
+</div>
+</div><div class="column" style="width:44%;">
+<div class="center-h">
+<p><img data-src="figures/06-stack-frames.svg" style="height:15.4em"></p>
+</div>
+</div></div>
+</section>
+<section id="how-a-stack-overflow-happens" class="slide level2 fit1">
+<h2>How a stack overflow happens</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
+<div class="sm">
+<ul>
+<li>The stack has a <strong>maximum size</strong>, e.g.&nbsp;8 MB for Linux</li>
+<li>If the base case is missing or is never reached, no call returns and every call adds a frame</li>
+<li>A correct recursion can also be too deep, e.g.&nbsp;one call per element of a list with a million elements</li>
+<li>When the next frame does not fit, we have a <strong>stack overflow</strong>
+<ul>
+<li>the program crashes or, in languages like C, it overwrites other memory</li>
+<li>Python stops earlier, by default after 1,000 nested calls, with a <code>RecursionError</code></li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:44%;">
+<div class="center-h">
+<p><img data-src="figures/06-stack-overflow.svg" style="height:15.4em"></p>
+</div>
+</div></div>
+</section>
+<section id="memes-warned-you-about-recursion" class="slide level2 fit1">
+<h2>Memes warned you about recursion</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div>
+<p><strong>3 Steps to being a good Programmer</strong></p>
+<ol type="1">
+<li>Avoid recursion</li>
+<li>Repeat steps 1 and 2</li>
+<li>Always have an exit condition</li>
+<li>Beware of being off by one</li>
+</ol>
+</div>
+<p><img data-src="figures/meme-stack-overflow.png" style="height:5.9em"></p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="figures/meme-distracted-boyfriend.jpg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<div class="outline focus">
+<ol type="1">
+<li>Recursion</li>
+<li><span class="current">Recursive Algorithms</span></li>
+<li>Memoization</li>
+</ol>
+</div>
+</section>
+<section id="the-greatest-common-divisor" class="slide level2">
+<h2>The Greatest Common Divisor</h2>
+<div class="center-h">
+<p><img data-src="figures/06-gcd.svg" style="height:14.5em"></p>
+</div>
+</section>
+<section id="recursive-algorithm-1-euclids-algorithm" class="slide level2">
+<h2><span class="pretitle">Recursive algorithm 1</span> Euclid’s algorithm</h2>
+<div>
+<p>Uses the mathematical property: <span class="math inline">\(\gcd(a,b) = \gcd(b,\ a \bmod b)\)</span></p>
+</div>
+<div class="codewrap" style="font-size:1.50em">
+<pre class="pseudocode"><b>Procedure</b> GCD(<i>a</i>, <i>b</i>)
+<i>Inputs:</i>
+      <i>a</i>, <i>b</i>: natural numbers (<i>a</i>, <i>b</i> ∈ ℕ) with <i>a</i> ≥ <i>b</i>
+<i>Result:</i> the greatest common divisor of <i>a</i> and <i>b</i>
+<b>If</b> <i>b</i> = 0
+      <b>then return</b> <i>a</i>
+      <b>else return</b> GCD(<i>b</i>, <i>a</i> <b>mod</b> <i>b</i>)</pre>
+</div>
+</section>
+<section id="euclids-algorithm" class="slide level2">
+<h2>Euclid’s algorithm</h2>
+<div class="sm">
+<p>Uses the mathematical property: <span class="math inline">\(\gcd(a,b) = \gcd(b,\ a \bmod b)\)</span></p>
+</div>
+<div class="columns">
+<div class="column" style="width:62%;">
+<div class="codewrap" style="font-size:1.50em">
+<pre class="pseudocode"><b>Procedure</b> GCD(<i>a</i>, <i>b</i>)
+<i>Inputs:</i>
+      <i>a</i>, <i>b</i>: natural numbers (<i>a</i>, <i>b</i> ∈ ℕ) with <i>a</i> ≥ <i>b</i>
+<i>Result:</i> the greatest common divisor of <i>a</i> and <i>b</i>
+<b>If</b> <i>b</i> = 0
+      <b>then return</b> <i>a</i>
+      <b>else return</b> GCD(<i>b</i>, <i>a</i> <b>mod</b> <i>b</i>)</pre>
+</div>
+</div><div class="column" style="width:38%;">
+<div class="sm">
+<ul>
+<li><span class="math inline">\(\gcd(270, 192)\)</span>
+<ul>
+<li><span class="math inline">\(270 \bmod 192 = 78\)</span></li>
+<li><span class="math inline">\(\gcd(192, 78)\)</span>
+<ul>
+<li><span class="math inline">\(192 \bmod 78 = 36\)</span></li>
+<li><span class="math inline">\(\gcd(78, 36)\)</span>
+<ul>
+<li><span class="math inline">\(78 \bmod 36 = 6\)</span></li>
+<li><span class="math inline">\(\gcd(36, 6)\)</span>
+<ul>
+<li><span class="math inline">\(36 \bmod 6 = 0\)</span></li>
+<li><span class="math inline">\(\gcd(6, 0)\)</span>
+<ul>
+<li><strong>return 6</strong></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="euclid-and-the-gcd" class="slide level2 fit1">
+<h2>Euclid and the GCD</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="sm">
+<ul>
+<li>Euclid (~300 BC) Greek mathematician</li>
+<li>“Euclid of Alexandria” but little is actually known about his life, neither birth year nor place</li>
+<li>Commonly known as the father of geometry</li>
+<li>Euclid’s most influential book is <em>Elements</em>, which includes the algorithm to calculate the gcd</li>
+<li>The original version of the algorithm did subtractions on the terms instead of modulo operations but it was recursive. However, it required more steps</li>
+<li>One of his lesser known books is titled <em>Data</em> (Δεδομένα), on how to study given information geometrically</li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="center-h">
+<p><img data-src="figures/euclid.jpg" style="height:13.4em"></p>
+<div class="xs">
+<p>Imagination of how Euclid could have looked like</p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="recursive-algorithm-2-depth-first-search-in-directed-graphs" class="slide level2">
+<h2><span class="pretitle">Recursive algorithm 2</span> Depth-First Search in Directed Graphs</h2>
+<div class="center-h">
+<p><img data-src="figures/directed-graph.png" style="height:7.7em"></p>
+</div>
+<div class="sm">
+<p>Several problems can be solved with depth-first search, such as:</p>
+<ul>
+<li>Is node <span class="math inline">\(x\)</span> included in the graph?</li>
+<li>Does a graph have a cycle?</li>
+<li>Does the graph have a strongly connected component?</li>
+</ul>
+</div>
+</section>
+<section id="depth-first-search" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.30em">
+<pre class="pseudocode"><b>Procedure</b> DFS(<i>G</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+<i>Result:</i> every vertex stores its discovery time <i>d</i>,
+its finishing time <i>f</i> and its parent π
+<span class="hl"><b>For</b> each vertex <i>u</i> in <i>G</i>.<i>V</i>:</span>
+<span class="hl">      color[<i>u</i>] ← WHITE</span>
+<span class="hl">      π[<i>u</i>] ← NIL              # parent</span>
+<i>time</i> ← 0                      # global counter
+<b>For</b> each vertex <i>u</i> in <i>G</i>.<i>V</i>:
+      <b>If</b> color[<i>u</i>] = WHITE
+            <b>then</b> DFS-VISIT(<i>G</i>, <i>u</i>)</pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-00.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>Example: the For loop takes vertex <span class="math inline">\(c\)</span> first<br>and neighbors are taken alphabetically<br>time = 0<br>Enter For-Loop:<br>call <code>DFS-VISIT(G, c)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-1" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<span class="hl"><i>time</i> ← <i>time</i> + 1</span>
+<span class="hl"><i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered</span>
+<span class="hl">color[<i>u</i>] ← GRAY</span>
+<span class="hl"><b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):</span>
+<span class="hl">      <b>If</b> color[<i>v</i>] = WHITE</span>
+<span class="hl">            <b>then</b> π[<i>v</i>] ← <i>u</i></span>
+<span class="hl">                 DFS-VISIT(<i>G</i>, <i>v</i>)</span>
+color[<i>u</i>] ← BLACK
+<i>time</i> ← <i>time</i> + 1
+<i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-01.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>call <code>DFS-VISIT(G, c)</code><br>time = 1<br>Enter For-Loop:<br>next adjacent white node: b<br>add parent of b<br>call <code>DFS-VISIT(G, b)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-2" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<span class="hl"><i>time</i> ← <i>time</i> + 1</span>
+<span class="hl"><i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered</span>
+<span class="hl">color[<i>u</i>] ← GRAY</span>
+<span class="hl"><b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):</span>
+<span class="hl">      <b>If</b> color[<i>v</i>] = WHITE</span>
+<span class="hl">            <b>then</b> π[<i>v</i>] ← <i>u</i></span>
+<span class="hl">                 DFS-VISIT(<i>G</i>, <i>v</i>)</span>
+color[<i>u</i>] ← BLACK
+<i>time</i> ← <i>time</i> + 1
+<i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-02.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>call <code>DFS-VISIT(G, b)</code><br>time = 2<br>Enter For-Loop:<br>next adjacent white node: e<br>add parent of e<br>call <code>DFS-VISIT(G, e)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-3" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<span class="hl"><i>time</i> ← <i>time</i> + 1</span>
+<span class="hl"><i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered</span>
+<span class="hl">color[<i>u</i>] ← GRAY</span>
+<span class="hl"><b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):</span>
+<span class="hl">      <b>If</b> color[<i>v</i>] = WHITE</span>
+<span class="hl">            <b>then</b> π[<i>v</i>] ← <i>u</i></span>
+<span class="hl">                 DFS-VISIT(<i>G</i>, <i>v</i>)</span>
+color[<i>u</i>] ← BLACK
+<i>time</i> ← <i>time</i> + 1
+<i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-03.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>call <code>DFS-VISIT(G, e)</code><br>time = 3<br>Enter For-Loop:<br>next adjacent white node: a<br>add parent of a<br>call <code>DFS-VISIT(G, a)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-4" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<span class="hl"><i>time</i> ← <i>time</i> + 1</span>
+<span class="hl"><i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered</span>
+<span class="hl">color[<i>u</i>] ← GRAY</span>
+<span class="hl"><b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):</span>
+<span class="hl">      <b>If</b> color[<i>v</i>] = WHITE</span>
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)
+color[<i>u</i>] ← BLACK
+<i>time</i> ← <i>time</i> + 1
+<i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-04.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>call <code>DFS-VISIT(G, a)</code><br>time = 4<br>Enter For-Loop:<br>no adjacent white nodes<br>finish <code>DFS-VISIT(G, a)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-5" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<i>time</i> ← <i>time</i> + 1
+<i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered
+color[<i>u</i>] ← GRAY
+<b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):
+      <b>If</b> color[<i>v</i>] = WHITE
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)
+<span class="hl">color[<i>u</i>] ← BLACK</span>
+<span class="hl"><i>time</i> ← <i>time</i> + 1</span>
+<span class="hl"><i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</span></pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-05.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>finish <code>DFS-VISIT(G, a)</code><br>time = 5<br>return to For-Loop of <code>DFS-VISIT(G, e)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-6" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<i>time</i> ← <i>time</i> + 1
+<i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered
+color[<i>u</i>] ← GRAY
+<span class="hl"><b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):</span>
+<span class="hl">      <b>If</b> color[<i>v</i>] = WHITE</span>
+<span class="hl">            <b>then</b> π[<i>v</i>] ← <i>u</i></span>
+<span class="hl">                 DFS-VISIT(<i>G</i>, <i>v</i>)</span>
+color[<i>u</i>] ← BLACK
+<i>time</i> ← <i>time</i> + 1
+<i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-06.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>return to For-Loop of <code>DFS-VISIT(G, e)</code><br>time = 5<br>Back in the For-Loop:<br>next adjacent white node: f<br>add parent of f<br>call <code>DFS-VISIT(G, f)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-7" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<span class="hl"><i>time</i> ← <i>time</i> + 1</span>
+<span class="hl"><i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered</span>
+<span class="hl">color[<i>u</i>] ← GRAY</span>
+<span class="hl"><b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):</span>
+<span class="hl">      <b>If</b> color[<i>v</i>] = WHITE</span>
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)
+color[<i>u</i>] ← BLACK
+<i>time</i> ← <i>time</i> + 1
+<i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-07.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>call <code>DFS-VISIT(G, f)</code><br>time = 6<br>Enter the For-Loop:<br>no adjacent white nodes<br>finish <code>DFS-VISIT(G, f)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-8" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<i>time</i> ← <i>time</i> + 1
+<i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered
+color[<i>u</i>] ← GRAY
+<b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):
+      <b>If</b> color[<i>v</i>] = WHITE
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)
+<span class="hl">color[<i>u</i>] ← BLACK</span>
+<span class="hl"><i>time</i> ← <i>time</i> + 1</span>
+<span class="hl"><i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</span></pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-08.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>finish <code>DFS-VISIT(G, f)</code><br>time = 7<br>return to For-Loop of <code>DFS-VISIT(G, e)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-9" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<i>time</i> ← <i>time</i> + 1
+<i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered
+color[<i>u</i>] ← GRAY
+<span class="hl"><b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):</span>
+<span class="hl">      <b>If</b> color[<i>v</i>] = WHITE</span>
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)
+color[<i>u</i>] ← BLACK
+<i>time</i> ← <i>time</i> + 1
+<i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-09.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>return to For-Loop of <code>DFS-VISIT(G, e)</code><br>time = 7<br>Back in the For-Loop:<br>no adjacent white nodes<br>finish <code>DFS-VISIT(G, e)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-10" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<i>time</i> ← <i>time</i> + 1
+<i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered
+color[<i>u</i>] ← GRAY
+<b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):
+      <b>If</b> color[<i>v</i>] = WHITE
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)
+<span class="hl">color[<i>u</i>] ← BLACK</span>
+<span class="hl"><i>time</i> ← <i>time</i> + 1</span>
+<span class="hl"><i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</span></pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-10.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>finish <code>DFS-VISIT(G, e)</code><br>time = 8<br>return to For-Loop of <code>DFS-VISIT(G, b)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-11" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<i>time</i> ← <i>time</i> + 1
+<i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered
+color[<i>u</i>] ← GRAY
+<span class="hl"><b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):</span>
+<span class="hl">      <b>If</b> color[<i>v</i>] = WHITE</span>
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)
+color[<i>u</i>] ← BLACK
+<i>time</i> ← <i>time</i> + 1
+<i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-11.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>return to For-Loop of <code>DFS-VISIT(G, b)</code><br>time = 8<br>Back in the For-Loop:<br>no adjacent white nodes<br>finish <code>DFS-VISIT(G, b)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-12" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<i>time</i> ← <i>time</i> + 1
+<i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered
+color[<i>u</i>] ← GRAY
+<b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):
+      <b>If</b> color[<i>v</i>] = WHITE
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)
+<span class="hl">color[<i>u</i>] ← BLACK</span>
+<span class="hl"><i>time</i> ← <i>time</i> + 1</span>
+<span class="hl"><i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</span></pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-12.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>finish <code>DFS-VISIT(G, b)</code><br>time = 9<br>return to For-Loop of <code>DFS-VISIT(G, c)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-13" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<i>time</i> ← <i>time</i> + 1
+<i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered
+color[<i>u</i>] ← GRAY
+<span class="hl"><b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):</span>
+<span class="hl">      <b>If</b> color[<i>v</i>] = WHITE</span>
+<span class="hl">            <b>then</b> π[<i>v</i>] ← <i>u</i></span>
+<span class="hl">                 DFS-VISIT(<i>G</i>, <i>v</i>)</span>
+color[<i>u</i>] ← BLACK
+<i>time</i> ← <i>time</i> + 1
+<i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-13.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>return to For-Loop of <code>DFS-VISIT(G, c)</code><br>time = 9<br>Back in the For-Loop:<br>next adjacent white node: g<br>add parent of g<br>call <code>DFS-VISIT(G, g)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-14" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<span class="hl"><i>time</i> ← <i>time</i> + 1</span>
+<span class="hl"><i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered</span>
+<span class="hl">color[<i>u</i>] ← GRAY</span>
+<span class="hl"><b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):</span>
+<span class="hl">      <b>If</b> color[<i>v</i>] = WHITE</span>
+<span class="hl">            <b>then</b> π[<i>v</i>] ← <i>u</i></span>
+<span class="hl">                 DFS-VISIT(<i>G</i>, <i>v</i>)</span>
+color[<i>u</i>] ← BLACK
+<i>time</i> ← <i>time</i> + 1
+<i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-14.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>call <code>DFS-VISIT(G, g)</code><br>time = 10<br>Enter the For-Loop:<br>next adjacent white node: d<br>add parent of d<br>call <code>DFS-VISIT(G, d)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-15" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<span class="hl"><i>time</i> ← <i>time</i> + 1</span>
+<span class="hl"><i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered</span>
+<span class="hl">color[<i>u</i>] ← GRAY</span>
+<span class="hl"><b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):</span>
+<span class="hl">      <b>If</b> color[<i>v</i>] = WHITE</span>
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)
+color[<i>u</i>] ← BLACK
+<i>time</i> ← <i>time</i> + 1
+<i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-15.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>call <code>DFS-VISIT(G, d)</code><br>time = 11<br>Enter the For-Loop:<br>no adjacent white nodes<br>finish <code>DFS-VISIT(G, d)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-16" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<i>time</i> ← <i>time</i> + 1
+<i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered
+color[<i>u</i>] ← GRAY
+<b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):
+      <b>If</b> color[<i>v</i>] = WHITE
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)
+<span class="hl">color[<i>u</i>] ← BLACK</span>
+<span class="hl"><i>time</i> ← <i>time</i> + 1</span>
+<span class="hl"><i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</span></pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-16.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>finish <code>DFS-VISIT(G, d)</code><br>time = 12<br>return to For-Loop of <code>DFS-VISIT(G, g)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-17" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<i>time</i> ← <i>time</i> + 1
+<i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered
+color[<i>u</i>] ← GRAY
+<span class="hl"><b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):</span>
+<span class="hl">      <b>If</b> color[<i>v</i>] = WHITE</span>
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)
+color[<i>u</i>] ← BLACK
+<i>time</i> ← <i>time</i> + 1
+<i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-17.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>return to For-Loop of <code>DFS-VISIT(G, g)</code><br>time = 12<br>Back in the For-Loop:<br>no adjacent white nodes<br>finish <code>DFS-VISIT(G, g)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-18" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<i>time</i> ← <i>time</i> + 1
+<i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered
+color[<i>u</i>] ← GRAY
+<b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):
+      <b>If</b> color[<i>v</i>] = WHITE
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)
+<span class="hl">color[<i>u</i>] ← BLACK</span>
+<span class="hl"><i>time</i> ← <i>time</i> + 1</span>
+<span class="hl"><i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</span></pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-18.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>finish <code>DFS-VISIT(G, g)</code><br>time = 13<br>return to For-Loop of <code>DFS-VISIT(G, c)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-19" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<i>time</i> ← <i>time</i> + 1
+<i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered
+color[<i>u</i>] ← GRAY
+<span class="hl"><b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):</span>
+<span class="hl">      <b>If</b> color[<i>v</i>] = WHITE</span>
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)
+color[<i>u</i>] ← BLACK
+<i>time</i> ← <i>time</i> + 1
+<i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-19.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>return to For-Loop of <code>DFS-VISIT(G, c)</code><br>time = 13<br>Back in the For-Loop:<br>no adjacent white nodes<br>finish <code>DFS-VISIT(G, c)</code></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-20" class="slide level2 fit1">
+<h2>Depth-First Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="codewrap" style="font-size:1.00em">
+<pre class="pseudocode"><b>Procedure</b> DFS-VISIT(<i>G</i>, <i>u</i>)
+<i>Inputs:</i>
+  <i>G</i>: a graph
+  <i>u</i>: the vertex to be processed
+<i>Result:</i> <i>u</i> and every vertex reachable from it are visited
+<i>time</i> ← <i>time</i> + 1
+<i>d</i>[<i>u</i>] ← <i>time</i>                 # discovered
+color[<i>u</i>] ← GRAY
+<b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):
+      <b>If</b> color[<i>v</i>] = WHITE
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)
+<span class="hl">color[<i>u</i>] ← BLACK</span>
+<span class="hl"><i>time</i> ← <i>time</i> + 1</span>
+<span class="hl"><i>f</i>[<i>u</i>] ← <i>time</i>                 # finished</span></pre>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/06-dfs-20.svg" style="height:9.2em"></p>
+<div class="sm">
+<p>finish <code>DFS-VISIT(G, c)</code><br>time = 14<br>All nodes finished<br>→ <strong>FINISHED</strong></p>
+</div>
+</div></div>
+</section>
+<section id="depth-first-search-21" class="slide level2">
+<h2>Depth-First Search</h2>
+<div>
+<p>More on Depth-First Search: See Cormen (2009)</p>
+</div>
+<div class="imgrow middle">
+<p><img data-src="figures/cormen-dfs-pseudocode.png" style="height:11.7em"> <img data-src="figures/cormen-dfs-figure.jpg" style="height:11.7em"></p>
+</div>
+<div class="source">
+<p>From <em>Introduction to Algorithms</em> by Thomas Cormen (2009)</p>
+</div>
+</section>
+<section id="dfs-for-planning-topological-sorting" class="slide level2 fit1">
+<h2>DFS for planning: topological sorting</h2>
+<div class="columns">
+<div class="column" style="width:44%;">
+<div class="sm">
+<ul>
+<li>Tasks often depend on each other, e.g.&nbsp;data has to be collected before it is analyzed</li>
+<li>A directed graph without cycles describes the plan, with an edge <span class="math inline">\(u \rightarrow v\)</span> if <span class="math inline">\(u\)</span> has to be done before <span class="math inline">\(v\)</span></li>
+<li><strong>Topological sorting</strong> finds an order that respects all dependencies:
+<ol type="1">
+<li>run DFS on the graph</li>
+<li>sort the vertices by <strong>decreasing finishing time</strong> <span class="math inline">\(f\)</span></li>
+</ol></li>
+<li>A vertex finishes after all vertices that depend on it</li>
+</ul>
+</div>
+</div><div class="column" style="width:56%;">
+<div class="center-h">
+<p><img data-src="figures/06-dfs-topological.svg" style="height:15em"></p>
+</div>
+</div></div>
+</section>
+<section id="dfs-for-finding-cycles" class="slide level2 fit1">
+<h2>DFS for finding cycles</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<div class="sm">
+<ul>
+<li>A cycle in a plan means that it cannot be carried out, e.g.&nbsp;a course that requires itself through other courses. Such a graph has no topological order</li>
+<li>While <code>DFS-VISIT(G, u)</code> runs, the GRAY vertices are the ones whose calls are waiting on the stack</li>
+<li>If a neighbor <span class="math inline">\(v\)</span> of <span class="math inline">\(u\)</span> is <strong>GRAY</strong>, there is a path from <span class="math inline">\(v\)</span> to <span class="math inline">\(u\)</span> and an edge from <span class="math inline">\(u\)</span> to <span class="math inline">\(v\)</span>, i.e.&nbsp;a <strong>cycle</strong></li>
+</ul>
+</div>
+</div><div class="column" style="width:54%;">
+<p><img data-src="figures/06-dfs-cycle.svg" style="width:100.0%"></p>
+<div class="codewrap" style="font-size:1.0em">
+<pre class="pseudocode"><b>For</b> each vertex <i>v</i> in neighbors(<i>u</i>):
+<span class="hl">      <b>If</b> color[<i>v</i>] = GRAY</span>
+<span class="hl">            <b>then</b> report a cycle</span>
+      <b>If</b> color[<i>v</i>] = WHITE
+            <b>then</b> π[<i>v</i>] ← <i>u</i>
+                 DFS-VISIT(<i>G</i>, <i>v</i>)</pre>
+</div>
+</div></div>
+</section>
+<section id="types-of-recursive-algorithms" class="slide level2">
+<h2>Types of recursive algorithms</h2>
+<div class="rtypes">
+<div class="rt">
+<div class="rt-row">
+<div class="rt-l">
+<p><strong>Linear recursion:</strong> the procedure calls itself once</p>
+</div>
+<div class="rt-r">
+<p><span class="math inline">\(\text{FACTORIAL}(n) = n \cdot \text{FACTORIAL}(n-1)\)</span></p>
+</div>
+</div>
+<div class="rt rt-inner">
+<div class="rt-row">
+<div class="rt-l">
+<p><strong>Tail-end recursion</strong> is a special case of linear recursion: the recursive call is the last step, so its result is returned without any further calculation</p>
+</div>
+<div class="rt-r">
+<p><span class="math inline">\(\text{GCD}(a, b) = \text{GCD}(b,\ a \bmod b)\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="rt">
+<div class="rt-row">
+<div class="rt-l">
+<p><strong>Tree</strong> or <strong>cascade recursion:</strong> the procedure calls itself several times</p>
+</div>
+<div class="rt-r">
+<p><span class="math inline">\(\text{FIB}(n) = \text{FIB}(n-1) + \text{FIB}(n-2)\)</span><br>DFS-VISIT, with one call per white neighbor</p>
+</div>
+</div>
+</div>
+<div class="rt">
+<div class="rt-row">
+<div class="rt-l">
+<p><strong>Nested recursion:</strong> the parameters of a recursive call contain another recursive call, e.g.&nbsp;the Ackermann function</p>
+</div>
+<div class="rt-r">
+<p><span class="math inline">\(ack(0, m) = m + 1\)</span><br><span class="math inline">\(ack(n+1, 0) = ack(n, 1)\)</span><br><span class="math inline">\(ack(n+1, m+1) = ack(n,\ ack(n+1, m))\)</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="outline-1" class="slide level2">
+<h2>Outline</h2>
+<div class="outline focus">
+<ol type="1">
+<li>Recursion</li>
+<li>Recursive Algorithms</li>
+<li><span class="current">Memoization</span></li>
+</ol>
+</div>
+</section>
+<section id="example-fibonacci-numbers" class="slide level2">
+<h2>Example: Fibonacci numbers</h2>
+<div class="codewrap" style="font-size:1.48em">
+<pre class="pseudocode" style="width:66%;margin:0.4em auto"><b>Procedure</b> FIB(<i>n</i>)                  # recursive version
+<i>Inputs:</i>
+  <i>n</i>: a natural number (<i>n</i> ∈ ℕ)
+<i>Result:</i> the <i>n</i>-th Fibonacci number
+<b>If</b> <i>n</i> = 0
+      <b>then return</b> 0
+<b>If</b> <i>n</i> = 1
+      <b>then return</b> 1
+<b>return</b> FIB(<i>n</i> - 1) + FIB(<i>n</i> - 2)</pre>
+</div>
+<div class="center-h sm">
+<p>The number of calls to <code>fib(n)</code> grows <strong>exponentially</strong> with <span class="math inline">\(n\)</span></p>
+</div>
+</section>
+<section id="why-is-the-recursive-version-slow" class="slide level2 fit1">
+<h2>Why is the recursive version slow?</h2>
+<div class="center-h">
+<p><img data-src="figures/06-fib-tree.svg" class="" style="height:9.6em"></p>
+</div>
+<div class="sm">
+<ul>
+<li>FIB(5) makes 15 calls, although there are only 6 different sub-problems, namely FIB(0) to FIB(5)</li>
+<li>The number of calls grows fast with <span class="math inline">\(n\)</span>, e.g.&nbsp;FIB(30) makes about 2.7 million calls</li>
+</ul>
+</div>
+</section>
+<section id="memoization-saving-results-in-an-array" class="slide level2 fit1">
+<h2>Memoization: saving results in an array</h2>
+<div class="definition">
+<p><span class="label">Definition of memoization</span></p>
+<div class="sm">
+<p>Memoization means <strong>saving the result</strong> of each sub-problem the first time it is calculated, for example in an array, so that we do not have to compute that same sub-problem again.</p>
+</div>
+</div>
+<div class="center-h">
+<p><img data-src="figures/06-memo-array.svg" class="" style="height:4.2em"></p>
+</div>
+<div class="sm">
+<ul>
+<li>Each sub-problem is solved only once, which makes the algorithm faster in exchange for the memory of the array</li>
+<li>With the array we can also rewrite the recursion as a loop that fills the array from the smallest sub-problem</li>
+<li>Saving and reusing the results of sub-problems is the idea behind <strong>dynamic programming</strong></li>
+</ul>
+</div>
+</section>
+<section id="example-fibonacci-numbers-1" class="slide level2">
+<h2>Example: Fibonacci numbers</h2>
+<div class="codewrap" style="font-size:1.06em">
+<pre class="pseudocode" style="width:70%;margin:0.4em auto"><b>Procedure</b> FIB(<i>n</i>)                  # recursive, with memoization
+<i>Inputs:</i>
+  <i>n</i>: a natural number (<i>n</i> ∈ ℕ)
+<i>Data:</i> <i>memo</i>: an array indexed from 0 to <i>n</i>, initially all NIL
+<i>Result:</i> the <i>n</i>-th Fibonacci number
+<b>If</b> <i>n</i> = 0
+      <b>then return</b> 0
+<b>If</b> <i>n</i> = 1
+      <b>then return</b> 1
+<b>If</b> <i>memo</i>[<i>n</i>] ≠ NIL
+      <b>then return</b> <i>memo</i>[<i>n</i>]
+<i>memo</i>[<i>n</i>] ← FIB(<i>n</i> - 1) + FIB(<i>n</i> - 2)
+<b>return</b> <i>memo</i>[<i>n</i>]</pre>
+</div>
+</section>
+<section id="example-fibonacci-numbers-2" class="slide level2">
+<h2>Example: Fibonacci numbers</h2>
+<div class="codewrap" style="font-size:1.06em">
+<pre class="pseudocode" style="width:70%;margin:0.4em auto"><b>Procedure</b> FIB(<i>n</i>)                  # recursive, with memoization
+<i>Inputs:</i>
+  <i>n</i>: a natural number (<i>n</i> ∈ ℕ)
+<i>Data:</i> <i>memo</i>: an array indexed from 0 to <i>n</i>, initially all NIL
+<i>Result:</i> the <i>n</i>-th Fibonacci number
+<b>If</b> <i>n</i> = 0
+      <b>then return</b> 0
+<b>If</b> <i>n</i> = 1
+      <b>then return</b> 1
+<b>If</b> <i>memo</i>[<i>n</i>] ≠ NIL
+      <b>then return</b> <i>memo</i>[<i>n</i>]
+<i>memo</i>[<i>n</i>] ← FIB(<i>n</i> - 1) + FIB(<i>n</i> - 2)
+<b>return</b> <i>memo</i>[<i>n</i>]</pre>
+</div>
+<div class="center-h sm">
+<p>Previously calculated results are saved in <code>memo</code></p>
+</div>
+</section>
+<section id="example-fibonacci-numbers-3" class="slide level2">
+<h2>Example: Fibonacci numbers</h2>
+<div class="codewrap" style="font-size:1.50em">
+<pre class="pseudocode" style="width:66%;margin:0.4em auto"><b>Procedure</b> FIB(<i>n</i>)                  # fully iterative
+<i>Inputs:</i>
+  <i>n</i>: a natural number (<i>n</i> ∈ ℕ)
+<i>Data:</i> <i>memo</i>: an array indexed from 0 to <i>n</i>
+<i>Result:</i> the <i>n</i>-th Fibonacci number
+<i>memo</i>[0] ← 0
+<i>memo</i>[1] ← 1
+<b>For</b> <i>i</i> = 2 to <i>n</i>:
+      <i>memo</i>[<i>i</i>] ← <i>memo</i>[<i>i</i> - 1] + <i>memo</i>[<i>i</i> - 2]
+<b>return</b> <i>memo</i>[<i>n</i>]</pre>
+</div>
+</section>
+<section id="memoization-and-memory-the-stack-or-the-array" class="slide level2 fit1">
+<h2>Memoization and memory: the stack or the array?</h2>
+<div class="tbl-grid tbl-roomy">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Version of FIB(<span class="math inline">\(n\)</span>)</th>
+<th style="text-align: center;">Calls for <span class="math inline">\(n = 30\)</span></th>
+<th style="text-align: center;">Stack</th>
+<th style="text-align: center;">Array</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>recursive</td>
+<td style="text-align: center;">about 2.7 million</td>
+<td style="text-align: center;">up to <span class="math inline">\(n\)</span> frames</td>
+<td style="text-align: center;">none</td>
+</tr>
+<tr class="even">
+<td>recursive with memoization</td>
+<td style="text-align: center;">59</td>
+<td style="text-align: center;">up to <span class="math inline">\(n\)</span> frames</td>
+<td style="text-align: center;"><span class="math inline">\(n + 1\)</span> entries</td>
+</tr>
+<tr class="odd">
+<td>iterative with an array</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1 frame</td>
+<td style="text-align: center;"><span class="math inline">\(n + 1\)</span> entries</td>
+</tr>
+<tr class="even">
+<td>iterative with two variables</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1 frame</td>
+<td style="text-align: center;">none</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sm">
+<ul>
+<li>Memoization uses <strong>more memory</strong> than the plain recursion, because it keeps the array in addition to the stack</li>
+<li>The iterative version uses <strong>less memory</strong> than both recursive versions, because it needs the array but no stack frames, so it cannot overflow the stack</li>
+<li>If only the last results are needed, as in Fibonacci, the array can be replaced by two variables</li>
+</ul>
+</div>
+</section>
+<section id="outtake-types-of-algorithms-you-will-encounter" class="slide level2 fit1">
+<h2>Outtake – Types of algorithms you will encounter</h2>
+<div class="rtypes atypes">
+<div class="rt">
+<div class="rt-row">
+<div class="rt-l">
+<p><strong>Recursion</strong></p>
+<ul>
+<li>solves a problem through calls to itself on smaller inputs, e.g.&nbsp;DFS</li>
+<li>requires specifying sensible abort conditions</li>
+</ul>
+</div>
+<div class="rt-r">
+<p><img data-src="figures/06-type-recursion.svg"></p>
+</div>
+</div>
+</div>
+<div class="rt">
+<div class="rt-row">
+<div class="rt-l">
+<p><strong>Greedy</strong></p>
+<ul>
+<li>successive extension of partial solutions, e.g.&nbsp;BFS extends the visited nodes with the closest ones</li>
+<li>determines locally optimal choice at each step, then moves on</li>
+<li>only correct if local optimum also leads to globally optimal solutions</li>
+</ul>
+</div>
+<div class="rt-r">
+<p><img data-src="figures/06-type-greedy.svg"></p>
+</div>
+</div>
+</div>
+<div class="rt">
+<div class="rt-row">
+<div class="rt-l">
+<p><strong>Divide and Conquer</strong></p>
+<ul>
+<li>separate the problem into decoupled/non-overlapping smaller sub-problems. <span class="hl-orange">More next session!</span></li>
+<li>solve sub-problems independently</li>
+<li>if necessary, collapse all sub-results to global results</li>
+</ul>
+</div>
+<div class="rt-r">
+<p><img data-src="figures/06-type-dc.svg"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="why-does-this-matter-practical-python-examples" class="slide level2">
+<h2>Why does this matter? Practical Python examples</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><img data-src="figures/06-python-examples-notebook.png" style="width:100.0%"></p>
+</div><div class="column" style="width:45%;">
+<div class="sm">
+<ul>
+<li><strong>Fibonacci with a memo:</strong> the function as written makes millions of calls, with saved results it makes 59</li>
+<li><strong>The stack is finite:</strong> a recursive depth-first search fails on a chain of 5,000 nodes</li>
+<li><strong>Euclid’s algorithm:</strong> the gcd of two 18-digit numbers is found in 16 calls</li>
+</ul>
+</div>
+</div></div>
+<div class="source">
+<p><a href="https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples06-Recursion.ipynb" class="uri">https://github.com/dgarcia-eu/ICSS/blob/main/PythonExamples/Examples06-Recursion.ipynb</a></p>
+</div>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li>Recursion needs a <strong>base case</strong> and a <strong>recursive case</strong> that moves towards it</li>
+<li>Every call waits on the <strong>program stack</strong> until its own calls return, and a recursion that is too deep causes a <strong>stack overflow</strong></li>
+<li><strong>Factorial</strong> and <strong>Euclid’s algorithm</strong> run their recursive definitions</li>
+<li><strong>Depth-first search</strong> records times that sort tasks and reveal cycles</li>
+<li>Recursion can be <strong>linear</strong> (<strong>tail-end</strong> as a special case), <strong>tree</strong> or <strong>nested</strong></li>
+<li><strong>Memoization</strong> saves results in an array and calculates each only once</li>
+</ul>
+<p><strong>Next session:</strong> Sorting Algorithms</p>
+</section>
+<section id="evaluation-for-introduction-to-programming-with-python" class="slide level2">
+<h2>Evaluation for Introduction to Programming with Python</h2>
+<div class="center-h">
+<p><img data-src="figures/evaluation-qr.png" style="height:10.4em"></p>
+<p><a href="https://evasys.uni-konstanz.de/evasys/online.php?pswd=HYFEH" class="uri">https://evasys.uni-konstanz.de/evasys/online.php?pswd=HYFEH</a></p>
+<div class="sm">
+<p>The survey is open until 27.11.2026 at 18:00</p>
+</div>
+</div>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../theme/unikn-logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><span class="fbar-left">Session 06</span><span class="fbar-mid">Introduction to Computing for the Social Sciences</span><span class="fbar-right">Winter Semester 2026-2027</span></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="ICSS-2026-06-Recursion_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="ICSS-2026-06-Recursion_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="ICSS-2026-06-Recursion_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="ICSS-2026-06-Recursion_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="ICSS-2026-06-Recursion_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="ICSS-2026-06-Recursion_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="ICSS-2026-06-Recursion_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="ICSS-2026-06-Recursion_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="ICSS-2026-06-Recursion_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="ICSS-2026-06-Recursion_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 6.0e-2,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+              // target, if specified
+              link.setAttribute("target", "_blank");
+              if (link.getAttribute("rel") === null) {
+                link.setAttribute("rel", "noopener");
+              }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

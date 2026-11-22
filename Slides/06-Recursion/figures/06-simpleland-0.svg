@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 314" width="1160" height="314" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b03a2e"/></marker><marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e07b00"/></marker><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#888"/></marker></defs>
+  <circle cx="1040" cy="206" r="62" fill="#a6e1f4" stroke="#3e5496" stroke-width="2.8"/>
+  <path d="M 1004.9 187.4 C 1009.0 160.5 1046.2 158.5 1054.5 175.0 C 1064.8 168.8 1085.5 183.3 1079.3 201.9 C 1089.6 216.3 1077.2 241.1 1056.5 239.1 C 1044.1 253.5 1017.3 249.4 1015.2 228.7 C 994.5 226.7 992.5 199.8 1004.9 187.4 Z" fill="#9bd48a" stroke="#3d7d3a" stroke-width="1.6"/>
+  <path d="M 1031.7 237.0 C 1037.9 220.5 1050.3 222.5 1052.4 237.0" fill="#a6e1f4" stroke="#3d7d3a" stroke-width="1.6"/>
+  <path d="M 1042.1 201.9 C 1027.6 183.3 1031.7 170.9 1042.1 170.9 C 1052.4 170.9 1056.5 183.3 1042.1 201.9 Z" fill="#e0503a" stroke="#8c2a1c" stroke-width="1.2"/>
+  <circle cx="1042.1" cy="182.2" r="4.1" fill="#fff"/>
+  <text x="1040" y="292" text-anchor="middle" font-size="20" fill="#111" font-weight="bold" font-style="normal">Simpleland</text>
+</svg>

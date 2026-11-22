@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 333" width="500" height="333" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b03a2e"/></marker><marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e07b00"/></marker><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#888"/></marker></defs>
+  <rect x="4" y="6" width="492" height="321" rx="8" fill="#e9f6fc" stroke="#3e5496" stroke-width="1.8"/>
+  <rect x="14" y="15" width="472" height="32" rx="5" fill="#fff" stroke="#9a9a9a" stroke-width="1"/>
+  <text x="26" y="37" text-anchor="start" font-size="18" fill="#111" font-weight="normal" font-style="normal">post by Ana</text>
+  <text x="16" y="69" text-anchor="start" font-size="16" fill="#3e5496" font-weight="normal" font-style="italic">list of comments</text>
+  <rect x="26" y="77" width="458" height="157" rx="8" fill="#d4eef9" stroke="#3e5496" stroke-width="1.8"/>
+  <rect x="36" y="86" width="438" height="32" rx="5" fill="#fff" stroke="#9a9a9a" stroke-width="1"/>
+  <text x="48" y="108" text-anchor="start" font-size="18" fill="#111" font-weight="normal" font-style="normal">post by Ben</text>
+  <text x="38" y="140" text-anchor="start" font-size="16" fill="#3e5496" font-weight="normal" font-style="italic">list of comments</text>
+  <rect x="48" y="148" width="424" height="75" rx="8" fill="#bfe5f5" stroke="#3e5496" stroke-width="1.8"/>
+  <rect x="58" y="157" width="404" height="32" rx="5" fill="#fff" stroke="#9a9a9a" stroke-width="1"/>
+  <text x="70" y="179" text-anchor="start" font-size="18" fill="#111" font-weight="normal" font-style="normal">post by Ana</text>
+  <text x="60" y="210" text-anchor="start" font-size="16" fill="#888" font-weight="normal" font-style="italic">empty list of comments</text>
+  <rect x="26" y="241" width="458" height="75" rx="8" fill="#d4eef9" stroke="#3e5496" stroke-width="1.8"/>
+  <rect x="36" y="250" width="438" height="32" rx="5" fill="#fff" stroke="#9a9a9a" stroke-width="1"/>
+  <text x="48" y="272" text-anchor="start" font-size="18" fill="#111" font-weight="normal" font-style="normal">post by Cem</text>
+  <text x="38" y="303" text-anchor="start" font-size="16" fill="#888" font-weight="normal" font-style="italic">empty list of comments</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 272" width="580" height="272" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b03a2e"/></marker><marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e07b00"/></marker><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#888"/></marker></defs>
+  <line x1="162" y1="66" x2="207" y2="66" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <line x1="368" y1="66" x2="413" y2="66" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <line x1="474" y1="96" x2="418" y2="172" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+  <line x1="371" y1="176" x2="315" y2="100" stroke="#cc2222" stroke-width="4" marker-end="url(#ar)"/>
+  <rect x="9.0" y="38.0" width="150" height="56" rx="8" fill="#b8b8b8" stroke="#111" stroke-width="1.6"/>
+  <text x="84" y="73" text-anchor="middle" font-size="21" fill="#111" font-weight="bold" font-style="normal">Statistics 1</text>
+  <rect x="215.0" y="38.0" width="150" height="56" rx="8" fill="#b8b8b8" stroke="#111" stroke-width="1.6"/>
+  <text x="290" y="73" text-anchor="middle" font-size="21" fill="#111" font-weight="bold" font-style="normal">Statistics 2</text>
+  <rect x="421.0" y="38.0" width="150" height="56" rx="8" fill="#b8b8b8" stroke="#111" stroke-width="1.6"/>
+  <text x="496" y="73" text-anchor="middle" font-size="21" fill="#111" font-weight="bold" font-style="normal">Methods</text>
+  <rect x="318.0" y="178.0" width="150" height="56" rx="8" fill="#b8b8b8" stroke="#e07b00" stroke-width="4"/>
+  <text x="393" y="213" text-anchor="middle" font-size="21" fill="#111" font-weight="bold" font-style="normal">Seminar</text>
+  <text x="170" y="158" text-anchor="middle" font-size="20" fill="#cc2222" font-weight="bold" font-style="normal">edge to a GRAY</text>
+  <text x="170" y="184" text-anchor="middle" font-size="20" fill="#cc2222" font-weight="bold" font-style="normal">vertex: a cycle</text>
+  <text x="393" y="262" text-anchor="middle" font-size="18" fill="#e07b00" font-weight="bold" font-style="normal">u, being processed</text>
+  <text x="290" y="22" text-anchor="middle" font-size="18" fill="#444" font-weight="normal" font-style="italic">v, still GRAY (its call has not returned)</text>
+</svg>

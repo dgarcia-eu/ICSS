@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 176" width="640" height="176" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b03a2e"/></marker><marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e07b00"/></marker><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#888"/></marker></defs>
+  <text x="6" y="60" text-anchor="start" font-size="22" fill="#111" font-weight="bold" font-style="normal">Slots</text>
+  <rect x="150" y="20" width="96" height="62" fill="#111"/>
+  <rect x="160" y="30" width="76" height="42" fill="#8fe8d8"/>
+  <text x="198" y="62" text-anchor="middle" font-size="26" fill="#555" font-weight="bold" font-style="normal">1</text>
+  <rect x="268" y="20" width="96" height="62" fill="#111"/>
+  <rect x="278" y="30" width="76" height="42" fill="#8fe8d8"/>
+  <text x="316" y="62" text-anchor="middle" font-size="26" fill="#555" font-weight="bold" font-style="normal">2</text>
+  <rect x="386" y="20" width="96" height="62" fill="#111"/>
+  <rect x="396" y="30" width="76" height="42" fill="#8fe8d8"/>
+  <text x="434" y="62" text-anchor="middle" font-size="26" fill="#555" font-weight="bold" font-style="normal">3</text>
+  <rect x="504" y="20" width="96" height="62" fill="#111"/>
+  <rect x="514" y="30" width="76" height="42" fill="#8fe8d8"/>
+  <text x="552" y="62" text-anchor="middle" font-size="26" fill="#555" font-weight="bold" font-style="normal">4</text>
+  <text x="6" y="146" text-anchor="start" font-size="22" fill="#111" font-weight="bold" font-style="normal">Diners</text>
+  <path d="M 173.0 170.0 Q 173.0 140.0 198.0 140.0 Q 223.0 140.0 223.0 170.0 Z" fill="#d9534f" stroke="#333" stroke-width="1.3"/>
+  <path d="M 181.0 118.0 Q 176.0 140.0 183.0 146.0 L 213.0 146.0 Q 220.0 140.0 215.0 118.0 Z" fill="#7a4a2a" stroke="none" stroke-width="1.6"/>
+  <circle cx="198.0" cy="120.0" r="15.0" fill="#f6d3b3" stroke="#333" stroke-width="1.3"/>
+  <path d="M 182.5 119.0 A 15.5 15.5 0 0 1 213.5 119.0 Q 206.0 111.0 198.0 112.0 Q 190.0 111.0 182.5 119.0 Z" fill="#7a4a2a" stroke="none" stroke-width="1.6"/>
+  <text x="198.0" y="162.0" text-anchor="middle" font-size="17" fill="#fff" font-weight="bold" font-style="normal">A</text>
+  <path d="M 291.0 170.0 Q 291.0 140.0 316.0 140.0 Q 341.0 140.0 341.0 170.0 Z" fill="#3e5496" stroke="#333" stroke-width="1.3"/>
+  <circle cx="316.0" cy="120.0" r="15.0" fill="#c98d63" stroke="#333" stroke-width="1.3"/>
+  <path d="M 300.5 119.0 A 15.5 15.5 0 0 1 331.5 119.0 Q 324.0 111.0 316.0 112.0 Q 308.0 111.0 300.5 119.0 Z" fill="#2b2b2b" stroke="none" stroke-width="1.6"/>
+  <text x="316.0" y="162.0" text-anchor="middle" font-size="17" fill="#fff" font-weight="bold" font-style="normal">B</text>
+  <path d="M 409.0 170.0 Q 409.0 140.0 434.0 140.0 Q 459.0 140.0 459.0 170.0 Z" fill="#2e9e4f" stroke="#333" stroke-width="1.3"/>
+  <circle cx="434.0" cy="120.0" r="15.0" fill="#f2c9a5" stroke="#333" stroke-width="1.3"/>
+  <path d="M 418.5 119.0 A 15.5 15.5 0 0 1 449.5 119.0 Q 442.0 111.0 434.0 112.0 Q 426.0 111.0 418.5 119.0 Z" fill="#b06a2a" stroke="none" stroke-width="1.6"/>
+  <circle cx="434.0" cy="103.0" r="6.0" fill="#b06a2a"/>
+  <text x="434.0" y="162.0" text-anchor="middle" font-size="17" fill="#fff" font-weight="bold" font-style="normal">C</text>
+  <path d="M 527.0 170.0 Q 527.0 140.0 552.0 140.0 Q 577.0 140.0 577.0 170.0 Z" fill="#e8a13a" stroke="#333" stroke-width="1.3"/>
+  <circle cx="552.0" cy="120.0" r="15.0" fill="#dba77c" stroke="#333" stroke-width="1.3"/>
+  <path d="M 537.0 122.0 Q 535.0 114.0 540.0 111.0" fill="none" stroke="#3a3a3a" stroke-width="3"/>
+  <path d="M 567.0 122.0 Q 569.0 114.0 564.0 111.0" fill="none" stroke="#3a3a3a" stroke-width="3"/>
+  <text x="552.0" y="162.0" text-anchor="middle" font-size="17" fill="#fff" font-weight="bold" font-style="normal">D</text>
+</svg>

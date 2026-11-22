@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 446 476" width="446" height="476" font-family="Arial, Helvetica, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b03a2e"/></marker><marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e07b00"/></marker><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e5496"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#888"/></marker></defs>
+  <rect x="16" y="56" width="300" height="376" rx="0" fill="#fff" stroke="#111" stroke-width="1.6"/>
+  <line x1="4" y1="56" x2="338" y2="56" stroke="#cc2222" stroke-width="2.4" stroke-dasharray="7 4"/>
+  <text x="344" y="62" text-anchor="start" font-size="19" fill="#cc2222" font-weight="bold" font-style="normal">limit of</text>
+  <text x="344" y="84" text-anchor="start" font-size="19" fill="#cc2222" font-weight="bold" font-style="normal">the stack</text>
+  <rect x="16" y="392" width="300" height="40" rx="0" fill="#dfe6ee" stroke="#111" stroke-width="1.2"/>
+  <text x="166.0" y="418" text-anchor="middle" font-size="17" fill="#333" font-weight="normal" font-style="normal">the program that made the call</text>
+  <rect x="16" y="316" width="300" height="76" rx="0" fill="#7fb1e8" stroke="#111" stroke-width="1.2"/>
+  <text x="166.0" y="348" text-anchor="middle" font-size="19" fill="#111" font-weight="bold" font-style="normal">recursive_factorial(3)</text>
+  <text x="166.0" y="373" text-anchor="middle" font-size="17" fill="#111" font-weight="normal" font-style="normal">n = 3, return address</text>
+  <rect x="16" y="240" width="300" height="76" rx="0" fill="#9cc4ee" stroke="#111" stroke-width="1.2"/>
+  <text x="166.0" y="272" text-anchor="middle" font-size="19" fill="#111" font-weight="bold" font-style="normal">recursive_factorial(2)</text>
+  <text x="166.0" y="297" text-anchor="middle" font-size="17" fill="#111" font-weight="normal" font-style="normal">n = 2, return address</text>
+  <rect x="16" y="164" width="300" height="76" rx="0" fill="#bcd6f0" stroke="#111" stroke-width="1.2"/>
+  <text x="166.0" y="196" text-anchor="middle" font-size="19" fill="#111" font-weight="bold" font-style="normal">recursive_factorial(1)</text>
+  <text x="166.0" y="221" text-anchor="middle" font-size="17" fill="#111" font-weight="normal" font-style="normal">n = 1, return address</text>
+  <line x1="44" y1="156" x2="44" y2="114" stroke="#111" stroke-width="2.4" marker-end="url(#a)"/>
+  <text x="58" y="142" text-anchor="start" font-size="17" fill="#444" font-weight="normal" font-style="normal">each call adds a frame</text>
+  <text x="166.0" y="90" text-anchor="middle" font-size="18" fill="#777" font-weight="normal" font-style="italic">free stack memory</text>
+  <text x="223.0" y="464" text-anchor="middle" font-size="18" fill="#444" font-weight="normal" font-style="italic">Stack segment during recursive_factorial(3)</text>
+</svg>
