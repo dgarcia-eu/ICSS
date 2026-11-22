@@ -91,7 +91,8 @@ Definition; examples; search algorithms
 
 **Session 06: Recursive algorithms** (25.11 – 01.12)  
 Recursion vs. iteration; Properties of recursive algorithms  
-*Reference(s): Chapter 13 of 'Python Programming: An introduction to Computer Science' by Zelle*
+*Reference(s): Chapter 13 of 'Python Programming: An introduction to Computer Science' by Zelle*  
+[**Slides**](https://dgarcia-eu.github.io/ICSS/Slides/06-Recursion/ICSS-2026-06-Recursion.html) - [**Transcript**](https://dgarcia-eu.github.io/ICSS/Transcripts/06-Recursion.html) - [**Exercise sheet**](https://dgarcia-eu.github.io/ICSS/Exercises/Exercise06.html)
 
 **Session 07: Sorting Algorithms** (02.12 – 08.12)  
 Selection sort; Insertion sort; Divide and conquer algorithms; Merge sort; Quick sort.  
