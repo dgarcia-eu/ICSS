@@ -161,7 +161,18 @@ $1 + 3 + 5 + 7 = 16$.
 ### A2. Graph representations
 
 a)
-$$\begin{array}{c|cccc} & 1&2&3&4\\\hline 1&0&1&0&0\\ 2&0&0&1&0\\ 3&1&0&0&1\\ 4&0&0&0&0\end{array}$$
+
+$$
+\begin{array}{c|cccc}
+  & 1 & 2 & 3 & 4 \\
+\hline
+1 & 0 & 1 & 0 & 0 \\
+2 & 0 & 0 & 1 & 0 \\
+3 & 1 & 0 & 0 & 1 \\
+4 & 0 & 0 & 0 & 0
+\end{array}
+$$
+
 b) The lists are $1 \rightarrow 2$, $2 \rightarrow 3$, $3 \rightarrow 1 \rightarrow 4$
 and $4 \rightarrow$ (empty).
 c) No, it is not symmetric. A symmetric adjacency matrix means that the graph
