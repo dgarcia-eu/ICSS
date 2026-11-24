@@ -131,8 +131,6 @@ d) Why is "delete the node $p$ itself" harder than "delete the node after $p$"?
 
 ## Sources
 
-- Exercises 1 and 2 are adapted from the 2023/24 sheet 3 of this course; exercise 3
-  was rewritten in 2026/27.
 - **Cormen, T. H., Leiserson, C. E., Rivest, R. L. & Stein, C. (2009).**
   *Introduction to Algorithms*, 3rd ed., MIT Press, ch. 10–12.: Reading for
   this session; A3 and A4 follow its treatment of BST deletion and depth.

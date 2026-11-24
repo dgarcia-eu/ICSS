@@ -144,8 +144,6 @@ d) At what edge density would the matrix become competitive?
 
 ## Sources
 
-- Exercises 1–3 are adapted from the 2023/24 exercise sheet on algorithms of
-  this course, with the flowchart redrawn.
 - **Cormen, T. H. (2013).** *Algorithms Unlocked*, MIT Press, ch. 1 and 6.
   Reading for this session. Bellman-Ford is in chapter 6.
 - **Cormen, T. H., Leiserson, C. E., Rivest, R. L. & Stein, C. (2009).**
